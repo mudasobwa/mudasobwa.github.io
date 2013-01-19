@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "EventMachine :: yield ⇒ choose one ⇒ yield"
+title: "EventMachine :: Nested Calls (Yield ⇒ Choose one ⇒ Yield)"
 description: "Ruby’s EventMachine trick"
-category: garbage
+category: hacking
 tags: [ruby, tricks]
 ---
 {% include JB/setup %}
