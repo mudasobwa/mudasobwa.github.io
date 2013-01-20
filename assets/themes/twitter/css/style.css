@@ -81,6 +81,7 @@ h6 { font-size: 16px; }
 h1 small, h1 small ul li { font-size: 14px; }
 h1 small ul { display: table-cell; }
 a { text-shadow: 1px 1px 1px #999; }
+pre code, pre code span { line-height: 0.8em; }
 
 .navbar .nav > li > a {
   text-shadow: 1px 1px 1px #999;
@@ -115,3 +116,4 @@ div.pagination {
   font-family: 'Ubuntu', helvetica, arial, sans-serif;
 }
 .span10 img { margin: 1em 0 1em 0; }
+
