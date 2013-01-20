@@ -120,7 +120,7 @@ ul.posts {
     color: #aaa;
   }
 
-  .site .footer {
+  footer {
     font-size: 80%;
     color: #666;
     border-top: 4px solid #eee;
@@ -128,24 +128,11 @@ ul.posts {
     overflow: hidden;
   }
 
-    .site .footer .contact {
-      float: left;
-      margin-right: 3em;
-    }
-
-      .site .footer .contact a {
-        color: #8085C1;
-      }
-
-    .site .footer .rss {
-      margin-top: 1.1em;
-      margin-right: -.2em;
-      float: right;
-    }
-
-      .site .footer .rss img {
-        border: 0;
-      }
+  .contact { float: left; margin-right: 3em; }
+  .contact p { font-size: 80%; }
+  .contact a { color: #8085C1; }
+  .rss { margin-top: 1.1em; margin-right: -.2em; float: right; }
+  .rss img { border: 0; height: 16px; }
 
 /*****************************************************************************/
 /*

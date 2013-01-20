@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "EventMachine :: Nested Calls (Yield ⇒ Choose one ⇒ Yield)"
-description: "Ruby’s EventMachine trick"
+title: "EventMachine :: Nested Calls"
+description: "Yield ⇒ Choose one ⇒ Yield"
 category: hacking
 tags: [ruby, tricks]
 ---
@@ -35,13 +35,13 @@ end
 
 Reactor is well-hooked (e. g. `EventMachine.add_shutdown_hook { puts «Exiting…» }`.) Asynchronous connection surely may be served on the fly. A documentation is, again, presented. Sometimes it is even clearly.
 
-But enough of righteousness.
+But let’s cease humdrum.
 
 ###Reaping a harvest
 
 While a task is limited to "request processing →  response," there is no problem. But what if we need to send the next query basing on the result of the previous one? Not to make a post too long, let us get right to the problem:
 
-####look up jabber-server for a Discovery component and then communicate with it asynchronously
+> __*look up jabber-server for a Discovery component and then communicate with it asynchronously*__
 
 We are to send a request to Discovery, to get a list of components, to ask each component for its capabilities. If the list of features is ours, perform our job. Gracefully quit, if it is not.
 

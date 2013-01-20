@@ -7,17 +7,18 @@ auto: true
 safe: true
 # source: <your pages repo>
 # destination: <the build dir>
-lsi: true
+lsi: false
 pygments: true
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
 title : Perls and Rubys in Words
-tagline: Meta-meta-meta-modelling of life
+tagline: 102% original content
 author :
   name : Alexei Matyushkin
   email : am@mudasobwa.ru
+  motto: continiously building the M³-model of life
   github : mudasobwa
   twitter : mudasobwa
   feedburner : mudasobwa
