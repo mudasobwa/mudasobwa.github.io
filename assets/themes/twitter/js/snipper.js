@@ -96,7 +96,7 @@ var snipper = {
         }
       }
     }
-    this.initPres();
+    this.initPres(className, openAll);
   },
   /** Initializes the default CSS for details/summaries. This is necessary since older browsers
         have no clue about whether details/summary are block elements.
@@ -141,7 +141,8 @@ var snipper = {
       if ( n.nodeType == 1 && n != elem ) {
         if ( n.tagName.toLowerCase() === "pre") {
           n.style.height = open || (this.magicSubHeight >= n.parentNode.offsetHeight - this.magicHeight) ? "auto" : "" + this.magicSubHeight + "px";
-        } else if (n.className && n.className.toLowerCase() !== "snipper-fader") {
+        };
+        if (!n.className || n.className.toLowerCase() !== "snipper-fader") {
           n.style.display = open ? "block" : "none";
         } else {
           n.style.display = open ? "none" : "block";
@@ -287,17 +288,17 @@ var snipper = {
       }
       canvas.height = this.magicHeight;
       canvas.width = elem.offsetWidth;
-      canvas.class = "snipper";
+      canvas.className = "snipper";
       canvas.style.cursor = "pointer";
       canvas.onclick = function(e) { toggler.toggleDetail(e); };
       sum.appendChild(canvas);
-      snipper.drawCaption(canvas, this.snipperTitle + ++this.snipperId);
+      this.drawCaption(canvas, this.snipperTitle + ++this.snipperId);
     }
     wrapper.appendChild(sum);
     wrapper.appendChild(elem);
     
-    wrapper.insertBefore(snipper.createFader(elem.offsetWidth), elem);
+    wrapper.insertBefore(this.createFader(elem.offsetWidth), elem);
     
-    snipper.setOpenClose(sum, false);
+    this.setOpenClose(sum, openIt);
   }
 }
