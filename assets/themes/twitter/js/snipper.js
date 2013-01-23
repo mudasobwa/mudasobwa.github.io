@@ -141,8 +141,7 @@ var snipper = {
       if ( n.nodeType == 1 && n != elem ) {
         if ( n.tagName.toLowerCase() === "pre") {
           n.style.height = open || (this.magicSubHeight >= n.parentNode.offsetHeight - this.magicHeight) ? "auto" : "" + this.magicSubHeight + "px";
-        };
-        if (!n.className || n.className.toLowerCase() !== "snipper-fader") {
+        } else if (!n.className || n.className.toLowerCase() !== "snipper-fader") {
           n.style.display = open ? "block" : "none";
         } else {
           n.style.display = open ? "none" : "block";
