@@ -248,6 +248,7 @@ var snipper = {
   },
 
   createFader : function(w) {
+    // stolen from http://stackoverflow.com/a/12178019
     var fader = document.createElement("div");
     fader.className = "snipper-fader";
     fader.style.width = "" + w + "px";
