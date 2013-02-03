@@ -40,7 +40,7 @@ It is easy to see that the sequence `\e[01;04;38;05;196;48;05;232m` turns the mo
 
 ###How to get a color, huh?
 
-It turns put that colors are encoded in the remaining 256 - 16 - 24 = 216 choices using a simple and straightforward algorithm. A range of tones is calibrated against division modulo 6. That number is treated as RGB-constituent in 6-based notation with “zero in sixteen”. For orange (`#ff9900`) it gives `16 + 5 * 6² + 3 * 6 + 0 = 214`). There are exceptions, as without them. Those “standard” old-school colors and grayscale. Yeah.
+It turns put that colors are encoded in the remaining 256 - 16 - 24 = 216 choices using a simple and straightforward algorithm. A range of tones is calibrated against division modulo 6. That number is treated as RGB-constituent in 6-based notation with “zero in sixteen”. For orange (`#ff9900`) it gives `16 + 5 * 6² + 3 * 6 + 0 = 214`). There are exceptions; they will be there any time. Those “standard” old-school colors and grayscale. Yeah.
 
 ### Who the hell does need that?
 
