@@ -40,12 +40,13 @@ end
 Now we can write:
 {% highlight ruby %}
 [ "Apple", "Orange", "Pear" ].map &[ :+, " is a fruit." ]
+[ "Apple", "Orange", "Pear" ].map &[ :match, "[a-z]e" ]
 {% endhighlight %}
 yielding:
 {% highlight ruby %}
 #=> ["Apple is a fruit.", "Orange is a fruit.", "Pear is a fruit."]
+#=> [#<MatchData "le">, #<MatchData "ge">, nil]
 {% endhighlight %}
-
 ----
 Kinda same trick may be done for methods. Let’s say we have:
 {% highlight ruby %}
