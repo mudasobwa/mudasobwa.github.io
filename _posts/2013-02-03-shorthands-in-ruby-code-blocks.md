@@ -48,6 +48,7 @@ yielding:
 #=> [#<MatchData "le">, #<MatchData "ge">, nil]
 {% endhighlight %}
 Methods are being called on array elements (on `String`s in the example above.)
+
 ----
 Kinda same trick may be done for external methods using `&method` shorthand. Let’s say we have:
 {% highlight ruby %}
