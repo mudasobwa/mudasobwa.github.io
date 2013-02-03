@@ -29,9 +29,9 @@ need is to use one of a cryptic `$` [ruby globals](http://jimneath.org/2010/01/0
 prints all the `MatchData`s:
 
 {% highlight ruby %}
-  ⇒ #<MatchData "12">
-  ⇒ #<MatchData "34">
-  ⇒ #<MatchData "567">
+  # ⇒ <MatchData "12">
+  # ⇒ <MatchData "34">
+  # ⇒ <MatchData "567">
 {% endhighlight %}
 
 Voilà.
