@@ -25,7 +25,15 @@ The good news is: ruby provides us with a syntactic sugar for that stuff. Let’
 {% endhighlight %}
 It is fully equivalent to the `do-|o|-end` codepiece above, but the readability is drastically improved.
 
-How the hell does it work? As \[almost\] all the other shorthands in ruby, it’s calling some method. In that case 
+How the hell does it work?
+
+The `&obj` is evaluated in ruby in the following way:
+
+ * if object is a `block`, it converts the block into a simple `proc`.
+ * if object is a `Proc`, it converts the object into a block while preserving the `lambda?` status of the object.
+ * if object is not a `Proc`, it first calls `#to_proc` on the object and then converts it into a block.
+
+In our case 
 the method is `#to_proc` on a `Symbol`’s instance (because `:name.class == Symbol`). The `Symbol#to_proc` method 
 was originally added by `ActiveSupport` but has been integrated into Ruby since 1.8.7.
 
