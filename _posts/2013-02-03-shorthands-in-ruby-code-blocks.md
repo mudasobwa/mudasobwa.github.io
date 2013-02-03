@@ -47,8 +47,9 @@ yielding:
 #=> ["Apple is a fruit.", "Orange is a fruit.", "Pear is a fruit."]
 #=> [#<MatchData "le">, #<MatchData "ge">, nil]
 {% endhighlight %}
+Methods are being called on array elements (on `String`s in the example above.)
 ----
-Kinda same trick may be done for methods. Let’s say we have:
+Kinda same trick may be done for external methods using `&method` shorthand. Let’s say we have:
 {% highlight ruby %}
   arr.each do |x|
     get_fullname x
