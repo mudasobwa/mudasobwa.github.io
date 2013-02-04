@@ -20,11 +20,11 @@ Nowadays a text in the X-terminal may appear in an ornate way. That’s why I ca
 For a terminal to realize that it can show 256 colors, we should aknowledge it about:
 
 {% highlight bash %}
-  case "$TERM" in
-    'xterm') TERM=xterm-256color;;
-    'screen') TERM=screen-256color;;
-    'Eterm') TERM=Eterm-256color;;
-  esac
+case "$TERM" in
+  'xterm') TERM=xterm-256color;;
+  'screen') TERM=screen-256color;;
+  'Eterm') TERM=Eterm-256color;;
+esac
 {% endhighlight %}
 
 The color itself is encoded in quite breathtaking manner. Escape-sequence is starting with the traditional `\e[` and ending with `m`. It consists of *flags*, the *color of the background* and the *text color*. Flags for bold, italic, underline and inverse (fg ⇐ ⇒ bg) are `01`, `03`, `04` and `07` respectively (there is a flag for the flashing as well, but what if there are children reading this?) Flags to cancel the style are `22`, `23`, `24`, `27`. Flags can be written in simultaneous order, one after another, separated by semicolons. There must be no semicolon just before the final `m`.

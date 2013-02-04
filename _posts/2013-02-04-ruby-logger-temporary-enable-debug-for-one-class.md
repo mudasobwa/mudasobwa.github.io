@@ -36,21 +36,20 @@ calls except of interesting ones.
 
 The other thing we need is to override the formatter of our logger:
 {% highlight ruby %}
-  # put this after logger initialization
-  logger.level = Logger::DEBUG
-  logger.formatter = lambda do |sev, dt, prog, msg|
-    f,l,m = parse_caller
-  # here goes the check
-  # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 
-    if (f =~ /newclass/i) && (m =~ /failed_method/)
-      original_formatter.call(sev, dt, prog, msg) 
-    end
+# put this after logger initialization
+logger.level = Logger::DEBUG
+logger.formatter = lambda do |sev, dt, prog, msg|
+  f,l,m = parse_caller
+  #↓↓↓↓↓↓↓↓↓↓↓↓ here goes the check ↓↓↓↓↓↓↓↓↓↓↓↓↓
+  if (f =~ /newclass/i) && (m =~ /failed_method/)
+    original_formatter.call(sev, dt, prog, msg) 
   end
+end
 {% endhighlight %}
 I know it looks a weird hack, but it works fine. As soon as we don’t need debug logging at all, simply
 turn back to `INFO` level (and don’t forget to switch back to regular `Logger#formatter`):
 {% highlight ruby %}
-  logger.level = Logger::INFO
-  logger.formatter = Logger::Formatter.new
+logger.level = Logger::INFO
+logger.formatter = Logger::Formatter.new
 {% endhighlight %}
 

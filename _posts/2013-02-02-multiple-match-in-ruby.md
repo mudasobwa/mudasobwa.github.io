@@ -14,24 +14,24 @@ of getting all the `MatchData` instances. Even
 a strange answers on a topic, like that one below:
 
 {% highlight ruby %}
-  str.to_enum(:scan, /PATTERN/).map { Regexp.last_match }
+str.to_enum(:scan, /PATTERN/).map { Regexp.last_match }
 {% endhighlight %}
 
 Actually, the [owls are easier than they seem](http://en.wikipedia.org/wiki/Twin_Peaks). All we 
 need is to use one of a cryptic `$` [ruby globals](http://jimneath.org/2010/01/04/cryptic-ruby-global-variables-and-their-meanings.html):
 
 {% highlight ruby %}
-  input = "abc12def34ghijklmno567pqrs"
-  numbers = /\d+/
-  input.gsub(numbers) { |m| p $~ }
+input = "abc12def34ghijklmno567pqrs"
+numbers = /\d+/
+input.gsub(numbers) { |m| p $~ }
 {% endhighlight %}
 
 prints all the `MatchData`s:
 
 {% highlight ruby %}
-  # ⇒ <MatchData "12">
-  # ⇒ <MatchData "34">
-  # ⇒ <MatchData "567">
+# ⇒ <MatchData "12">
+# ⇒ <MatchData "34">
+# ⇒ <MatchData "567">
 {% endhighlight %}
 
 Voilà.
