@@ -47,13 +47,13 @@ end
 {% endhighlight %}
 Now we can write:
 {% highlight ruby %}
-\[ "Apple", "Orange", "Pear" \].map &\[ :+, " is a fruit." \]
-\[ "Apple", "Orange", "Pear" \].map &\[ :match, "[a-z]e" \]
+[ "Apple", "Orange", "Pear" ].map &[ :+, " is a fruit." ]
+[ "Apple", "Orange", "Pear" ].map &[ :match, "[a-z]e" ]
 {% endhighlight %}
 yielding:
 {% highlight ruby %}
- #⇒ \["Apple is a fruit.", "Orange is a fruit.", "Pear is a fruit."\]
- #⇒ \[#<MatchData "le">, #<MatchData "ge">;, nil\]
+ #⇒ ["Apple is a fruit.", "Orange is a fruit.", "Pear is a fruit."]
+ #⇒ [#<MatchData "le">, #<MatchData "ge">, nil]
 {% endhighlight %}
 Methods are being called on array elements (on `String`s in the example above.)
 
