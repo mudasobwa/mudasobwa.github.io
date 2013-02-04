@@ -1,12 +1,12 @@
 # encoding: utf-8
 
+require 'cgi'
+
 module RocketScience
   module Liquid
     class QuoteTag < ::Liquid::Tag
-      def initialize(tag_name, quote, title, href, tokens)
-        @quote = quote.strip
-        @title = title.strip
-        @href  = href.strip
+      def initialize(tag_name, quote, tokens)
+        @quote, @title, @href = CGI.escapeHTML(quote).split('×')
         super
       end
       

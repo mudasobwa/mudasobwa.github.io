@@ -83,6 +83,8 @@ h5 { font-size: 18px; }
 h6 { font-size: 16px; }
 
 code { color: inherit; }
+blockquote p { color: #999; line-height: 1.6em; padding-right: 10em; }
+.smallcaps { font-variant: small-caps; }
 
 h1 small, h1 small ul li { font-size: 14px; }
 h1 small ul { display: table-cell; }
