@@ -7,7 +7,7 @@ tags: [tools, linux]
 ---
 {% include JB/setup %}
 
-Tinkering at `zsh` settings, I occidentally came across a very interesting [solution](http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/) for the right-side prompt. Everybody who runs zsh on her notebook should definitely take a glance. The right-side prompt usually holds an unnecessary garbage, like either clock or `tty id`. That’s why I really like an idea to put there a battery charge indicator. Depending on the battery level, the notifier is to be shown in green, yellow or red. 
+Tinkering at `zsh` settings, I accidentally came across a very interesting [solution](http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/) for the right-side prompt. Everybody who runs zsh on her notebook should definitely take a glance. The right-side prompt usually holds an unnecessary garbage, like either clock or `tty id`. That’s why I really like an idea to put there a battery charge indicator. Depending on the battery level, the notifier is to be shown in green, yellow or red. 
 
 The inventor of the solution used the far-fetched python to retrieve the battery charge level. I decided to rewrite the whole stuff using native shell. The result looks like this:
 
