@@ -9,7 +9,7 @@ tags: [ruby, tricks]
 
 In our application we may occasionally have a heavy usage of `logger.debug` calls. It appears
 to be helpful to examine the fails, especially in multithreading environment. That’s why we
-do not want to get rid of these calls, setting the `logger.level = Logger::INFO` in production.
+do not want to get rid of these calls. We set the `logger.level = Logger::INFO` in production instead.
 
 But what if we need to print debug messages for only one or two of over 9000 files? There is no elegant
 solution on hand, as far as I know. Let me show an ugly hack to provide such a functionality.
