@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Multiple match in ruby"
+title: "Multiple Match in Ruby"
 description: "Matching all the occurences of a pattern returning MatchData"
 category: hacking
-tags: [ruby, snippets, tricks]
+tags: [ruby, tricks]
 ---
 {% include JB/setup %}
 

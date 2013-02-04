@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Shorthands in ruby code blocks"
+title: "Shorthands in Ruby Code Blocks"
 description: "Syntactic sugar using ampersand notations"
 category: hacking
-tags: [ruby, snippets, tricks]
+tags: [ruby, tricks]
 ---
 {% include JB/setup %}
 
