@@ -40,8 +40,11 @@ The other thing we need is to override the formatter of our logger:
   logger.level = Logger::DEBUG
   logger.formatter = lambda do |sev, dt, prog, msg|
     f,l,m = parse_caller
-    # here goes the check                          ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 
-    original_formatter.call(sev, dt, prog, msg) if (f =~ /newclass/i) && (m =~ /failed_method/)
+  # here goes the check
+  # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 
+    if (f =~ /newclass/i) && (m =~ /failed_method/)
+      original_formatter.call(sev, dt, prog, msg) 
+    end
   end
 {% endhighlight %}
 I know it looks a weird hack, but it works fine. As soon as we don’t need debug logging at all, simply
