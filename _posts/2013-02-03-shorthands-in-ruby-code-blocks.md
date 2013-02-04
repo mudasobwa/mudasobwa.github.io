@@ -16,7 +16,7 @@ arr.each do |x|
   x.name
 end.join(" ")
 {% endhighlight %}
-Well, there are curly-brackets-notation available, hence we may rewrite the code above within one line.
+Well, there is curly-brackets-notation available, hence we may rewrite the code above within one line.
 But there is still a lot of absolutely unnecessary garbage hiding the core of what’s being actually done.
 
 The good news is: ruby provides us with a syntactic sugar for that stuff. Let’s look at this:
