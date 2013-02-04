@@ -48,8 +48,9 @@ The other thing we need is to override the formatter of our logger:
   end
 {% endhighlight %}
 I know it looks a weird hack, but it works fine. As soon as we don’t need debug logging at all, simply
-turn back to `INFO` level:
+turn back to `INFO` level (and don’t forget to switch back to regular `Logger#formatter`):
 {% highlight ruby %}
   logger.level = Logger::INFO
+  logger.formatter = Logger::Formatter.new
 {% endhighlight %}
 
