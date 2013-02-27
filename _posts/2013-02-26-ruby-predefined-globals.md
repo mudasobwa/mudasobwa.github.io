@@ -697,7 +697,7 @@ $.
     <p><span class="label label-important">read-only</span> <span class="label label-info">thread-local</span>  <strong>Shorthand to <code>$!.backtrace</code></strong><br>
     Locals to the <code>rescue</code> clause.</p>
 {% highlight ruby %}
-> 0 / 0 rescue $!
+> 0 / 0 rescue $@
 # ⇒ [
 #  [ 0] "(pry):7:in `/'",
 #  [ 1] "(pry):7:in `__pry__'",
