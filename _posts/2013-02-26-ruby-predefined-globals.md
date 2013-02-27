@@ -433,7 +433,7 @@ o
     <p><span class="label label-important">read-only</span>  <strong>Denotes whether the auto-split mode was enabled with <code>-a</code> command line argument.</strong><br>
     <code>-a</code> switch makes sense when used together with either <a href="#minus-p-small"><code>-p</code></a>
     or <a href="#minus-n-small"><code>-n</code></a> args.
-    In auto-split mode, Ruby executes	<code><a href="#F">$F</a> = <a href="#underscore">$_</a>.split</code> at beginning of each loop.</p>
+    In auto-split mode, Ruby executes	<code>$F = <a href="#underscore">$_</a>.split</code> at beginning of each loop.</p>
 {% highlight ruby %}
 ~ cat > test-a-switch.rb <<EOF
 # heredoc> # encoding: utf-8
