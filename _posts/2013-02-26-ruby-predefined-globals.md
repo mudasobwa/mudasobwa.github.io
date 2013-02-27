@@ -435,11 +435,11 @@ o
     or <a href="#minus-n-small"><code>-n</code></a> args.
     In auto-split mode, Ruby executes	<code>$F = <a href="#underscore">$_</a>.split</code> at beginning of each loop.</p>
 {% highlight ruby %}
-~ cat > test-a-switch.rb <<EOF
-# heredoc〉 # encoding: utf-8
-# heredoc〉 puts "LINE=[#{\$_.strip}]"
-# heredoc〉 puts "\$F=#{\$F}"
-# heredoc〉 EOF
+~ cat > test-a-switch.rb 〈〈EOF
+# heredoc> # encoding: utf-8
+# heredoc> puts "LINE=[#{\$_.strip}]"
+# heredoc> puts "\$F=#{\$F}"
+# heredoc> EOF
 
 ~ ruby -a -n test-a-switch.rb test-a-switch.rb
 # LINE=[# encoding: utf-8]
@@ -468,9 +468,9 @@ o
   <td>
     <p><span class="label label-important">read-only</span>  <strong>Denotes whether the debug mode was enabled with <code>-d</code> switch.</strong><br></p>
 {% highlight ruby %}
-~ cat > test-d-switch.rb <<EOF
-# heredoc〉 puts "DEBUG MODE: #{\$-d}"
-# heredoc〉 EOF
+~ cat > test-d-switch.rb 〈〈EOF
+# heredoc> puts "DEBUG MODE: #{\$-d}"
+# heredoc> EOF
 
 ~ ruby -d test-d-switch.rb
 # Exception `LoadError' at /…/lib/ruby/site_ruby/2.0.0/rubygems.rb:1264 - cannot load such file -- rubygems/defaults/operating_system
@@ -559,9 +559,9 @@ end
     <p><span class="label label-important">read-only</span>  <strong>Denotes whether the verbose mode
       was enabled with either <code>-v</code> or <code>-w</code> switch.</strong><br></p>
 {% highlight ruby %}
-~ cat > test-v-switch.rb <<EOF
-# heredoc〉 puts "VERBOSE MODE: #{\$-v}"
-# heredoc〉 EOF
+~ cat > test-v-switch.rb 〈〈EOF
+# heredoc> puts "VERBOSE MODE: #{\$-v}"
+# heredoc> EOF
 
 ~ ruby -v test-v-switch.rb
 # ruby 2.0.0dev (2012-12-01 trunk 38126) [x86_64-linux]
