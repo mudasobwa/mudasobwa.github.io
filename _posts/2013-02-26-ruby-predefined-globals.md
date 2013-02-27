@@ -566,6 +566,8 @@ end
 ~ ruby -v test-v-switch.rb
 # ruby 2.0.0dev (2012-12-01 trunk 38126) [x86_64-linux]
 # VERBOSE MODE: true
+
+~
 {% endhighlight %}
 </td>
 </tr>
