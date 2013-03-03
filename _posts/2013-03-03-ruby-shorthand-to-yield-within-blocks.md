@@ -33,7 +33,7 @@ def cleanup
 end
 
 def evaluate_lua
-  cleanup yield
+  cleanup yield if block_given?
   # do actual evaluate
 end
 {% endhighlight %}
@@ -58,7 +58,7 @@ end
 and
 
 {% highlight ruby %}
-def cleanup
+def cleanup if block_given?
   # do some cleanup if block_given?
 end
 
