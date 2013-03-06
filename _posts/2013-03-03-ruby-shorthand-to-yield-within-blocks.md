@@ -11,7 +11,7 @@ I’m definitely a _lambda-guy_. I’m addicted to simplicity, beauty and intell
 He who claims there is syntax clearer than `arr.each { |e| … }`, let him throw the first stone at me.
 After all yielding is much more of human nature than jumping.
 
-However there are two cases when `yield` seem to be hardly used. First is the `&`-shorthand to method
+However there are two cases when `yield` seems to be hardly used. First is the `&`-shorthand to method
 within another codeblock:
 
 {% highlight ruby %}
