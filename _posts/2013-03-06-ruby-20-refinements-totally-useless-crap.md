@@ -8,9 +8,9 @@ tags: [ruby]
 {% include JB/setup %}
 
 There were so-called refinements introduced in Ruby 2.0. I was playing with them and now I’m totally cajoled.
-Let me explain, what’s wrong with ’em and why am I thinking that nobody actually wants to use them.
+Let me explain, what’s wrong with ’em and why I consider nobody actually wants to use them.
 
-#### The main declared advantage of refine is that they are not global scoped. Bah.
+#### The main declared advantage of refines is that they are not global scoped. Bah.
 
 {% highlight ruby %}
 module MyModule
@@ -30,7 +30,7 @@ is isolated not worse.
 
 #### Refinements do not support class methods. Bah.
 
-Of course they are through a hack (remember, everything is an object):
+Of course they do through a hack (remember, everything is an object:)
 
 {% highlight ruby %}
 module VoidRefinements
@@ -70,5 +70,5 @@ The latter is not even resulting in performance penalties, since nobody would ca
 Plus I have had some weird unpredicted errors with non-ascii method names in refinements. But that does actually
 make already no sense after all.
 
-Am I missing smth or everybody sees no advantages in the newly introduced feature?
+Am I missing smth or everyone sees no advantages in the newly introduced feature?
 

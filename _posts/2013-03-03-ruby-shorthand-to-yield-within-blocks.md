@@ -42,8 +42,8 @@ The latter will throw an odd error `ArgumentError: wrong number of arguments (1 
 The `cleanup &yield` neither works, if one were curious.
 
 What’s the problem to use explicit `&cb` param here? There are two as usual. First is
-an aesthetics, which very matters in Ruby. The second (and major) is that instantiating
-a new `Proc` object results in a surprisingly heavy performance penalty (≈ five times slower).
+an aesthetics, which matters a lot in Ruby. The last and not the least is that instantiating
+a new `Proc` object leads to a surprisingly heavy performance penalty (≈ five times slower.)
 Happily, there is a not wide-known [feature](http://www.ruby-doc.org/core-2.0/Proc.html#method-c-new)
 of `Proc.new` constructor. Being called _without a block within a method with an attached block_, it
 _converts_ that block to the `Proc` object. It means that both

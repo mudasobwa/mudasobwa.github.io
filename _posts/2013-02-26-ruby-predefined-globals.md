@@ -382,7 +382,7 @@ o
       <span class="code">String === $-K unless $-K.nil?</span>
   </td>
   <td>
-    <p><span class="label label-inverse">obsolete</span> <span class="label label-success">read-write</span>  <strong>Determined the encoding to use to parse <code>.rb</code> files.</strong><br>
+    <p><span class="label label-inverse">obsolete</span> <span class="label label-success">read-write</span>  <strong>Determines the encoding to be used whilst parsing <code>.rb</code> files.</strong><br>
     One should avoid using that variable since <code>ruby-1.9</code>.</p>
 {% highlight ruby %}
 > $-K
@@ -433,7 +433,7 @@ o
     <p><span class="label label-important">read-only</span>  <strong>Denotes whether the auto-split mode was enabled with <code>-a</code> command line argument.</strong><br>
     <code>-a</code> switch makes sense when used together with either <a href="#minus-p-small"><code>-p</code></a>
     or <a href="#minus-n-small"><code>-n</code></a> args.
-    In auto-split mode, Ruby executes	<code>$F = <a href="#underscore">$_</a>.split</code> at beginning of each loop.</p>
+    In auto-split mode, Ruby executes	<code>$F = <a href="#underscore">$_</a>.split</code> at the beginning of each loop.</p>
 {% highlight ruby %}
 ~ cat > test-a-switch.rb 〈〈EOF
 # heredoc> # encoding: utf-8
@@ -512,7 +512,8 @@ EOF
       <span class="code">∈ [true, false]</span>
   </td>
   <td>
-    <p><span class="label label-important">read-only</span>  <strong>Denotes whether the automatic line-ending processing mode was enabled with <code>-l</code> switch.</strong><br>
+    <p><span class="label label-important">read-only</span>  <strong>Denotes whether the automatic
+      line-ending processing mode was enabled with <code>-l</code> switch.</strong><br>
     Automatic line-endings sets <a href="#backslash"><code>$\</code></a> to
       the value of <a href="#slash"><code>$/</code></a>, and (when used with either <a href="#minus-p-small"><code>-p</code></a>
       or <a href="#minus-n-small"><code>-n</code></a> args) chops every line read using <code>chop!</code>.</p>
@@ -532,7 +533,7 @@ EOF
     <p><span class="label label-important">read-only</span>  <strong>Denotes whether the “gets loop around” mode was enabled with <code>-p</code> switch.</strong><br>
     <code>-p</code> switch acts mostly like <code>-n</code> sibling with one exception: it prints the value
       of variable <code>$_</code> at the each end of the loop.<br>For some unknown reason there is no internal global
-      to get aknowledged whether the <code>-n</code> command line switch was given. When it was, Ruby is to assume
+      to get aknowledged whether the <code>-n</code> command line switch was given. In case it were, Ruby is to assume
       the following loop around your script, which provides an iteration over filename arguments somewhat like
       <code>sed -n</code> and <code>awk</code> do.</p>
 {% highlight ruby %}
@@ -579,7 +580,7 @@ end
   </td>
   <td>
     <p><span class="label label-important">read-only</span>  <strong>Number of the last line read from the current input file <a href="#less"><code>ARGF</code></a>.</strong><br>
-    <a href="http://www.ruby-doc.org/core-2.0/ARGF.html">ARGF</a> is a stream designed for use in scripts that process files given as command-line arguments or passed in via <code>STDIN</code>.</p>
+    <a href="http://www.ruby-doc.org/core-2.0/ARGF.html">ARGF</a> is a stream designed to use in scripts that process files given as command-line arguments or passed in via <code>STDIN</code>.</p>
 {% highlight ruby %}
 ARGV.replace ["file1"] # file1 ≡ 'a\nb\nc\nd'
 ARGF.readlines # Returns the contents of file1 as an Array
