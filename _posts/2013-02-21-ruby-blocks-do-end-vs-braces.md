@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ruby Blocks: do-end vs. braces"
+title: "Ruby Blocks: Do-end vs. Braces"
 description: "What to use for ruby blocks?"
 category: tips
 tags: [ruby]

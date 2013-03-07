@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ruby shorthand to yield within blocks"
+title: "Ruby Shorthand to Yield Within Blocks"
 description: "Example of using shorthand to yield keyword"
 category: hacking
 tags: [ruby, tricks]

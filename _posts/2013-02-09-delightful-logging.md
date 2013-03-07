@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Delightful logging"
+title: "Delightful Logging"
 description: "Facilitation of dealing with Logger"
 category: hacking
 tags: [ruby, tricks]
