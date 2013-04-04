@@ -29,6 +29,7 @@ The only polish required (in my opinion) is the proper theme. So, here we go. I 
 current ruby version etc. If you are not as to Ruby as me, you’ll find a better application for it.
 
 To install the theme you’ll need:
+
 * install a [Powerline-patched font](https://gist.github.com/1595572) for the theme special symbols
 to render correctly
 * grab the [theme file](https://gist.github.com/mudasobwa/5308070) and put in into `~/.zsh.prompts/prompt_mudasobwa_setup`
@@ -45,13 +46,16 @@ prompt mudasobwa
 The screenshots below shows only the visual effectiveness of the theme; the cymes is in details. Everyone
 is to be exalted about it’s power and scared kinda “why didn’t I switched to it yesterday.”
 
-#### Inside git branch:
+**Inside git branch:**
+
 ![YADR prompt inside git branch](/img/yadr-mudasobwa-git-prompt.png)
 
-#### With background jobs (the blue gear on the left) and non-zero exit status from the previously run command:
+**With background jobs (the blue gear on the left) and non-zero exit status from the previously run command:**
+
 ![YADR prompt with running process](/img/yadr-mudasobwa-full-prompt.png)
 
-#### VIM status line:
+**VIM status line:**
+
 ![YADR prompt for VIM](/img/yadr-mudasobwa-vim-prompt.png)
 
 
