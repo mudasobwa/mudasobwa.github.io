@@ -43,7 +43,7 @@ prompt mudasobwa
 
 * restart `zsh`
 
-The screenshots below shows only the visual effectiveness of the theme; the cymes is in details. Everyone
+The screenshots below show only the visual effectiveness of the theme; the cymes is in details. Everyone
 is to be exalted about it’s power and scared kinda “why didn’t I switched to it yesterday.”
 
 **Inside git branch:**
