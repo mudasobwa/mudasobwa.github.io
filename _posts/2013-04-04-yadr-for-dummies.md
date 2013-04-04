@@ -8,7 +8,7 @@ tags: [tools, linux]
 {% include JB/setup %}
 
 I spend a half of my life in the terminal window (another half is being wasted even sillier.)
-A couple of years ago a switched to `zsh`, then I met [`oh-my-zsh`](https://github.com/robbyrussell/oh-my-zsh),
+A couple of years ago I switched to `zsh`, then I met [`oh-my-zsh`](https://github.com/robbyrussell/oh-my-zsh),
 I even wrote my own theme for it, with blackjack and [battery charge indicator]({% post_url 2013-01-20-zsh-weird-right-prompt %}).
 From time to time I tuned the theme up, played with newly investigated vim tricks etc. I switched from `oh-my-zsh` to
 [`prezto`](https://github.com/sorin-ionescu/prezto), but I anyway felt myself a little bit deprived.
