@@ -22,27 +22,35 @@ module Magick
   class ImageList
     def self.preview files, options={}
       options = {
-        :columns       => 5,
-        :scale_range   => 0.1,
-        :thumb_width   => 120,
-        :rotate_angle  => 20,
-        :background    => 'white',
-        :border        => 'gray20'
+        :columns       => 5,              # number of columns in collage
+        :scale_range   => 0.1,            # ± to the thumb width
+        :thumb_width   => 120,            # the width of thumbnail
+        :rotate_angle  => 20,             # maximal rotate angle
+        :background    => 'white',        # background of the collage
+        :border        => 'gray20'        # border color
       }.merge(options)
+      # Produce collage from all the files in directory
       files = "#{files}/*" if File.directory?(files)
       imgs = ImageList.new
-      imgnull = Image.new(options[:thumb_width],options[:thumb_width]) { self.background_color = 'transparent' }
+      # The placeholder for collage borders
+      imgnull = Image.new(options[:thumb_width],options[:thumb_width]) {
+        self.background_color = 'transparent'
+      }
+      # Top row
       (options[:columns]+2).times { imgs << imgnull.dup }
       Dir.glob("#{files}") { |f|
         Image::read(f).each { |i| 
           scale = (1.0 + options[:scale_range]*Random::rand(-1.0..1.0))*options[:thumb_width]/[i.columns, i.rows].max
+          # Placeholder if that’s the first column
           imgs << imgnull.dup if (imgs.size % (options[:columns]+2)).zero?
           imgs << i.auto_orient.thumbnail(scale).polaroid(
             Random::rand(-options[:rotate_angle]..options[:rotate_angle])
           )
+          # Placeholder if that’s the last columns
           imgs << imgnull.dup if (imgs.size % (options[:columns]+2)) == options[:columns]+1
         } rescue puts "Skipping error: #{$!}"  # simply skip non-image files
       }
+      # Fill the last row
       (2*options[:columns]+4-(imgs.size % (options[:columns]+2))).times { imgs << imgnull.dup }
       imgs.montage { 
         self.tile             = Magick::Geometry.new(options[:columns]+2) 
