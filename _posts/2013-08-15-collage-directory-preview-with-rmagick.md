@@ -63,4 +63,4 @@ Magick::ImageList::preview(IMGS_DIR, :thumb_width=>200).write COLLAGE.jpg
 
 Resulting in smth like:
 
-![Collage](/img/collage.png)
+![Collage](/img/collage.jpg)
