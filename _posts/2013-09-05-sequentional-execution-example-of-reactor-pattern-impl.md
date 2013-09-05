@@ -10,16 +10,16 @@ tags: [ruby, tricks]
 [Reactor pattern](http://en.wikipedia.org/wiki/Reactor_pattern) is an event handling pattern
 for operating service requests delivered concurrently to a service handler by one or more inputs. All
 the ready-to-use ruby implementations (like [EventMachine](http://rubyeventmachine.com/) and family,)
-though are very smart built and quite helpful, hide all the details. I decided to write down a short
+although are very smart built and quite helpful, hide all the details. I decided to write down a short
 example of how the task may be accomplished in pure ruby.
 
 Let’s say we are interested in running an echo-service-like application. We don’t need any servers,
 just pure “wait-for-input ⇒ reply” app. The CLI wrapper might be a good example. All we want is to have
-a running instance somewhere, which will accept internal calls like `@inst.cmd("ls")` and reply with
-the result of the command run.
+a running instance somewhere that will accept internal calls like `@inst.cmd("ls")` and reply with
+a result of the command run.
 
 We decide to have two independent threads, which are to be synchronized in the following manner: just
-after the `prior` function is executed, the `posterior` function wakes up, does something and sleeps
+after the `prior` function is executed, the `posterior` function wakes up, does something and falls sleep
 back until the next call to `prior`. Here we go:
 
 {% highlight ruby %}
@@ -70,7 +70,7 @@ module SeqExec
 end
 {% endhighlight %}
 
-Here we produce two threads which are waiting one for another until the `yield` clause
+Here we produce two threads, waiting one for another until the `yield` clause
 (which may be blocking, if necessary) occurs to initiate the _ping-pong_ mechanism.
 
 Let’s now add some syntactic sugar:
