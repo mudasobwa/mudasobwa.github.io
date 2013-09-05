@@ -7,13 +7,17 @@ tags: [ruby, tricks]
 ---
 {% include JB/setup %}
 
-Just before my last trip I finally decided to issue daily reports. Not to forget the impressions as well as to share my experiences with friends. The scenario I foresaw was: all the day I make photos, than reach the hotel with Wifi internet, pick out a dozen of best views and publish.
+Just before my last trip I have finally decided to issue daily reports. Not to forget the impressions
+as well as to share my experiences with friends. The scenario I foresaw was: all the day I make photos,
+then reach a hotel with Wifi internet, pick out a dozen of best views and publish.
 
-It’s worth to mention that I have chosen a jekyll successor, the [ruhoh](http://ruhoh.com) publishing system. I only needed a handy script to quickly produce a new blog entry by the directory with today photos. Plus I wanted a collage
-is to be put as a post preview.
+It’s worth to mention that I have chosen a jekyll successor, the [ruhoh](http://ruhoh.com) publishing
+system. I only needed a handy script to quickly produce a new blog entry by the directory with today photos.
+Plus I wanted a collage to be put as a post preview.
 
-There is an [ImageMagick](http://imagemagick.org) wrapper for Ruby: [RMagick](http://rmagick.rubyforge.org). The only problem remained: I still needed to produce collage by hands. So, I decided to monkeypatch the library. Below goes the
-code of the patch:
+There is an [ImageMagick](http://imagemagick.org) wrapper for Ruby: [RMagick](http://rmagick.rubyforge.org).
+The only problem remained: I still needed to produce the collage by hands. So, I decided to monkeypatch the library.
+Below goes the code of the patch:
 
 {% highlight ruby %}
 require 'RMagick'
