@@ -11,7 +11,7 @@ A couple of months ago I finally switched from Firefox to Chromium. As I mention
 to find some information over the internet. That’s not click-through pattern. I know what am I interested in and I know where am I to find it.
 So, half of the time I was wasting on opening new browser tabs and entering the respective search engine. Firefox gave me an opportunity
 to use the small search box on the right of the usual one (sorry for not naming it properly, I likely do not bother how it’s called.)
-Chromium, on the other hand, has no such ability (or I was not able to fing it at a glance.)
+Chromium, on the other hand, has no such ability (or I was not able to find it at a glance.)
 
 Past a week I found myself searching for a “developing chrome extension extended search.” That was how I came to
 [Omnibox](http://developer.chrome.com/extensions/omnibox.html) how-tos. It has actually an already existing and growing bundle of
