@@ -60,6 +60,6 @@ From: /tmp/pry.rb @ line 7 Object#iterate:
 
 Here goes the whole stuff in action (thanks to brilliant [showterm.io](http://showterm.io) service):
 
-<iframe src="http://showterm.io/d542cd31224acaa84549f" width="640" height="480"></iframe>
+<iframe src="http://showterm.io/d542cd31224acaa84549f" width="640" height="480"> </iframe>
 
 
