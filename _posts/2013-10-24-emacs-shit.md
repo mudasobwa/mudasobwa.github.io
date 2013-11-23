@@ -9,5 +9,5 @@ tags: [“…”, pic]
 
 The manhole below was found in Toledo, Spain. The legend states “EMACSA alcantarillado” for “emacs is shit” in spanish.
 
-![EMACSA alcantarillado](/img/emacs-alcantarillado.jpg)
+![EMACSA alcantarillado](/img/emacs-alcantarillada.jpg)
 
