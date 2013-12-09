@@ -8,7 +8,7 @@ tags: [linux]
 
 {% include JB/setup %}
 
-=== Linux
+### Linux
 
 **Q.** I’m stuck with installation of `best-lib-ever` of version `1.2.3`, needed to
 convert integer value to string? I have tried
@@ -21,7 +21,7 @@ but still have the same problem (memory dump follows.)
 
 **A.** Where the f×ck did you dig that piece of shit? Why not use the standard `int_to_str`?
 
-=== MacOSX
+### MacOSX
 
 **Q.** I met the following problem on my _OSX Lion_. After I have successfuly installed
 `best-lib-ever`, the `web-server-of-choice` prints warning messages during startup (messages
@@ -32,7 +32,7 @@ so that the web server will not be damaged.
 **A.** _Here_ is a solution (summing up: you are not supposed to install `best-lib-ever` near
 the `web-server-of-choice`.)
 
-=== Windows
+### Windows
 
 **Q.** I have tried to install `best-development-tool` and nothing works. Please help!
 
