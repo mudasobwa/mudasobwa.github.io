@@ -5,7 +5,6 @@
 permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
 safe: false
 # source: <your pages repo>
 # destination: <the build dir>

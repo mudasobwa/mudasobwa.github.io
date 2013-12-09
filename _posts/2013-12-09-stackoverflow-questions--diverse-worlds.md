@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "StackOverflow questions :: Diverse Worlds"
+title: "StackOverflow questions ⇒ Diverse Worlds"
 description: "How to determine which OS uses op by the question he asked"
 category: fun
 tags: [linux]
 ---
+
 {% include JB/setup %}
 
 === Linux
@@ -18,7 +19,7 @@ I might have a problem with `another-best-lib`, but that’s not my case (test f
 As a last try I created a fully fresh installation within virtual machine (config follows,)
 but still have the same problem (memory dump follows.)
 
-**A.** Where the f*ck did you dig that piece of shit? Why not use the standard `int_to_str`?
+**A.** Where the f×ck did you dig that piece of shit? Why not use the standard `int_to_str`?
 
 === MacOSX
 
@@ -36,3 +37,4 @@ the `web-server-of-choice`.)
 **Q.** I have tried to install `best-development-tool` and nothing works. Please help!
 
 **A.** Install `mingw` and follow the instructions _here_.
+
