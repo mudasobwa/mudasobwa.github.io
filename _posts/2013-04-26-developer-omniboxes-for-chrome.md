@@ -3,7 +3,8 @@ layout: post
 title: "Developer Omniboxes for Chrome"
 description: "A collection of omnibox search extensions for Google Chrome™, for searching API reference documentation for a number of different languages and libraries."
 category: hacking
-tags: [tools]
+tags:
+  - tools
 ---
 {% include JB/setup %}
 

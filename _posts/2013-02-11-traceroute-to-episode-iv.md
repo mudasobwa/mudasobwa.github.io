@@ -3,7 +3,9 @@ layout: post
 title: "Traceroute to Episode IV"
 description: ""
 category: fun
-tags: [“…”, pic]
+tags:
+  - “…”
+  - pic
 ---
 {% include JB/setup %}
 

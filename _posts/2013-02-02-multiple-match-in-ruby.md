@@ -3,12 +3,13 @@ layout: post
 title: "Multiple Match in Ruby"
 description: "Matching all the occurences of a pattern returning MatchData"
 category: hacking
-item: {"who" : "she"}
-tags: [ruby, tricks]
+tags:
+  - ruby
+  - tricks
 ---
 {% include JB/setup %}
 
-When somebody needs to find all occerences of a pattern in a string, {{ page.item.who }} usually
+When somebody needs to find all occerences of a pattern in a string, she usually
 does either `scan` or repeatitive `match` calls. I was unable to google a quick solution
 of getting all the `MatchData` instances. Even
 [StackOverflow provides](http://stackoverflow.com/questions/6804557/how-do-i-get-the-match-data-for-all-occurrences-of-a-ruby-regular-expression-in)

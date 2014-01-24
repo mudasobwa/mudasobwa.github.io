@@ -3,7 +3,9 @@ layout: post
 title: "Collage directory preview with RMagick"
 description: "Monkeypatch for RMagick to produce collages"
 category: hacking
-tags: [ruby, tricks]
+tags:
+  - ruby
+  - tricks
 ---
 {% include JB/setup %}
 

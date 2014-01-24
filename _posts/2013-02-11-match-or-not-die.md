@@ -3,7 +3,9 @@ layout: post
 title: "Match or Not Die"
 description: "Match string painless without superfluous if-then clauses"
 category: hacking
-tags: [ruby, tricks]
+tags:
+  - ruby
+  - tricks
 ---
 {% include JB/setup %}
 

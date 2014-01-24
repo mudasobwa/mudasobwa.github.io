@@ -3,7 +3,9 @@ layout: post
 title: "YADR for Dummies"
 description: "Easy installation of YADR"
 category: shell
-tags: [tools, linux]
+tags:
+  - tools
+  - linux
 ---
 {% include JB/setup %}
 

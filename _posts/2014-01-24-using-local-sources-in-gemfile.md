@@ -3,7 +3,9 @@ layout: post
 title: "Using local sources in Gemfile"
 description: "Comfort development of several gems simultaneously"
 category: hacking
-tags: [ruby, shell]
+tags: 
+  - ruby
+  - shell
 ---
 
 {% include JB/setup %}

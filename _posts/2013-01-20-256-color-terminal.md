@@ -3,7 +3,9 @@ layout: post
 title: "256 Color Term (Nightmare Level)"
 description: "Color builder for linux terminal utility"
 category: shell
-tags: [linux, tools]
+tags:
+  - linux
+  - tools
 image: /img/256-color-terminal.png
 ---
 {% include JB/setup %}

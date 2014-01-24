@@ -3,7 +3,8 @@ layout: post
 title: "Ruby Memory Pitfalls"
 description: "Ruby Memory Operation :: Pitfalls"
 category: hacking
-tags: [ruby]
+tags: 
+  - ruby
 ---
 {% include JB/setup %}
 

@@ -3,7 +3,9 @@ layout: post
 title: "EventMachine :: Nested Calls"
 description: "Yield ⇒ Choose one ⇒ Yield"
 category: hacking
-tags: [ruby, tricks]
+tags:
+  - ruby
+  - tricks
 ---
 {% include JB/setup %}
 

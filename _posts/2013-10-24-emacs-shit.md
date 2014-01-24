@@ -3,7 +3,9 @@ layout: post
 title: "EMACS SHIT"
 description: "The proofpic of why emacs should be considered a crap"
 category: fun
-tags: [“…”, pic]
+tags:
+  - “…”
+  - pic
 ---
 {% include JB/setup %}
 

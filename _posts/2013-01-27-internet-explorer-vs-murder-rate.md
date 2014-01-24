@@ -3,7 +3,9 @@ layout: post
 title: "Internet Explorer vs Murder Rate"
 description: ""
 category: fun
-tags: [“…”, pic]
+tags:
+  - “…”
+  - pic
 ---
 {% include JB/setup %}
 

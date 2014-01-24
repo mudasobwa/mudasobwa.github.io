@@ -3,7 +3,9 @@ layout: post
 title: "Command line application wrappers problem"
 description: "Problem with shell script wrappers in non-default I18N environment"
 category: hacking
-tags: [ruby, tricks]
+tags: 
+  - ruby
+  - tricks
 ---
 {% include JB/setup %}
 

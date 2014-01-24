@@ -3,7 +3,8 @@ layout: post
 title: "Ruby 2.0 Refinements: Totally Useless Crap"
 description: "Are refinements in Ruby 2.0 totally useless?— Yes they are."
 category: hacking
-tags: [ruby]
+tags:
+  - ruby
 ---
 {% include JB/setup %}
 

@@ -3,7 +3,9 @@ layout: post
 title: "Sequentional execution: example of Reactor pattern impl"
 description: "Basic example of Reactor pattern implementation within two threads"
 category: hacking
-tags: [ruby, tricks]
+tags:
+  - ruby
+  - tricks
 ---
 {% include JB/setup %}
 

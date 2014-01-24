@@ -3,7 +3,8 @@ layout: post
 title: "StackOverflow questions ⇒ Diverse Worlds"
 description: "How to determine which OS uses op by the question he asked"
 category: fun
-tags: [linux]
+tags:
+  - linux
 ---
 
 {% include JB/setup %}

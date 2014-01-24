@@ -3,7 +3,9 @@ layout: post
 title: "Delightful Logging"
 description: "Facilitation of dealing with Logger"
 category: hacking
-tags: [ruby, tricks]
+tags:
+  - ruby
+  - tricks
 ---
 {% include JB/setup %}
 

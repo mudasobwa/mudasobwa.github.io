@@ -3,7 +3,8 @@ layout: post
 title: "Ruby Predefined Globals"
 description: "List of predefined globals ($∀) in ruby with examples"
 category: tips
-tags: [ruby]
+tags:
+  - ruby
 ---
 {% include JB/setup %}
 

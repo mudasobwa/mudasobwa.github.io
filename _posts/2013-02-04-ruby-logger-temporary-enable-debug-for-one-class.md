@@ -3,7 +3,9 @@ layout: post
 title: "Ruby Logger :: Temporary Enable Debug for One Class"
 description: "How to enable debug for a couple of classes only"
 category: hacking
-tags: [ruby, tricks]
+tags:
+  - ruby
+  - tricks
 ---
 {% include JB/setup %}
 

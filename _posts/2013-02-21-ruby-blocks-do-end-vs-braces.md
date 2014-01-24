@@ -3,7 +3,8 @@ layout: post
 title: "Ruby Blocks: Do-end vs. Braces"
 description: "What to use for ruby blocks?"
 category: tips
-tags: [ruby]
+tags:
+  - ruby
 ---
 {% include JB/setup %}
 

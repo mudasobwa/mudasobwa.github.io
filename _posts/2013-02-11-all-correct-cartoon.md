@@ -3,7 +3,9 @@ layout: post
 title: "Oll Korrect Cartoon"
 description: ""
 category: fun
-tags: [“…”, pic]
+tags: 
+  - “…”
+  - pic
 ---
 {% include JB/setup %}
 

@@ -3,7 +3,9 @@ layout: post
 title: "Make Hash Element Access Painless"
 description: "Provide a common mechanism to access deeply nested hash elements w/o annoying exception handling"
 category: hacking
-tags: [ruby, tricks]
+tags:
+  - ruby
+  - tricks
 ---
 {% include JB/setup %}
 

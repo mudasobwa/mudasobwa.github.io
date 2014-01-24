@@ -3,7 +3,9 @@ layout: post
 title: "Zsh :: Weird Right Prompt"
 description: "Tuning right-side prompt in zsh for notebooks"
 category: shell
-tags: [tools, linux]
+tags:
+  - tools
+  - linux
 ---
 {% include JB/setup %}
 

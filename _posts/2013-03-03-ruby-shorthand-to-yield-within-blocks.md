@@ -3,7 +3,9 @@ layout: post
 title: "Ruby Shorthand to Yield Within Blocks"
 description: "Example of using shorthand to yield keyword"
 category: hacking
-tags: [ruby, tricks]
+tags:
+  - ruby
+  - tricks
 ---
 {% include JB/setup %}
 

@@ -3,7 +3,9 @@ layout: post
 title: "Debug inplace"
 description: "Example of using PRY for inplace debugging in ruby"
 category: hacking
-tags: [ruby, tricks]
+tags:
+  - ruby
+  - tricks
 ---
 {% include JB/setup %}
 
