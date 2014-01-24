@@ -33,14 +33,14 @@ gem 'mycutegem', :path => '../mycutegem', :group => :development
 gem 'mycutegem', '~> 0.9.3', :group => :production
 {% endhighlight %}
 
-{% highlight shell %}
+{% highlight ruby %}
 You cannot specify the same gem twice with different version requirements.
 {% endhighlight %}
 
 The solution is simple. There is an ability to inform bundler about
 our _local_ copy of repository:
 
-{% highlight shell %}
+{% highlight ruby %}
 $ bundle config local.mycutegem /home/am/Projects/mycutegem
 {% endhighlight %}
 
