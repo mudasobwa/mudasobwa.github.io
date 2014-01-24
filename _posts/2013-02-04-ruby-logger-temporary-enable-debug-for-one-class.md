@@ -16,6 +16,7 @@ solution on hand, as far as I know. Let me show an ugly hack to provide such a f
 
 First of all, let’s prepare the function to retrieve the caller’s filename and/or method. This would
 be a static function somewhere in top-level of our module:
+
 {% highlight ruby %}
 module MyModule
   def parse_caller
@@ -30,11 +31,13 @@ module MyModule
   end
 end
 {% endhighlight %}
+
 The magic number “7” there states for an amount of subcalls between our call and resulting
 `Logger#add`. We will examine the original caller of `logger.debug` method and reject all 
 calls except of interesting ones.
 
 The other thing we need is to override the formatter of our logger:
+
 {% highlight ruby %}
 # put this after logger initialization
 logger.level = Logger::DEBUG
@@ -46,8 +49,10 @@ logger.formatter = lambda do |sev, dt, prog, msg|
   end
 end
 {% endhighlight %}
+
 I know it looks a weird hack, but it works fine. As soon as we don’t need debug logging at all, simply
 turn back to `INFO` level (and don’t forget to switch back to regular `Logger#formatter`):
+
 {% highlight ruby %}
 logger.level = Logger::INFO
 logger.formatter = Logger::Formatter.new
