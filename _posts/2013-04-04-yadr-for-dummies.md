@@ -35,10 +35,10 @@ to render correctly
 * grab the [theme file](https://gist.github.com/mudasobwa/5308070) and put in into `~/.zsh.prompts/prompt_mudasobwa_setup`
 * put the following three lines in the end of your `~/.zshrc` file:
 
-{% highlight bash %}
-autoload -Uz promptinit
-promptinit
-prompt mudasobwa
+{% highlight shell %}
+  $ autoload -Uz promptinit
+  $ promptinit
+  $ prompt mudasobwa
 {% endhighlight %}
 
 * restart `zsh`
