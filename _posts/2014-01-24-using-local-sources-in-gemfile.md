@@ -3,7 +3,7 @@ layout: post
 title: "Using local sources in Gemfile"
 description: "Comfort development of several gems simultaneously"
 category: hacking
-tags: 
+tags:
   - ruby
   - shell
 ---
