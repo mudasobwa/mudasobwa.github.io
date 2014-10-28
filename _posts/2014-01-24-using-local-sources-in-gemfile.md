@@ -42,7 +42,7 @@ You cannot specify the same gem twice with different version requirements.
 The solution is simple. There is an ability to inform bundler about
 our _local_ copy of repository:
 
-{% highlight ruby %}
+{% highlight %}
 $ bundle config local.mycutegem /home/am/Projects/mycutegem
 {% endhighlight %}
 
