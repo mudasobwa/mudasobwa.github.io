@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 I’m definitely a _lambda-guy_. I’m addicted to simplicity, beauty and intelligibility of closures.
 He who claims there is syntax clearer than `arr.each { |e| … }`, let him throw the first stone at me.
 After all yielding is much more of human nature than jumping.

@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 Many ruby project scaffolders (like [bueller](https://github.com/dkastner/bueller) &Co.) produce a file tree
 consisting of main `module` file (`MODULE_NAME.rb` needed to syntax-sugaring the project stuff requires,)
 some additional garbage and a `lib/MODULE_NAME/version.rb` file. The latter looks like:

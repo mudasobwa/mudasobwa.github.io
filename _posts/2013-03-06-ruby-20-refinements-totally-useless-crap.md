@@ -6,8 +6,6 @@ category: hacking
 tags:
   - ruby
 ---
-{% include JB/setup %}
-
 There were so-called refinements introduced in Ruby 2.0. I was playing with them and now I’m totally cajoled.
 Let me explain, what’s wrong with ’em and why I consider nobody actually wants to use them.
 

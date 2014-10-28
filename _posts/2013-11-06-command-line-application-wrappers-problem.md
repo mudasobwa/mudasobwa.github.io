@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 Well, everybody knows, that there is no locale but `C`. That’s why all the wrappers
 bar none use simple `Popen3::popen3` calls and then parse the output selfless. For
 instance whether we are to count the total number of file system blocks, including indirect

@@ -7,9 +7,6 @@ tags:
   - ruby
   - shell
 ---
-
-{% include JB/setup %}
-
 Let’s imagine we develop application, depending on a couple of our own gems.
 Or, say, we decide to break a functionality into several gems. The main
 application `Gemfile` thus contains references to our gems among all others.

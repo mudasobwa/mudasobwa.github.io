@@ -7,8 +7,6 @@ tags:
   - tools
   - linux
 ---
-{% include JB/setup %}
-
 I spend a half of my life in the terminal window (another half is being wasted even sillier.)
 A couple of years ago I switched to `zsh`, then I met [`oh-my-zsh`](https://github.com/robbyrussell/oh-my-zsh),
 I even wrote my own theme for it, with blackjack and [battery charge indicator]({% post_url 2013-01-20-zsh-weird-right-prompt %}).
@@ -37,7 +35,7 @@ to render correctly
 * grab the [theme file](https://gist.github.com/mudasobwa/5308070) and put in into `~/.zsh.prompts/prompt_mudasobwa_setup`
 * put the following three lines in the end of your `~/.zshrc` file:
 
-{% highlight shell %}
+{% highlight bash %}
   $ autoload -Uz promptinit
   $ promptinit
   $ prompt mudasobwa

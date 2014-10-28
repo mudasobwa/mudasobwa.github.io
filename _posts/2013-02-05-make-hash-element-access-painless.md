@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 We often need to deal with a data from very unreliable sources. Over unreliable networks. Using unreliable foreign libraries.
 
 Typically, parsing XML or JSON returns a hash, array, or combination of them. These hashes and/or arrays are likely to be

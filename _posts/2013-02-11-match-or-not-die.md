@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 Let’s imagine we want to regexp a string and print the capitalized match out.
 We start with one of the followings:
 

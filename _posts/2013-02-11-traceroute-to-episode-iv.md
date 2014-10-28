@@ -7,8 +7,6 @@ tags:
   - “…”
   - pic
 ---
-{% include JB/setup %}
-
 Kinda eastern egg in DNS (gaze at the trace starting with 13<sup>th</sup> node.)
 
 {% highlight bash %}

@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 When somebody needs to find all occerences of a pattern in a string, she usually
 does either `scan` or repeatitive `match` calls. I was unable to google a quick solution
 of getting all the `MatchData` instances. Even

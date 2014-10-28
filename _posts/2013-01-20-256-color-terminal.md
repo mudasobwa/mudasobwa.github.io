@@ -8,8 +8,6 @@ tags:
   - tools
 image: /img/256-color-terminal.png
 ---
-{% include JB/setup %}
-
 <img src="/img/256-color-terminal.png" alt="Screenshot of escape-sentense builder">
 
 

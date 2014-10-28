@@ -7,6 +7,4 @@ tags:
   - pic
   - lingua
 ---
-{% include JB/setup %}
-
 ![ABC for linguists](/img/ABC.png)

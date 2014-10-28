@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 The easiest way to drop a brick is to use asynchronous threads. Few friends of mine, while proved themselves as a strong professional hackers, were literally surrendering to the multithreading. For starters I would tell my favorite parable of the deadlock (sorry for the dupe, but it is too nice to omit it here.) Ten years ago [Associated Press](http://ap.org/) told the world as, in the Swedish city airport Krisianstad, a pilot was trying to land a passenger plane, but none of air traffic controllers did respond to his requests. It turned out that the controller had not yet returned from his vacation. As a result, the plane circled the airport until an urgently summoned reserve air traffic controller landed the plane in half an hour. Debriefing revealed that the problem was caused by a delay of the airplane. The air traffic controller, who had to land an airplane, hurried to his workplace from a vacation on it’s board.
 
 Well, when we bump into the asynchrony, we have to break the usual picture in the head: a subjective world around us is single threaded. If we had sent a letter and have got an answer past a week, everything happened in a single flow. We are not responsible for actions of our respondent and/or a postman. While our code is.

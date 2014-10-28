@@ -6,8 +6,6 @@ category: hacking
 tags: 
   - ruby
 ---
-{% include JB/setup %}
-
 Ruby has an automatic memory management. In most cases this is good; sometimes it becomes sad.
 
 Ruby memory management is both elegant and cumbersome. It stores objects (named `RVALUE`s)

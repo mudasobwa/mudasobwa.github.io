@@ -6,9 +6,6 @@ category: fun
 tags:
   - linux
 ---
-
-{% include JB/setup %}
-
 ### Linux
 
 **Q.** I’m stuck with installation of `best-lib-ever` of version `1.2.3`, needed to

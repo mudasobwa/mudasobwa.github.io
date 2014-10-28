@@ -6,8 +6,6 @@ category: tips
 tags:
   - ruby
 ---
-{% include JB/setup %}
-
 ## Below is the summary table for the predefined globals in ruby.
 
 <table class="table table-bordered code">

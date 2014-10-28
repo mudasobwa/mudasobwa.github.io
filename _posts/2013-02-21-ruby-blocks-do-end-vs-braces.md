@@ -6,8 +6,6 @@ category: tips
 tags:
   - ruby
 ---
-{% include JB/setup %}
-
 Ruby tries to add a spoon of sugar to each damn line of your code any time she thinks it to be possible. That’s nice.
 Sometimes she became meddlesome. That used to drive me bonkers. A newbie is to be that rara avis, to understand that
 there is actually a huge difference between braces and `do-end` constructs to define a block.

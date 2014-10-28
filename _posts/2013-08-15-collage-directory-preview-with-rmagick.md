@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 Just before my last trip I have finally decided to issue daily reports. Not to forget the impressions
 as well as to share my experiences with friends. The scenario I foresaw was: all the day I make photos,
 then reach a hotel with Wifi internet, pick out a dozen of best views and publish.

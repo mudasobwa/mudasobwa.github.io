@@ -6,8 +6,6 @@ category: hacking
 tags:
   - tools
 ---
-{% include JB/setup %}
-
 A couple of months ago I finally switched from Firefox to Chromium. As I mentioned before, I’m a keyboard addict. I mostly use the browser
 to find some information over the internet. That’s not click-through pattern. I know what am I interested in and I know where am I to find it.
 So, half of the time I was wasting on opening new browser tabs and entering the respective search engine. Firefox gave me an opportunity

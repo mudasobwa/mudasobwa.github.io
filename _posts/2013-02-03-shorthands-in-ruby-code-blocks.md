@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 Sometimes Ruby, being like a functional language, unobtrusively forces us to use
 code blocks within iterators (such as [map](http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-map), 
 [each](http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-each), etc.) More than offen, these codeblock

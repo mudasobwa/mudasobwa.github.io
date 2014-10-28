@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 In our application we may occasionally have a heavy usage of `logger.debug` calls. It appears
 to be helpful to examine the fails, especially in multithreading environment. That’s why we
 do not want to get rid of these calls. We set the `logger.level = Logger::INFO` in production instead.

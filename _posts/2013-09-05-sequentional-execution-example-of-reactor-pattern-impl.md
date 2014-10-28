@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 [Reactor pattern](http://en.wikipedia.org/wiki/Reactor_pattern) is an event handling pattern
 for operating service requests delivered concurrently to a service handler by one or more inputs. All
 the ready-to-use ruby implementations (like [EventMachine](http://rubyeventmachine.com/) and family,)

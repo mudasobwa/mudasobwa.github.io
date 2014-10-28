@@ -7,8 +7,6 @@ tags:
   - ruby
   - tricks
 ---
-{% include JB/setup %}
-
 Most valuable feature of Ruby is, <abbr title="‘Meiner demütig Meinung nach’ is the german equivalent for ‘IMHO’">MDMN</abbr>,
 the ability to overwrite virtually all the default behaviour. The swiss knife of hacking is [pry](http://pryrepl.org) which is,
 according to official site, “a **powerful** alternative to the standard IRB shell for Ruby. It features **syntax highlighting**,

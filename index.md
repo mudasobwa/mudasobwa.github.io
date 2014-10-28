@@ -13,7 +13,8 @@ My name is Alexei Matyushkin. I was born on October 0, 1973, in Saint-Petersburg
 <small><a href="http://news.com.com/2100-7344_3-5159179.html?part=rss&amp;tag=feed&amp;subj=news">Se habla open source?</a></small></blockquote>
 
 ----
-##In One Fell Swoop
+
+## In One Fell Swoop
 
 I have an experience in C/C++ pointing, Ruby railing, SQL querying, Java threads woodoo magic (and woodoo pleasure since 6.0), Perl crypting, Javascript handling, AJAX inplacing, Python tabbing, LISP bracketing. I have been working with so many unix variants (HP-UX, Solaris, Minix, Linux) that I finally learned the proper plural form ‘unices’. I have managed the jabber client-server apps in Yandex, led warehouse management apps for US customers, developed the metamodelling tool in Berlin and created the medical apps in Saint-Petersburg.
 
