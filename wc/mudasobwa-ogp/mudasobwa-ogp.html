@@ -1,0 +1,213 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Element providing easy [OGP specification](http://ogp.me/).
+
+##### The OGP metas
+
+    <html prefix="og: http://ogp.me/ns#">
+    <head>
+    <title>The Rock (1996)</title>
+    <meta property="og:title" content="The Rock" />
+    <meta property="og:type" content="video.movie" />
+    <meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
+    <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
+
+    &lt;!-- optional --&gt;
+    <meta property="og:audio" content="http://example.com/bond/theme.mp3" />
+    <meta property="og:description"
+      content="Sean Connery found fame and fortune as the
+               suave, sophisticated British agent, James Bond." />
+    <meta property="og:determiner" content="the" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:site_name" content="IMDb" />
+    <meta property="og:video" content="http://example.com/bond/trailer.swf" />
+
+##### Example
+
+    <mudasobwa-ogp caption="Fancy title"
+           url='http://mudasobwa.ru/%E2%98%85/_/2014-12-31-1'
+           image='http://mudasobwa.ru/i/turron-1.jpg'
+           description='Fancy description, image etc'
+           locale='ru_RU'
+           site='mudasobwa.ru'
+           image_width='100'
+           image_height='100'>
+    </mudasobwa-ogp>
+
+@element mudasobwa-ogp
+@blurb Element providing easy OGP specification.
+@status release
+@homepage http://polymerlabs.github.io/mudasobwa-ogp
+-->
+
+<polymer-element name="mudasobwa-ogp" attributes="caption type url image description locale site image_width image_height">
+  <style>
+    :host { display: none; }
+  </style>
+  <script>
+    Polymer({
+      /**
+       * The `caption` attribute sets the OGP __title__
+       *
+       * @attribute caption
+       * @type string
+       * @default null
+       */
+      caption: null,
+
+      /**
+       * The `type` attribute sets the OGP __type__
+       *
+       * @attribute type
+       * @type string
+       * @default 'website'
+       */
+      type: 'website',
+
+      /**
+       * The `url` attribute sets the OGP __url__
+       *
+       * @attribute url
+       * @type string
+       * @default null
+       */
+      url: null,
+
+      /**
+       * The `image` attribute sets the OGP __image__
+       *
+       * @attribute image
+       * @type string
+       * @default null
+       */
+      image: null,
+
+      /**
+       * The `description` attribute sets the OGP __description__
+       *
+       * @attribute description
+       * @type string
+       * @default null
+       */
+      description: null,
+
+      /**
+       * The `locale` attribute sets the OGP __locale__
+       *
+       * @attribute locale
+       * @type string
+       * @default null
+       */
+      locale: null,
+
+      /**
+       * The `site` attribute sets the OGP __site__
+       *
+       * @attribute site
+       * @type string
+       * @default null
+       */
+      site: null,
+
+      /**
+       * The `image_width` attribute sets the OGP __image:width__
+       *
+       * @attribute image_width
+       * @type string
+       * @default null
+       */
+      image_width: null,
+
+      /**
+       * The `image_height` attribute sets the OGP __image:height__
+       *
+       * @attribute image_height
+       * @type string
+       * @default null
+       */
+      image_height: null,
+
+      /**
+       * Adds or replaces the OGP meta tag.
+       *
+       * @method setMeta
+       * @param {string} name the name of meta tag
+       * @param {string} content the content of meta tag
+       */
+      setMeta: function(name, content) {
+        var property = 'og:' + (name === 'caption' ? 'title' : name.replace(/_/g, ':'))
+
+        var head = document.getElementsByTagName('head')[0];
+
+        var metas = document.getElementsByTagName('meta');
+        for (meta in metas) {
+          if (metas[meta].getAttribute && metas[meta].getAttribute('property') === property) {
+            head.removeChild(metas[meta]);
+            break;
+          }
+        };
+
+        var meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        meta.setAttribute('content', content);
+        head.appendChild(meta);
+      },
+
+      /**
+       * Handler for `attributeChanged` event. Set’s the respective meta.
+       *
+       * @method attributeChanged
+       * @param {string} attr the name of attribute (directly maps to OGP tags)
+       * @param {string} old the old value of the attribute
+       * @param {string} neu the new value of the attribute
+       */
+      attributeChanged: function(attr, old, neu) {
+        setMeta(attr, neu);
+      },
+
+      ready: function() {
+        var self = this;
+
+        var html = document.getElementsByTagName('html')[0];
+        var prefix = html.getAttribute('prefix') || '';
+        if (!(prefix.match(/og:\s*http:\/\/ogp.me\/ns/g))) {
+          prefix += (prefix.length === 0 ? '' : ' ') + 'og: http://ogp.me/ns#';
+          html.setAttribute('prefix', prefix);
+        }
+
+        ["title", "type", "url", "image", "description", "locale", "site", "image_width", "image_height"].forEach(function(attr) {
+          var val = self.getAttribute(attr);
+          if(val && val.length && val.length > 0) {
+            self.setMeta(attr, val);
+          }
+        });
+
+        this.fireApplied(true, []);
+      },
+
+      /**
+       * The `mudasobwa-ogp-applied` event is fired whenever the page was modified accordingly to values specified.
+       *
+       * @event mudasobwa-ogp-applied
+       * @param {Object} detail
+       *   @param {string} detail.success `true` whether the page was successfully updated, `false` otherwise.
+       *   @param {Array} detail.errors an array of errors occured.
+       */
+
+      /**
+       * The `fireApplied` method will fire the `applied` event.
+       *
+       * @method fireApplied
+       */
+      fireApplied: function(success, errors) {
+        this.fire('mudasobwa-ogp-applied', { success: success, errors: errors });
+      }
+
+    });
+
+  </script>
+
+</polymer-element>
