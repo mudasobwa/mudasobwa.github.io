@@ -4,9 +4,7 @@
 # permalink: pretty
 permalink: /:categories/:year/:month/:day/:title
 
-exclude: [
-  ".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "vendor",
-  "wc", "wc/core-component-page", "wc/exif-js", "wc/mudasobwa-exthen", "wc/polymer", "wc/webcomponentsjs", "wc/web-component-tester"]
+exclude: [ ".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "vendor" ]
 safe: false
 # source: <your pages repo>
 # destination: <the build dir>
