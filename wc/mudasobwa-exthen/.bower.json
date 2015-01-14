@@ -1,0 +1,34 @@
+{
+  "name": "mudasobwa-exthen",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components",
+    "image",
+    "exif"
+  ],
+  "main": "mudasobwa-exthen.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.2",
+    "core-toolbar": "Polymer/core-toolbar#~0.5.2",
+    "code-explainer": "Polymer/code-explainer#~0.5.2",
+    "paper-icon-button": "Polymer/paper-icon-button#~0.5.2",
+    "core-media-query": "Polymer/core-media-query#~0.5.2",
+    "paper-input": "Polymer/paper-input#~0.5.2",
+    "exif-js": "jseidelin/exif-js",
+    "mudasobwa-nominatim": "mudasobwa/mudasobwa-nominatim#master"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  },
+  "homepage": "https://github.com/mudasobwa/mudasobwa-exthen",
+  "_release": "7871bb1fb1",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "7871bb1fb1798b4c1f741d54fa7f45252c0aa9d7"
+  },
+  "_source": "git://github.com/mudasobwa/mudasobwa-exthen.git",
+  "_target": "master",
+  "_originalSource": "mudasobwa/mudasobwa-exthen"
+}

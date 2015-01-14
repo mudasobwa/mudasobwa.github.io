@@ -1,0 +1,28 @@
+{
+  "name": "mudasobwa-gypsy-trick",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components",
+    "gps",
+    "tracking"
+  ],
+  "main": "mudasobwa-gypsy-trick.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.1",
+    "core-ajax": "Polymer/core-ajax#^0.5.1"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  },
+  "homepage": "https://github.com/mudasobwa/mudasobwa-gypsy-trick",
+  "_release": "a2d734be29",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a2d734be293c3ad013d9b7766aef71c6122ff49a"
+  },
+  "_source": "git://github.com/mudasobwa/mudasobwa-gypsy-trick.git",
+  "_target": "master",
+  "_originalSource": "mudasobwa/mudasobwa-gypsy-trick"
+}

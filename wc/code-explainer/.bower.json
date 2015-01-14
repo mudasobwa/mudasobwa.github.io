@@ -1,0 +1,21 @@
+{
+  "name": "code-explainer",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.0",
+    "core-selector": "Polymer/core-selector#^0.5.0",
+    "core-media-query": "Polymer/core-media-query#^0.5.0",
+    "prettify-element": "Polymer/prettify-element#^0.5.0"
+  },
+  "version": "0.5.2",
+  "homepage": "https://github.com/Polymer/code-explainer",
+  "_release": "0.5.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.5.2",
+    "commit": "01a35238714f2a2b802564a2d65417be13a108b6"
+  },
+  "_source": "git://github.com/Polymer/code-explainer.git",
+  "_target": "~0.5.2",
+  "_originalSource": "Polymer/code-explainer"
+}

@@ -1,0 +1,232 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+
+<!--
+Web component provides easy handling of GPS tracks in GPX format.
+
+##### Example
+
+    <mudasobwa-gypsy-trick src='data/gpx.xml'></mudasobwa-gypsy-trick>
+
+@element mudasobwa-gypsy-trick
+@blurb Element providing easy handling of GPS tracks in GPX format.
+@status alpha
+@fixme make `src` an array of tracks. NB! segments might have same names!!
+@homepage http://rocket-science.ru/wc/mudasobwa-gypsy-trick
+-->
+<polymer-element name="mudasobwa-gypsy-trick" attributes="src extrapolate">
+  <template>
+    <core-ajax id="data"
+      auto
+      url="{{ src }}"
+      response="{{ gypsy }}"
+      handleAs="xml">
+    </core-ajax>
+
+    <template if="{{ gypsy | isGypsyOfType('gpx') }}">
+      <template repeat="{{ wpt in gypsy | nodeList('wpt') }}">
+        {{ wpt | addWpt }}
+      </template>
+
+      <template repeat="{{ trk in gypsy | nodeList('trk') }}">
+        {{ trk | addTrk }}
+      </template>
+
+      {{ firePointsReady() }}
+    </template>
+
+    <template if="{{ gypsy | isGypsyOfType('kml') }}">
+      <template repeat="{{ folder in gypsy | nodeList('Folder', 'Folder') }}">
+        <p>{{ folder | addFolder }}</p>
+      </template>
+
+      {{ firePointsReady() }}
+    </template>
+
+  </template>
+
+  <script>
+    Polymer({
+      /**
+       * The `src` attribute sets the source of GPX
+       *
+       * @attribute src
+       * @type string
+       */
+      src: null,
+
+      /**
+      * The `extrapolate` attribute sets the extrapolation time in minutes for locating coordinates by time
+      *
+      * @attribute extrapolate
+      * @type integer
+      * @default 5
+      */
+      extrapolate: 5, // minutes
+
+      created: function() {
+        this.points = [];    // initialize and hint type to an object
+        this.nodeCount = {}; // internal storage for node count of each type
+        this.periods = [];   // periods we have GEO data for
+      },
+
+      isGypsyOfType: function(element, name) {
+        return element &&
+               element.querySelector(name) &&
+               element.querySelector(name).parentNode.constructor === XMLDocument;
+      },
+
+      ready: function() {
+        // More info: http://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods
+      },
+
+      /**
+      * Handler for `attributeChanged` event. Set’s the respective meta.
+      *
+      * @method attributeChanged
+      * @param {string} attr the name of attribute (directly maps to OGP tags)
+      * @param {string} old the old value of the attribute
+      * @param {string} neu the new value of the attribute
+      */
+      attributeChanged: function(attr, old, neu) {
+        console.log([attr, old, neu]);
+        // FIXME
+        /*
+          console.log(this.points);
+          console.log(this.getCoordForTime('Fri Jan 02 2015 13:23:22 GMT+0100 (CET)'));
+          console.log(this.getCoordForTime('Fri Jan 02 2015 13:13:22 GMT+0100 (CET)'));
+        */
+      },
+
+      /**
+       * The `nodeList` helper method returns list of nodes for an XML given as input.
+       *
+       * @method contentLoaded
+       */
+      nodeList: function(element, name, filter) {
+        var result = !element ?
+                          [] :
+                          [].slice.call(element.querySelectorAll(name)).filter(function(el) {
+                            return !filter || el.parentNode.localName === filter
+                          });
+        if(result.length > 0) {
+          this.nodeCount[name] = (this.nodeCount[name] || 0) + result.length;
+        }
+        return result;
+      },
+
+      addPoint: function(segment, time, lat, lon, alt) {
+        if (lat && lat.length && lon && lon.length) {
+          this.points.push({ segment: segment, time: time, lat: +lat, lon: +lon, alt: +alt });
+        }
+      },
+
+      addFolder: function(element) {
+        var segment = element.querySelector('name').innerHTML;
+        var _period = element.querySelector('TimeSpan');
+        var period = {
+          begin: new Date(_period.querySelector('begin').innerHTML),
+          end  : new Date(_period.querySelector('end').innerHTML)
+        };
+        var msb = period.begin.getTime();
+        var mss = period.end.getTime() - msb;
+        var coords = element.querySelector('Placemark')
+                            .querySelector('LineString')
+                            .querySelector('coordinates')
+                            .innerHTML.split(/\s+/);
+        for (var c in coords) {
+          var lla = coords[c].split(',');
+          this.addPoint(
+            segment,                                        // segment
+            new Date(msb + mss / (coords.length - 1) * c),  // time
+            lla[1], lla[0], lla[2]                          // lat, lon, alt
+          );
+        }
+        this.periods.push({
+          segment:  segment,
+          length:   coords.length,
+          begin:    period.begin,
+          end:      period.end
+        });
+        this.nodeCount['Folder'] -= 1;
+      },
+
+      getSegmentPoints: function(segment) {
+        return this.points.filter(function(p) {
+          return p.segment === segment;
+        });
+      },
+
+      getCoordForTime: function(dt) {
+        var d = null;
+        switch(dt.constructor.name) {
+          case 'Number': d = new Date(dt); break;
+          case 'String': d = new Date(Date.parse(dt)); break;
+          case 'Date':   d = dt; break;
+          default: throw { message: 'getCoordForTime() expects Number, String or Date instance as parameter', input: dt };
+        }
+        d = d.getTime();
+
+        var period = null;
+        for (var p in this.periods) {
+          if ( // ±5 min is OK
+            d > this.periods[p].begin.getTime() - 1000 * 60 * this.extrapolate &&
+            d < this.periods[p].end.getTime() + 1000 * 60 * this.extrapolate
+          ) {
+            period = this.periods[p];
+            break;
+          }
+        }
+        if (!period) { return null; }
+
+        // FIXME Might be improved by involving segment and/or median.
+        //       The implementation below simple iterates all points.
+        //       Should iterate through the chosen segment only and
+        //              take into account left/right nearest points.
+
+        var diff = { left: Date.now(), right: Date.now() };
+        var result = { left: null, right: null };
+        this.points.forEach(function(p) {
+          var pt = p.time.getTime();
+          var side = (d > pt) ? 'left' : 'right';
+          if (diff[side] > Math.abs(d - pt)) {
+            diff[side] = Math.abs(d - pt);
+            result[side] = p;
+          }
+        });
+
+        return (result.left && result.right) ?
+                  {
+                    segment: period.segment,
+                    time: new Date(d),
+                    lat: (+result.left.lat + +result.right.lat) / 2,
+                    lon: (+result.left.lon + +result.right.lon) / 2,
+                    alt: (+result.left.alt + +result.right.alt) / 2,
+                  } : result.left ? result.left : result.right;
+
+      },
+
+      /**
+       * The `mudasobwa-gypsy-trick-points-ready` event is fired whenever
+       *   the element has the GPX input processed.
+       *
+       * @event mudasobwa-gypsy-trick-points-ready
+       * @param {Object} detail
+       *   @param {string} detail.points The points yielded from GPS track.
+       */
+
+      /**
+       * The `firePointsReady` method will fire the `mudasobwa-gypsy-trick-points-ready` event.
+       *
+       * @method firePointsReady
+       */
+      firePointsReady: function() {
+        var points = this.points;
+        this.fire('mudasobwa-gypsy-trick-points-ready', { points: points });
+      }
+
+    });
+
+  </script>
+
+</polymer-element>

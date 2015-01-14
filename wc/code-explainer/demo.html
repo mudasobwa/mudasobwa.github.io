@@ -1,0 +1,180 @@
+<!doctype html>
+<!--
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+-->
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="code-explainer.html">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,800|Source+Code+Pro:400,700" rel="stylesheet">
+  <style>
+  	body {
+      font-size: 16px;
+      font-family: "RobotoDraft Regular,Open Sans",Helvetica,Arial,sans-serif;
+      font-weight: normal;
+      line-height: 24px;  		
+  	}
+  </style>
+</head>
+
+<body unresolved touch-action="auto">
+
+  <code-explainer>
+    <script type="text/template">[dim-start]<!-- Polyfill Web Components support for older browsers -->
+      <script src="components/platform/platform.js">&lt;/script>[dim-end]
+
+      <!-- Import element -->
+      [start-create]&lt;link rel="import" href="google-map.html"&gt;[end-use]
+
+      <!-- Use element -->
+      [start-use]<google-map lat="37.790" long="-122.390"></google-map>[end-create]
+    </script>
+    <h2>Using Polymer Elements</h2>
+    <div>Using Polymer elements (like all Web Components) is absurdly simple:</div>
+    <code-explainer-info sec="create" bullet="1" label="Import element">
+      Find a component and import its definition into your page using
+      an HTML Import (<code>&lt;link rel="import"&gt;</code>).
+    </code-explainer-info>
+    <code-explainer-info sec="use" bullet="2" label="Use the new element">
+      Once imported, custom elements become first-class HTML elements and can be used like any other.
+    </code-explainer-info>
+  </code-explainer>
+
+  <br>
+
+  <code-explainer>
+    <script type="text/template"><!-- Define element -->
+      [start-def]<polymer-element name="my-counter" [start-publish]attributes="counter">[end-publish][end-def]
+        [start-scope]<template>[end-scope]
+          <style> /*...*/ </style>
+          <div id="label"><content></content></div>
+          Value: <span [start-nodefind]id="counterVal"[end-nodefind]>[start-data]&#123;&#123;counter&#125;&#125;[end-data]</span><br>
+          <button [start-events]on-tap="&#123;&#123;increment&#125;&#125;[end-events]">Increment</button>
+        [start-scope]</template>[end-scope]
+        <script>
+          Polymer({
+            [start-publish][start-data]counter[end-data]: 0[end-publish], // Default value
+            [start-publish]counterChanged[end-publish]: function() {
+              [start-nodefind]this.$.counterVal[end-nodefind].classList.add('highlight');
+            },
+            [start-events]increment[end-events]: function() {
+              this.counter++;
+            }
+          });
+        &lt;/script>
+      [start-def]</polymer-element>[end-def]
+
+      <!-- Use element -->
+      <my-counter [start-publish]counter="10"[end-publish]>[start-content]Points[end-content]</my-counter>
+    </script>
+    <h2>Creating Polymer Elements</h2>
+    <div>Polymer sugars Web Components standards with awesome features for creating custom elements:</div>
+    <code-explainer-info sec="def" label="Declarative custom element definition">
+      Define custom elements declaratively using <code>&lt;polymer-element&gt;</code>
+    </code-explainer-info>
+    <code-explainer-info sec="scope" label="Markup and style encapsulation">
+      Shadow DOM encapsulates your element's internals.  Template markup is 
+      compartmentalized, and styles don't leak in or out.
+    </code-explainer-info>
+    <code-explainer-info sec="publish" label="Published properties">
+      Properties that are <em>published</em> can be initialized via markup and invoke change 
+      handlers when modified.
+    </code-explainer-info>
+    <code-explainer-info sec="data" label="Declarative data binding">
+      Properties on the element can be bound directly into the view, with robust support for
+      expressions.
+    </code-explainer-info>
+    <code-explainer-info sec="events" label="Declarative event binding">
+      Event handlers can be bound to functions on the element declaratively using 
+      <code>on-<i>event</i></code> attributes.
+    </code-explainer-info>
+    <code-explainer-info sec="nodefind" label="Automatic node finding">
+      Any template children can be referenced by <code>id</code> on <code>this.$</code>, eliminating
+      boilerplate querySelector's.
+    </code-explainer-info>
+  </code-explainer>
+
+  <br>
+
+  <code-explainer>
+    <script type="text/template"><!-- Define element -->
+      [start-def]<polymer-element name="my-counter" [start-publish]attributes="counter">[end-publish][end-def]
+        [start-scope]<template>[end-scope]
+          <style> /*...*/ </style>
+          <div id="label"><content></content></div>
+          Value: <span [start-nodefind]id="counterVal"[end-nodefind]>[start-data]&#123;&#123;counter&#125;&#125;[end-data]</span><br>
+          <button [start-events]on-tap="&#123;&#123;increment&#125;&#125;[end-events]">Increment</button>
+        [start-scope]</template>[end-scope]
+        <script>
+          Polymer({
+            [start-publish][start-data]counter[end-data]: 0[end-publish], // Default value
+            [start-publish]counterChanged[end-publish]: function() {
+              [start-nodefind]this.$.counterVal[end-nodefind].classList.add('highlight');
+            },
+            [start-events]increment[end-events]: function() {
+              this.counter++;
+            }
+          });
+        &lt;/script>
+      [start-def]</polymer-element>[end-def]
+
+      <!-- Use element -->
+      <my-counter [start-publish]counter="10"[end-publish]>[start-content]Points[end-content]</my-counter>
+    </script>
+    <h2>Creating Polymer Elements</h2>
+    <div>Polymer sugars Web Components standards with awesome features for creating custom elements:</div>
+    <code-explainer-info sec="def" label="Declarative custom element definition" collapsable bullet="1">
+      Define custom elements declaratively using <code>&lt;polymer-element&gt;</code>
+    </code-explainer-info>
+    <code-explainer-info sec="scope" label="Markup and style encapsulation" collapsable bullet="2">
+      Shadow DOM encapsulates your element's internals.  Template markup is 
+      compartmentalized, and styles don't leak in or out.
+    </code-explainer-info>
+    <code-explainer-info sec="publish" label="Published properties" collapsable bullet="3">
+      Properties that are <em>published</em> can be initialized via markup and invoke change 
+      handlers when modified.
+    </code-explainer-info>
+    <code-explainer-info sec="data" label="Declarative data binding" collapsable bullet="4">
+      Properties on the element can be bound directly into the view, with robust support for
+      expressions.
+    </code-explainer-info>
+    <code-explainer-info sec="events" label="Declarative event binding" collapsable bullet="5">
+      Event handlers can be bound to functions on the element declaratively using 
+      <code>on-<i>event</i></code> attributes.
+    </code-explainer-info>
+    <code-explainer-info sec="nodefind" label="Automatic node finding" collapsable bullet="6">
+      Any template children can be referenced by <code>id</code> on <code>this.$</code>, eliminating
+      boilerplate querySelector's.
+    </code-explainer-info>
+  </code-explainer>
+
+  <br>
+
+  <code-explainer>
+    <script type="text/template">
+      <template>
+        <div class="foo">[start-mustache]{{userName}}[end-mustache]</div>
+      </template>
+      <script>
+        Polymer({
+          [start-var]userName: "John"[end-var]
+        });
+      &lt;/script>
+    </script>
+    <h2>How bindings work</h2>
+    <code-explainer-info sec="var" bullet="1" label="Define a variable">
+      Variables defined in the scope of a Polymer object are
+      available for binding.
+    </code-explainer-info>
+    <code-explainer-info sec="mustache" bullet="2" label="Insert a binding">
+      Bindings can be inserted into the view using <code>{{...}}</code> 
+      mustache-style syntax.
+    </code-explainer-info>
+  </code-explainer>
+
+
+</body>
+</html>

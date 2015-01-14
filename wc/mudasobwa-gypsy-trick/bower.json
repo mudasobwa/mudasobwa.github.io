@@ -1,0 +1,19 @@
+{
+  "name": "mudasobwa-gypsy-trick",
+  "version": "0.1.3",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components",
+    "gps",
+    "tracking"
+  ],
+  "main": "mudasobwa-gypsy-trick.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.1",
+    "core-ajax": "Polymer/core-ajax#^0.5.1"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  }
+}

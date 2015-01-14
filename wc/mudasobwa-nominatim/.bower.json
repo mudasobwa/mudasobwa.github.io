@@ -1,0 +1,30 @@
+{
+  "name": "mudasobwa-nominatim",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components",
+    "gps",
+    "openstreetmap",
+    "geolocation"
+  ],
+  "ignore": [],
+  "main": "mudasobwa-nominatim.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2",
+    "core-ajax": "Polymer/core-ajax#^0.5.2"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  },
+  "homepage": "https://github.com/mudasobwa/mudasobwa-nominatim",
+  "_release": "ad65d49871",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ad65d4987142e34121581a36a9295d0f462529c3"
+  },
+  "_source": "git://github.com/mudasobwa/mudasobwa-nominatim.git",
+  "_target": "master",
+  "_originalSource": "mudasobwa/mudasobwa-nominatim"
+}
