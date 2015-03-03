@@ -5,7 +5,7 @@ description: "Another matter why PHP is damaging brains"
 category: hacking
 tags:
   - ruby
-  - shell
+  - php
 ---
 Last week I had an intriguing discussion with some Python guru (he got a nickname “[reticulatus](https://en.wikipedia.org/wiki/Python_reticulatus)” a long ago.) I complained to him that the last year I was oblidged to code in PHP and now I am anxious about my IQ being decreased significally. That language virtually forces one to write an enormously nasty code. On the other hand, I finally feigned that PHP code might be written in functional manner as well. My friend archly grinned and suggested me to run benchmarks on functional-ity.
 
