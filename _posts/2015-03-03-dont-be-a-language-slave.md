@@ -117,6 +117,6 @@ end
    0.090000   0.000000   0.090000 (  0.090643)
 {% endhighlight %}
 
-Ooh! Here we got what we expected from the modern language: mapping and reducing might be optimize comparing to dumb iteration and they occasionally were. Both `map` and `reduce` are predictably _faster_ than iterations. QED.
+Ooh! Here we got what we expected from the modern language: mapping and reducing might be optimized comparing to dumb iteration and they occasionally were optimized. Both `map` and `reduce` are predictably _faster_ than iterations. QED.
 
 The difference in ruby is not significant, but the language is likely nudging us to use functional approach. Besides this code is a way more readable, it is just _faster_. While PHP... Well, thanks God my PHP diving season is over.
