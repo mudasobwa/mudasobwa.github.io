@@ -140,4 +140,4 @@ end
 
 Let’s run it and go take another ristretto.
 
-![Log output](img/log-tricks.png)
+![Log output](/img/log-tricks.png)
