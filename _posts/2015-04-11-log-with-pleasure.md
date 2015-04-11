@@ -32,8 +32,9 @@ First of all, to tune the log we have to gain an access to it. Let’s do it.
                      .instance_variable_get(:@logger)
                      .instance_variable_get(:@log) :
               Logger.new($stdout)
-@tty = @logdevice.instance_variable_get(:@logdev).instance_variable_get(:@dev).tty? ||
-              const_defined?('Rails') && ::Rails.env.development?
+@tty = @logdevice.instance_variable_get(:@logdev)
+                 .instance_variable_get(:@dev).tty? ||
+       const_defined?('Rails') && ::Rails.env.development?
 {% endhighlight %}
 
 The latter condition in `@tty` check is required to force `@tty` be set to `true`
@@ -138,3 +139,5 @@ end
 {% endhighlight %}
 
 Let’s run it and go take another ristretto.
+
+![Log output](img/log-tricks.png)
