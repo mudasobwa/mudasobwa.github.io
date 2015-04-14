@@ -115,4 +115,5 @@ hash = {
     'value' => 'value21', 'line' => 3,
     'value' => 'value22', 'line' => 4
   ]
+}
 {% endhighlight %}
