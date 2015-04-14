@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Log with pleasure"
+title: "Log With Pleasure"
 description: "A couple of tricks to make your logging experience pleasing"
 category: hacking
 tags:
