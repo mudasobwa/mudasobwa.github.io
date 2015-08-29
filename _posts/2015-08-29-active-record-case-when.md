@@ -11,7 +11,7 @@ tags:
 Everybody working with Rails project, slightly more complicated, than
 To-Do list, is aware of [N+1 Query Problem](http://www.sitepoint.com/silver-bullet-n1-problem/).
 It is awful, it might drastically decrease the performance of an application.
-I saw pages, performing over 4000 queries against database.
+I saw pages, performing over 4000 queries against database on a single load.
 
 There are great diagnostics gems, like aforementioned [`bullet`](https://github.com/flyerhzm/bullet) 
 and/or [`query_reviewer`](https://github.com/nesquena/query_reviewer) There are plenty of
@@ -24,13 +24,13 @@ MySQL (and most other dialects) provides a single query for it:
 
 {% highlight sql %}
 UPDATE `profiles` SET `yay` = CASE `workflow_state`
-WHEN 'approved' THEN 'yes'
-WHEN 'cancelled' THEN 'no'
-ELSE `yay`
-END
+                              WHEN 'approved' THEN 'yes'
+                              WHEN 'cancelled' THEN 'no'
+                              ELSE `yay`
+                              END
 {% endhighlight %}
 
-Till now Rails has no nifty wrapper for it. Now it has:
+Till now Rails had no nifty wrapper for it. Now it has:
 
 {% highlight ruby %}
 module ActiveRecord
