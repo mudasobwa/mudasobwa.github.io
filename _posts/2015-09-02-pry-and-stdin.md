@@ -15,18 +15,18 @@ Just put `binding.pry` whereever in your code and voilà, you are done. Run it 
 see an execution stopped on this line of code:
 
 {% highlight ruby %}
-     5:  (1..42).each do |i|
+     5: (1..42).each do |i|
      6:   puts "Iteration ##{i}."
      7:   puts "This code does nothing useful."
   => 8:   binding.pry
      9: end
 {% endhighlight %}
 
-Everything works like a charm unless one tries to make a script accepting
+Everything works like a charm until one tries to make a script accepting
 standard input. Unix way, you know.
 
 {% highlight ruby %}
-  ps -Ao pid,command | grep my_proc | awk '{ print $1 }' | my_script
+  ps -Ao pid,command | grep proc_of_interest | awk '{ print $1 }' | my_script
 {% endhighlight %}
 
 In `my_script` one would utilize `ARGF` power:
