@@ -81,8 +81,8 @@ Web component handles geotagged images list to build the web page
 
             <core-animated-pages id="pages" selected="{{ selectedtab }}" flex>
               <template repeat="{{ img in images }}">
-                <mudasobwa-exthen one center-center vertical layout id="{{ img | idify }}" src="{{ img }}" autoRedraw
-                    fillFont="{{ font }}" style="margin-top: 600px"
+                <mudasobwa-exthen one center-top vertical layout id="{{ img | idify }}" src="{{ img }}" autoRedraw
+                    fillFont="{{ font }}"
                     on-mudasobwa-exthen-exif="{{ onExif }}"
                     on-mudasobwa-exthen-address="{{ onAddress }}"
                     on-mudasobwa-exthen-timestamp="{{ onTimestamp }}"
