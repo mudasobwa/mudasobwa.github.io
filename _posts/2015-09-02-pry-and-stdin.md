@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Pry :: breakpoint or ARGF?"
-description: "Hwo to make binding.pry work when $stdin is given"
+description: "How to make binding.pry work when $stdin is given"
 category: hacking
 tags:
   - ruby
