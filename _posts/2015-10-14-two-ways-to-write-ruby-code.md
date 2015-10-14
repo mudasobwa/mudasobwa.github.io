@@ -58,12 +58,12 @@ who will be obliged to read this code, though.
 ### Mode II. Mary Poppins.
 
 {% highlight ruby %}
-  def check_validity_for_supplier supplier, additional: false
-    if !supplier return false
-    if !supplier.valid? return false
-    if additional && !supplier.additional return false
-    true
-  end
+def check_validity_for_supplier supplier, additional: false
+  if !supplier return false
+  if !supplier.valid? return false
+  if additional && !supplier.additional return false
+  true
+end
 {% endhighlight %}
 
 Everything here is clear. But in terms of the whole picture this method is
