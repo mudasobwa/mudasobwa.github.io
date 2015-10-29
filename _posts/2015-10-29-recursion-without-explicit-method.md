@@ -73,7 +73,7 @@ Turning back to factorial evaluation:
 loop.reduce([1, 6]) do |memo|
   memo[0] *= memo[1]
   memo[1] -= 1
-  break memo3s.first if memo.last.zero?
+  break memo.first if memo.last.zero?
   memo
 end
 #⇒ 720
