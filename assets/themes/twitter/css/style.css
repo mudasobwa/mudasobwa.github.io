@@ -97,7 +97,7 @@ html, body {
 .tooltipable strong {line-height:30px;}
 .tooltipable:hover {text-decoration:none;}
 .tooltipable span {z-index:10; display:none; padding:8px 14px; margin-top:60px; margin-left:-160px; width:auto; max-width:300px;}
-.tooltipable:hover span{ display:inline; position:absolute; border:2px solid #FFF; color:#EEE; background:#000 repeat-x 0 0; } 
+.tooltipable:hover span{ display:inline; position:absolute; border:2px solid #FFF; color:#EEE; background:#000 repeat-x 0 0; }
 .callout {z-index:20;position:absolute;border:0;top:-14px;left:120px;}
 /*CSS3 extras*/
 .tooltipable span {
@@ -124,6 +124,7 @@ blockquote p { color: #999; line-height: 1.6em; padding-right: 10em; }
 h1 small, h1 small ul li { font-size: 14px; }
 h1 small ul { display: table-cell; }
 a { text-shadow: 1px 1px 1px #999; }
+pre { background-color: #f0f0f0; }
 pre code, pre code span { line-height: 1.2em; }
 
 .navbar .nav > li > a {
@@ -150,8 +151,8 @@ footer {
 }
 
 .contact { width: 100%; }
-.contact p { 
-  text-align: center; font-size: 80%; margin: 1em 5em; 
+.contact p {
+  text-align: center; font-size: 80%; margin: 1em 5em;
   font-family: 'Ubuntu', helvetica, arial, sans-serif;
 }
 div.pagination {
