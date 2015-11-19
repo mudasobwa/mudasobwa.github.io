@@ -42,7 +42,7 @@ context '#up' do
   end
 
   it 'should convert data properly' do
-    ConvertAddressesToNewFormat.new.down
+    ConvertAddressesToNewFormat.new.up
     Address.all.each do |a|
       expect(a.zip).to be_present
       ...
