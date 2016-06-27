@@ -42,8 +42,8 @@ What LOC is more readable, elegant and _easier in general_:
 {% highlight ruby %}
 elapsed = 2.business_days('EUR', 'USD').after(Time.zone.now)
 # or
-now = Time.zone.now
-elapsed = BusinessDaysFactory.for_currencies('EUR', 'USD').add(Time.zone.now, 2)
+elapsed = BusinessDaysFactory.for_currencies('EUR', 'USD')
+                             .add(Time.zone.now, 2)
 {% endhighlight %}
 
 ---
@@ -68,7 +68,7 @@ great feature, that is not a part of Ruby. That simple. He tried to bring
 pattern matching to Ruby, he even implemented sorta working prototype... The only
 problem is that Ruby has an aversion to it. Ruby existing syntax just rejected it.
 Ruby is a perfect language, but whether you need pattern matching, please,
-consider to switch to Erlang/Elixir/±20 othe languages that have it natively
+consider to switch to Erlang/Elixir/±20 other languages that have it natively
 supported. Ruby just has not.
 
 On the other hand, as you have chosen Ruby, please, stop tinkering anything else
