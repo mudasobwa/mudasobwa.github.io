@@ -27,9 +27,9 @@ There is a tendency to listen to what people we respect use to say. Which is goo
 In the modern era, any random phrase, occasionally dropped in any bloated
 discussion immediately becomes public. Which is bad.
 
-That happens because arguing is being done through the web, in shared access mode.
+This happens because arguing is being done through the web, in shared access mode.
 When an arbitrary Einstein had accidentally had said gibberish (which I believe
-happened to him quite often,) this was not spread immediately over the millions
+happened to him quite often,) it was not spread immediately over the millions
 of followers.
 
 When an arbitrary DHH has had behaved the same way, it is. Less famous people
