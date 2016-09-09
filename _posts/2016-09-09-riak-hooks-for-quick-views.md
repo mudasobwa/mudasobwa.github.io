@@ -26,12 +26,16 @@ a temperature value in hundred of different cities. Updates come every second,
 or even more often. I need to keep a history, but also I need a clean pure
 view with last up-to-date values. Like:
 
+|-|-|
 |City|Temperature|
 |-|-|
-|Barcelona|23°|
-|London|22°|
-|Moscow|-6°|
-|New York|0°|
+|Barcelona     |23°|
+|London        |22°|
+|Moscow        |-6°|
+|New York      |0°|
+|-|-|
+
+---
 
 So far so good. Riak handles inserts into “raw” data bucket perfectly,
 but how would I keep my view up-to-date? Easy.
@@ -52,7 +56,7 @@ update_current(RiakObject) ->
 
   case dict:find(<<"X-Riak-Deleted">>, MetaData) of
     {ok, _} ->
-      %% do nothing, this is a deletion
+      % do nothing, this is a deletion
       io:fwrite("!! DELETED AN OBJECT FROM RAW: ~w~n", [RiakObject]);
     _ ->
       {struct, Json} = mochijson2:decode(riak_object:get_value(RiakObject)),
@@ -61,7 +65,7 @@ update_current(RiakObject) ->
       case C:get(Bucket, Key) of
         {ok, Old} ->
           case riak_object:get_value(Old) of
-            Value -> %% Value has not changed, skipping update
+            Value -> % Value has not changed, skipping update
               % io:fwrite("LEFT INSTACT: ~w~n", [{Key, Value}]);
               ok;
             _ ->
@@ -109,7 +113,8 @@ Now, copy the `beam` into this directory:
 
 {% highlight ruby %}
 $ sudo mkdir -p /usr/lib/riak/hooks
-$ sudo cp backend_hooks.beam /usr/lib/riak/hooks
+$ erlc backend_hooks.erl && \
+    sudo cp backend_hooks.beam /usr/lib/riak/hooks
 {% endhighlight %}
 
 Restart Riak and we are done. Now on every insert into `raw` bucket, Riak
