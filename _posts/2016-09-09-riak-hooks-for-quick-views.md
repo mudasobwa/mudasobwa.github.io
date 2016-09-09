@@ -60,7 +60,7 @@ update_current(RiakObject) ->
       io:fwrite("!! DELETED AN OBJECT FROM RAW: ~w~n", [RiakObject]);
     _ ->
       {struct, Json} = mochijson2:decode(riak_object:get_value(RiakObject)),
-      {<<"value">>, Value} = lists:keyfind(<<"value">>, 1, Json), %% immediately die on fail
+      {<<"value">>, Value} = lists:keyfind(<<"value">>, 1, Json)
       {ok, C} = riak:local_client(),
       case C:get(Bucket, Key) of
         {ok, Old} ->
