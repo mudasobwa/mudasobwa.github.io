@@ -15,11 +15,11 @@ Riak server, it should be able to write data.
 Riak is written in Erlang, that’s why. Also, Riak supports
 [hooks, written in Erlang](http://docs.basho.com/riak/kv/2.1.4/developing/usage/commit-hooks/).
 
-I love hooks. When it comes to a voodoo magic, I am a big fun
+I love hooks. When it comes to a voodoo magic, I am a big fun of
 [domino effect](https://en.wikipedia.org/wiki/Domino_effect). One simply
 inserts a value into the database, and complicated business logic processes
 do their job transparently. All these schema transformations, history, logging,
-versioning, emailing, coffeemaking, tequiladrinking... Sorry, I am distracted.
+versioning, emailing, coffeemaking, tequiladrinking... Sorry, was distracted.
 
 So, in one of our projects we have a stream of changing data; think of
 a temperature value in hundred of different cities. Updates come every second,
@@ -84,7 +84,7 @@ Cool. Now we have to install this hook. To do so, one should do three things.
 Riak hooks might be attached directly to specific buckets, but I prefer to keep things
 clear and introduce the `bucket-type` for it:
 
-{% highlight shell %}
+{% highlight bash %}
 sudo riak-admin bucket-type create raw \
     '{"props":{"precommit":[{"mod":"backend_hooks","fun":"update_current"}]}}'
 sudo riak-admin bucket-type activate raw
@@ -97,7 +97,7 @@ To install a hook, one should compile the Erlang module and copy the resulting
 `beam` into the directory, Riak is aknowledged of. First of all, let’s tell
 Riak about our hook directory:
 
-{% highlight shell %}
+{% highlight bash %}
 $ cat /etc/riak/advanced.config
 [
   {riak_kv, [
@@ -111,13 +111,14 @@ above into it. This will add `"/usr/lib/riak/hooks"` to the Riak paths.
 
 Now, copy the `beam` into this directory:
 
-{% highlight ruby %}
+{% highlight bash %}
 $ sudo mkdir -p /usr/lib/riak/hooks
 $ erlc backend_hooks.erl && \
     sudo cp backend_hooks.beam /usr/lib/riak/hooks
 {% endhighlight %}
 
-Restart Riak and we are done. Now on every insert into `raw` bucket, Riak
-will respectively update the “nested” up-to-date `current` bucket.
+Restart Riak and we are all set. From now on every insert into `raw` bucket,
+will result in Riak to gracefully update the “nested” up-to-date
+`{current, spot}` bucket.
 
 And all that was done with a dozen of lines of code. Cute, isn’t it?
