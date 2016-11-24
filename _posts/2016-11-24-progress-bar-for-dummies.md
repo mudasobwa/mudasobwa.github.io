@@ -55,7 +55,7 @@ class ProgressBar
     meter
   end
 
-  ############################################################################
+  ##########################################################
 
   def self.test caption = 'Hello', count = 1024
     ProgressBar.new(caption, count).tap do |pb|
@@ -66,7 +66,7 @@ class ProgressBar
     end
   end
 
-  ############################################################################
+  ##########################################################
 
   private
 
@@ -79,7 +79,8 @@ class ProgressBar
   end
 
   def meter(sym = '=')
-    print sym * (@position.to_f * ($stdin.winsize.first - @caption.length - 2) / @count)
+    space = $stdin.winsize.first - @caption.length - 2
+    print sym * (@position.to_f * space / @count)
     if @position == @count
       puts
       # rubocop:disable Style/FormatString
