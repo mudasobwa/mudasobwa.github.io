@@ -58,12 +58,14 @@ end
 and
 
 {% highlight ruby %}
-def cleanup if block_given?
-  # do some cleanup if block_given?
+def cleanup
+  if block_given?
+    # do some cleanup if block_given?
+  end
 end
 
 def evaluate_lua
-  cleanup Proc.new
+  cleanup &Proc.new
   # do actual evaluate
 end
 {% endhighlight %}
