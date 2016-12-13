@@ -33,18 +33,25 @@ Let’s start with the complete working example.
 
 {% highlight ruby %}
 module StructVivificator
-  # when prepended, this module will extend struct with
-  # getter and setter for the default proc;
-  # an exception will be raised when tried to be prepended to non-struct
   def self.prepended(base)
     raise 'Sorry, structs only!' unless base < Struct
 
+    base.singleton_class.prepend(Module.new do
+      def new(*args, &λ) # override `new` to accept block
+        super(*args).tap { @λ = λ }
+      end
+    end)
     base.send(:define_method, :default_proc=) { |λ| @λ = λ }
-    base.send(:define_method, :default_proc) { @λ }
+    base.send(:define_method, :default_proc) { |&λ| λ ? @λ = λ : @λ }
+
+    # override accessors (additional advantage: performance/clarity)
+    base.members.each do |m|
+      base.send(:define_method, m) { self[m] }
+      base.send(:define_method, "#{m}=") { |value| self[m] = value }
+    end
   end
   def [](name)
-    # checks here might be more sophisticated
-    super || default_proc && default_proc.(name)
+    super || default_proc && default_proc.(name) # or more sophisticated checks
   end
 end
 
@@ -72,6 +79,7 @@ So far so good. Let’s test it.
 {% highlight ruby %}
 foo = Foo.new
 foo.default_proc = ->(name) { name == :bar ? 42 : 0 }
+puts foo.bar          # => 42
 puts foo[:bar] += 1   # => 43
 puts foo.bar += 1     # => 44
 puts foo[:baz] += 1   # => 1
