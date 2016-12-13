@@ -84,15 +84,3 @@ puts foo[:bar] += 1   # => 43
 puts foo.bar += 1     # => 44
 puts foo[:baz] += 1   # => 1
 {% endhighlight %}
-
-Of course, to fully conform the `Hash`’s autovivification one should also:
-
-{% highlight ruby %}
-base.singleton_class.send(:define_method, :new) do |*args, &λ|
-  super(*args)
-  @λ = λ
-end
-{% endhighlight %}
-
-inside `self.prepended` callback. I have not put it in the first snippet
-for the sake of keeping code clean and tiny.
