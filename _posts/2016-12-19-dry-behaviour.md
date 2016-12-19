@@ -5,6 +5,7 @@ description: "Tiny library inspired by Elixir protocol pattern"
 category: hacking
 tags:
   - ruby
+  - elixir
 ---
 
 Elixir introduced the concept of behaviours. The quote from the [official docs](http://elixir-lang.org/getting-started/protocols.html):
@@ -62,11 +63,11 @@ end
 The implementation goes into `defimpl` clause:
 
 {% highlight elixir %}
-defimpl Noisy, target: Dog do
+defimpl Noisy, for: Dog do
   def sound(animal), do: "woof"
 end
 
-defimpl Noisy, target: Cat do
+defimpl Noisy, for: Cat do
   def sound(animal), do: "meow"
 end
 {% endhighlight %}
@@ -74,8 +75,8 @@ end
 Now we can use the protocol, without actual care who the animal we have:
 
 {% highlight elixir %}
-animal = ExtrernalSource.get_animal
-Noisy.sound(animal)
+ExtrernalSource.animal
+|> Noisy.sound
 {% endhighlight %}
 
 ---
