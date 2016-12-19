@@ -266,6 +266,6 @@ it’s method `:+` (because of `defimpl target: [Integer, ...], ..., map: { add:
 
 Whether you still think, this is a redundant of-no-practival-use garbage,
 imagine the `Tax` protocol. That might be implemented for: `ItemToSell`,
-'Shipment', 'Employee', 'Lunch' etc.
+`Shipment`, `Employee`, `Lunch` etc.
 
 ❖ [`dry-behaviour` repo](https://github.com/am-kantox/dry-behaviour/). Enjoy!
