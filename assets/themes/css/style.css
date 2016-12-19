@@ -125,7 +125,7 @@ h1 small, h1 small ul li { font-size: 14px; }
 h1 small ul { display: table-cell; }
 a { text-shadow: 1px 1px 1px #999; }
 pre { background-color: #f0f0f0; }
-pre code, pre code span { line-height: 1.2em; }
+pre code, pre code span { line-height: 1em; font-size: 12px; }
 
 .navbar .nav > li > a {
   text-shadow: 1px 1px 1px #999;
@@ -160,4 +160,4 @@ div.pagination {
   font-family: 'Ubuntu', helvetica, arial, sans-serif;
 }
 .span10 img { margin: 1em 0 1em 0; }
-.code { font-family: monospace; font-size: 70%; }
+.code { font-family: monospace; }
