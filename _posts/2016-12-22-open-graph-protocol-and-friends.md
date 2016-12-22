@@ -15,7 +15,7 @@ a nifty image with a fancy title and description, or remain an orphan lonely lin
 
 ![Afisha Open Graph / Twitter](/img/afisha.png)
 
-The above twit happened to be built by twitter itself. The tweet author just
+The tweet above happened to be built by twitter itself. The tweet author just
 copy-pasted the link to their webpage from her browser’s address. This wow-tech
 is named “Twitter Cards”; it is [described in details here](https://dev.twitter.com/cards/overview).
 
