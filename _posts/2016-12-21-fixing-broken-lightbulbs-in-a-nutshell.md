@@ -20,5 +20,5 @@ tags:
 * _Rust:_ solders a lampholder out, patches the glower with a brand new firmware glower;
 * _LISP loyal user:_ throws the bulb out of the window to escape a surveillance;
 * _Java Enterprise Senior:_ buys a floodlight and settles it outside of the window;
-* _Go-fella:_ hires a junior to fix a lightbulb.
+* _Go-fella:_ hires 42 juniors and creates a department on the problem “fixing lightbulbs.”
 
