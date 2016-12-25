@@ -34,7 +34,7 @@ So I went to the supermarket and bought the one made from the mixed milk, sheep�
 Also I bought rosmarinus, estragon and dill, the pergament paper and the
 bags with a zipper. Here I started:
 
-![Preparation: Ingredients](/img/cheese/1.png)
+![Preparation: Ingredients](/img/cheese/1.jpg)
 
 Honestly, this cheese was as tasty as the one the human being can buy for money,
 even better. So I suggest you to write this recipe down and try yourself: it’s
@@ -46,28 +46,28 @@ Get three sheets of the pergament paper, sprinkle it abundantly with species
 (more rosemarin, less estragon, less dill.) If you have the grains of coriander,
 put them there as well.
 
-![Preparation: Ingredients](/img/cheese/2.png)
+![Preparation: sprinkling pergament sheets](/img/cheese/2.jpg)
 
 Place the cheese head in the middle of that spicy lawn.
 
-![Preparation: Ingredients](/img/cheese/3.png)
+![Preparation: putting the cheese head](/img/cheese/3.jpg)
 
 Roll the cheese head in the species. It should be covered with as thick layer
 of dried herbs, as possible.
 
-![Preparation: Ingredients](/img/cheese/4.png)
+![Preparation: covering the cheese with species](/img/cheese/4.jpg)
 
 As think as possible, I have said!
 
-![Preparation: Ingredients](/img/cheese/5.png)
+![Preparation: more covering](/img/cheese/5.jpg)
 
 Wrap the cheese with pergament sheets; 7–8 sheets would be enough.
 
-![Preparation: Ingredients](/img/cheese/6.png)
+![Preparation: wrapping the cheese](/img/cheese/6.jpg)
 
 Put it in the bag, zip it, and put the pack in another one zipped bag.
 
-![Preparation: Ingredients](/img/cheese/7.png)
+![Preparation: putting the cheese in the zipped bag](/img/cheese/7.jpg)
 
 You are all done! Now place the bag in the fridge for one month. To get
 the cheese “more aged,” one might change the pergament papers past two weeks,
