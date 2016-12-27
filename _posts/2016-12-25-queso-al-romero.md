@@ -76,3 +76,5 @@ the humidity in the package will make the cheese tasting more cured.
 
 After one month (6 weeks are even better,) your “famous cheese with rosmarinus”
 is ready. ¡Que aproveche!
+
+![Ready & sliced](/img/cheese/8.jpg)
