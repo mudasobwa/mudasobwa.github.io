@@ -22,20 +22,20 @@ a response as tuples.
 
 So, `Tuple`s are good. Save for one single glitch: they are not iterable.
 That said, `Tuple`s do not implement `Enumerable` protocol. The goal of this
-small post is to show how this portocol might be implemented for tuples
+small post is to show how this protocol might be implemented for tuples
 in non-naïve way (the naïve way would be to just convert tuples to lists.)
 
 {% highlight elixir %}
 defmodule Tuple.Enumerable do
   defimpl Enumerable, for: Tuple do
-		@max_items 42
+    @max_items 42
 
     def count(tuple), do: tuple_size(tuple)
 
-		# member? implementation is done through casting tuple to the list
-		#  it’s not required for iteration, and building all those matched
+    # member? implementation is done through casting tuple to the list
+    #  it’s not required for iteration, and building all those matched
     #  clauses seems to be an overkill here
-		def member?([], _), do: {:ok, false}
+    def member?([], _), do: {:ok, false}
     def member?(tuple, value) when is_tuple(tuple) do
       tuple |> Tuple.to_list |> member?(value)
     end
@@ -58,21 +58,21 @@ defmodule Tuple.Enumerable do
     defp do_reduce({value}, {:cont, acc}, fun),    do: do_reduce({}, fun.(value, acc), fun)
 
     Enum.each(1..@max_items-1, fn tot ->
-			tail = Enum.join(Enum.map(1..tot, & "e_#{&1}"), ",")
-			match = Enum.join(["value"] ++ [tail], ",")
+      tail = Enum.join(Enum.map(1..tot, & "e_#{&1}"), ",")
+      match = Enum.join(["value"] ++ [tail], ",")
       Code.eval_string(
-				"defp do_reduce({#{match}}, {:cont, acc}, fun), do: do_reduce({#{tail}}, fun.(value, acc), fun)", [], __ENV__
+        "defp do_reduce({#{match}}, {:cont, acc}, fun), do: do_reduce({#{tail}}, fun.(value, acc), fun)", [], __ENV__
       )
     end)
 
     # list fallback for huge tuples
-		defp do_reduce([h | t], {:cont, acc}, fun)     do
+    defp do_reduce([h | t], {:cont, acc}, fun)     do
       do_reduce((if Enum.count(t) <= @max_items, do: List.to_tuple(t), else: t), fun.(h, acc), fun)
     end
 
     # fallback to list for huge tuples
     defp do_reduce(huge,    {:cont, acc}, fun) when huge > @max_items do
-			do_reduce(Tuple.to_list(huge), {:cont, acc}, fun)
+      do_reduce(Tuple.to_list(huge), {:cont, acc}, fun)
     end
   end
 end
