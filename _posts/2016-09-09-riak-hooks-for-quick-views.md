@@ -4,7 +4,8 @@ title: "Use Hooks in Riak to Create Views"
 description: "Riak hooks are a good tool to simplify creation of views"
 category: hacking
 tags:
-  - ruby
+  - elixir
+  - erlang
 ---
 
 > [Riak KV](http://docs.basho.com/riak/kv/2.1.4/downloads/) is a distributed
