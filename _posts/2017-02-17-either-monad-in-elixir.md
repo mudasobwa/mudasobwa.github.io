@@ -14,7 +14,7 @@ Yes, `Anyway` monad were my favorite one, if it were existing.
 
 Monads are known to be good in handling side effects and dealing with side effects.
 Monads are very simple (despite their cryptographogastroenterologic name.) Monads
-are after all handy, producing an _easy-to-read_ code, which is nowadays considered
+are after all handy, resulting in an _easy-to-read_ code, which is nowadays considered
 to be even more valuable then _producing-expected-result_ and even _correct_ code.
 
 OK, jokes aside.
@@ -34,7 +34,7 @@ with {:ok, [file | _tail]} <- File.ls,
   do: IO.puts content
 {% endhighlight %}
 
-but the truth is it actually behaves as simple `Either` monad. That said,
+And you know what? It behaves as simple `Either` monad. That said,
 _if the match on any subsequent step failed, the execution will immediately stop
 and RHO will be returned_.
 
