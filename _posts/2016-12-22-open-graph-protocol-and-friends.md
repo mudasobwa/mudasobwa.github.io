@@ -91,10 +91,12 @@ value) and get the fancy mentions in social networks, supporting OGP.
 
 ```html
 <meta name="twitter:card"        content="summary" />
-<meta property="og:type"         content="object" />
+<meta property="og:type"         content="article" />
 
 <meta name="twitter:image:src"   property="og:image"       content="https://avatars2..." />
-<meta name="twitter:site"        property="og:site_name"   content="@github" />
+<meta name="twitter:site"        property="og:site_name"   content="@rocket-science.ru" />
+<meta name="twitter:url"         property="og:url"         content="https://rocket-s..." />
+<meta name="twitter:creator"                               content="@mudasobwa" />
 <meta name="twitter:title"       property="og:title"       content="TITLE" />
 <meta name="twitter:description" property="og:description" content="DESCRIPTION" />
 
