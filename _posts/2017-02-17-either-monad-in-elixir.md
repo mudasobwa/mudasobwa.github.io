@@ -56,3 +56,23 @@ safely skip all the subsequent steps, directly returning `{:error, :enoent}`
 to the caller!) What is this?—this is an `Either` monad.
 
 That simple.
+
+---
+
+### Bonus Track
+
+It’s not mentioned anywhere in the documentation, or at least I could not find it,
+but `with` special form _apparently supports `else` with matching clauses_.
+Consider the following code:
+
+{% highlight elixir %}
+with {:ok, [file | _tail]} <- File.ls("NOWAY"),
+     {:ok, content} <- File.read(file) do
+  IO.puts content
+else
+  {:error, :enoent} -> IO.puts "NO SUCH FILE"
+  unexpected -> IO.puts "#{inspect unexpected} happened"
+end
+{% endhighlight %}
+
+Yes, it would spit `"NO SUCH FILE"` message out to the console. Awesome!
