@@ -5,6 +5,8 @@ tagline: continiously building the M³-model of life
 ---
 {% include JB/setup %}
 
+---
+
 ## My ¢2
 
 My name is Alexei Matyushkin. I was born on October 0, 1973, in Saint-Petersburg, Russia. Nowadays I got used to a nickname “mudasobwa,” proudly granted by rwandian linguists:
@@ -20,8 +22,8 @@ I have an experience in C/C++ pointing, Ruby railing, SQL querying, Java threads
 
 ----
 <div class="row">
-  <div class="span6">
-  <h4 class="smallcaps">decalogue</h4>
+  <div class="col s12 m6">
+  <h4 class="smallcaps">    decalogue</h4>
   <ol type="i">
   <li>Go drunk solitary. In fine fettle call friends to drink.</li>
   <li>Flirt with everyone. Sleep alone.</li>
@@ -35,13 +37,13 @@ I have an experience in C/C++ pointing, Ruby railing, SQL querying, Java threads
   <li><b>Bear in mind</b>: you are wiser, hence you are guilty.</li>
   <li><em>P.S.</em>Don’t dodge to supplement.</li></ol>
   </div>
-  <div class="span6">
+  <div class="col s12 m6">
   <h4 class="smallcaps">binaries</h4>
-  <ul>
+  <ul class="disc">
   <li>I don’t dread to appear: smart, stupid, arrogant, humble, a womanizer, a misogynist, a chatterbox, a taciturn, a teetotaler, an alcoholic, a dictator, a democrat, reliable, unreliable, white, black and purple.</li>
   <li>I am affraid to show myself: a bore.</li></ul>
   <h4 class="smallcaps">sins (and coss)</h4>
-  <ul>
+  <ul class="disc">
   <li>indifference</li>
   <li>partiality</li>
   <li>intellectual laziness</li>
@@ -54,9 +56,8 @@ Below are the notes I do write when occasionally find smth interesting during ha
 
 ## Posts
 
-<table class="table table-striped table-condensed table-bordered">
+<table class="striped highlight border">
   {% for post in site.posts %}
     <tr><td>{{ post.date | date_to_string }}</td><td><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></td></tr>
   {% endfor %}
 </table>
-

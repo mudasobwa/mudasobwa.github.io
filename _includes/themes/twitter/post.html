@@ -11,25 +11,28 @@
   <div class="span1"></div>
   <div class="span10">
     {{ content }}
-    <div class="pagination">
-      <ul>
-      {% if page.previous %}
-        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
-      {% else %}
-        <li class="prev disabled"><a>&larr; Previous</a></li>
-      {% endif %}
-        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
-      {% if page.next %}
-        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
-      {% else %}
-        <li class="next disabled"><a>Next &rarr;</a>
-      {% endif %}
-      </ul>
+    <br><br>
+    <div class="pagination row">
+      <div class="col s12 m4 center">
+        {% if page.previous %}
+          <a class="btn btn-floating" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}"><i class="material-icons medium">skip_previous</i></a></a>
+        {% else %}
+          <a class="btn btn-floating disabled"><i class="material-icons medium">skip_previous</i></a>
+        {% endif %}
+      </div>
+      <div class="col s12 m4 center">
+        <a class="btn btn-floating" href="{{ BASE_PATH }}{{ site.JB.archive_path }}"><i class="material-icons medium">settings_ethernet</i></a>
+      </div>
+      <div class="col s12 m4 center">
+        {% if page.next %}
+          <a class="btn btn-floating" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}"><i class="material-icons medium">skip_next</i></a>
+        {% else %}
+          <a class="btn btn-floating disabled"><i class="material-icons medium">skip_next</i>
+        {% endif %}
+      </div>
     </div>
-    <hr>
-    {% include JB/comments %}
   </div>
-  
+
 <!--
   <div class="span4">
     <h4>Published</h4>
@@ -41,7 +44,7 @@
     {% assign tags_list = page.tags %}
     {% include JB/tags_list %}
     </ul>
-  {% endunless %}  
+  {% endunless %}
   </div>
 -->
 </div>

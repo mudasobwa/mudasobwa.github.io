@@ -155,9 +155,6 @@ footer {
   text-align: center; font-size: 80%; margin: 1em 5em;
   font-family: 'Ubuntu', helvetica, arial, sans-serif;
 }
-div.pagination {
-  font-size: 90%;
-  font-family: 'Ubuntu', helvetica, arial, sans-serif;
-}
+
 .span10 img { margin: 1em 0 1em 0; }
 .code { font-family: monospace; }

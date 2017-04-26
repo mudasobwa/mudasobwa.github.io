@@ -1,0 +1,76 @@
+/* Override some defaults */
+.footer-copyright {
+  text-align: center; /* center align it with the container */
+  font-size: x-small;
+}
+
+.smallcaps { font-variant: small-caps; }
+
+blockquote { border-left: 5px solid #009688; }
+blockquote p { color: #999; line-height: 1.6em; padding-right: 10em; }
+blockquote small:before { content:'—  '; }
+
+h1 { font-size: 3.14rem; }
+h2 { font-size: 2.90rem; }
+h3 { font-size: 2.70rem; }
+h4 { font-size: 2.50rem; }
+h5 { font-size: 2.30rem; }
+h6 { font-size: 2.10rem; }
+
+h1 small ul { display: table-cell; }
+h1 small {
+  font-size: 14px;
+  color: #aaa;
+  top: -20px;
+  left: -10px;
+  position: relative;
+}
+
+td { padding: 5px 10px; }
+
+ul.disc li { list-style-type: disc; }
+
+a { color: #009688; }
+a:visited { color: #004d40; }
+a:active, a:hover { color: #80cbc4; }
+
+nav a, nav a:visited, nav a:active, nav a:hover { color: #80cbc4; }
+
+div.pagination {
+  font-size: 90%;
+  font-family: 'Ubuntu', helvetica, arial, sans-serif;
+}
+.span10 img { margin: 1em 0 1em 0; }
+.code { font-family: monospace; }
+
+/* tag_box ======================================================== */
+
+.tag_box {
+	list-style:none;
+	margin:0;
+	padding:5px 0 ;
+	overflow:hidden;
+}
+.tag_box li {
+	line-height:28px;
+}
+.tag_box.inline li {
+	float:left;
+}
+.tag_box a {
+	padding: 3px 6px;
+	margin: 2px;
+	background: #eee;
+	color:#005F6B;
+	border-radius: 3px;
+	text-decoration:none;
+}
+.tag_box a span{
+	vertical-align:super;
+	font-size:0.8em;
+}
+.tag_box a.active {
+	background:#57A957;
+	border:1px solid #4C964D;
+	color:#FFF;
+}

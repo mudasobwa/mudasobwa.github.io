@@ -7,76 +7,112 @@
     <meta name="author" content="{{ site.author.name }}">
     <meta name="msvalidate.01" content="DD6CC60E32E94EC101FE1201B669A34F" />
 
+    <link rel="shortcut icon" href="/img/favicon.png">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Le styles -->
-    <link href="{{ ASSET_PATH }}/bootstrap/css/readable.min.css" rel="stylesheet">
-    <!--link href="{{ ASSET_PATH }}/css/pygments.css" rel="stylesheet"-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
-    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-
-    <link rel="shortcut icon" href="/img/favicon.png">
+    <link href="{{ ASSET_PATH }}/css/mine.css?body=1" rel="stylesheet" type="text/css" media="all">
 
     <link href="http://feeds.feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
-    <!-- Le fav and touch icons -->
-  <!-- Update these with your own images
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  -->
 
-    <!--
-    <script src="{{ ASSET_PATH }}/js/snipper.js"></script>
-    <script> window.onload = function() { snipper.init("Code snippet #", false, false); } </script>
-    -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
   <body>
 
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <ul class="nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
-        </div>
+    <nav class="teal darken-4" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="{{ HOME_PATH }}" class="brand-logo">{{ site.title }}</a>
+        <ul class="right hide-on-med-and-down">
+          {% assign pages_list = site.pages %}
+          {% assign group = 'navigation' %}
+          {% include JB/pages_list %}
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          {% assign pages_list = site.pages %}
+          {% assign group = 'navigation' %}
+          {% include JB/pages_list %}
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
-    </div>
+    </nav>
 
     <div class="container">
-
       <div class="content">
         {{ content }}
       </div>
-
-      <footer>
-        <div class="contact">
-          <p>
-            <a href="http://creativecommons.org/licenses/by/3.0/deed">CC BY 3.0</a> <code>::</code>
-            {{ site.author.name }} <code>::</code>
-            <a href="/files/alexei-matyushkin.pdf">résumé</a> <code>::</code>
-            {{ site.author.motto }} <code>::</code>
-            <a href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a> <code>::</code>
-            {{ site.tagline }} <code>::</code>
-            <a href="http://feeds.feedburner.com/{{ site.author.feedburner }}">RSS Feed</a>
-          </p>
-
-          <!--p>
-            <a href="http://github.com/{{ site.author.github }}/">github.com/{{ site.author.github }}</a><br />
-            <a href="http://twitter.com/{{ site.author.twitter }}/">twitter.com/{{ site.author.twitter }}</a><br />
-          </p-->
-        </div>
-      </footer>
-
     </div> <!-- /container -->
+
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Here I go</h5>
+            <p class="grey-text text-lighten-4">
+              Name: <b>Aleksei Matiushkin</b> (nick: <b>mudasobwa</b>).<br>
+              About: I am still more <b>more functional</b> than <b>object oriented</b>.<br>
+              Was born: <b>October 0, 1973</b>, in <b>Saint-Petersburg</b>, Russia.<br>
+              Lived: <b>Saint-Petersburg</b> ⇒ <b>Heraclion</b> ⇒ <b>Berlin</b> ⇒ <b>Moscow</b> ⇒ <b>Barcelona</b>.<br>
+              Love: <b>Linux</b>, <b>Elixir</b>, <b>Erlang</b>, <b>Ruby off Rails</b>, <b>COBOL</b>.<br>
+              Hate: <b>MacOS</b>, <b>iOS</b>, <b>PHP</b>, <b>JavaScript</b>, <b>haters</b>.
+            </p>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Lovely posts</h5>
+            <ul>
+              <li><a class="white-text" href="/fun/2013/04/06/abc-for-fluent-speakers-nm-level">ABC for Fluent Speakers</a></li>
+              <li><a class="white-text" href="/hacking/2017/04/24/git-commit-credo-linter-hook">Use credo in git pre-commit</a></li>
+              <li><a class="white-text" href="/hacking/2017/03/08/hack-vs-kludge">Hack vs. Kludge</a></li>
+              <li><a class="white-text" href="/hacking/2017/02/17/either-monad-in-elixir">Either Monad in Elixir</a></li>
+              <li><a class="white-text" href="/hobby/2016/12/25/queso-al-romero">Queso as Romero</a></li>
+              <li><a class="white-text" href="/hacking/2016/12/19/dry-behaviour">Protocols in Ruby</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Get in touch</h5>
+            <ul>
+              <li><a class="white-text" href="mailto:am@mudasobwa.ru">am@mudasobwa.ru</a></li>
+              <li><a class="white-text" href="https://github.com/am-kantox">git @kantox</a></li>
+              <li><a class="white-text" href="https://github.com/mudasobwa">git @home</a></li>
+              <li><a class="white-text" href="http://stackoverflow.com/users/story/2035262">story @stackoverflow</a></li>
+              <li><a class="white-text" href="https://twitter.com/mudasobwa">twitter</a></li>
+              <li><a class="white-text" href="http://mudasobwa.ru">блог на русском</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container teal-text text-lighten-3">
+          <strong>
+            <a class="teal-text text-lighten-5" href="http://creativecommons.org/licenses/by/3.0/deed">CC BY 3.0</a> <code>::</code>
+            {{ site.author.name }} <code>::</code>
+            <a class="teal-text text-lighten-5" href="/files/alexei-matyushkin.pdf">résumé</a> <code>::</code>
+            {{ site.author.motto }} <code>::</code>
+            <a class="teal-text text-lighten-5" href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a> <code>::</code>
+            {{ site.tagline }} <code>::</code>
+            <a class="teal-text text-lighten-5" href="http://feeds.feedburner.com/{{ site.author.feedburner }}">RSS Feed</a> <code>::</code>
+            ❤ <code>::</code>
+            <a class="teal-text text-lighten-5" href="http://materializecss.com">materializecss</a>
+          </strong>
+          <!--
+          <a href="http://github.com/{{ site.author.github }}/">github.com/{{ site.author.github }}</a><br />
+          <a href="http://twitter.com/{{ site.author.twitter }}/">twitter.com/{{ site.author.twitter }}</a><br />
+          -->
+        </div>
+      </div>
+    </footer>
 
     {% include JB/analytics %}
   </body>
