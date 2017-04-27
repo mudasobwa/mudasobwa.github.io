@@ -23,7 +23,7 @@ I have an experience in C/C++ pointing, Ruby railing, SQL querying, Java threads
 ----
 <div class="row">
   <div class="col s12 m6">
-  <h4 class="smallcaps">    decalogue</h4>
+  <h4 class="smallcaps">decalogue</h4>
   <ol type="i">
   <li>Go drunk solitary. In fine fettle call friends to drink.</li>
   <li>Flirt with everyone. Sleep alone.</li>
