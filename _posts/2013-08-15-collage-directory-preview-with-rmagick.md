@@ -19,7 +19,7 @@ There is an [ImageMagick](http://imagemagick.org) wrapper for Ruby: [RMagick](ht
 The only problem remained: I still needed to produce the collage by hands. So, I decided to monkeypatch the library.
 Below goes the code of the patch:
 
-{% highlight ruby %}
+```ruby
 require 'RMagick'
 
 module Magick
@@ -64,14 +64,14 @@ module Magick
     end
   end
 end
-{% endhighlight %}
+```
 
 The only noticable piece of code here is the stuff with `imgnull`. Since I rotate the thumbnails, I need to
 preserve a sufficient place around the resulting montaged image. The function may be called with:
 
-{% highlight ruby %}
+```ruby
 Magick::ImageList::preview(IMGS_DIR, :thumb_width=>200).write COLLAGE.jpg
-{% endhighlight %}
+```
 
 Resulting in smth like:
 

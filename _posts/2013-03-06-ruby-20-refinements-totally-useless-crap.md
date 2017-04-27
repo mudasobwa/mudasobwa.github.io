@@ -11,7 +11,7 @@ Let me explain, what’s wrong with ’em and why I consider nobody actually wan
 
 #### The main declared advantage of refines is that they are not global scoped. Bah.
 
-{% highlight ruby %}
+```ruby
 module MyModule
   class ::String
     def my_locally_needed_func
@@ -23,7 +23,7 @@ end
 # here I need it
 require 'mymodule'
 "".my_locally_needed_func
-{% endhighlight %}
+```
 
 is isolated not worse.
 
@@ -31,7 +31,7 @@ is isolated not worse.
 
 Of course they do through a hack (remember, everything is an object:)
 
-{% highlight ruby %}
+```ruby
 module VoidRefinements
   refine String do
     def self.singleton_method_for_string_class
@@ -58,7 +58,7 @@ String.singleton_method_for_string_class rescue puts $!
 using VoidRefinementsOK
 String.singleton_method_for_string_class rescue puts $!
 # ⇒ inside proper singleton_method_for_string_class
-{% endhighlight %}
+```
 
 The latter is not even resulting in performance penalties, since nobody would call `Fixnum.substr` on purpose.
 

@@ -57,9 +57,9 @@ Pass them everywhere (I doubt about COBOL, but any other language in 2015 would
 gracefully understand the unicode,) convert it back and forth, escape them,
 unescape them, you’ll always have the correct result.
 
-{% highlight ruby %}
+```ruby
      str = 'And God said “We’ll call it ‘typography’,” and there was light'
-{% endhighlight %}
+```
 
 Actually, I came to this conclusion after a couple of hours of hard debug
 session, where quoted string was passed into javascript from ruby with a

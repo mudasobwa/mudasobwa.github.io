@@ -81,7 +81,7 @@ tags:
   <td>
     <p><span class="label label-important">read-only</span> <span class="label label-info">thread-local</span>  <strong>The last exception, that was <em>thrown and rescued</em> in the current context.</strong><br>
     Locals to the <code>rescue</code> clause.</p>
-{% highlight ruby %}
+```ruby
 > 0 / 0 rescue $!
 # ⇒ <ZeroDivisionError: divided by 0>
 
@@ -97,7 +97,7 @@ tags:
 # from (pry):67:in `/'
 > $!
 # ⇒ nil
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -114,7 +114,7 @@ tags:
         <a href="http://www.ruby-doc.org/stdlib-1.9.3/libdoc/dl/rdoc/DL.html">DL</a>/<a href="http://www.ruby-doc.org/stdlib-1.9.3/libdoc/fiddle/rdoc/Fiddle.html">Fiddle</a>,
         are shown in the list.
     </p>
-{% highlight ruby %}
+```ruby
 > $"
 # ⇒ [
 #  [  0] "enumerator.so",
@@ -125,7 +125,7 @@ tags:
 #  …
 #  [227] "/…/lib/ruby/2.0.0/dl.rb"
 # ]
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -136,13 +136,13 @@ tags:
   </td>
   <td>
     <p><span class="label label-important">read-only</span>  <strong>Current process ID.</strong><br></p>
-{% highlight ruby %}
+```ruby
 > $"
 # ⇒ 8603
 
 > Process.pid
 # ⇒ 8603
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -154,7 +154,7 @@ tags:
   <td>
     <p><span class="label label-important">read-only</span> <span class="label label-info">thread-local</span>  <strong>The matched string from the previous successful pattern match.</strong><br>
     Locals to the pattern match scope.</p>
-{% highlight ruby %}
+```ruby
 > "foo bar baz".match /foo|bar|baz/
 # ⇒ <MatchData "foo">
 > $&
@@ -169,7 +169,7 @@ tags:
 # ⇒ nil
 > $&
 # ⇒ nil
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -181,7 +181,7 @@ tags:
   <td>
     <p><span class="label label-important">read-only</span> <span class="label label-info">thread-local</span>  <strong>The rest of the string <em>after the matched</em> substring in the previous successful pattern match.</strong><br>
     Locals to the pattern match scope.</p>
-{% highlight ruby %}
+```ruby
 > "foo bar baz".match /foo|bar|baz/
 # ⇒ <MatchData "foo">
 > $'
@@ -196,7 +196,7 @@ tags:
 # ⇒ nil
 > $'
 # ⇒ nil
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -208,7 +208,7 @@ tags:
   <td>
     <p><span class="label label-important">read-only</span>  <strong>The command line arguments passed to the currently executed ruby script.</strong><br>
     An alias for <code>ARGV</code>.</p>
-{% highlight ruby %}
+```ruby
 ~ pry --simple-prompt
 > $*
 # ⇒ [
@@ -218,7 +218,7 @@ tags:
 # ⇒ [
 #  [0] "--simple-prompt"
 # ]
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -230,7 +230,7 @@ tags:
   <td>
     <p><span class="label label-important">read-only</span> <span class="label label-info">thread-local</span>  <strong>The last <em>captured</em> match from the previous successful pattern match.</strong><br>
     Locals to the pattern match scope. Contains <code>nil</code> if there was no capture (even while match was successful.)</p>
-{% highlight ruby %}
+```ruby
 > "foo bar baz".match /(foo) (bar) baz/
 # ⇒ <MatchData "foo bar baz" 1:"foo" 2:"bar">
 > $+
@@ -247,7 +247,7 @@ tags:
 # ⇒ <MatchData "foo bar baz">
 > $+
 # ⇒ nil
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -260,7 +260,7 @@ tags:
     <p><span class="label label-success">read-write</span>  <strong>Separator for both
     <code>Kernel#print</code> and <code>Array#join</code>.</strong><br>
     Defaults to nil.</p>
-{% highlight ruby %}
+```ruby
 > print "foo", "bar", "baz"
 # foobarbaz⇒ nil
 > %w[foo bar baz].join
@@ -273,7 +273,7 @@ tags:
 # foo%bar%baz⇒ nil
 > %w[foo bar baz].join
 # ⇒ "foo%bar%baz"
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -287,7 +287,7 @@ tags:
   <td>
     <p><span class="label label-success">read-write</span>  <strong>Input record separator.</strong><br>
     Defaults to <code>\n</code>. May be set with the <code>-0</code> command line parameter (as octal value.)</p>
-{% highlight ruby %}
+```ruby
 > $-0='%'
 # ⇒ "%"
 > gets
@@ -305,7 +305,7 @@ o
 %
 # ⇒ "f\no\no\n%"
 > 
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -319,7 +319,7 @@ o
   <td>
     <p><span class="label label-success">read-write</span>  <strong>Default field separator for <code>String#split</code>.</strong><br>
     Defaults to <code>nil</code>. May be set with the <code>-F</code> command line parameter.</p>
-{% highlight ruby %}
+```ruby
 > $-F
 # ⇒ nil
 > "foo bar baz".split
@@ -344,7 +344,7 @@ o
 
 > $-F == $;
 # ⇒ true
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -358,7 +358,7 @@ o
   <td>
     <p><span class="label label-important">read-only</span>  <strong>Array of include paths.</strong><br>
     Absolute paths to be searched by <code>Kernel.load</code> and/or <code>Kernel.require</code>.</p>
-{% highlight ruby %}
+```ruby
 > $-I
 # ⇒ [
 #  [ 0] "/…/gems/rubygems-bundler-1.1.0/lib",
@@ -371,7 +371,7 @@ o
 
 > $-I == $:
 # ⇒ true
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -383,11 +383,11 @@ o
   <td>
     <p><span class="label label-inverse">obsolete</span> <span class="label label-success">read-write</span>  <strong>Determines the encoding to be used whilst parsing <code>.rb</code> files.</strong><br>
     One should avoid using that variable since <code>ruby-1.9</code>.</p>
-{% highlight ruby %}
+```ruby
 > $-K
 # (pry):13: warning: variable $KCODE is no longer effective
 # ⇒ nil
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -400,7 +400,7 @@ o
     <p><span class="label label-important">read-only</span>  <strong>Current verbosity level.</strong><br>
     Defaults to <code>1</code>. May be set to <code>0</code> with the <code>-W0</code> command line arg
       and to <code>2</code> with one of <code>-w</code>, <code>-v</code>, or <code>--verbose</code> switches.</p>
-{% highlight ruby %}
+```ruby
 > $-W
 # ⇒ 1
 > exit
@@ -419,7 +419,7 @@ o
 > $-W
 # ⇒ 0
 >
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -433,7 +433,7 @@ o
     <code>-a</code> switch makes sense when used together with either <a href="#minus-p-small"><code>-p</code></a>
     or <a href="#minus-n-small"><code>-n</code></a> args.
     In auto-split mode, Ruby executes	<code>$F = <a href="#underscore">$_</a>.split</code> at the beginning of each loop.</p>
-{% highlight ruby %}
+```ruby
 ~ cat > test-a-switch.rb 〈〈EOF
 # heredoc> # encoding: utf-8
 # heredoc> puts "LINE=[#{\$_.strip}]"
@@ -455,7 +455,7 @@ o
 # $F=
 # LINE=puts "$F=#{$F}"
 # $F=
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -466,7 +466,7 @@ o
   </td>
   <td>
     <p><span class="label label-important">read-only</span>  <strong>Denotes whether the debug mode was enabled with <code>-d</code> switch.</strong><br></p>
-{% highlight ruby %}
+```ruby
 ~ cat > test-d-switch.rb 〈〈EOF
 # heredoc> puts "DEBUG MODE: #{\$-d}"
 # heredoc> EOF
@@ -475,7 +475,7 @@ o
 # Exception `LoadError' at /…/lib/ruby/site_ruby/2.0.0/rubygems.rb:1264 - cannot load such file -- rubygems/defaults/operating_system
 # Exception `LoadError' at /…/lib/ruby/site_ruby/2.0.0/rubygems.rb:1273 - cannot load such file -- rubygems/defaults/ruby
 # DEBUG MODE: true
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -488,7 +488,7 @@ o
     <p><span class="label label-important">read-only</span>  <strong>Value of the <code>-i</code> command line argument, if given.</strong><br>
     Defaults to <code>nil</code>. When provided, this argument enables inplace-edit mode; the parameter specifies an extension of
     backup file to be created.</p>
-{% highlight ruby %}
+```ruby
 ~ cat > test-i-switch.rb << EOF
 \$_.upcase!
 puts "i-switch: #{\$-i}"
@@ -501,7 +501,7 @@ EOF
 # $_.UPCASE!
 # i-switch: .bak
 # PUTS "I-SWITCH: #{$-I}"
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -516,9 +516,9 @@ EOF
     Automatic line-endings sets <a href="#backslash"><code>$\</code></a> to
       the value of <a href="#slash"><code>$/</code></a>, and (when used with either <a href="#minus-p-small"><code>-p</code></a>
       or <a href="#minus-n-small"><code>-n</code></a> args) chops every line read using <code>chop!</code>.</p>
-{% highlight ruby %}
+```ruby
 # Could not invent a meaningful example :-(
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -535,16 +535,16 @@ EOF
       to get aknowledged whether the <code>-n</code> command line switch was given. In case it were, Ruby is to assume
       the following loop around your script, which provides an iteration over filename arguments somewhat like
       <code>sed -n</code> and <code>awk</code> do.</p>
-{% highlight ruby %}
+```ruby
 while gets
  …
 end
-{% endhighlight %}
+```
 <p>An example of usage follows:</p>
-{% highlight ruby %}
+```ruby
 ~ echo "foo bar baz" | ruby -p -e '$_.tr! "o-z", "O-Z"'
 # ⇒ fOO baR baZ
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -558,7 +558,7 @@ end
   <td>
     <p><span class="label label-important">read-only</span>  <strong>Denotes whether the verbose mode
       was enabled with either <code>-v</code> or <code>-w</code> switch.</strong><br></p>
-{% highlight ruby %}
+```ruby
 ~ cat > test-v-switch.rb 〈〈EOF
 # heredoc> puts "VERBOSE MODE: #{\$-v}"
 # heredoc> EOF
@@ -568,7 +568,7 @@ end
 # VERBOSE MODE: true
 
 ~
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -580,12 +580,12 @@ end
   <td>
     <p><span class="label label-important">read-only</span>  <strong>Number of the last line read from the current input file <a href="#less"><code>ARGF</code></a>.</strong><br>
     <a href="http://www.ruby-doc.org/core-2.0/ARGF.html">ARGF</a> is a stream designed to use in scripts that process files given as command-line arguments or passed in via <code>STDIN</code>.</p>
-{% highlight ruby %}
+```ruby
 ARGV.replace ["file1"] # file1 ≡ 'a\nb\nc\nd'
 ARGF.readlines # Returns the contents of file1 as an Array
 $.
 # ⇒ 4
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -606,7 +606,7 @@ $.
   <td>
     <p><span class="label label-important">read-only</span>  <strong>The <code>N-th</code> capture of the previous successful pattern match.</strong><br>
     Defaults to <code>nil</code> if the match failed or if <code>N</code> is greater than an amount of captured groups.</p>
-{% highlight ruby %}
+```ruby
 > "foo bar baz".match(/(foo) (bar)/) 
 # ⇒ <MatchData:0x18cb9f4>
 > $1
@@ -615,7 +615,7 @@ $.
 # ⇒ "bar"
 > $3
 # ⇒ nil
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -626,10 +626,10 @@ $.
   </td>
   <td>
     <p><span class="label label-important">read-only</span>  <strong>Read‐only alias for ARGF.</strong><br></p>
-{% highlight ruby %}
+```ruby
 > $<.class
 # ⇒ ARGF.class < Object
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -640,11 +640,11 @@ $.
   </td>
   <td>
     <p><span class="label label-inverse">obsolete</span>  <br></p>
-{% highlight ruby %}
+```ruby
 > $=
 # (pry):23: warning: variable $= is no longer effective
 # ⇒ false
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -655,7 +655,7 @@ $.
   </td>
   <td>
     <p><span class="label label-success">read-write</span>  <strong>Standard output stream.</strong><br></p>
-{% highlight ruby %}
+```ruby
 > $> = File.new('/tmp/foo', 'w')
 # ⇒ <File:/tmp/foo>
 # -rw-r--r-- 1 am users 0 Feb 27 12:41 /tmp/foo
@@ -666,7 +666,7 @@ $.
 
 ~ cat /tmp/foo
 # bar baz
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -677,14 +677,14 @@ $.
   </td>
   <td>
     <p><span class="label label-important">read-only</span>  <strong>Exit status of the last terminated process within current context.</strong><br></p>
-{% highlight ruby %}
+```ruby
 > `ls FooBarBaz`
 # ls: невозможно получить доступ к FooBarBaz: Нет такого файла или каталога
 # ⇒ ""
 
 > $?
 # ⇒ <Process::Status: pid 31718 exit 2>
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -696,7 +696,7 @@ $.
   <td>
     <p><span class="label label-important">read-only</span> <span class="label label-info">thread-local</span>  <strong>Shorthand to <code>$!.backtrace</code></strong><br>
     Locals to the <code>rescue</code> clause.</p>
-{% highlight ruby %}
+```ruby
 > 0 / 0 rescue $@
 # ⇒ [
 #  [ 0] "(pry):7:in `/'",
@@ -704,7 +704,7 @@ $.
 #  …
 #  [23] "/…/bin/ruby_noexec_wrapper:14:in `<main>'"
 # ]
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -716,12 +716,12 @@ $.
   <td>
     <p><span class="label label-success">read-write</span>  <strong>Appended to <code>Kernel.print</code> output.</strong><br>
     Defaults to <code>nil</code>, or to <a href="#slash"><code>$/</code></a> if the <code>-l</code> switch was given.</p>
-{% highlight ruby %}
+```ruby
 > $\='%'
 # ⇒ "%"
 > print 'foo', 'bar', 'baz'
 # ⇒ %foobarbaz%=> nil
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -734,14 +734,14 @@ $.
     <p><span class="label label-important">read-only</span> <span class="label label-info">thread-local</span>  <strong>Last <code>String</code> read from <code>IO</code>
      by one of <code>Kernel.gets</code>, <code>Kernel.readline</code> or siblings.</strong><br>
     Widely used with <a href="#minus-p-small"><code>-p</code></a> and <a href="#minus-n-small"><code>-n</code></a> switches.</p>
-{% highlight ruby %}
+```ruby
 > gets
 foo
 # ⇒ "foo\n"
 
 > $_
 # ⇒ "foo\n"
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -754,7 +754,7 @@ foo
     <p><span class="label label-important">read-only</span> <span class="label label-info">thread-local</span>  <strong>The
       rest of the string <em>before</em> the matched substring in the previous successful pattern match.</strong><br>
     Locals to the pattern match scope.</p>
-{% highlight ruby %}
+```ruby
 > "foo bar baz".match /bar|baz/
 # ⇒ <MatchData "bar">
 > $`
@@ -769,7 +769,7 @@ foo
 # ⇒ nil
 > $`
 # ⇒ nil
-{% endhighlight %}
+```
 </td>
 </tr>
 <tr>
@@ -781,12 +781,12 @@ foo
   <td>
     <p><span class="label label-important">read-only</span> <span class="label label-info">thread-local</span>  <strong>The
       <code>MatchData</code> from the previous successful pattern match.</strong><br></p>
-{% highlight ruby %}
+```ruby
 > "abc12def34ghijklmno567pqrs".gsub (/\d+/) { |m| p $~ }
 # ⇒ <MatchData "12">
 # ⇒ <MatchData "34">
 # ⇒ <MatchData "567">
-{% endhighlight %}
+```
 </td>
 </tr>
 </tbody>

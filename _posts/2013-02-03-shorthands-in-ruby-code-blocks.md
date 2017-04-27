@@ -12,20 +12,20 @@ code blocks within iterators (such as [map](http://www.ruby-doc.org/core-1.9.3/A
 [each](http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-each), etc.) More than offen, these codeblock
 are kinda one-liners and woo-`do-|o|-end` magic makes a code looking overdriven:
 
-{% highlight ruby %}
+```ruby
 arr.each do |x|
   x.name
 end.join(" ")
-{% endhighlight %}
+```
 
 Well, there is curly-brackets-notation available, hence we may rewrite the code above within one line.
 But there is still a lot of absolutely unnecessary garbage hiding the core of what’s being actually done.
 
 The good news is: ruby provides us with a syntactic sugar for that stuff. Let’s look at this:
 
-{% highlight ruby %}
+```ruby
 arr.each (&:name).join(" ")
-{% endhighlight %}
+```
 
 It is fully equivalent to the `do-|o|-end` codepiece above, but the readability is drastically improved.
 
@@ -43,49 +43,49 @@ was originally added by `ActiveSupport` but has been integrated into Ruby since 
 
 To enable this shorthand for classes other than `Symbol`, e. g. for an `Array`:
 
-{% highlight ruby %}
+```ruby
 class Array
   def to_proc
     lambda { |recv| recv.send *self }
   end
 end
-{% endhighlight %}
+```
 
 Now we can write:
 
-{% highlight ruby %}
+```ruby
 [ "Apple", "Orange", "Pear" ].map &[ :+, " is a fruit." ]
 [ "Apple", "Orange", "Pear" ].map &[ :match, "[a-z]e" ]
-{% endhighlight %}
+```
 
 yielding:
 
-{% highlight ruby %}
+```ruby
  #⇒ ["Apple is a fruit.", "Orange is a fruit.", "Pear is a fruit."]
  #⇒ [#<MatchData "le">, #<MatchData "ge">, nil]
-{% endhighlight %}
+```
 
 Methods are being called on array elements (on `String`s in the example above.)
 
 ----
 Kinda same trick may be done for external methods using `&method` shorthand. Let’s say we have:
 
-{% highlight ruby %}
+```ruby
 arr.each do |x|
   get_fullname x
 end.join(" ")
-{% endhighlight %}
+```
 
 Thus, assuming we have the `get_fullname` method defined, we can rewrite it as:
 
-{% highlight ruby %}
+```ruby
 arr.each &method(:get_fullname)
-{% endhighlight %}
+```
 
 In other words, 
 
-{% highlight ruby %}
+```ruby
 %w{ first second third }.map &method(:puts)
-{% endhighlight %}
+```
 
 will print the array content out (expanding to `{ |s| puts s }`).

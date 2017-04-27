@@ -16,14 +16,14 @@ Let’s digress from our dramatic story and take a look at the following snippet
 to an application running at a snail's pace. Well, the task looks straightforward. Install `benchmark` gem, read the
 [documentation](http://ruby-doc.org/stdlib-1.9.3/libdoc/benchmark/rdoc/Benchmark.html), try an example:
 
-{% highlight ruby %}
+```ruby
 require 'benchmark'
 puts Benchmark.measure { "a"*1_000_000 }
-{% endhighlight %}
+```
 
 Works fine! Let’s try smth more complicated:
 
-{% highlight ruby %}
+```ruby
 require 'benchmark'
 puts Benchmark.measure do
   while true
@@ -31,27 +31,27 @@ puts Benchmark.measure do
     break if Random.rand(100) === 1
   end
 end
-{% endhighlight %}
+```
 
 Ooooups…
 
-{% highlight ruby %}
+```ruby
 irb:010 >
 # LocalJumpError: no block given (yield)
 #     from IRRELEVANT_PATH_TO_RVM/lib/ruby/2.0.0/benchmark.rb:281:in `measure'
 #     from (irb):9`
-{% endhighlight %}
+```
 
 WTF? That’s the syntax sugar, ruby mixed into your tea. That’s a time to take a look at an operator precedence table.
 `{}` binds tighter than `do-end`. Furthermore, `do-end` clause has lowest precedence at all. In other words, the latter
 codepiece is similar to:
 
-{% highlight ruby %}
+```ruby
 require 'benchmark'
 (puts Benchmark.measure) do
   # irrelevant code
 end
-{% endhighlight %}
+```
 
 Surely, the aforementioned hitch never befuddled a guru, but there is a style guideline which may get rid of the
 possibility even to stuck with this. Use braces `{}` when a block returnes a value. Use `do-end` clause otherwise.

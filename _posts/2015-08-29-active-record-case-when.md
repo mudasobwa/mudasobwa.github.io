@@ -22,17 +22,17 @@ Imagine you have to update a table, setting a column value basing on the value i
 
 MySQL (and most other dialects) provides a single query for it:
 
-{% highlight sql %}
+```sql
 UPDATE `profiles` SET `yay` = CASE `workflow_state`
                               WHEN 'approved' THEN 'yes'
                               WHEN 'cancelled' THEN 'no'
                               ELSE `yay`
                               END
-{% endhighlight %}
+```
 
 Till now Rails had no nifty wrapper for it. Now it has:
 
-{% highlight ruby %}
+```ruby
 module ActiveRecord
   class Base # :nodoc:
     # Updates multiple rows in table using prepared hash as input
@@ -84,6 +84,6 @@ module ActiveRecord
     end
   end
 end
-{% endhighlight %}
+```
 
 The above code will update a table with single query, according to the hash given. Enjoy!

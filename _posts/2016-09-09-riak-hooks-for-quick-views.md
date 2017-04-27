@@ -44,7 +44,7 @@ but how would I keep my view up-to-date? Easy.
 Let’s introduce a hook on Riak’s insert into “raw” data bucket.
 Hooks are to be written in Erlang, so we’ll produce a simple module:
 
-{% highlight erlang %}
+```erlang
 -module(backend_hooks).
 -export([update_current/1]).
 
@@ -79,44 +79,44 @@ update_current(RiakObject) ->
         end
     end,
   RiakObject.
-{% endhighlight %}
+```
 
 Cool. Now we have to install this hook. To do so, one should do three things.
 Riak hooks might be attached directly to specific buckets, but I prefer to keep things
 clear and introduce the `bucket-type` for it:
 
-{% highlight bash %}
+```bash
 sudo riak-admin bucket-type create raw \
     '{"props":{"precommit":[{"mod":"backend_hooks","fun":"update_current"}]}}'
 sudo riak-admin bucket-type activate raw
 
 sudo riak-admin bucket-type create current
 sudo riak-admin bucket-type activate current
-{% endhighlight %}
+```
 
 To install a hook, one should compile the Erlang module and copy the resulting
 `beam` into the directory, Riak is aknowledged of. First of all, let’s tell
 Riak about our hook directory:
 
-{% highlight bash %}
+```bash
 $ cat /etc/riak/advanced.config
 [
   {riak_kv, [
     {add_paths, ["/usr/lib/riak/hooks"]}
   ]}
 ].
-{% endhighlight %}
+```
 
 On the fresh installation, this file is empty/non-existent. Put the content
 above into it. This will add `"/usr/lib/riak/hooks"` to the Riak paths.
 
 Now, copy the `beam` into this directory:
 
-{% highlight bash %}
+```bash
 $ sudo mkdir -p /usr/lib/riak/hooks
 $ erlc backend_hooks.erl && \
     sudo cp backend_hooks.beam /usr/lib/riak/hooks
-{% endhighlight %}
+```
 
 Restart Riak and we are all set. From now on every insert into `raw` bucket,
 will result in Riak to gracefully update the “nested” up-to-date

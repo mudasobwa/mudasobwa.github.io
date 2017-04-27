@@ -39,12 +39,12 @@ at home and Gentoo at work. I believe you got the point.
 
 What LOC is more readable, elegant and _easier in general_:
 
-{% highlight ruby %}
+```ruby
 elapsed = 2.business_days('EUR', 'USD').after(Time.zone.now)
 # or
 elapsed = BusinessDaysFactory.for_currencies('EUR', 'USD')
                              .add(Time.zone.now, 2)
-{% endhighlight %}
+```
 
 ---
 

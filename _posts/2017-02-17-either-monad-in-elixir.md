@@ -28,11 +28,11 @@ Our today’s special guest is
 It is widely used to chain the simple atomic functions returning `{:ok, result}`
 tuples:
 
-{% highlight elixir %}
+```elixir
 with {:ok, [file | _tail]} <- File.ls,
      {:ok, content} <- File.read(file),
   do: IO.puts content
-{% endhighlight %}
+```
 
 And you know what? It behaves as simple `Either` monad. That said,
 _if the match on any subsequent step failed, the execution will immediately stop
@@ -40,12 +40,12 @@ and RHO will be returned_.
 
 Let’s check this trivial contrived example:
 
-{% highlight elixir %}
+```elixir
 iex|1 ▶ with 1 <- 1,
 ...|1 ▶      2 <- "HERE WE GO",
 ...|1 ▶      3 <- 3, do: "HERE WE WON’T GO"
 "HERE WE GO"
-{% endhighlight %}
+```
 
 The second match failed and _not matched term had beed returned_. It’s amazing,
 is not it?
@@ -65,7 +65,7 @@ It’s not mentioned anywhere in the documentation, or at least I could not find
 but `with` special form _apparently supports `else` with matching clauses_.
 Consider the following code:
 
-{% highlight elixir %}
+```elixir
 with {:ok, [file | _tail]} <- File.ls("NOWAY"),
      {:ok, content} <- File.read(file) do
   IO.puts content
@@ -73,6 +73,6 @@ else
   {:error, :enoent} -> IO.puts "NO SUCH FILE"
   unexpected -> IO.puts "#{inspect unexpected} happened"
 end
-{% endhighlight %}
+```
 
 Yes, it would spit `"NO SUCH FILE"` message out to the console. Awesome!

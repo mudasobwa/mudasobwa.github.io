@@ -22,7 +22,7 @@ But the heaps themselves are not released to OS anymore.**
 
 Let’s take a look at the simple example:
 
-{% highlight ruby %}
+```ruby
   def report
     puts 'Memory ' + `ps ax -o pid,rss | grep -E "^[[:space:]]*#{$$}"`
             .strip.split.map(&:to_i)[1].to_s + 'KB'
@@ -41,24 +41,24 @@ Let’s take a look at the simple example:
   # ⇒ Memory 65188KB
   # ⇒ Memory 65188KB
   # ⇒ Memory 11788KB
-{% endhighlight %}
+```
 
 Here we allocate the huge amount of memory, use it somehow and then release back to OS.
 Everything seems to be fine. Let’s now slightly change the source code:
 
-{% highlight ruby %}
+```ruby
 -  big_var = " " * 10_000_000
 +  big_var = 1_000_000.times.map(&:to_s)
-{% endhighlight %}
+```
 
 That was a humdrum modification, wasn’t it? But wait:
 
-{% highlight ruby %}
+```ruby
   # ⇒ Memory 11788KB
   # ⇒ Memory 65188KB
   # ⇒ Memory 65188KB
   # ⇒ Memory 57448KB
-{% endhighlight %}
+```
 
 WTF? The memory is not released to OS anymore. That’s because each element
 of the array we introduced _suits_ the `RVALUE` size and is stored in the _ruby heap_.
@@ -70,20 +70,20 @@ for operation are returned back to Ruby. To _Ruby_ that said, not to OS.
 
 So, be careful with creating a lot of temporary variables suiting the 40 bytes:
 
-{% highlight ruby %}
+```ruby
   big_var = " " * 10_000_000
   big_var.gsub(/\s/) { |c| '-' }
-{% endhighlight %}
+```
 
 results in growth of memory guzzled by Ruby as well. And this memory will not
 be returned back to OS during the whole long run:
 
-{% highlight ruby %}
+```ruby
   # ⇒ Memory 10156KB
   # ⇒ Memory 13788KB
   # ⇒ Memory 13788KB
   # ⇒ Memory 12808KB
-{% endhighlight %}
+```
 
 Not so crucial, but noteworthy enough.
 

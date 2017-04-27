@@ -26,7 +26,7 @@ I want to share a couple of tricks helping me to utilize the log in cosy manner.
 
 First of all, to tune the log we have to gain an access to it. Let’s do it.
 
-{% highlight ruby %}
+```ruby
 @logdevice = const_defined? 'Rails' ?
               ::Rails.logger
                      .instance_variable_get(:@logger)
@@ -35,7 +35,7 @@ First of all, to tune the log we have to gain an access to it. Let’s do it.
 @tty = @logdevice.instance_variable_get(:@logdev)
                  .instance_variable_get(:@dev).tty? ||
        const_defined?('Rails') && ::Rails.env.development?
-{% endhighlight %}
+```
 
 The latter condition in `@tty` check is required to force `@tty` be set to `true`
 in _Rails_ development environment, where logs are going through `development.log`
@@ -44,16 +44,16 @@ file, yet most purpose is to review them on the fly in the console.
 Now we should not forget about our colleagues, who probably would not admit
 the accidental log format change as long-awaited Christmas gift.
 
-{% highlight ruby %}
+```ruby
 @keep_out = Kernel.const_defined?('Rails') && ::Rails.env.production? ||
             ENV['RAILS_PRETTY_LOG'] != '42'
-{% endhighlight %}
+```
 
 OK, my log modifications would never affect neither production env, nor alien
 environments not having `RAILS_PRETTY_LOG` environment variable set to `42`.
 Fine. Let’s hack a log a bit. First of all, let’s add colors.
 
-{% highlight ruby %}
+```ruby
 SEV_COLORS = {
   'INFO'    => ['01;38;05;21', '00;38;05;152'],
   'WARN'    => ['01;38;05;226', '00;38;05;222'],
@@ -66,7 +66,7 @@ def self.clrz txt, clr
 
   "\e[#{clr}m#{txt.gsub(/«(.*?)»/, "\e[01;38;05;51m\\1\e[#{clr}m")}\e[0m"
 end
-{% endhighlight %}
+```
 
 We will colorize different types of messages (red errors, blue infos, darkgrayed
 debugs, all that stuff.) Whether the message contains text in guillemets, it
@@ -74,12 +74,12 @@ will be automatically highlighted.
 
 Fine. Now let’s introduce the stopwords.
 
-{% highlight ruby %}
+```ruby
 @stopwords = []
 def logger_stopwords file
   @stopwords += File.read(file).split($/).map { |l| Regexp.new l } rescue nil
 end
-{% endhighlight %}
+```
 
 Once the text file, having list of regexps one by line, is loaded with
 aforementioned `logger_stopwords` function, matching messages would be removed
@@ -89,7 +89,7 @@ with infinite SQL statements.
 It sounds like everything is ready. Let’s implement our own
 [formatter](http://ruby-doc.org/stdlib-2.1.5/libdoc/logger/rdoc/Logger/Formatter.html).
 
-{% highlight ruby %}
+```ruby
 SEV_SYMBOLS = {
   'INFO'    => '✔',
   'WARN'    => '✗',
@@ -114,7 +114,7 @@ unless @keep_out
     end
   }
 end
-{% endhighlight %}
+```
 
 The above will filter everything matching stopwords, format multiline strings
 in more human-readable manner and colorize output when printing on console.
@@ -127,7 +127,7 @@ temporarily, not switching the context.
 
 Well, we are to define wrappers:
 
-{% highlight ruby %}
+```ruby
 %i(warn info error debug).each do |m|
   class_eval "
     def #{m} message
@@ -136,7 +136,7 @@ Well, we are to define wrappers:
     module_function :#{m}
   "
 end
-{% endhighlight %}
+```
 
 Let’s run it and go take another ristretto.
 

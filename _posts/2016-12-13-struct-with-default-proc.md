@@ -19,19 +19,19 @@ Everybody programming ruby at least three months should have met the
 behaviour. This `default_proc` might be also passed directly to the constructor
 of the hash:
 
-{% highlight ruby %}
+```ruby
 ▶ hash = Hash.new { |h, k| h[k] = 42 }
 #⇒ {}
 ▶ hash[:answer]
 #⇒ 42
-{% endhighlight %}
+```
 
 One might require the sane functionality from structs (why not, after all?)
 Indeed, this is easy.
 
 Let’s start with the complete working example.
 
-{% highlight ruby %}
+```ruby
 module StructVivificator
   def self.prepended(base)
     raise 'Sorry, structs only!' unless base < Struct
@@ -62,7 +62,7 @@ end
 Foo = Struct.new(:bar, :baz) do
   prepend StructVivificator
 end
-{% endhighlight %}
+```
 
 Here we declared the module to `prepend`. Once prepended, it checks
 whether it was prepended to `Struct`, and declares two methods
@@ -76,11 +76,11 @@ through `method_missing` magic, the only thing to overwrite is a `Struct#[]` met
 
 So far so good. Let’s test it.
 
-{% highlight ruby %}
+```ruby
 foo = Foo.new
 foo.default_proc = ->(name) { name == :bar ? 42 : 0 }
 puts foo.bar          # => 42
 puts foo[:bar] += 1   # => 43
 puts foo.bar += 1     # => 44
 puts foo[:baz] += 1   # => 1
-{% endhighlight %}
+```

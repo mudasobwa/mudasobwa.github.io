@@ -17,7 +17,7 @@ The code below has been tested on Ubuntu, though it should work fine on any linu
 
 Right prompt in zsh is being set with an environment variable `RPROMPT`. Here is a piece of code that is to be put in the end of `~ /.zshrc` file (or `~/.oh-my-zsh/themes/THEME_OF_CHOICE` if you are already addicted to [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) ):
 
-{% highlight bash %}
+```bash
 function battery_charge {
   # Battery 0: Discharging, 94%, 03:46:34 remaining
   bat_percent=`acpi | awk -F ':' {'print $2;'} | awk -F ',' {'print $2;'} | sed -e "s/\s//" -e "s/%.*//"`
@@ -32,7 +32,7 @@ function battery_charge {
   echo $cl$filled$empty'%F{default}'
 }
 RPROMPT='[%*] $(battery_charge)'
-{% endhighlight %}
+```
 
 The algorithm is simplier than an amoeba in it’s extramarital period:
 - Receive and parse the battery from `acpi` (you may need to install it with `sudo apt-get install acpi`);
@@ -44,6 +44,6 @@ This post is just an illustration of the principle “Spend three minutes and ma
 
 Just in case I have one more trick *als Nachspeise*. The following snippet prints a return code of a previosly executed command:
 
-{% highlight bash %}
+```bash
 RPROMPT='%{$fg[red]%} ⏎ $? %{$reset_color%} '$RPROMPT
-{% endhighlight %}
+```

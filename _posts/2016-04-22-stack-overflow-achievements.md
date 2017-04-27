@@ -18,7 +18,7 @@ For those, who does not like surfing, here goes the **tl;dr**:
 
 > **A.** One might use the [`Hash#default_proc`](http://ruby-doc.org/core-2.3.0/Hash.html#method-i-default_proc)
 in the following manner:
-{% highlight ruby %}
+```ruby
 result = Hash.new { |h1, k1|
   (0...col1.size) === k1 ? h1[k1] = Hash.new { |h2, k2|
     (0...col2.size) === k2 ? h2[k2] = Hash.new { |h3, k3| do
@@ -27,7 +27,7 @@ result = Hash.new { |h1, k1|
     } : nil
   } : nil
 }
-{% endhighlight %}
+```
 > **C.** This is one crazy intense nugget of code.
 
 The comment above was given by the person, I know as being experienced,

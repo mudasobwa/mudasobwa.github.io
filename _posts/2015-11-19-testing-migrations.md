@@ -28,7 +28,7 @@ There is quick and dirty approach. If one knows “potentially problematic” ad
 she might **create a simple fixture with that data and run the migration `down` and
 then back `up`**. That simple.
 
-{% highlight ruby %}
+```ruby
 require_relative File.join Rails.root,
                            'db',
                            'migrate',
@@ -49,6 +49,6 @@ context '#up' do
     end
   end
 end
-{% endhighlight %}
+```
 
 The same might be easily done to test `#down` migration.

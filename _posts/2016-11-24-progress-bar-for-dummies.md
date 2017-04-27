@@ -32,7 +32,7 @@ everything I need from a progress bar is to draw—well—progress bar.
 Below is the source code of it. I put this file into my `lib/tasks` directory
 and I `require_relative` it from tasks where I need to draw a meter. That simple.
 
-{% highlight ruby %}
+```ruby
 class ProgressBar
   RUNNING = %W{👆 👇 👈 👉 👊}.freeze
 
@@ -91,7 +91,7 @@ class ProgressBar
     end
   end
 end
-{% endhighlight %}
+```
 
 This code is provided as is, take it, play with it, but don’t write me back
 saying it could’ve been done better. It could have. But I needed to have it up

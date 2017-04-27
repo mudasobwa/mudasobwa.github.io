@@ -18,7 +18,7 @@ While in ruby we tend to declare methods on objects, that simply mutate the
 objects, in Elixir it is impossible. Everybody had seen the `Animal` example
 explaining the polymorphism in a nutshell for any of so-called OO languages:
 
-{% highlight ruby %}
+```ruby
 class Animal
   def sound
     raise "I am an abstract animal, I keep silence (and mystery.)"
@@ -38,7 +38,7 @@ class Cat < Animal
     "meow"
   end
 end
-{% endhighlight %}
+```
 
 Now we are safe to call `sound` method on any animal, without bothering
 to determine what exact type of animal we are facing. In Elixir, on the other
@@ -53,16 +53,16 @@ but for the sake of our task we would stick to protocols in this post.
 The protocol is a pure interface, declared with `defprotocol` keyword.
 For the animalistic example above it would be:
 
-{% highlight elixir %}
+```elixir
 defprotocol Noisy do
   @doc "Produces a sound for the animal given"
   def sound(animal)
 end
-{% endhighlight %}
+```
 
 The implementation goes into `defimpl` clause:
 
-{% highlight elixir %}
+```elixir
 defimpl Noisy, for: Dog do
   def sound(animal), do: "woof"
 end
@@ -70,14 +70,14 @@ end
 defimpl Noisy, for: Cat do
   def sound(animal), do: "meow"
 end
-{% endhighlight %}
+```
 
 Now we can use the protocol, without actual care who the animal we have:
 
-{% highlight elixir %}
+```elixir
 ExtrernalSource.animal
 |> Noisy.sound
-{% endhighlight %}
+```
 
 ---
 
@@ -100,7 +100,7 @@ I am not advocating this approach is better; it is just different.
 To try it, we would need to provide some DSL to make it easy to declare
 protocols in pure ruby. Let’s do it. We are to start with tests.
 
-{% highlight ruby %}
+```ruby
 module Protocols::Arithmetics
   include Dry::Protocol
 
@@ -131,7 +131,7 @@ module Protocols::Arithmetics
 
   defimpl target: [Integer, Float], delegate: :to_s, map: { add: :+, subtract: :- }
 end
-{% endhighlight %}
+```
 
 Let’s dig a bit into the code above. We have declared the protocol `Arithmetics`,
 responsible for adding and subtracting values. Once two operations above
@@ -142,7 +142,7 @@ Our DSL support _method delegation_, _mapping_ and explicit declaration.
 This contrived example does not make much sense as is, but it provides a good
 test case for our DSL. Let’s write tests.
 
-{% highlight ruby %}
+```ruby
 expect(Protocols::Adder.add(5, 3)).to eq(8)
 expect(Protocols::Adder.add(5.5, 3)).to eq(8.5)
 expect(Protocols::Adder.subtract(5, 10)).to eq(-5)
@@ -150,7 +150,7 @@ expect(Protocols::Adder.multiply(5, 3)).to eq(15)
 expect do
   Protocols::Adder.multiply(5, 3.5)
 end.to raise_error(RuntimeException, "We can multiply by integers only")
-{% endhighlight %}
+```
 
 Yay, it’s time to finally implement this DSL. This is easy.
 
@@ -160,7 +160,7 @@ The whole implementation fits one single module. We would call it `BlackTie`,
 since it’s all about protocols. In the first place tt will hold the maps of
 declared protocols to their implementations.
 
-{% highlight ruby %}
+```ruby
 module BlackTie
   class << self
     def protocols
@@ -171,7 +171,7 @@ module BlackTie
       @implementations ||= Hash.new { |h, k| h[k] = h.dup.clear }
     end
   end
-{% endhighlight %}
+```
 
 _Sidenote:_ the trick with `default_proc` in hash declarations
 (`Hash.new { |h, k| h[k] = h.dup.clear }`) produces the hash that has
@@ -180,17 +180,17 @@ a deep `default_proc`, returning an empty hash.
 `defmethod` is the most trivial method here, it simply stores the
 declaration under respective name in the global `@protocols` hash:
 
-{% highlight ruby %}
+```ruby
 def defmethod(name, *params)
   BlackTie.protocols[self][name] = params
 end
-{% endhighlight %}
+```
 
 Declaration of the `protocol` is a bit more cumbersome (some details are
 omitted here for the sake of clarity, see
 [the full code here](https://github.com/am-kantox/dry-behaviour/blob/master/lib/dry/behaviour/black_tie.rb#L19).)
 
-{% highlight ruby %}
+```ruby
 def defprotocol
   raise if BlackTie.protocols.key?(self) || !block_given?
 
@@ -213,7 +213,7 @@ def defprotocol
     end
   end
 end
-{% endhighlight %}
+```
 
 Basically, the code above has four block. First of all, we check the conditions
 the protocol must meet. Then we execute a block given, recording what methods
@@ -227,7 +227,7 @@ receiver.
 OK, the only thing left is to declare `defimpl` DSL. The code below is a bit
 simplified.
 
-{% highlight ruby %}
+```ruby
 def defimpl(protocol = nil, target: nil, delegate: [], map: {})
   raise if target.nil? || !block_given? && delegate.empty? && map.empty?
 
@@ -252,7 +252,7 @@ def defimpl(protocol = nil, target: nil, delegate: [], map: {})
   end
 end
 module_function :defimpl
-{% endhighlight %}
+```
 
 Despite the amount of LOCs, the code above is fairly simple: we create an
 anonymous module, declare methods on it and supply it as the target of

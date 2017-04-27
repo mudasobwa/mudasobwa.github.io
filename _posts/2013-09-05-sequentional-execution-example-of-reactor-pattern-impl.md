@@ -22,7 +22,7 @@ We decide to have two independent threads, which are to be synchronized in the f
 after the `prior` function is executed, the `posterior` function wakes up, does something and falls sleep
 back until the next call to `prior`. Here we go:
 
-{% highlight ruby %}
+```ruby
 module SeqExec
   class Seqs
     attr_reader :init
@@ -68,14 +68,14 @@ module SeqExec
     end
   end
 end
-{% endhighlight %}
+```
 
 Here we produce two threads, waiting one for another until the `yield` clause
 (which may be blocking, if necessary) occurs to initiate the _ping-pong_ mechanism.
 
 Let’s now add some syntactic sugar:
 
-{% highlight ruby %}
+```ruby
 module SeqExec
   Thread.abort_on_exception = true
   def pre &cb
@@ -92,11 +92,11 @@ module SeqExec
     Seqs.new.synch @prior, @posterior
   end
 end
-{% endhighlight %}
+```
 
 Now it’s time to play with:
 
-{% highlight ruby %}
+```ruby
 include SeqExec
 @i=0
 @stack = []
@@ -106,12 +106,12 @@ run
 
 10.times { print "#"; sleep 0.1 }
 sleep 3
-{% endhighlight %}
+```
 
 The `prior` function pushes the incremented integer to the stack, the `posterior` reacts
 by printing it to the terminal:
 
-{% highlight ruby %}
+```ruby
 # ⇒ ####-1-|1|###-2-|2|###-3-|3|-4-|4|-5-|5|-6-|6|-7-|7|-8-|8|-9-|9|-10-|10|-11-|11|-12-|12|-13-|13|
-{% endhighlight %}
+```
 

@@ -34,7 +34,7 @@ have little force. I’m going to bring everything out clearly.
 
 ### Mode I. Bond. James Bond.
 
-{% highlight ruby %}
+```ruby
 SPECIAL_CASING_FIELDS.each { |method|
   define_method("filter_#{method}") { |cp, filters = []|
       hash[ncp = __to_code_point(cp)].nil? ? \
@@ -46,7 +46,7 @@ SPECIAL_CASING_FIELDS.each { |method|
               [*hash[ncp]].select { |h| h[method.to_sym].vacant? }
   }
 }
-{% endhighlight %}
+```
 
 This is a piece from my [Unicode lightweight library](https://github.com/mudasobwa/forkforge).
 It produces six helper methods for filtering and selecting different unicode
@@ -57,14 +57,14 @@ who will be obliged to read this code, though.
 
 ### Mode II. Mary Poppins.
 
-{% highlight ruby %}
+```ruby
 def check_validity_for_supplier supplier, additional: false
   if !supplier return false
   if !supplier.valid? return false
   if additional && !supplier.additional return false
   true
 end
-{% endhighlight %}
+```
 
 Everything here is clear. But in terms of the whole picture this method is
 a fiction. Even being declared as `private`, it populates the screen area,

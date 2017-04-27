@@ -15,14 +15,14 @@ a flexible **plugin architecture**, **runtime invocation** and **source and docu
 Though `pry` is better than the standard IRB console in all the aspects around, I personally am totally amused with
 it’s “runtime invocation” feature. It works in the following way: anywhere within your code scope you simply drop the line
 
-{% highlight ruby %}
+```ruby
 binding.pry
-{% endhighlight %}
+```
 
 and—voilá—the execution flow is stopped here, putting you in `pry` session with the context specified. Let’s say we have
 the code:
 
-{% highlight ruby %}
+```ruby
 #!/usr/bin/env ruby
 
 require 'pry'
@@ -37,12 +37,12 @@ def iterate
 end
 
 iterate
-{% endhighlight %}
+```
 
 We’ll yield an amount of equal signs in the output, following by accidental zero in `rand` call, leading us
 to the `pry` instance within current context:
 
-{% highlight ruby %}
+```ruby
 〉ruby pry.rb
 ===============
 From: /tmp/pry.rb @ line 7 Object#iterate:
@@ -56,7 +56,7 @@ From: /tmp/pry.rb @ line 7 Object#iterate:
     11: end
 
 2.1.0 (main):0 >
-{% endhighlight %}
+```
 
 Here goes the whole stuff in action (thanks to brilliant [showterm.io](http://showterm.io) service):
 

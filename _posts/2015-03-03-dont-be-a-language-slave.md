@@ -13,7 +13,7 @@ Well, I did.
 
 The result is embarassing. I can’t even surmise how much scorn is to be felt to produce the interpreter that acts in the following way. Let’s take a look at the benchmarks. NB I wrote [the tiny wrapper](https://github.com/mudasobwa/screwdrivers/blob/master/src/Mudasobwa/Screwdrivers/YardStick.php) for calls to `microtime`. It does nothing but calculates times and memory usage between subsequent calls. Consider it a handy transparent utility.
 
-{% highlight php %}
+```php
 $count = 1000000; // an amount of iterations
 
 // test input, it will be mapped and reduced
@@ -24,9 +24,9 @@ for ($i = 0; $i < $count; $i++) {
 
 // the wrapper to benchmark easily
 $ys = new \Mudasobwa\Screwdrivers\YardStick(true);
-{% endhighlight %}
+```
 
-{% highlight php %}
+```php
 // Mapping
 $ys->milestone('MAP#Start');
 $countew_array1 = array();
@@ -38,9 +38,9 @@ $ys->milestone('MAP#FOR');
 $countew_array3 = array_map(function($a) { return $a / 2; }, $array);
 $ys->milestone('MAP#ARRAY_MAP');
 $ys->report('MAP.+'); // report measures for milestones `MAP*`
-{% endhighlight %}
+```
 
-{% highlight php %}
+```php
 // Reducing
 $ys->milestone('REDUCE#Start');
 $average1 = 0;
@@ -54,11 +54,11 @@ $average3 = array_reduce($array, function($memo, $a) use($count) {
 }, 0);
 $ys->milestone('REDUCE#ARRAY_REDUCE');
 $ys->report('REDUCE.+'); // report measures for milestones `REDUCE*`
-{% endhighlight %}
+```
 
 The results are shown below:
 
-{% highlight bash %}
+```bash
 ==== Diff for tags: [MAP#Start :: MAP#FOREACH]
 --   ⌚ Time:    ⇒ 0.223850 sec
 --   ⌛ Memory:  ⇒ 141,009.3 KB
@@ -78,11 +78,11 @@ The results are shown below:
 ==== Diff for tags: [REDUCE#FOR :: REDUCE#ARRAY_REDUCE]
 --   ⌚ Time:    ⇒ 0.276434 sec
 --   ⌛ Memory:  ⇒ 4.6 KB
-{% endhighlight %}
+```
 
 Memory consumption is the same, but `array_map` execution time is almost twice as much as `foreach`, and `array_reduce` is almost four times slower! WUT? Let’s turn back to ruby (I’m not as reptile as my friend, I like jewels more than snakes.)
 
-{% highlight ruby %}
+```ruby
 require 'benchmark'
 
 n = 1_000_000
@@ -104,9 +104,9 @@ Benchmark.bm do |x|
   x.report { array.each { |a| reduce2 += a / n } }
   x.report { reduce3 = array.reduce(&:+) / n }
 end
-{% endhighlight %}
+```
 
-{% highlight bash %}
+```bash
        user     system      total        real
    0.130000   0.000000   0.130000 (  0.130952)
    0.110000   0.000000   0.110000 (  0.104156)
@@ -115,7 +115,7 @@ end
    0.120000   0.000000   0.120000 (  0.115846)
    0.150000   0.000000   0.150000 (  0.155771)
    0.090000   0.000000   0.090000 (  0.090643)
-{% endhighlight %}
+```
 
 Ooh! Here we got what we expected from the modern language: mapping and reducing might be optimized comparing to dumb iteration and they occasionally were optimized. Both `map` and `reduce` are predictably _faster_ than iterations. QED.
 

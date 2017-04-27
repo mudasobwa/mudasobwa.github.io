@@ -14,12 +14,12 @@ After all yielding is much more of human nature than jumping.
 However there are two cases when `yield` seems to be hardly used. First is the `&`-shorthand to method
 within another codeblock:
 
-{% highlight ruby %}
+```ruby
 def uglify items
   raise ArgumentException.new unless items.respond_to? :each
   items.each { |e| yield e }
 end
-{% endhighlight %}
+```
 
 If we try to shorten the `|e| yield e` clause with `&`-notation we’ll gain no success, since `yield` is
 a keyword rather than method of a very superclass (like `Object` or `Kernel`.) But who cares?
@@ -27,7 +27,7 @@ a keyword rather than method of a very superclass (like `Object` or `Kernel`.) B
 Well, I do. Because there is a second, much more vital situation when `yield` sucks. It is re-passing a
 codeblock to a subsequent method:
 
-{% highlight ruby %}
+```ruby
 def cleanup
   # do some cleanup if block_given?
 end
@@ -36,7 +36,7 @@ def evaluate_lua
   cleanup yield if block_given?
   # do actual evaluate
 end
-{% endhighlight %}
+```
 
 The latter will throw an odd error `ArgumentError: wrong number of arguments (1 for 0)`.
 The `cleanup &yield` neither works, if one were curious.
@@ -48,16 +48,16 @@ Happily, there is a not wide-known [feature](http://www.ruby-doc.org/core-2.0/Pr
 of `Proc.new` constructor. Being called _without a block within a method with an attached block_, it
 _converts_ that block to the `Proc` object. It means that both
 
-{% highlight ruby %}
+```ruby
 def uglify items
   raise ArgumentException.new unless items.respond_to? :each
   items.each(&Proc.new)
 end
-{% endhighlight %}
+```
 
 and
 
-{% highlight ruby %}
+```ruby
 def cleanup
   if block_given?
     # do some cleanup if block_given?
@@ -68,6 +68,6 @@ def evaluate_lua
   cleanup &Proc.new
   # do actual evaluate
 end
-{% endhighlight %}
+```
 
 will work as expected without extra performance penalty.

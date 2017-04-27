@@ -12,13 +12,13 @@ bar none use simple `Popen3::popen3` calls and then parse the output selfless. F
 instance whether we are to count the total number of file system blocks, including indirect
 blocks, used by the files in directory, we would write the following wrapper:
 
-{% highlight ruby %}
+```ruby
   def get_dir_total dir
     stdin, stdout, stderr = Open3.popen3 "ls -la #{dir}"
     # log the errors or whatever
     stdout.read.split("\n").select { |line| line['total'] }.gsub(/\D/, '')
   end
-{% endhighlight %}
+```
 
 And this code will pass all the tests. And we’ll put it in production, and for all
 the colleagues it will work like a charm. Until some trainee from the adjacent
@@ -30,12 +30,12 @@ one. Which forces `ls` to print `итого` instead of `total`, breaking so cut
 
 So, I have monkeypatched my `Popen3` with
 
-{% highlight ruby %}
+```ruby
   …
   cmd.prepend "LC_ALL=C "
   original.popen3 cmd
   …
-{% endhighlight %}
+```
 
 And I would like to ask wrapper-writers “Please, don’t rely on standard locale on target computers.”
 

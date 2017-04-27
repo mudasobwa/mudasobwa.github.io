@@ -14,28 +14,28 @@ Besides all it’s buns and cookies, pry provides an ability to debug your ruby 
 Just put `binding.pry` whereever in your code and voilà, you are done. Run it and
 see an execution stopped on this line of code:
 
-{% highlight ruby %}
+```ruby
      5: (1..42).each do |i|
      6:   puts "Iteration ##{i}."
      7:   puts "This code does nothing useful."
   => 8:   binding.pry
      9: end
-{% endhighlight %}
+```
 
 Everything works like a charm until one tries to make a script accepting
 standard input. Unix way, you know.
 
-{% highlight ruby %}
+```ruby
   ps -Ao pid,command | grep proc_of_interest | awk '{ print $1 }' | my_script
-{% endhighlight %}
+```
 
 In `my_script` one would utilize `ARGF` power:
 
-{% highlight ruby %}
+```ruby
 input = ARGF.read
 # binding.pry
 do_stuff input
-{% endhighlight %}
+```
 
 Have you noticed `binding.pry`? Well, it was not commented out, since I met
 a problem with my data and wanted to examine them in debugger session.
@@ -52,7 +52,7 @@ user input when there is neither user no input available, right? So pry does.
 
 How could one overcome this? Pretty easy. Let’s cheat `pry`:
 
-{% highlight ruby %}
+```ruby
 pry_stdin = IO.new(IO.sysopen('/dev/tty'), 'r')
 # load pry and cheat it with our stdio
 require 'pry'
@@ -60,7 +60,7 @@ Pry.config.input = pry_stdin
 
 # ...
 binding.pry
-{% endhighlight %}
+```
 
 We just opened a `tty` device for reading from and passed it as input stream to
 `pry`. All internal `pry` checks are now happy and we yield good old breakpoint.

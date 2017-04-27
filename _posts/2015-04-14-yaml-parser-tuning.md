@@ -17,9 +17,9 @@ Yesterday I was participating in answering a
 The YAML file was to be parsed as usual, but with a tiny improvement: instead
 of leaves values there should be placed hashes like:
 
-{% highlight ruby %}
+```ruby
 { value: value, line: line }
-{% endhighlight %}
+```
 
 where line is a line in original YAML file this leaf was met. The technique
 below actually is not stuck with this particular case; it demonstrates the
@@ -32,11 +32,11 @@ The default parser in Ruby is `Psych`. It is a good old AST builder. To improve
 
 Patching the node is pretty straightforward. We would store a line, so here we go:
 
-{% highlight ruby %}
+```ruby
 class Psych::Nodes::Node
   attr_accessor :line
 end
-{% endhighlight %}
+```
 
 #### TreeBuilder
 
@@ -44,7 +44,7 @@ end
 the only method of interest, `TreeBuilder#scalar`, which is invoked on every
 node. Lets’s deal with it a bit.
 
-{% highlight ruby %}
+```ruby
 class EnchancedBuilder < Psych::TreeBuilder
   # Line numbers are available to parser, not to builder; we need a backreference
   attr_accessor :parser
@@ -60,7 +60,7 @@ class EnchancedBuilder < Psych::TreeBuilder
     s
   end
 end
-{% endhighlight %}
+```
 
 Here we set the prepared `Node.line` attribute and store the current value
 of line of current entity.
@@ -70,7 +70,7 @@ of line of current entity.
 The only thing left is to spit the newly introduced `line` attribute to
 generated ruby properly.
 
-{% highlight ruby %}
+```ruby
 class Psych::Visitors::ToRuby
   # There may be problems with Yaml mappings that have tags.
   # @author @matt
@@ -95,20 +95,20 @@ class Psych::Visitors::ToRuby
     hash
   end
 end
-{% endhighlight %}
+```
 
 That’s it. Now we are able to produce hashes as shown below from YAML.
 
-{% highlight yaml %}
+```yaml
 key1: value1
 key2:
   - value21
   - value22
-{% endhighlight %}
+```
 
 would become
 
-{% highlight yaml %}
+```yaml
 hash = {
   'key1' => { 'value' => 'value1', 'line' => 1 },
   'key2' => [
@@ -116,4 +116,4 @@ hash = {
     'value' => 'value22', 'line' => 4
   ]
 }
-{% endhighlight %}
+```

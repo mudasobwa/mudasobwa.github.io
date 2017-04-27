@@ -15,13 +15,13 @@ To make a life easier for the programmer, man can use the [Reactor](http://en.wi
 
 ###EventMachine
 
-{% highlight bash %}
+```bash
 gem install eventmachine
-{% endhighlight %}
+```
 
 An `EventMachine` class is more or less documented. Dealing with simple queries is straightforward. Usually the stuff looks somehow like below (here and after `EM` is an alias for `EventMachine`):
 
-{% highlight ruby %}
+```ruby
 begin
   EM.run do
   … # all the meaningful code, e. g. EM.connect (…)
@@ -31,7 +31,7 @@ begin
 ensure
   EM.stop # this could be omitted since the destructor nevertheless calls it
 end
-{% endhighlight %}
+```
 
 Reactor is well-hooked (e. g. `EventMachine.add_shutdown_hook { puts «Exiting…» }`.) Asynchronous connection surely may be served on the fly. A documentation is, again, presented. Sometimes it is even clearly.
 
@@ -47,7 +47,7 @@ We are to send a request to Discovery, to get a list of components, to ask each 
 
 Here’s how it looks like with `EventMachine` (I removed everything that has nothing to do with `EM` directly):
 
-{% highlight ruby %}
+```ruby
 @stream.write_with_handler(disco) do |result|
 …
   # iterate thru disco results and wait until all collected
@@ -72,7 +72,7 @@ Here’s how it looks like with `EventMachine` (I removed everything that has no
 …
   }
 end
-{% endhighlight %}
+```
 
 Everything is done for us by iterators and their magic function [`map`](http://eventmachine.rubyforge.org/EventMachine/Iterator.html#map-instance_method). Lambda code under the last bracket (near the comment "yielding") will be executed if and only we have collected all the discoinfos for all components.
 

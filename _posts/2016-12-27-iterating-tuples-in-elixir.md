@@ -25,7 +25,7 @@ That said, `Tuple`s do not implement `Enumerable` protocol. The goal of this
 small post is to show how this protocol might be implemented for tuples
 in non-naïve way (the naïve way would be to just convert tuples to lists.)
 
-{% highlight elixir %}
+```elixir
 defmodule Tuple.Enumerable do
   defimpl Enumerable, for: Tuple do
     @max_items 42
@@ -76,7 +76,7 @@ defmodule Tuple.Enumerable do
     end
   end
 end
-{% endhighlight %}
+```
 
 The code above builds `@max_items` function match clauses for `Tuple`s
 having not more than `42` members. That guarantees no conversion to `list`

@@ -19,10 +19,10 @@ Try it youself and I swear you never decide to turn back to your crude homebred 
 
 An installation is as easy (you already have ruby installed, haven’t you?) as:
 
-{% highlight bash %}
+```bash
 git clone https://github.com/skwp/dotfiles ~/.yadr
 cd ~/.yadr && rake install
-{% endhighlight %}
+```
 
 The only polish required (in my opinion) is the proper theme. So, here we go. I teached the pretty
 [Agnoster](https://gist.github.com/agnoster/3712874) theme to show proper right prompt with current gemset,
@@ -35,11 +35,11 @@ to render correctly
 * grab the [theme file](https://gist.github.com/mudasobwa/5308070) and put in into `~/.zsh.prompts/prompt_mudasobwa_setup`
 * put the following three lines in the end of your `~/.zshrc` file:
 
-{% highlight bash %}
+```bash
   $ autoload -Uz promptinit
   $ promptinit
   $ prompt mudasobwa
-{% endhighlight %}
+```
 
 * restart `zsh`
 
