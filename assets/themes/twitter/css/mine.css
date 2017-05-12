@@ -6,7 +6,9 @@
 
 .smallcaps { font-variant: small-caps; }
 
-blockquote { border-left: 5px solid #009688; }
+p { font-size: 1.2em; }
+
+blockquote { border-left: 5px solid #009688; font-size: 0.9rem; }
 blockquote p { color: #999; line-height: 1.6em; padding-right: 10em; }
 blockquote small:before { content:'—  '; }
 
@@ -25,8 +27,6 @@ h1 small {
   left: -10px;
   position: relative;
 }
-
-p { font-size: 20px; }
 
 td { padding: 5px 10px; }
 
