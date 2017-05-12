@@ -26,6 +26,8 @@ h1 small {
   position: relative;
 }
 
+p { font-size: 20px; }
+
 td { padding: 5px 10px; }
 
 ul.disc li { list-style-type: disc; }
