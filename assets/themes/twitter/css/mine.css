@@ -30,6 +30,12 @@ td { padding: 5px 10px; }
 
 ul.disc li { list-style-type: disc; }
 
+code.highlighter-rouge {
+  background-color: #eee;
+  padding: 0em 0.3em;
+  border: 1px solid #ccc;
+}
+
 a { color: #009688; }
 a:visited { color: #004d40; }
 a:active, a:hover { color: #80cbc4; }
