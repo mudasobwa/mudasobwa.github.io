@@ -87,9 +87,9 @@ WithBinding.DynamicModule.response()
 As one might see, both `status` and `message` variables were bound to
 newly created module in three different ways:
 
-- as local functions;
-- as module variables;
-- as smart sigil.
+- — as local functions;
+- — as module variables;
+- — as smart sigil.
 
 Also the module was granted with `bindings/0` function, returning the bindings
 keyword list as is.
