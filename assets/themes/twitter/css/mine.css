@@ -31,7 +31,10 @@ h1 small {
 
 td { padding: 5px 10px; }
 
-ul.disc li { list-style-type: disc; }
+ul.disc li {
+  list-style-type: disc;
+  /* font-size: 110%; margin-left: 2em; */
+}
 
 code.highlighter-rouge {
   background-color: #eee;

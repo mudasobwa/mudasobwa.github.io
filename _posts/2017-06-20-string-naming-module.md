@@ -41,9 +41,9 @@ iex|1 ▶ String.Naming.AnimalSymbols.monkey
 
 The gracefully stolen from native Elixir [`unicode/properties.ex`](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/unicode/properties.ex) approach would be to:
 
-- parse text file provided by Consortium;
-- prepare the data structure to walk through;
-- build the functions in compile time using meta programming features.
+— parse text file provided by Consortium;  
+— prepare the data structure to walk through;  
+— build the functions in compile time using meta programming features.
 
 This is all mighty and will prevail, except it ain’t so.
 
