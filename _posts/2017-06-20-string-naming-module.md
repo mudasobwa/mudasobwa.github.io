@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "String.Naming to ease an access to UTF8 symbols by name"
+title: "String.Naming to call UTF8 by name"
 description: "compile-time generated set of modules to ease an access to a predefined subset of UTF8 symbols"
 category: hacking
 tags:
