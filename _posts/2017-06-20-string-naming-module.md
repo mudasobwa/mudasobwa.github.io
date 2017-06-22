@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "String.Naming to call UTF8 by name"
+title: "StringNaming to call UTF8 by name"
 description: "compile-time generated set of modules to ease an access to a predefined subset of UTF8 symbols"
 category: hacking
 tags:
@@ -35,7 +35,7 @@ post, but I am positive there could be many.
 So far, so good. Our goal is to end up with something like:
 
 ```elixir
-iex|1 ▶ String.Naming.AnimalSymbols.monkey
+iex|1 ▶ StringNaming.AnimalSymbols.monkey
 "🐒"
 ```
 
@@ -52,7 +52,7 @@ is to be built without a glitch. The problem is that we need nested modules
 to be produced on the fly. Look:
 
 ```elixir
-iex|2 ▶ String.Naming.AnimalSymbols.<TAB>
+iex|2 ▶ StringNaming.AnimalSymbols.<TAB>
 Baby            Bactrian        Dromedary       Fox
 Front           Hatching        Lady            Lion
 Paw             Spiral          Tropical        Unicorn
@@ -70,7 +70,7 @@ rhinoceros/0    rooster/0       scorpion/0      shark/0
 sheep/0         shrimp/0        snail/0         snake/0
 spider/0        squid/0         tiger/0         turkey/0
 turtle/0        whale/0
-iex|2 ▶ String.Naming.AnimalSymbols.Baby.chick
+iex|2 ▶ StringNaming.AnimalSymbols.Baby.chick
 "🐤"
 ```
 
@@ -119,13 +119,13 @@ def nesteds(nested, %{} = map) do
     {_key, code} when is_binary(code) -> :ok # leaf, skip it
     {k, v} ->
       mod = :lists.reverse([k | :lists.reverse(nested)])
-      String.Naming.H.nested_module(mod, v)
+      StringNaming.H.nested_module(mod, v)
   end)
 end
 ```
 
 The above just iterates the map and calls a producer for all the nested
-modules. That simple. `String.Naming.H.nested_module/2` is where the deal
+modules. That simple. `StringNaming.H.nested_module/2` is where the deal
 happens. First of all, we are to split functions (leaves) and modules (branches).
 We could not prepare this in advance, since we had no clue at parsing stage
 whether this would be a leaf or not.
@@ -163,7 +163,7 @@ defmodule Module.concat(mod) do
     Code.eval_quoted(ast, [name: name, value: value], __ENV__)
   end)
   # TODO: def __all__
-  String.Naming.H.nesteds(mod, mods) # call back for the nesteds
+  StringNaming.H.nesteds(mod, mods) # call back for the nesteds
 end
 ```
 
@@ -191,14 +191,14 @@ values:
 Now we just call
 
 ```elixir
-String.Naming.H.nesteds(["String", "Naming"], names_tree)
+StringNaming.H.nesteds(["String", "Naming"], names_tree)
 ```
 
-on the top level, and the tree of modules is built under `String.Naming`
+on the top level, and the tree of modules is built under `StringNaming`
 namespace. Enjoy:
 
 ```elixir
-String.Naming.ChessSymbols.Black.Chess.king
+StringNaming.ChessSymbols.Black.Chess.king
 "♚"
 ```
 
