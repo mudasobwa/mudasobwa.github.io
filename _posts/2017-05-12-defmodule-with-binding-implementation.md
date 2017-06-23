@@ -23,7 +23,6 @@ end
 
 # versus
 
-end
 defmodule A do
   defmodule B do
   end
