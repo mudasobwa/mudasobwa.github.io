@@ -144,7 +144,8 @@ of [`Enum.split_with/2`](https://hexdocs.pm/elixir/Enum.html#split_with/2), but
 here it’s simpler (and faster) to produce maps explicitly. Now we have two maps.
 It’s time to rock!
 
-The first [hacky and basically wrong] approach was to use [`Code.eval_quoted/3`],
+The first—hacky and basically wrong—approach was to use
+[`Code.eval_quoted/3`](https://hexdocs.pm/elixir/Code.html#eval_quoted/3),
 since I could not figure out how to dynamically create a module inside other module:
 
 ```elixir
@@ -171,7 +172,8 @@ end
 ```
 
 I have posted a question on SO and
-[Dogbert helped](https://stackoverflow.com/a/44852119/2035262) me to make the code clean:
+[Dogbert helped](https://stackoverflow.com/a/44852119/2035262) me to make
+the code clean with [`Module.create/3`](https://hexdocs.pm/elixir/Module.html#create/3):
 
 ```elixir
 ast = for {name, value} <- funs do
