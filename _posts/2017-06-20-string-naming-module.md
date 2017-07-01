@@ -187,13 +187,8 @@ StringNaming.H.nesteds(mod, mods)
 
 ---
 
-That is basically it. At this very moment Elixir does not allow to avoid
-`Code.eval_quoted/3`, since `unquote(ast)` (which I expected to work)
-produces a weird error message.
-
-The only thing left is to implement `__MODULE__.__all__/0` function
-to return a keyword list of all the functions available, with their
-values:
+That is basically it. The only thing left is to implement `__MODULE__.__all__/0` function
+to return a keyword list of all the functions available, with their values:
 
 ```elixir
   def __all__ do
