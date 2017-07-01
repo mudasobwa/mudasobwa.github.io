@@ -144,6 +144,9 @@ of [`Enum.split_with/2`](https://hexdocs.pm/elixir/Enum.html#split_with/2), but
 here it’s simpler (and faster) to produce maps explicitly. Now we have two maps.
 It’s time to rock!
 
+The first [hacky and basically wrong] approach was to use [`Code.eval_quoted/3`],
+since I could not figure out how to dynamically create a module inside other module:
+
 ```elixir
 defmodule Module.concat(mod) do
   Enum.each(funs, fn {name, value} ->
@@ -166,6 +169,21 @@ defmodule Module.concat(mod) do
   StringNaming.H.nesteds(mod, mods) # call back for the nesteds
 end
 ```
+
+I have posted a question on SO and
+[Dogbert helped](https://stackoverflow.com/a/44852119/2035262) me to make the code clean:
+
+```elixir
+ast = for {name, value} <- funs do
+  name = name |> String.replace(~r/\A(\d)/, "N_\\1") |> Macro.underscore |> String.to_atom
+  quote do: def unquote(name)(), do: <<String.to_integer(unquote(value), 16)::utf8>>
+end
+# TODO: def __all__
+Module.create(Module.concat(mod), ast, Macro.Env.location(__ENV__))
+StringNaming.H.nesteds(mod, mods)
+```
+
+---
 
 That is basically it. At this very moment Elixir does not allow to avoid
 `Code.eval_quoted/3`, since `unquote(ast)` (which I expected to work)
