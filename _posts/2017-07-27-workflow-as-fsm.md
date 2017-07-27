@@ -18,11 +18,11 @@ The FSM can change from one state to another in response to some external inputs
 the change from one state to another is called a transition.  
 An FSM is defined by a list of its states, its initial state,
 and the conditions for each transition.  
-<small>— [Wikipedia](https://en.wikipedia.org/wiki/Finite-state_machine)</small>
+<small>[Wikipedia](https://en.wikipedia.org/wiki/Finite-state_machine)</small>
 
 _Wikipedia_ provides a coin-operated turnstile as an example of state machine:
 
-![State diagram for a turnstile](https://commons.wikimedia.org/wiki/File:Turnstile_state_machine_colored.svg#/media/File:Turnstile_state_machine_colored.svg)
+![State diagram for a turnstile](https://upload.wikimedia.org/wikipedia/commons/9/9e/Turnstile_state_machine_colored.svg)
 
 Even from this example it’s clear that the definition above is not accurate.
 To be precise, the statement “the change from one state to another is called
