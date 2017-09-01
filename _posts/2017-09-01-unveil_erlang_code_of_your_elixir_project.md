@@ -11,7 +11,7 @@ tags:
 
 ## Elixir is Erlang in a nutshell
 
-> `Elixir` leverages the Erlang VM [...]
+> `Elixir` leverages the Erlang VM [...]  
 <small>[elixir-lang.org](https://elixir-lang.org/)</small>
 
 What does mean “leverages”? It means Elixir is compiled into BEAMs, and the latter are
