@@ -37,8 +37,8 @@ Code.compiler_options(debug_info: true)
 According to the [official documentation](https://hexdocs.pm/elixir/Code.html#compiler_options/1),
 
 > `:debug_true` option is set to `true` to retain debug information in the compiled
-module; this allows a developer to reconstruct the original source code, `false` by default.
-[...]
+module; this allows a developer to reconstruct the original source code, `false` by default.  
+[...]  
 These options are global since they are stored by Elixir’s Code Server.
 
 ## Prepare the Elixir BEAMs to be available
@@ -59,7 +59,7 @@ cd /usr/local/src && \
   make clean test
 ```
 
-If everything went good, config your `exenv` to use trunk version:
+If everything went good, teach your `exenv` to use trunk version:
 
 ```bash
 cd ~/.exenv/versions && \
@@ -72,7 +72,7 @@ Check we are all set:
 
 ```bash
 $ iex
-Erlang/OTP 20 [erts-9.0] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:10] [hipe] [kernel-poll:false]
+Erlang/OTP 20 [erts-9.0] [source] [64-bit] [...]
 
 Interactive Elixir (1.6.0-dev) - press Ctrl+C to exit (type h() ENTER for help)
 iex|1 ▶ 
@@ -97,7 +97,7 @@ Make the file executable with `chmod +x /usr/local/bin/delixir` and you are all 
 Let’s check how it works:
 
 ```bash
-delixir.erl _build/dev/lib/my_app/ebin/Elixir.MyApp.beam
+delixir _build/dev/lib/my_app/ebin/Elixir.MyApp.beam
 ```
 
 You should see something like:
