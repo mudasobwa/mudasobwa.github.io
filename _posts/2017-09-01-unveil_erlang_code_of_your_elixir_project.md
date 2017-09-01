@@ -102,7 +102,7 @@ delixir _build/dev/lib/my_app/ebin/Elixir.MyApp.beam
 
 You should see something like:
 
-```
+```erlang
 -file("/home/user/proj/my_app/lib/"
       "my_app.ex",
       1).
