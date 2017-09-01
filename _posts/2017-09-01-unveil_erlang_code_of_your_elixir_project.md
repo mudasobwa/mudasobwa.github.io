@@ -106,21 +106,15 @@ You should see something like:
 -file("/home/user/proj/my_app/lib/"
       "my_app.ex",
       1).
-
 -module('Elixir.MyApp').
-
 -compile(no_auto_import).
-
 -behaviour('Elixir.GenServer').
-
 -export(['__info__'/1, ...]).
-
 -spec '__info__'(attributes | compile | exports |
 		 functions | macros | md5 | module) -> atom() |
 						       [{atom(), any()} |
 							{atom(), byte(),
 							 integer()}].
-
 '__info__'(functions) ->
 ```
 
