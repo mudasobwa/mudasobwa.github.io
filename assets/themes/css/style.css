@@ -42,6 +42,10 @@ code.highlighter-rouge {
   border: 1px solid #ccc;
 }
 
+div.page-header {
+  margin-left: -.75rem;
+  margin-right: -.75rem;
+}
 
 /* tag_box ======================================================== */
 
