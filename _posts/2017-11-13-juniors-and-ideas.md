@@ -25,7 +25,7 @@ an issue. As soon as Junior raises ideas, _we are all set_.
 
 The real problem is: Juniors rare if never come up with ideas. In C/C++/Java world
 they tend to ask Seniors on every subject (which is good,) or grab-n-paste answers
-from SO, which is bad, because Seniors usually explain whys and SO only provides hows
+from SO, which is bad, because Seniors usually explain _whys_ and SO only provides _hows_
 (if we were lucky enough to find a correct answer.) In Rails world the situation
 is even worse, because Rails provides an ability to build some likely working stuff
 without even understanding how it all works under the hood. Juniors don’t need
@@ -43,7 +43,7 @@ And during this time there was no issue to ask anyone about anything and
 to come up with any weird proposal.
 
 Nowadays we have tons of information, we are literally sinking in.
-Besides tutorials, video lessons, crash courses of any flavor, we have all this
+Besides tutorials, video lessons, crash courses of any flavor, we have all these
 so called technical blogs, mostly written by not so experienced people.
 And the worst thing is: since they have no sufficient knowledge about the technology,
 they do write motivational posts. Like that one linked above.
