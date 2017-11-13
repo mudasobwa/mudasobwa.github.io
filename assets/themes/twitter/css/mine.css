@@ -50,6 +50,11 @@ a:active, a:hover { color: #80cbc4; }
 
 nav a, nav a:visited, nav a:active, nav a:hover { color: #80cbc4; }
 
+div.page-header {
+  margin-left: -.75rem;
+  margin-right: -.75rem;
+}
+
 div.pagination {
   font-size: 90%;
   font-family: 'Ubuntu', helvetica, arial, sans-serif;

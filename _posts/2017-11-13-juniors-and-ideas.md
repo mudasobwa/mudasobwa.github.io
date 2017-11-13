@@ -5,8 +5,6 @@ description: ""
 category: culture
 ---
 
-## Preface
-
 At work, we have a slack channel named “morethings” where all team members are
 to throw links to any resources found in the internet, that might be interesting
 for others. Yesterday one of my colleagues threw a link to the blogpost cited below:
