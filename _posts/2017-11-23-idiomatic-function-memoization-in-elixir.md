@@ -7,20 +7,19 @@ category: elixir
 
 Today there was a [question raised on SO](https://stackoverflow.com/questions/47452163/writing-the-function-once-in-elixir).
 
-“it's possible to write a higher order function ‘once’ which returns a function
-that will invoke the passed in function only once, and returns the previous
-result on subsequent calls?”
+> “it's possible to write a higher order function ‘once’ which returns a function
+> that will invoke the passed in function only once, and returns the previous
+> result on subsequent calls?”
 
-```javascript
-var once = (func) => {
-  var wasCalled = false, prevResult;
-  return (...args) => {
-    if (wasCalled) return prevResult;
-    wasCalled = true;
-    return prevResult = func(...args);
-  }
-}
-```
+>
+    var once = (func) => {
+      var wasCalled = false, prevResult;
+      return (...args) => {
+        if (wasCalled) return prevResult;
+        wasCalled = true;
+        return prevResult = func(...args);
+      }
+    }
 
 The above is an example of this behaviour in JS, provided by OP. There were
 many different approaches given.
