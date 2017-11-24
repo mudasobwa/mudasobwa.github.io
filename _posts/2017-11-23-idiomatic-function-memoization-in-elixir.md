@@ -2,7 +2,7 @@
 layout: post
 title: "Idiomatic function memoization in Elixir"
 description: "How to memoize the function in Elixir"
-category: hacking
+categories: hacking, elixir
 tags: elixir, tricks, dwim
 ---
 
