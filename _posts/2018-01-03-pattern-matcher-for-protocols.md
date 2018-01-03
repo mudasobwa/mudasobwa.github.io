@@ -37,8 +37,8 @@ end
 
 That kinda works, but hey! We have all the ingredients: we have macros in Elixir,
 we have
-[`Kernel#replections`](https://hexdocs.pm/elixir/Kernel.html#defprotocol/2-reflection)
-for protocols, we also have . Let’s cook the matchers ourselves.
+[`Kernel#reflections`](https://hexdocs.pm/elixir/Kernel.html#defprotocol/2-reflection)
+for protocols, we also have an ardour. Let’s cook the matchers ourselves.
 
 We are going to generate all the clauses for all the consolidated protocols,
 known to the system. Let’s do it:
@@ -114,3 +114,11 @@ M.__info__(:functions)
 
 Now you have a function (a set of 11 functions, to be precise,) that effectively
 matches _only_ implementations of the `Enumerable` protocol.
+
+---
+
+There is definitely a room for improvements, like packing everything into a `__using__/1`
+macro, allowing blocks and delegates besides the anonymous function as a handler,
+better customization for how to handle different implementations, callbacks, cold beer...
+
+Maybe once I’ll publish this as a package to hex, but for now this blog is fine enough.
