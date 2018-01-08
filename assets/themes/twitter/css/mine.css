@@ -22,10 +22,12 @@ h4 { font-size: 1.90rem; }
 h5 { font-size: 1.70rem; }
 h6 { font-size: 1.50rem; }
 
-.content ul {
-  list-style-type: initial;
+.row ul {
   margin-left: 3em;
   font-size: 110%;
+}
+.row ul li {
+  list-style-type: initial;
 }
 
 h1 small ul { display: table-cell; }
