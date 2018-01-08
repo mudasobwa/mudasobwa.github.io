@@ -54,7 +54,7 @@ in the example above, we are to support all kinds of notations:
 
 - anonymous functions `fn arg -> arg end`;
 - references to functions `&IO.inspect/1`;
-- ready-to-apply functions `{IO, :inspect, [label: "★]}`.
+- ready-to-apply functions `{IO, :inspect, [label: "★"]}`.
 
 The quoted code for that would be:
 
