@@ -20,7 +20,7 @@ iex|1 ▶ LibLatLon.lookup "images/IMG_1.jpg"
 #     ...
 ```
 
-OK, leading shameless ad is over; let’s turn back to the the theme of today's
+OK, leading shameless ad is over; let’s turn back to the theme of today's
 talk. This library claims it can read a latitude and longitude information from
 almost anything that is somehow looking like a thing, that includes coordinates.
 
@@ -33,11 +33,11 @@ It was easy for:
 
 One might check
 [the diversity of types accepted](https://hexdocs.pm/lib_lat_lon/LibLatLon.Coords.html#borrow/1)
-and the examples below. And everything was fun, unless I stepped into accepting
+and the examples below. And everything was fun unless I stepped into accepting
 strings as an input. If you wonder, Google supports the nifty properly
 typographed format:
 
-* https://maps.google.com?search=41°22´33.612˝N,2°8´55.242˝E
+* [https://maps.google.com?search=41°22´33.612˝N,2°8´55.242˝E](https://maps.google.com?search=41°22´33.612˝N,2°8´55.242˝E)
 
 Cool? Yes. I decided I need to support this format as well. In other words,
 I was to parse the input like `"41°22´33.612˝N"` and produce a float out of
@@ -55,7 +55,7 @@ Elixir binary pattern matching to accomplish the task. Because I love regular
 expressions, but binary pattern matching is still way sexier.
 
 The issue is one cannot pattern match binaries of undeternmined length
-in the middle of the match. My first idea was strictly disallow malformed
+in the middle of the match. My first idea was to strictly disallow malformed
 input like `"42°0´6.57252˝N,3°8´28.13388˝E"`, but a friend of mine having
 an address _“17257 Fontanilles, Girona, Spain”_ would complain and grudge that
 `{42, 3.14159265}` is accepted fine, while `"42°0´0˝N,3°14´15.9˝E"` is not.
@@ -83,7 +83,7 @@ Let’s do it for the single blahtitude:
 
 Hey, it was simple! `@decimal_precision` is a parameter that is small in
 developement environment and set to `12` in production. 12 gives 48 different
-implementation only for the single blahtitude and it takes some noticable time
+implementations only for the single blahtitude and it takes some noticable time
 to compile, while the runtime execution is blazingly fast.
 
 The result would be nearly the same as we had copy-pasted
