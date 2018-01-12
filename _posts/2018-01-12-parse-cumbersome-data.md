@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pattern matching on binaries is better than regular expressions"
+title: "Pattern matching on binaries takes over Regex"
 description: "Cumbersome pattern matching might be way better than parsing strings with regexps"
 category: hacking
 tags: elixir, tricks, dwim
@@ -57,10 +57,10 @@ expressions, but binary pattern matching is still way sexier.
 The issue is one cannot pattern match binaries of undeternmined length
 in the middle of the match. My first idea was strictly disallow malformed
 input like `"42°0´6.57252˝N,3°8´28.13388˝E"`, but a friend of mine having
-an address “17257 Fontanilles, Girona, Spain” would complain and grudge that
+an address _“17257 Fontanilles, Girona, Spain”_ would complain and grudge that
 `{42, 3.14159265}` is accepted fine, while `"42°0´0˝N,3°14´15.9˝E"` is not.
 
-But Elixir provides great opportunities for macro programming, would probably
+Well, Elixir provides great opportunities for macro programming, would probably
 yell here the astute reader, and yes, here we go. We are about to _generate_
 all possible variants of the string above in a compile time.
 
@@ -84,7 +84,7 @@ Let’s do it for the single blahtitude:
 Hey, it was simple! `@decimal_precision` is a parameter that is small in
 developement environment and set to `12` in production. 12 gives 48 different
 implementation only for the single blahtitude and it takes some noticable time
-to compile.
+to compile, while the runtime execution is blazingly fast.
 
 The result would be nearly the same as we had copy-pasted
 `def parse(<<.........>>), do: {}` 48 times and changed the details here
@@ -99,6 +99,8 @@ with a limited mantissa (with an unlimited one, it’s still possible with
 a fallback to regular expression when the amount of digits is greater than `42`,)
 you name it.
 
-Sometimes plain old good regular expression looks at least way more sane.
+---
+
+_Author note:_ sometimes plain old good regular expression looks at least way more sane.
 
 
