@@ -23,8 +23,8 @@ What really matters is a performance. Code efficiency and viability. The human
 being should be responsible to understand any cumbersome code, while it brings
 a gain in the user experience. One of the most valuable metrics of UX is
 a response time. Not the developer comfort. I believe there is an epitaph
-graved in stone in the programmer’s hell, saying “Thou shalt have no
-boon before UX.”
+graved in stone in the programmer’s hell, saying **“Thou shalt have no
+boon before UX.”**
 
 I got distracted, though.
 
