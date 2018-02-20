@@ -57,7 +57,8 @@ Please note, that the same function called in e. g. _ruby_ 50 times would
 allocate the memory _50 times_.
 
 That is very significant. If you still think it is not, let me restate:
-_immutability grants caching of everything for free._
+_immutability grants caching of everything for free._ This is an immortal
+cache that does not require invalidation for the application lifetime.
 
 ---
 
