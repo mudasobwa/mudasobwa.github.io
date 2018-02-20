@@ -37,7 +37,7 @@ h6 { font-size: 1.50rem; }
 .row ul li {
   list-style-type: initial;
 }
-footer ul li {
+footer .row ul li {
   list-style-type: none;
 }
 
