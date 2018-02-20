@@ -34,6 +34,10 @@ h6 { font-size: 1.50rem; }
   margin-left: 3em;
   font-size: 110%;
 }
+footer .row ul {
+  margin-left: 0;
+  font-size: 90%;
+}
 .row ul li {
   list-style-type: initial;
 }
