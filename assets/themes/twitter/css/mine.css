@@ -3,7 +3,7 @@ html {
     line-height: 1.5;
     font-family: "Mukta Mahee", "Roboto", "Open Sans", sans-serif;
     font-weight: normal;
-    font-size: 140%;
+    font-size: 128%;
     color: rgba(0,0,0,0.87);
 }
 
@@ -36,6 +36,9 @@ h6 { font-size: 1.50rem; }
 }
 .row ul li {
   list-style-type: initial;
+}
+footer ul li {
+  list-style-type: none;
 }
 
 h1 small ul { display: table-cell; }
