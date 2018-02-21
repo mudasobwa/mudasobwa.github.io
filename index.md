@@ -56,7 +56,7 @@ Below are the notes I do write when occasionally find smth interesting during ha
 
 ## Posts
 
-<table class="striped highlight border">
+<table class="striped highlight border" style="line-height: 100%;">
   {% for post in site.posts %}
     <tr><td>{{ post.date | date_to_string }}</td><td><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></td></tr>
   {% endfor %}
