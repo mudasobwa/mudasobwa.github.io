@@ -37,7 +37,7 @@ I have an experience in C/C++ pointing, Ruby railing, SQL querying, Java threads
   <li><b>Bear in mind</b>: you are wiser, hence you are guilty.</li>
   <li><em>P.S.</em>Don’t dodge to supplement.</li></ol>
   </div>
-  <div class="col s12 m6">
+  <div class="col s12 m6" style="font-size: 80%;">
   <h4 class="smallcaps">binaries</h4>
   <ul class="disc">
   <li>I don’t dread to appear: smart, stupid, arrogant, humble, a womanizer, a misogynist, a chatterbox, a taciturn, a teetotaler, an alcoholic, a dictator, a democrat, reliable, unreliable, white, black and purple.</li>
