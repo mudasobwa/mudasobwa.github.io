@@ -15,7 +15,9 @@ ruby surely inherited a flip-flop operator from Perl, amongst others. Why?
 Because programming is sexy, ruby is sexy and—you get it—flip-flop is very sexy.
 
 Uh. I probably should start with a brief explanation of what flip-flop is
-in general.
+in general. (There is another
+[great writing](http://nithinbekal.com/posts/ruby-flip-flop/) on the subject by
+Nithin Bekal.)
 
 The term [came from the electronics](https://en.wikipedia.org/wiki/Flip-flop_(electronics))
 where it roughly means two-state machine with memory. Basically, it’s meaning
