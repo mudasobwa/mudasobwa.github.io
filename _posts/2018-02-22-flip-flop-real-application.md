@@ -9,9 +9,9 @@ tags: ruby
 > ruby inherited the Perl philosophy of having more than one way to do the same
 > thing. I inherited that philosophy from Larry Wall, who is my hero actually.
 > I want to make ruby users free. I want to give them the freedom to choose.
-> <small>— Yukihiro Matsumoto</small>
+> <small>Yukihiro Matsumoto</small>
 
-ruby surely inherited a flip-flop operator from Perl, amongst others. Why?
+Ruby surely inherited a flip-flop operator from Perl, amongst others. Why?
 Because programming is sexy, ruby is sexy and—you get it—flip-flop is very sexy.
 
 Uh. I probably should start with a brief explanation of what flip-flop is
