@@ -83,7 +83,7 @@ div.pagination {
   font-family: 'Ubuntu', helvetica, arial, sans-serif;
 }
 .span10 img { margin: 1em 0 1em 0; }
-pre, pre code, .code {
+pre, code, .code {
   font-family: 'Anonymous Pro', monospace;
   font-size: 90%;
 }
