@@ -28,7 +28,8 @@ iex|3 ▶ mod_ko = Integer
 iex|4 ▶ %^mod_ok{} = %MyMod{foo: 42, bar: 3.14}
 #⇒ %MyMod{bar: 3.14, foo: 42}
 iex|5 ▶ %^mod_ko{} = %MyMod{foo: 42, bar: 3.14}
-#⇒ ** (MatchError) no match of right hand side value: %MyMod{bar: 3.14, foo: 42}
+#⇒ ** (MatchError) no match of right hand side value:
+#       %MyMod{bar: 3.14, foo: 42}
 ```
 
 Wow. We can explicitly pattern match on dynamic struct types! It also works
@@ -36,7 +37,8 @@ in `case` clauses:
 
 ```elixir
 iex|6 ▶ case %MyMod{foo: 42, bar: 3.14} do
-...|6 ▶   %^mod_ok{} = %{foo: _foo} -> IO.inspect(mod_ok, label: "Pinned module")
+...|6 ▶   %^mod_ok{} = %{foo: _foo} ->
+...|6 ▶     IO.inspect(mod_ok, label: "Pinned module")
 ...|6 ▶ end
 #⇒ Pinned module: MyMod
 ```
