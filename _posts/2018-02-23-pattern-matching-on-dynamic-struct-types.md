@@ -13,7 +13,7 @@ I have an interesting Elixir feature on hand. That is related to pattern
 matching. That is, I bet, not widely known at all.
 
 One can pattern match on dynamic struct type with pin operator
-[`Kernel.SpecialForms.^/1](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%5E/1).
+[`Kernel.SpecialForms.^/1`](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%5E/1).
 It’s documentation says:
 
 > Accesses an already bound variable in match clauses. Also known as the pin operator.
