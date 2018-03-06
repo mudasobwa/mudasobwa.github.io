@@ -3,7 +3,10 @@ layout: post
 title: "Pattern matcher for Protocols"
 description: "How to pattern match a protocol in Elixir"
 category: hacking
-tags: elixir, tricks, dwim
+tags:
+  - elixir
+  - tricks
+  - dwim
 ---
 
 One of the best features of Erlang (and hence Elixir) is the ability to

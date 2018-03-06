@@ -3,7 +3,10 @@ layout: post
 title: "Idiomatic function memoization in Elixir"
 description: "How to memoize the function in Elixir"
 category: hacking
-tags: elixir, tricks, dwim
+tags:
+  - elixir
+  - tricks
+  - dwim
 ---
 
 Today there was a [question raised on SO](https://stackoverflow.com/questions/47452163/writing-the-function-once-in-elixir).

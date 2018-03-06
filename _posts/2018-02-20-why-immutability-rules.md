@@ -3,7 +3,9 @@ layout: post
 title: "Why immutability rules"
 description: "A list of some less evident advantages of immutability"
 category: hacking
-tags: elixir, ruby
+tags:
+ - elixir
+ - ruby
 ---
 
 The arguing on pros and cons of mutability is aging it’s Diamond jubilee.

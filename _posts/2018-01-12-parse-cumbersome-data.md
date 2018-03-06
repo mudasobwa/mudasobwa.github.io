@@ -3,7 +3,10 @@ layout: post
 title: "Pattern matching on binaries takes over Regex"
 description: "Cumbersome pattern matching might be way better than parsing strings with regexps"
 category: hacking
-tags: elixir, tricks, dwim
+tags:
+  - elixir
+  - tricks
+  - dwim
 ---
 
 Last week I spent evenings tweaking

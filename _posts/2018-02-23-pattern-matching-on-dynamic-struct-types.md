@@ -3,7 +3,8 @@ layout: post
 title: "Pattern matching on dynamic struct types"
 description: "A less known patter matching feature in Elixir"
 category: hacking
-tags: elixir
+tags:
+  - elixir
 ---
 
 Pattern matching is great.

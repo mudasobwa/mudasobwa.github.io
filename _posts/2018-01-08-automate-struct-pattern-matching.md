@@ -3,7 +3,10 @@ layout: post
 title: "Automate pattern matching for structs"
 description: "How to bulk pattern match structs in function clauses in Elixir"
 category: hacking
-tags: elixir, tricks, dwim
+tags:
+  - elixir
+  - tricks
+  - dwim
 ---
 
 In the previous post we’ve been dealing with
