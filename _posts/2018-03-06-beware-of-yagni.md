@@ -73,7 +73,7 @@ not ready for any subsequent changes. The rule of thumb would be:
 
 > _While in code review, the reviewer might use YAGNI to prevent a waste of time_
 > _on unwanted and/or unexpected features. The code owner has no right to use_
-> _YAGN” as an argument to proof their delusion and/or reluctance to make the_
+> _YAGNI as an argument to proof their delusion and/or reluctance to make the_
 > _code friendly to future changes._
 
 That simple, thus it works.
@@ -82,7 +82,7 @@ And, the last but not the least: never, never excuse yourself with YAGNI.
 There are usually many people all around: team leader, project manager, product
 manager, CTO, CEO, your spouse whining about you spend too little time with them,
 to prevent you from doing a redundant stuff. There are many, many colleagues,
-who will tell you “YAGNI” when needed. But as soon as you have caught youself
+who will tell you ‘YAGNI’ when needed. But as soon as you have caught youself
 choosing the easiest path because of YAGNI, find the strength in yourself to
 resist. Unless you are going to qualify as Development Evangelist and Coach in
 Silicon Valley next year, of course. There works any garbage.
