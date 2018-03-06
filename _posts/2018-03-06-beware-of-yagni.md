@@ -15,7 +15,7 @@ tags:
 > XP co-founder Ron Jeffries has written: “Always implement things when you
 > actually need them, never when you just foresee that you need them.”
 >
-> <small>https://en.wikipedia.org/wiki/You_aren't_gonna_need_it</small>
+> <small> [You ain’t gonna need it @Wiki](https://en.wikipedia.org/wiki/You_aren't_gonna_need_it</small>
 
 This is the most misinterpreted and hence awful, hazardous, and detrimental
 principle ever stated in the Book of the Wrong Advises for Developers.
@@ -30,7 +30,7 @@ explaining the issue:
 > a presumptive feature, it does not apply to effort to make the
 > software easier to modify.
 >
-> <small>https://www.martinfowler.com/bliki/Yagni.html</small>
+> <small> [Yagni @MartinFowler](https://www.martinfowler.com/bliki/Yagni.html)</small>
 
 This principle works well when a Smart Senior Developer does a code review for
 an ambitious young Junior, who wants to conquer the world with their first PR.
@@ -48,7 +48,7 @@ proposed by the proactive Junior) and everybody (including the business) is happ
 > Truth is mighty and will prevail. There is nothing wrong with this, except that
 > it ain't so.
 >
-> <small>Mark Twain</small>
+> <small> Mark Twain</small>
 
 That’s the thing. Even a kitchen knife might be used to kill people, and this
 YAGNI concept is a perfect example of such a menace. It’s a great excuse to
