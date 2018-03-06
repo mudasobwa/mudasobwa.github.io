@@ -53,17 +53,17 @@ proposed by the proactive Junior) and everybody (including the business) is happ
 That’s the thing. Even a kitchen knife might be used to kill people, and this
 YAGNI concept is a perfect example of such a menace. It’s a great excuse to
 reject nearly any CR suggestions: “this already works, _yagn_ anything else,
-period.” Unfortunately, in my experience 9 out of 10 times I accepted YAGNI
+period.” Unfortunately, in my experience 9 out of 10 times, I accepted YAGNI
 argument, it resulted in _me_ implementing the stuff we were not going to need.
-Usually it happens in a month, sometimes—tomorrow. In some cases it was not only
+Usually it happens in a month, sometimes—tomorrow. In some cases, it was not only
 implementing what I suggested, but _completely rewriting_ the whole code piece,
 because _that_ YAGNI implies unmaintainable, not ready for extensions code.
 
 In 1930s Pepsi-Cola launched 12oz bottles fighting Coca-Cola’s domination.
 Coca-Cola responded with YAGNI and lost 30% of the market.
 
-In 1970s Toyota, Nissan, Mistubishi and smaller Japanese companies made
-a bid on low fuel consumption. YAGNI, responded American autoconcern and
+In 1970s Toyota, Nissan, Mitsubishi and smaller Japanese companies made
+a bid on low fuel consumption. ‘YAGNI,’ responded American autoconcern and
 lost nearly half of the market in the next decade.
 
 Nowadays every single YAGNI used as an excuse for unwillingness to accomplish
@@ -82,7 +82,7 @@ And, the last but not the least: never, never excuse yourself with YAGNI.
 There are usually many people all around: team leader, project manager, product
 manager, CTO, CEO, your spouse whining about you spend too little time with them,
 to prevent you from doing a redundant stuff. There are many, many colleagues,
-who will tell you ‘YAGNI’ when needed. But as soon as you have caught youself
+who will tell you ‘YAGNI’ when needed. But as soon as you have caught yourself
 choosing the easiest path because of YAGNI, find the strength in yourself to
 resist. Unless you are going to qualify as Development Evangelist and Coach in
 Silicon Valley next year, of course. There works any garbage.
