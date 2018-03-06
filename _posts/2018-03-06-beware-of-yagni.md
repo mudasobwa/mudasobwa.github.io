@@ -15,7 +15,7 @@ tags:
 > XP co-founder Ron Jeffries has written: “Always implement things when you
 > actually need them, never when you just foresee that you need them.”
 >
-> <small> [You ain’t gonna need it @Wiki](https://en.wikipedia.org/wiki/You_aren't_gonna_need_it</small>
+> <small> [You ain’t gonna need it @Wiki](https://en.wikipedia.org/wiki/You_aren't_gonna_need_it)</small>
 
 This is the most misinterpreted and hence awful, hazardous, and detrimental
 principle ever stated in the Book of the Wrong Advises for Developers.
@@ -23,7 +23,7 @@ principle ever stated in the Book of the Wrong Advises for Developers.
 As far as I can tell, originally it meant “Don’t install a fifth wheel on your
 car unless you are participating the 5-wheeled-cars-rally.” Nowadays it’s widely
 used as an excuse to reject doing their job from the lazy and arrogant
-developers. I rarely agree with Martin Fauler, but this is a brilliant wording
+developers. I rarely agree with Martin Fowler, but this is a brilliant wording
 explaining the issue:
 
 > Yagni only applies to capabilities built into the software to support
