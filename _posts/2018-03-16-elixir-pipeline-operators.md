@@ -92,7 +92,7 @@ Let’s run the test to check what do we have there:
 ```elixir
 iex|1 ▶ m = %MyStruct{foo: 42}
 iex|2 ▶ m ~>> [bar: 3.14]
-#⇒ DEBUG: {{:m, [line: 24], nil}, [bar: 3.14]}
+#⇒ DEBUG: {​{:m, [line: 24], nil}, [bar: 3.14]}
 ```
 
 OK, we receive `left` and `right` operands as expected. The only thing we need
