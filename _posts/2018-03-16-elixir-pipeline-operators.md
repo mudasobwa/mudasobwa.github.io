@@ -37,14 +37,15 @@ Let’s stay with the question as it was stated on SO:
 
 > There is a need to update the struct without breaking the pipeline up.
 > Something like this:
->
->    my_struct
->    |> %{ | my_field_in_struct: a_new_value}
->    |> my_funct1
->    |> %{ | my_field_in_struct: a_new_value}
->    |> my_funct2
->    |> %{ | my_field_in_struct: a_new_value}
->    |> my_funct3
+> <code lang="elixir"><pre>
+> my_struct
+> |> %{ | my_field_in_struct: a_new_value}
+> |> my_funct1
+> |> %{ | my_field_in_struct: a_new_value}
+> |> my_funct2
+> |> %{ | my_field_in_struct: a_new_value}
+> |> my_funct3
+> </pre></code>
 
 Let’s start with introducing our own pipe operator implementation:
 
