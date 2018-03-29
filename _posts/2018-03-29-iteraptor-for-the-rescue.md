@@ -159,7 +159,7 @@ _Example:_
 **`Iteraptor#escoger(*filters, **params, &λ)`** — filters the receiver
 according to the set of filters given (filters use case-equality) and,
 optionally, iterates the resulting structure if the block was given. Might
-be treated an an extended analogue of `Enumerable#select`.
+be treated an extended analogue of `Enumerable#select`.
 
 _alias:_ **`segar`**, _block arguments:_ **`key, value`**
 
@@ -179,7 +179,7 @@ _Example:_
 ```
 
 **`Iteraptor#rechazar(*filters, **params, &λ)`** — the exactly opposite to
-`Iteraptor#escoger`. Might be treated an an extended analogue of `Enumerable#select`.
+`Iteraptor#escoger`. Might be treated an extended analogue of `Enumerable#select`.
 
 _Example:_
 
@@ -193,7 +193,7 @@ _Example:_
 
 **`Iteraptor#aplanar(**params, &λ)`** — flattens the receiver, concatenating
 keys with `Iteraptor::DELIMITER` or whatever is passed as `delimiter` keyword
-argument. Might be treated an an extended analogue of `Enumerable#flatten`.
+argument. Might be treated an extended analogue of `Enumerable#flatten`.
 If block passed, `key, value` pair is yielded to it. The returned value
 is discarded.
 
