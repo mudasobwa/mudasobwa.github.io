@@ -7,7 +7,7 @@ tags:
   - “…”
   - ruby
   - elixir
-  - web.-components
+  - web-components
 ---
 
 When one copy-pastes a link to _twitter_ and/or _facebook_, it might either become

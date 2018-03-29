@@ -101,6 +101,7 @@ pre, code, .code {
 }
 .tag_box.inline li {
 	float:left;
+  list-style-type:none;
 }
 .tag_box a {
 	padding: 3px 6px;
