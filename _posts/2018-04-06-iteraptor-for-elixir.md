@@ -125,8 +125,8 @@ iex> %{a: %{b: %{c: 42}}}
 # map-reduce
 iex> %{a: %{b: %{c: 42}}}
 ...> |> Iteraptor.map_reduce([], fn
-...>      {k, %{} = v}, acc -> {{k, v}, [Enum.join(k, ".") | acc]}
-...>      {k, v}, acc -> {{k, v * 2}, [Enum.join(k, ".") <> "=" | acc]}
+...>      {k, %{} = v}, acc -> {​{k, v}, [Enum.join(k, ".") | acc]}
+...>      {k, v}, acc -> {​{k, v * 2}, [Enum.join(k, ".") <> "=" | acc]}
 ...>    end, yield: :all)
 {%{a: %{b: %{c: 42}}}, ["a.b.c=", "a.b", "a"]}
 
@@ -186,7 +186,7 @@ should be an accumulator value.
 
 **`Iteraptor.map_reduce(term, fun/2, opts)`** — iterates the nested structure,
 yielding the key and value. The value, returned from the block
-should be a `{{key, value}, acc}` value. The first element of this tuple is
+should be a `{​{key, value}, acc}` value. The first element of this tuple is
 used for mapping, the last—accumulating the result.
 
 - _function arguments:_ **`{key, value}, acc`** pair
