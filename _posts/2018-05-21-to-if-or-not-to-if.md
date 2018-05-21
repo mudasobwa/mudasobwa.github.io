@@ -15,12 +15,12 @@ to never use `if` conditional statement and many people were arguing.
 **TL;DR:** The text below is very biased and opionated. That does not mean
 it’s plain wrong. I consider `if` statements a code smell. Period.
 
-I am not a blinkered moron, though, and I understand there are circumstances
+_I am not a blinkered moron, though, and I understand there are circumstances
 under which `if` might be of perfect use. The rule having a dozen of
 exceptions is hard to memorize, that’s why I state the rule as
 “don’t use `if` statements.” “Unless you pretty fine understand why do
 you use `if`,” adds my internal rubber duck whom I have proofread the
-draft of this writing to.
+draft of this writing to._
 
 ---
 
@@ -29,8 +29,8 @@ draft of this writing to.
 In the stone age there were no programming languages and to kindly
 ask the machine to perform any operation, humans were using
 [codes](https://en.wikipedia.org/wiki/Machine_code) that were understood
-by the machine as is. One of the first books I was able to get on
-programming was [one of these by Peter Norton](https://www.goodreads.com/author/list/163189.Peter_Norton). Sorry, Peter,
+by the machine as is. One of the first books I was able to get to reveal
+the the mystical veil of development was [one of these by Peter Norton](https://www.goodreads.com/author/list/163189.Peter_Norton). Sorry, Peter,
 I do not remember which one. It started with a chapter explaining the
 source of _Norton Disk Editor_ utility, written completely in machine
 codes. Line by line. It looked like that (don’t try to run it, I just
@@ -187,7 +187,7 @@ module Schedule
     end
   end
 end
-%w[mon wed fri].each do |wd|
+%w[mon fri].each do |wd|
   Schedule.const_set("#{wd.capitalize}Schedule", Class.new(Day) do
   end)
 end
@@ -198,10 +198,14 @@ end
     end
   end)
 end
+class Schedule.WedSchedule < Day
+  def go_to_the_office
+  end
+end
 ```
 
 Now we can _instantiate_ the respective class, basing on current week day
-and call it’ instance `trip!` method. For both Saturday and Sunday this
+and call it’s instance `trip!` method. For both Saturday and Sunday this
 instantiation would throw an exception, _which is just fine_ (assuming we
 handle exceptions on the top level and don’t leak them as is to the user.)
 
@@ -226,20 +230,21 @@ use Elixir to demonstrate the control flow.
 
 ```elixir
 defmodule Schedule do
-  def trip! do
-    go_to_the_gym
-    go_to_the_office
-    go_home
+  def trip!(day) do
+    go_to_the_gym(day)
+    go_to_the_office(day)
+    go_home(day)
   end
   def go_to_the_gym(day) when day in ~w|tue thu| do
     Metro.gym!
   end
   def go_to_the_gym(day) when day in ~w|mon wed fri| do
   end
-  def go_to_the_office
+  def go_to_the_office("wed"), do: :ok
+  def go_to_the_office(_)
     Metro.office!
   end
-  def go_home
+  def go_home(_)
     Metro.home!
   end
 end
@@ -255,7 +260,7 @@ nested `if`s structure.
 
 ## Conclusion
 
-Any time I found myself blindly typing `if ` I pause for a while and
+Any time I found myself blindly typing `if`, I pause for a while and
 talk to my internal rubber duck (her name is Jess, btw.) “Jess, is there any
 way to avoid `if` clause here?” I ask inevitably. And you know what?—In most
 cases she responds with “yes” and we invent a robust well-designed solution
@@ -277,6 +282,6 @@ In all other cases I ended up with a better abstraction, that saved me tons
 of hours of refactoring, just because I had asked myself (and Jess) whether we could
 do better than just `if`. And we usually did.
 
-That is why I insist on memorizing the rule “`if` statements are a code smell, period.”
+That is why I insist on memorizing the rule _“`if` statements are a code smell, period.”_
 Even despite it sounds too cruel and arrogant. Vague and blurry rules always
 lose. Solid rules do win. And they surely do have exceptions.
