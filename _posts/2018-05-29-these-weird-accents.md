@@ -127,7 +127,7 @@ as expected, without surprises:
 #⇒ [6, 6]
 ```
 
-That is all transparently available because Elixir is smart,
+That is all transparently available because Elixir is smart, even though
 the input still differs:
 
 ```elixir
