@@ -68,7 +68,7 @@ came to the scene. Instead of looking through all the alphabets, collecting
 letters that walks like a duck and quacks like a duck, but having three legs,
 letters and accents were finally distinguished. To type a graved _a_ in voilà,
 I don’t need to remap my keyboard to have this symbol under my pinkie, I can
-simply use a combined diacritics, typing `a` and the accent ` ̀` subsequently.
+simply use a combined diacritics, typing `a` and the accent `  ̀  ` subsequently.
 And this is great.
 
 Unfortunately, there is a legacy. Spanish keyboard has a single key to type
@@ -89,7 +89,7 @@ I am not kidding. Try it yourself. This distinction is known as _composed_ vs.
 _decomposed_ form.
 
 FWIW, Ruby 2.5 introduced (and it was backported to Ruby 2.3+)
-[`String#unicode_normalize](https://ruby-doc.org/core/String.html#method-i-unicode_normalize)
+[`String#unicode_normalize`](https://ruby-doc.org/core/String.html#method-i-unicode_normalize)
 method, accepting euther `:nfc` or `:nfd` parameter to compose or decompose the
 receiver respectively. To catch “ñ” in the string no matter how it was typed,
 one **must** use:
