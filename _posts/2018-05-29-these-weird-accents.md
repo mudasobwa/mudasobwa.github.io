@@ -123,7 +123,7 @@ lists graphemes:
 as expected, without surprises:
 
 ```elixir
- ~w|mañana mañana| |> Enum.map(&String.length/1)
+~w|mañana mañana| |> Enum.map(&String.length/1)
 #⇒ [6, 6]
 ```
 
