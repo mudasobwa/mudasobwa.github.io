@@ -12,7 +12,7 @@ tags:
 
 ## History. Ruby Hard Way.
 
-I was born in the country where we don’t use the latin alphabet. Unlike the
+I was born in the country where we don’t use the Latin alphabet. Unlike the
 computer science, that was indeed born with the 26-letters-tied mother tongue.
 
 That basically forced me to study another alphabet, besides my primordial one.
@@ -21,9 +21,9 @@ Unlike the computer science, that mostly used the pristine ASCII7 till near past
 As the computer science was spreading throughout the world, people from different
 countries were looking for opportunities to use their own native languages. Asian
 peoples, using the hieroglyphic writing, were forced to invent a brand new way
-to represent their characters; europeans tried to be content with half measures,
+to represent their characters; Europeans tried to be content with half measures,
 still saving a space on hard drives and, more significant, a traffic over the
-coaxial cables the network was build with back then.
+coaxial cables the network was built with back then.
 
 Umlauts in German, `Æ`, `Ø` and	`Å` in Dano-Norwegian, `Ñ` in Spanish and `Ç` in
 Catalan, all these symbols were squeezed and crammed into one byte that was
@@ -163,5 +163,5 @@ But:
 
 ---
 
-I foresee the times when all the above became a legacy as well, since everybody
+I foresee the times when all the above became a legacy as well since everybody
 will just use emojis instead of words. Emojis have luckily no decomposed form.
