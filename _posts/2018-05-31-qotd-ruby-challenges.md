@@ -147,3 +147,7 @@ the answer would be `2` (indices `1` and `6`.) Ask me for hints and tips
 (mine is 36 symbols.)
 
 _NB:_ relatively hard task (50+ symbols solution is relatively easy.)
+
+---
+
+## Happy Challenging!
