@@ -95,9 +95,10 @@ defmodule MySubscriber do
 end
 ```
 
-[`handle_envio/1`] is the only callback defined for this behaviour. Implement
-it to whatever you need and all the messages sent to `:featured` channel by
-`MyPublisher` will now be handled.
+[`handle_envio/2`](https://hexdocs.pm/envio/Envio.Subscriber.html#c:handle_envio/2)
+is the only callback defined for this behaviour. Implement it to whatever
+you need and all the messages sent to `:featured` channel by `MyPublisher`
+will now be handled.
 
 For `:dispatch` type of the subscription, it’s even easier: just put
 
@@ -106,7 +107,6 @@ Envio.register(
   {MySubscriber, :on_envio}, # the function of arity 2 must exist
   dispatch: %Envio.Channel{source: Publisher, name: :featured}
 )
-
 ```
 
 anywhere in your code and start receiving messages synchronously.
