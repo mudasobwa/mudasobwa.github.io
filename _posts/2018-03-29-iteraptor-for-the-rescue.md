@@ -55,7 +55,8 @@ the deep enumerable into `Hash` instance
 the nested structure out of flattened hash
 * `segar` (_sp._ `yield`), alias `escoger` (_sp._ `select`) allows to filter
 and collect elelements
-* `rechazar` (_sp._ `reject`) allows to filter out and collect elelements.
+* `rechazar` (_sp._ `reject`) allows to filter out and collect elelements
+* `compactar` (_sp._ `compact`), allows to filter out all `nil`s.
 
 ### Words are cheap, show me the code
 
@@ -187,6 +188,17 @@ _Example:_
 ▶ {foo1: 42, foo2: %i[bar1 bar2], foo3: {foo4: {foo5: 3.14, foo6: :baz}}}.
 ▷   rechazar(/[15]/)
 #⇒ {"foo2"=>[:bar1], "foo3"=>{"foo4"=>{"foo6"=>:baz}}}
+```
+
+**`Iteraptor#compactar(**params)`** — the analogue of `Array#compact` to some
+extent. `Iteraptor#compactar` removes all the deeply nested keys having `nil` value.
+
+_Example:_
+
+```ruby
+▶ {foo1: nil, foo2: %i[nil bar2], foo3: {foo4: {foo5: nil, foo6: :baz}}}.
+▷   compactar()
+#⇒ {"foo2"=>[:bar2], "foo3"=>{"foo4"=>{"foo6"=>:baz}}}
 ```
 
 #### Flattening
