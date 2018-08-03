@@ -24,7 +24,7 @@ Starting with [version 0.8.1](https://github.com/am-kantox/tarearbol/releases/ta
 
 ### `Tarearbol` common syntax
 
-The most widely used function of `Tarearbol` would be probably [`ensure/2`], accepting a job either in a form of anonymous function ir as a MFA-tuple, and a set of options. Options are:
+The most widely used function of `Tarearbol` would be probably [`ensure/2`], accepting a job either in a form of anonymous function or as a MFA-tuple, and a set of options. Options are:
 
 * `attempts` _[default: :infinity]_ number of attemtps before fail, the integer value
 * `delay` _[default: 1 msec]_ number of milliseconds between attempts, `1_000` or `1.0` for one second, `:timeout` for five seconds, etc
@@ -33,15 +33,15 @@ The most widely used function of `Tarearbol` would be probably [`ensure/2`], acc
 * `accept_not_ok` _[default: true]_ when `false`, only the `:ok` atom or `{:ok, _}`
 tuple considered to be valid returned values from the task
 * `on_success` _[default: nil]_ the function to be called on successful execution (`arity` ∈ `[0, 1]` or tuple `{Mod, fun}` where fun is of arity zero or one,) for the 1-arity, the result of task execution is passed
-* `on_retry` _[default: nil]_ same as above, called _on retries_ after insuccessful attempts or one of `[:debug, :info, :warn, :error]` atoms to log a retry with default logger
-* `on_fail` _[default: nil]_ same as above, called when the task finally failed after attempts amount of insuccessful attempts
+* `on_retry` _[default: nil]_ same as above, called _on retries_ after unsuccessful attempts or one of `[:debug, :info, :warn, :error]` atoms to log a retry with default logger
+* `on_fail` _[default: nil]_ same as above, called when the task finally failed after attempts amount of unsuccessful attempts
 
 The usual invocation might look like:
 
 ```elixir
 case Tarearbol.ensure(fn -> raise "¡?" end, attempts: 1, raise: false) do
   {:error, %{job: _job, outcome: outcome}} ->
-    Logger.log("Error. Returned outcome: #{inspect outcome})
+    Logger.warn("Error. Returned outcome: #{inspect outcome}")
   {:ok, result} ->
     result
 end
