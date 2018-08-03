@@ -11,36 +11,20 @@ tags:
 
 ### Intro
 
-[**`Tarearbol`**](https://hexdocs.pm/tarearbol/intro.html) is a lightweight
-task manager, allowing retries, callbacks, assurance that the task succeeded,
-and more. It starts and manages the task supervision tree for granted.
-With `Tarearbol` one might ensure the task, that might occasionally fail
-due to reasons beyond caller’s control, will be retried until succeeded.
-It’s highly configurable and allows callbacks on:
+[**`Tarearbol`**](https://hexdocs.pm/tarearbol/intro.html) is a lightweight task manager, allowing retries, callbacks, assurance that the task succeeded, and more. It starts and manages the task supervision tree for granted. With `Tarearbol` one might ensure the task, that might occasionally fail due to reasons beyond caller’s control, will be retried until succeeded. It’s highly configurable and allows callbacks on:
 
 * task successful completion,
 * task retries,
 * task fail (when the max limit of retries is reached.)
 
-It also provides a functionality to manage many tasks at once with
-[`Tarearbol.ensure_all/2`](https://hexdocs.pm/tarearbol/Tarearbol.html#ensure_all/2)
-and
-[`Tarearbol.ensure_all_streamed/2`](https://hexdocs.pm/tarearbol/Tarearbol.html#ensure_all_streamed/2),
-run tasks with a delay using
-[`Tarearbol.run_at/3`](https://hexdocs.pm/tarearbol/Tarearbol.html#run_at/3) and
-[`Tarearbol.run_in/3`](https://hexdocs.pm/tarearbol/Tarearbol.html#run_in/3), and
-drain the scheduled tasks queue with
-[`Tarearbol.drain/1`](https://hexdocs.pm/tarearbol/Tarearbol.html#drain/1).
+It also provides a functionality to manage many tasks at once with [`Tarearbol.ensure_all/2`](https://hexdocs.pm/tarearbol/Tarearbol.html#ensure_all/2) and [`Tarearbol.ensure_all_streamed/2`](https://hexdocs.pm/tarearbol/Tarearbol.html#ensure_all_streamed/2), run tasks with a delay using
+[`Tarearbol.run_at/3`](https://hexdocs.pm/tarearbol/Tarearbol.html#run_at/3) and [`Tarearbol.run_in/3`](https://hexdocs.pm/tarearbol/Tarearbol.html#run_in/3), and drain the scheduled tasks queue with [`Tarearbol.drain/1`](https://hexdocs.pm/tarearbol/Tarearbol.html#drain/1).
 
-Starting with [version 0.8.1](https://github.com/am-kantox/tarearbol/releases/tag/v0.8.1)
-it married [`Envío`](https://hexdocs.pm/envio) to make it drastically easy to
-subscribe to task processing callbacks.
+Starting with [version 0.8.1](https://github.com/am-kantox/tarearbol/releases/tag/v0.8.1) it married [`Envío`](https://hexdocs.pm/envio) to make it drastically easy to subscribe to task processing callbacks.
 
 ### `Tarearbol` common syntax
 
-The most widely used function of `Tarearbol` would be probably [`ensure/2`],
-accepting a job either in a form of anonymous function ir as a MFA-tuple, and
-a set of options. Options are:
+The most widely used function of `Tarearbol` would be probably [`ensure/2`], accepting a job either in a form of anonymous function ir as a MFA-tuple, and a set of options. Options are:
 
 * `attempts` _[default: :infinity]_ number of attemtps before fail, the integer value
 * `delay` _[default: 1 msec]_ number of milliseconds between attempts, `1_000` or `1.0` for one second, `:timeout` for five seconds, etc
@@ -68,11 +52,7 @@ and logs the exception.
 
 ### Pub_Sub instead of logging
 
-Logging is not always handy when it comes to the real life. One might want to
-handle the task results from some other process, sending emails on fails, or
-retrying in a smarter way, or whatever. For that purpose all three callbacks
-are now publishing a message to subscribers using `Registry` through it’s
-handy wrapper `Envío` (effective `@since 0.8.1`.)
+Logging is not always handy when it comes to the real life. One might want to handle the task results from some other process, sending emails on fails, or retrying in a smarter way, or whatever. For that purpose all three callbacks are now publishing a message to subscribers using `Registry` through it’s handy wrapper `Envío` (effective `@since 0.8.1`.)
 
 Channels are:
 
@@ -81,8 +61,7 @@ Channels are:
 * `{Tarearbol.Publisher, :info}` to subscribe to task successful executions only,
 * `{Tarearbol.Publisher, :all}` to subscribe to everything above.
 
-Now the application using `Tarearbol` might simply add a subscriber into their
-supervision tree:
+Now the application using `Tarearbol` might simply add a subscriber into their supervision tree:
 
 ```elixir
 defmodule MyApp.Subscriber do
@@ -94,6 +73,6 @@ defmodule MyApp.Subscriber do
 end
 ```
 
-From now on _all_ task failes will be handled by the module above.
+From now on _all_ task failures will be handled by the module above.
 
 Happy subscribing!
