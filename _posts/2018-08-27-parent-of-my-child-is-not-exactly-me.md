@@ -9,10 +9,10 @@ tags:
 
 ## The Problem
 
-> A man and his son are driving in a car one day, when they get into a fatal accident. The man is killed instantly. The boy is knocked unconscious, but he is still alive. He is rushed to hospital, and will need immediate surgery. The doctor enters the emergency room, looks at the boy, and says _“I can’t operate on this boy, he is my son.”  _
+> A man and his son are driving in a car one day, when they get into a fatal accident. The man is killed instantly. The boy is knocked unconscious, but he is still alive. He is rushed to hospital, and will need immediate surgery. The doctor enters the emergency room, looks at the boy, and says _“I can’t operate on this boy, he is my son.”_
 > How is this possible? The answer is simple: the doctor is the boy's mother.
 
-Sooner or later in each complex application involving data manipulation backed up by the database arises a necessity to have a parent-child relationships inside the same table/model. The easiest example that comes into my mind would be a several related blog posts, maintaining the long story chapters. The sequence of these posts would be a whole topic but since people rare like to read more than 280 symbols at once nowadays we tend to split long writings into parts.
+Sooner or later in each complex application involving data manipulation backed up by the database arises a necessity to have a parent-child relationship inside the same table/model. The easiest example that comes into my mind would be several related blog posts, maintaining the long story chapters. The sequence of these posts would be a whole topic but since people rare like to read more than 280 symbols at once nowadays we tend to split long writings into parts.
 
 ## The wrong approach
 
@@ -25,7 +25,7 @@ class Post < ActiveRecord::Base
 end
 ```
 
-Here is my strong advise: **do not do that!**. Never ever.
+Here is my strong advice: **do not do that!** Never ever.
 
 ## The better approach
 
@@ -60,6 +60,6 @@ One cannot rely on `reload` inside the parent code, because `reload` will trash 
 
 One cannot rely on anything, save for an ugly explicit check of `next.reload.previous.nil?`.
 
-With an intermediate relationships table, the issue goes away for free. The reference between objects is _deleted_ from this table when `parent.save` is called, and the latter will fail immediately, violating referencial integrity.
+With an intermediate relationships table, the issue goes away for free. The reference between objects is _deleted_ from this table when `parent.save` is called, and the latter will fail immediately, violating referential integrity.
 
 That simple. Do not be lazy to implement the relationships table. Or, better, do not use mutable variables to store objects in general and `ActiveRecord` in particular.
