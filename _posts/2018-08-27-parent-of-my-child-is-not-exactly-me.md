@@ -9,10 +9,12 @@ tags:
 
 ## The Problem
 
-> A man and his son are driving in a car one day, when they get into a fatal accident. The man is killed instantly. The boy is knocked unconscious, but he is still alive. He is rushed to hospital, and will need immediate surgery. The doctor enters the emergency room, looks at the boy, and says _“I can’t operate on this boy, he is my son.”_
+> A man and his son are driving in a car one day, when they get into a fatal accident. The man is killed instantly. The boy is knocked unconscious, but he is still alive. He is rushed to hospital, and will need immediate surgery. The doctor enters the emergency room, looks at the boy, and says _“I can’t operate on this boy, he is my son.”  _
 > How is this possible? The answer is simple: the doctor is the boy's mother.
 
 Sooner or later in each complex application involving data manipulation backed up by the database arises a necessity to have a parent-child relationships inside the same table/model. The easiest example that comes into my mind would be a several related blog posts, maintaining the long story chapters. The sequence of these posts would be a whole topic but since people rare like to read more than 280 symbols at once nowadays we tend to split long writings into parts.
+
+## The wrong approach
 
 These posts basically maintain a linked list. The naïve database approach to store the relation between neighbour chapters would be to add a reference field to the table/model.
 
@@ -24,6 +26,8 @@ end
 ```
 
 Here is my strong advise: **do not do that!**. Never ever.
+
+## The better approach
 
 Create a new join table `posts_relationships` and use it to link the sibling posts chains. It sounds like overcomplicating things, but in practice it is not. It will pay back soon, helping to avoid a nighmare debugging session full of _whys_ and _wtfs_ while the deleted objects will keep resurrecting out of the ashes.
 
