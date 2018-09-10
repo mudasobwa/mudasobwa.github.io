@@ -11,9 +11,10 @@ tags:
 
 ## The Problem
 
-This post is made mostly as a response to [Learning Elixir, Frst Impressions](https://elixirforum.com/t/learning-elixir-frst-impressions-plz-dont-kill-me) posted yesterday at [Elixir Forum](https://elixirforum.com). The real matter I have finally came to writing this would be I feel a necessity to sum up what I constantly tell my colleagues, mates and wife. Here it is:
+This post is made mostly as a response to [Learning Elixir, Frst Impressions](https://elixirforum.com/t/learning-elixir-frst-impressions-plz-dont-kill-me) posted yesterday at [Elixir Forum](https://elixirforum.com). The real matter I have finally came to writing this would be I feel a necessity to sum up what I constantly tell to my colleagues, mates and wife. Here it is:
 
-### thou shalt not make into thee any graven image; do not worship anything or anybody blindly
+>
+#### thou shalt not make into thee any graven image; do not worship anything or anybody blindly
 
 This writing would consist of a number of modern hipe topics demythified (spelling intended.)
 
