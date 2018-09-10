@@ -11,7 +11,7 @@ tags:
 
 ## The Problem
 
-This post is made mostly as a response to [Learning Elixir, Frst Impressions](https://elixirforum.com/t/learning-elixir-frst-impressions-plz-dont-kill-me) posted yesterday at [Elixir Forum](https://elixirforum.com). The real matter I have finally came to writing this would be I feel a necessity to sum up what I constantly tell to my colleagues, mates and wife. Here it is:
+This post is made mostly as a response to [Learning Elixir, Frst Impressions](https://elixirforum.com/t/learning-elixir-frst-impressions-plz-dont-kill-me) posted yesterday at [Elixir Forum](https://elixirforum.com). The real matter I have finally come to writing this would be I feel a necessity to sum up what I constantly tell to my colleagues, mates and wife. Here it is:
 
 >
 #### thou shalt not make into thee any graven image; do not worship anything or anybody blindly
@@ -24,9 +24,9 @@ If I were to publish this 10 years ago, the “OOP Is A Way To Go” would come 
 
 Not to solve _all the tasks_. Not to solve _your current task_, unless it’s similar to what DHH is solving for decades.
 
-The same way being pure functional is brilliant when you are doing an academical talk entitled _Adjusting Models With Cathegory Theory In New Generation Language Paradigm_, but when you are being paid for less sexy stuff, like doing what’s called Data Sience in a startup, you’d better pick up `R` and/or `Python`. No matter how _pure_ and _elegant_ they are (they are not at all.)
+The same way being pure functional is brilliant when you are doing an academical talk entitled _Adjusting Models With Category Theory In New Generation Language Paradigm_, but when you are being paid for less sexy stuff, like doing what’s called Data Science in a startup, you’d better pick up `R` and/or `Python`. No matter how _pure_ and _elegant_ they are (they are not at all.)
 
-Being functional might help, it might injure, it might even hurt. The developer might like it, might hate it, might use it, might be like “wut the heck is functional.” There is no goodness in function purity. There is no goodness in currying as is. I hear your objections, and here goes my answer: you are wrong. Data-first or data-last, currying or piping, purity or side effects—all that crap does not matter much. There are tons of different problems when strong typing is obstructing and empeding. There are great developers who never need currying (thank God.) Nobody should ever care whether data-is-last or data-is-first. Even data in the middle is fine, if it works.
+Being functional might help, it might injure, it might even hurt. The developer might like it, might hate it, might use it, might be like “wut the heck is functional.” There is no goodness in function purity. There is no goodness in currying as is. I hear your objections, and here goes my answer: you are wrong. Data-first or data-last, currying or piping, purity or side effects—all that crap does not matter much. There are tons of different problems when strong typing is obstructing and impeding. There are great developers who never need currying (thank God.) Nobody should ever care whether data-is-last or data-is-first. Even data in the middle is fine, if it works.
 
 And here we smoothly pass to the second myth.
 
@@ -48,21 +48,21 @@ Bullshit. There are tons of applications where mutability is a pure virtue, besi
 
 ## Strong typing Is A Panacea
 
-There are fashionable rumors all around pushing that strong typing drastically decreases a number of mystakes, allows to catch any error on compilation stage and even obsoletes testing. In academic test stands maybe. In fancy slides. Not in the real life.
+There are fashionable rumors all around pushing that strong typing drastically decreases the number of mistakes, allows to catch any error on compilation stage and even obsoletes testing. In academic test stands maybe. In fancy slides. Not in the real life.
 
 Because real life is full of side effects. One gets data from third parties, from the internet, from the user, from the universe. And the universe (I am not talking about the users) is not strongly typed.
 
-That does not mean I deny the profit from applying the cathegory theory to computer science. Not at all. There are areas where it works pretty well. Unfortunately, there are areas where it does not. And being 100% strong types hinders there.
+That does not mean I deny the profit from applying the category theory to computer science. Not at all. There are areas where it works pretty well. Unfortunately, there are areas where it does not. And being 100% strong types hinders there.
 
 ## Monads Are A Godsend
 
-There are not. Sometimes they work. Sometimes they just bring a boilerplate of the inconceivable size for nothing. If the control flow is best described as a chain, each step might succeed or fail and we are to stop in the case of fail and immediately return the result—monads are great. But hey, how many processes in our life are as straightforward? Even bringing `tee` monad makes the code piece an unreadable crap.
+There are not. Sometimes they work. Sometimes they just bring a boilerplate of the inconceivable size for nothing. If the control flow is best described as a chain, each step might succeed or fail and we are to stop in the case of fail and immediately return the result—monads are great. But hey, how many processes in our lives are as straightforward? Even bringing `tee` monad makes the code piece an unreadable crap.
 
 ## The Summing Up
 
-There is no pill. The salad is almost always more tasty than a cucumber, a tomato, or an olive oil. Pizzas are usually made from many ingredients. Try to order a pizza with salami. Literally: a piece of dough covered with cropped salami; roomates would consider you a nerd.
+There is no pill. The salad is almost always more tasty than a cucumber, a tomato, or an olive oil. Pizzas are usually made from many ingredients. Try to order a pizza with salami. Literally: a piece of dough covered with cropped salami; roommates would consider you a nerd.
 
-Don’t hesitate to pick the most applicable patterns from different paradigms and mix them to achieve the best result for this particular task. There is nor a prophet neither a fortuneteller who knows what’s best for _you_ and _your current problem_. And always ask for a weird topping, like pineapple or something. Here is the key to bost most satisfactory and most profitable developement process:
+Don’t hesitate to pick the most applicable patterns from different paradigms and mix them to achieve the best result for this particular task. There is nor a prophet neither a fortuneteller who knows what’s best for _you_ and _your current problem_. And always ask for a weird topping, like pineapple or something. Here is the key to bost most satisfactory and most profitable development process:
 
 ## The Gold Ratio
 
@@ -70,7 +70,7 @@ There were many languages invented because of the real need, with business goals
 
 - `c` to make an assembly language a bit more humane (and `rust` now as a great disciple)
 - `erlang` to make a telecom work with millions of connections simultaneously
-- `php` to nake static webpages dynamic for no cost
+- `php` to make static webpages dynamic for no cost
 - `javascript` to make drop-down menus and poison the `marquee` tag
 - `haskell` to prove some mathematical concepts and make a perfect ideal academic language in a vacuum to teach students
 - `java` to support enterprise-level scalability
@@ -79,6 +79,6 @@ There were many languages invented because of the real need, with business goals
 
 All of them are great in their niches. One might even write pure immutable fully-functional code with ruby, or spawn a million of parallel tasks with javascript. The thing is one should not abuse languages for what they are not good enough. Don’t be a slave of technology, hipe, fashion, public opinion, authorities.
 
-Use the best from each world. Use strong typing when it applies and forget about it where it does not. Use carruying if the language treats it as a first class citizen and avoid building a weird surrogates to support currying in the languages that are built with another control flow in mind. Benefit from `while(*dest++ = *src++);` implementation of `strcpy` where it makes sense.
+Use the best from each world. Use strong typing when it applies and forget about it where it does not. Use currying if the language treats it as a first class citizen and avoid building a weird surrogates to support currying in the languages that are built with another control flow in mind. Benefit from `while(*dest++ = *src++);` implementation of `strcpy` where it makes sense.
 
 I could have been providing examples for another hundred of pages, but enough is enough. There is no one single paradigm as by now that works well under any circumstances. Let me repeat: **don’t be a slave of technology, hipe, fashion, public opinion, authorities**. Pick up the set of patterns accordingly to the problem, not to what you are most familiar with, or love more, or were told is the best thing ever.
