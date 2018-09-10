@@ -46,7 +46,7 @@ Being object-oriented might help, but it might injure, it might even hurt. One s
 
 Bullshit. There are tons of applications where mutability is a pure virtue, besides aforementioned basecamps and hadoops. For instance, any task that involves a conveyor and some state-dependent local storage would make you life a nightmare if you cannot mutate the state.
 
-## Strong typing Is A Panacea
+## Strong Typing Is A Panacea
 
 There are fashionable rumors all around pushing that strong typing drastically decreases the number of mistakes, allows to catch any error on compilation stage and even obsoletes testing. In academic test stands maybe. In fancy slides. Not in the real life.
 
@@ -56,13 +56,13 @@ That does not mean I deny the profit from applying the category theory to comput
 
 ## Monads Are A Godsend
 
-There are not. Sometimes they work. Sometimes they just bring a boilerplate of the inconceivable size for nothing. If the control flow is best described as a chain, each step might succeed or fail and we are to stop in the case of fail and immediately return the result—monads are great. But hey, how many processes in our lives are as straightforward? Even bringing `tee` monad makes the code piece an unreadable crap.
+They are not. Sometimes they work. Sometimes they just bring a boilerplate of the inconceivable size for nothing. If the control flow is best described as a chain, each step might succeed or fail and we are to stop in the case of fail and immediately return the result—monads are great. But hey, how many processes in our lives are as straightforward? Even bringing `tee` monad makes the code piece an unreadable crap.
 
 ## The Summing Up
 
 There is no pill. The salad is almost always more tasty than a cucumber, a tomato, or an olive oil. Pizzas are usually made from many ingredients. Try to order a pizza with salami. Literally: a piece of dough covered with cropped salami; roommates would consider you a nerd.
 
-Don’t hesitate to pick the most applicable patterns from different paradigms and mix them to achieve the best result for this particular task. There is nor a prophet neither a fortuneteller who knows what’s best for _you_ and _your current problem_. And always ask for a weird topping, like pineapple or something. Here is the key to bost most satisfactory and most profitable development process:
+Don’t hesitate to pick the most applicable patterns from different paradigms and mix them to achieve the best result for this particular task. There is nor a prophet neither a fortuneteller who knows what’s best for _you_ and _your current problem_. And always ask for a weird topping, like pineapple or something. Here is the key to both most satisfactory and most profitable development process:
 
 ## The Gold Ratio
 
