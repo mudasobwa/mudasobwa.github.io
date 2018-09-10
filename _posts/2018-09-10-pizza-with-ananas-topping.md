@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hipe Demythified or Pizza With Pineapple Topping"
+title: "Hype Demythified or Pizza With Pineapple Topping"
 description: "Don’t blindly follow the paradigms. Here is why."
 category: hacking
 tags:
@@ -16,7 +16,7 @@ This post is made mostly as a response to [Learning Elixir, Frst Impressions](ht
 >
 #### thou shalt not make into thee any graven image; do not worship anything or anybody blindly
 
-This writing would consist of a number of modern hipe topics demythified (spelling intended.)
+This writing would consist of a number of modern hype topics demythified (spelling intended.)
 
 ## Functional Programming Is The Path
 
@@ -77,8 +77,8 @@ There were many languages invented because of the real need, with business goals
 - `ruby` to make programmers happy (according to Matz, and I agree)
 - `go` to drastically decrease an entry level and learning curve to make it possible to hire teenagers
 
-All of them are great in their niches. One might even write pure immutable fully-functional code with ruby, or spawn a million of parallel tasks with javascript. The thing is one should not abuse languages for what they are not good enough. Don’t be a slave of technology, hipe, fashion, public opinion, authorities.
+All of them are great in their niches. One might even write pure immutable fully-functional code with ruby, or spawn a million of parallel tasks with javascript. The thing is one should not abuse languages for what they are not good enough. Don’t be a slave of technology, hype, fashion, public opinion, authorities.
 
 Use the best from each world. Use strong typing when it applies and forget about it where it does not. Use currying if the language treats it as a first class citizen and avoid building a weird surrogates to support currying in the languages that are built with another control flow in mind. Benefit from `while(*dest++ = *src++);` implementation of `strcpy` where it makes sense.
 
-I could have been providing examples for another hundred of pages, but enough is enough. There is no one single paradigm as by now that works well under any circumstances. Let me repeat: **don’t be a slave of technology, hipe, fashion, public opinion, authorities**. Pick up the set of patterns accordingly to the problem, not to what you are most familiar with, or love more, or were told is the best thing ever.
+I could have been providing examples for another hundred of pages, but enough is enough. There is no one single paradigm as by now that works well under any circumstances. Let me repeat: **don’t be a slave of technology, hype, fashion, public opinion, authorities**. Pick up the set of patterns accordingly to the problem, not to what you are most familiar with, or love more, or were told is the best thing ever.
