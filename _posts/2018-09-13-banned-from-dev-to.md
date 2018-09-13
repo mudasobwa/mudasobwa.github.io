@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Banned from dev.to"
+title: "Banned for not being flattering"
 description: "“I’m back in USSR,” or the censorship to better maintain diversity"
 category: culture
 tags:
@@ -17,6 +17,6 @@ This one. During 8 hours of it’s availability it received 32 positive response
 
 I have exactly zero comments. This is a perfect example of how people tend to treat diversity (unless there there is a difference in points of view,) how snitching is more powerful than producing a content, and how the crowd would deal with anybody who does not babble the words of admiration, delight, and rapture to the community members.
 
-This is what people call “healthy environment” today. Because fuck me.
+This is what people call  “healthy environment”  today. Because fuck me.
 
 I am fine with that. Are you?
