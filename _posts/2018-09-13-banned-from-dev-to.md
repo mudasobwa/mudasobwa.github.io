@@ -11,7 +11,7 @@ tags:
 
 ![How To Pass Any Tech Interview](/img/dev.to/banned_post.png)
 
-This one. During 8 hours of it’s availability it received 32 positive responses. It was tweeted several times by strangers. And then all of a suggen I have received this email:
+This one. During 8 hours of it’s availability it received 32 positive responses. It was tweeted several times by strangers. And then all of a sudden I have received this email:
 
 ![“we received a number of (valid) complaints that the article was clickbait-y and didn't establish a productive launching point for a true conversation”](/img/dev.to/notification.png)
 
