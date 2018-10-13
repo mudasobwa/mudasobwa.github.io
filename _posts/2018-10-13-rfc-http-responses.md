@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "RFC HTTP Responses Proposal"
+title: "RFC HTTP API Feedback Proposal"
 description: "RFC for implementing API HTTP responses in 6xx codes area"
 category: fun
 tags:
@@ -15,7 +15,7 @@ tags:
 > Category: Standards Track                                  October 2018
 > ISSN: 1973-3009
 
-## HTTP/1.1: Addendum for API Response Codes
+## HTTP/1.1: Addendum for API Feedback Codes
 
 ### Abstract
 
