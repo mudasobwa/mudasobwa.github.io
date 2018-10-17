@@ -34,7 +34,7 @@ def append(this, any)
 end
 ```
 
-This `@spec` line is parsed and evaluated by standard ruby parsed, if anybody’s curious. In this writing I am going to show how I had it implemented. For those brave who think they can do some ruby, I’d strongly suggest doing this golf yourselves, it was an exciting couple of hours while I get everything up and parsing properly (through crashes and weird error messages).
+This `@spec` line is parsed and evaluated by standard ruby parser, if anybody’s curious. In this writing I am going to show how I had it implemented. For those brave who think they can do some ruby, I’d strongly suggest doing this golf yourselves, it was an exciting couple of hours while I get everything up and parsing properly (through crashes and weird error messages).
 
 ### Getting to the task
 
