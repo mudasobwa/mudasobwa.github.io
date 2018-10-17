@@ -10,8 +10,6 @@ tags:
   - tools
 ---
 
-## HTTP/1.1: Addendum for API Feedback Codes
-
 ### Typespecs
 
 _Erlang_ and hence _Elixir_ are dynamically typed languages. They both have an extended abilities to type check in compile time using _typespecs_. Here are [an introduction](https://elixir-lang.org/getting-started/typespecs-and-behaviours.html) and [more detailed documentation](https://hexdocs.pm/elixir/master/typespecs.html#content).
