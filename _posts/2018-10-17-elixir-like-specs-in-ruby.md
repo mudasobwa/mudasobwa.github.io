@@ -21,7 +21,7 @@ Basically one might declare the specification of the function and if the actual 
 def concat(origin, any), do: origin <> IO.inspect(any)
 ```
 
-During the work on explicit function typing in [`Dry::Protocols`](https://github.com/am-kantox/dry-behaviour) I experimented with the syntax of specs. The most exciting I was able to get working was the almost copy of the Elixir’s one:
+During the work on explicit function typing in [`Dry::Protocols`](https://github.com/am-kantox/dry-behaviour) I experimented with the syntax of specs. The most exciting syntax I was able to get working was the almost copy of the Elixir’s one:
 
 ```ruby
 include Dry::Annotation
