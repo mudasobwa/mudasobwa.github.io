@@ -11,19 +11,19 @@ tags:
 
 ### Exceptional Behaviour
 
-> There are only two hard things in Computer Science: cache invalidation and naming things.
+> There are only two hard things in Computer Science: cache invalidation and naming things.  
 > _— Phil Karlton_
 
 Actually, there are three. I would put making a decision on whether to raise or gracefully handle exceptions in that row.
 
 There is the famous Erlang philosophy “let-it-crash,” which roughly means the process should not lie about it’s ability to deal with everything, rather it should simply refuse to handle unexpected data. 
 
-> [...] a clean separation of issues. We write code that solves problems and code that fixes problems, but the two are not intertwined.
+> [...] a clean separation of issues. We write code that solves problems and code that fixes problems, but the two are not intertwined.  
 > _— Joe Armstrong, “[Programming Erlang](https://pragprog.com/book/jaerlang2/programming-erlang)”_
 
 That said, the code that _solves_ problem should not ever try to _fix_ problems. There is a rule of thumb.
 
-**Code handling a data must not make an assumptions. If the code does not understand the data, it should raise an exception. Period.**
+**Code handling data must not make assumptions. If the code does not understand the data, it should raise an exception. Period.**
 
 Imagine we have a function that processes the use input (say, currency conversion rate.) We usually tend to write something like this:
 
@@ -51,7 +51,7 @@ The **behaviour of this code when the rate is zero is _exceptional_** and unless
 
 ### Let it crash
 
-> The real world actually has independent things communicating through messages. I’m an ex-physicist — we perceive the world by receiving messages. Packets of light and sound carry information. All that we know about the world is what we’ve learned by receiving messages. We don’t have shared memory. I have my memory, you have yours, and I don’t know what you think about anything. If I want to know what you think about something, then I have to ask you a question and wait for you to reply.
+> The real world actually has independent things communicating through messages. I’m an ex-physicist — we perceive the world by receiving messages. Packets of light and sound carry information. All that we know about the world is what we’ve learned by receiving messages. We don’t have shared memory. I have my memory, you have yours, and I don’t know what you think about anything. If I want to know what you think about something, then I have to ask you a question and wait for you to reply.  
 > _— Joe Armstrong, “[Programming Erlang](https://pragprog.com/book/jaerlang2/programming-erlang)”_
 
 I have seen (and honestly produced) a lot of code that is as defensive as possible. The `case` conditional statement should have `else` clause, that is to process unexpected income, they say. But... wait. Let’s take a step back and look up the meaning of “unexpected” in Merriam-Webster. It says “unexpected” is a synonym of “unforeseen” and to my best knowledge the latter means one cannot predict it. I am also an ex-physicist and I am pretty sure we cannot cook the ready-to-use answer if we don’t know what the question was. They also call it _“causation”_.
