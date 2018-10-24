@@ -8,7 +8,7 @@ tags:
   - coding
 ---
 
-![professional beggars were often seen as people not deserving of aid](img/willemsens-ideological-beggar.jpg)
+![professional beggars were often seen as people not deserving of aid](/img/willemsens-ideological-beggar.jpg)
 
 <small>— Abraham Willemsens (Metropolitan Museum of Art)</small>
 
