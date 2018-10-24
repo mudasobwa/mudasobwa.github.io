@@ -48,7 +48,7 @@ These guys do the real job, they have a complete right to claim fatigue, exhaust
 
 ![Coal miners after six hours in the bottomhole](/img/coal-miners.jpg)
 
-When I hear about the burnout from the guy who was literally relocating pizels on the scree  for eight hours, I have no emotions but laughter.
+When I hear about the burnout from people who were literally relocating pixels on the screen for eight hours, I have no emotions but laughter.
 
 ## Developers Are Extremely Touchy
 
