@@ -133,11 +133,11 @@ begin
   module AwesomePrint
     Formatter.prepend(Module.new do
       def awesome_self(object, type)
-        if type == :string && @options[:string_limit] && object.inspect.to_s.length > @options[:string_limit]
-          colorize(object.inspect.to_s[0..@options[:string_limit]] + "...", type)
-        else
-          super(object, type)
-        end
+        return super(object, type) unless type == :string
+        return super(object, type) unless @options[:string_limit]
+        return super(object, type) unless object.inspect.to_s.length > @options[:string_limit]
+
+        colorize(object.inspect.to_s[0..@options[:string_limit]] + "...", type)
       end
     end)
   end
