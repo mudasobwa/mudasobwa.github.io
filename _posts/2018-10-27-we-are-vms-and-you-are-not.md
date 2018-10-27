@@ -65,7 +65,9 @@ Ignore it. Why give yourself an ulcer? You don’t want to give us the machine t
 
 We designed it ourselves, it’s perfect. We like it so much we put our name on it, DCL—Digital’s Command Language. In fact we’re so happy with it, we designed it once for each of our operating systems. We even try to keep it the same from release to release, sometimes we blow it though. See figure 1.
 
-7. Real time performance. We got it. Who else could have done such a good job? So the system seems sluggish with all those priority 18 processes, no problem, just make them priority 1. Anyway, real time isn’t important anymore like it used to be. We changed our group’s name to get rid of the name realtime, we told all our realtime users to see figure 1 a long time ago.
+#### 7. Real time performance.
+
+We got it. Who else could have done such a good job? So the system seems sluggish with all those priority 18 processes, no problem, just make them priority 1. Anyway, real time isn’t important anymore like it used to be. We changed our group’s name to get rid of the name realtime, we told all our realtime users to see figure 1 a long time ago.
 
 In conclusion, stuff your SPR. Love VMS or leave it, but don’t complain.
 
