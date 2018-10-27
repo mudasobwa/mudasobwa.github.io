@@ -10,7 +10,7 @@ tags:
 
 ## NB!
 
-⚠️ **Attention! This is a joke. It was written as a joke back in 1970s when the environment in CS was not as inclusive and we had no necessity to preface jokes with a disclaimer “Attention! This is a joke.”**
+⚠️   **Attention! This is a joke. It was written as a joke back in 1970s when the environment in CS was not as inclusive and we had no necessity to preface jokes with a disclaimer “Attention! This is a joke.”**
 
 I am reposting it here because it is a marvelous piece of art and I am afraid it might be lost in ashes.
 
@@ -21,22 +21,22 @@ I am reposting it here because it is a marvelous piece of art and I am afraid it
 Please stop submitting SPR’s. This is our system. We designed it, we built it, and we use it more than you do. If there are some features you think might be missing, if the system isn’t as effective as you think it could be, TOUGH! Give it back, we don’t need you. See figure.
 
 ```
-                     ---------------------------
-                     !            -            !
-                     !           { }           !
-                     !           | |           !
-                     !           | |           !
-                     !        .-.! !.-.        !
-                     !      .-!  ! !  !.-.     !
-                     !      ! !       !  ;     !
-                     !      \           ;      !
-                     !       \         ;       !
-                     !        !       :        !
-                     !        !       |        !
-                     !        |       |        !
-                     !                         !
-                     ---------------------------
-                     	       Figure 1.
+           ---------------------------
+           !            -            !
+           !           { }           !
+           !           | |           !
+           !           | |           !
+           !        .-.! !.-.        !
+           !      .-!  ! !  !.-.     !
+           !      ! !       !  ;     !
+           !      \           ;      !
+           !       \         ;       !
+           !        !       :        !
+           !        !       |        !
+           !        |       |        !
+           !                         !
+           ---------------------------
+           	       Figure 1.
 ```
 
 Forget about your silly problem, let’s take a look at some of the features of the VMS operating system.
@@ -69,5 +69,5 @@ We designed it ourselves, it’s perfect. We like it so much we put our name on 
 
 In conclusion, stuff your SPR. Love VMS or leave it, but don’t complain.
 
-_Original source (now revoked):_ http://www.parc.xerox.com/csl/members/dourish/goodies/see-figure-1.html
-_Source:_ https://web.archive.org/web/19980215205000/http://www.parc.xerox.com/csl/members/dourish/goodies/see-figure-1.html
+[_Original source (now revoked) at Xerox_](http://www.parc.xerox.com/csl/members/dourish/goodies/see-figure-1.html).
+[_Source at WebMachine_](https://web.archive.org/web/19980215205000/http://www.parc.xerox.com/csl/members/dourish/goodies/see-figure-1.html).
