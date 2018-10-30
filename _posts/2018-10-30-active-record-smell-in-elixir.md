@@ -210,6 +210,34 @@ def scope!(query \\ nil, params),
   do: apply(unquote(repo), :all, [scope(query, params)])
 ```
 
+### Helpers For Enums
+
+This is completely redundant, but let’s make them to show the power of _Elixir_ macros again.
+
+```elixir
+defmacrop enums(opts) do
+  opts
+  |> Keyword.get(:enums, [])
+  |> Enum.flat_map(fn {prefix, values} ->
+    values
+    |> Macro.expand(__CALLER__) # to allow sigils
+    |> Enum.map(fn value ->
+      quote do
+        @spec unquote(:"#{prefix}_#{value}")(opts :: Keyword.t()) :: [Ecto.Schema.t()]
+        @doc ~s|Returns a dataset for `where(#{unquote(prefix)}: "#{unquote(value)}")`|
+        defp unquote(:"#{prefix}_#{value}")(opts) do
+          (data in scope(opts))
+          |> from(where: data.unquote(prefix) == ^unquote(value))
+          |> unquote(repo).all()
+        end
+      end
+    end)
+  end)
+end
+```
+
+Note, that specs and docs will be _caller specific_, including real names of functions for these particular enums.
+
 ### Putting It All Together
 
 All we need to do to make it work, would be to build the AST in the scaffold mentioned above to be injected into our schemas. That would be as easy as
@@ -221,7 +249,7 @@ ast =
       import(Ecto.Query)
       @type t :: %__MODULE__{}
     end
-    | [find(repo, preload) | scopes(preload)]
+    | [find(repo, preload) | scopes(preload) ++ enums(opts)]
   ]
 ```
 
