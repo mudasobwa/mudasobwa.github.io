@@ -26,7 +26,7 @@ Yes, some things from _AR_ are good enough for me to miss them.
 What we want is to have something like this
 
 ```elixir
-defmodule Post
+defmodule Post do
   use EctoAR.Query,
     repo: MyApp.Repo,
     preload: [:user, :comments],

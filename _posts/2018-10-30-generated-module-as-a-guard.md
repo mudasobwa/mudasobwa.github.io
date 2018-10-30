@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Generated Module As A Guard"
-description: "Better and faster way to implement validation of incoming data that just looking it up in the global config map"
+description: "Better and faster way to implement validation of incoming data than just looking it up in the global config map"
 category: hacking
 tags:
   - elixir
@@ -15,7 +15,7 @@ The application has a set of rules to filter the incoming data stream. Let’s s
 
 ## Naïve Approach
 
-The naïve approach to handle this use case would be to maintain a map, containing currency pairs as keys and rules as values, and apply rules to the incomind rates to check whether the rate is of interest or not. Rules would be simple maps specifying the acceptable interval for the rate as `min` and `max` values. Something like this (for the sake of an example ket’s assume rates are coming as maps already, for instance from RabbitMQ or like):
+The naïve approach to handle this use case would be to maintain a map, containing currency pairs as keys and rules as values, and apply rules to the incomind rates to check whether the rate is of interest or not. Rules would be simple maps specifying the acceptable interval for the rate as `min` and `max` values. Something like this (for the sake of an example let’s assume rates are coming as maps already, for instance from RabbitMQ or like):
 
 ```elixir
 defmodule Validator do
@@ -39,7 +39,7 @@ defmodule Validator do
 end
 ```
 
-This is good, and this works. But can we improve the performance?
+This is good, and this works. But can we improve the performance?—Sure thing!
 
 ## Pattern matching
 
