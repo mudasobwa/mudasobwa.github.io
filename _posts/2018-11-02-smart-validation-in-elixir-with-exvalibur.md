@@ -90,7 +90,7 @@ end
 
 ## Coming Soon
 
-- allow generic patterns in matches, like `%{matches: %{currency_pair: <<"EUR", _ :: binary-size(3)}}`
+- allow generic patterns in matches, like `%{matches: %{currency_pair: <<"EUR", _ :: binary-size(3)>>}}`
 - allow transformers in rules, like `%{transform: {MyMod, :to_changeset}}` applying to _validated_ input, so that one might use the validator as a mapper
 - allow the ruleset given in CSV (or some kind of external format.)
 
