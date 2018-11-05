@@ -127,6 +127,8 @@ h4 { font-size: 20px; }
 h5 { font-size: 18px; }
 h6 { font-size: 16px; }
 
+img { max-width: 100%; }
+
 code { color: inherit; }
 blockquote p { color: #999; line-height: 1.6em; padding-right: 10em; }
 .smallcaps { font-variant: small-caps; }
