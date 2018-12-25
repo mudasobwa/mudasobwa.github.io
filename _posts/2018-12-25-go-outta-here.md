@@ -68,6 +68,7 @@ What could go wrong with a plain old good equal sign? We’d lose the pride for 
     func main() {
       fmt.Println(x)
     }
+>
 > Notice that we moved the variable outside of the main function. This means that other functions can access this variable.
 
 This is found in _scopes_ chapter. OK, it looks like an instance variable in Ruby. Or as a module attribute in Elixir. What is indeed the scope and the lifetime of this variable? Can I return it from the functions declared in this module? There is no answer in the tutorial, also I understand that probably after stepping onto a couple of rakes any _Gopher_ would burn the knowledge into memory.
