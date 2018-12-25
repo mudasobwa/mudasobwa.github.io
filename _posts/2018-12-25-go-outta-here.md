@@ -77,7 +77,7 @@ This is found in _scopes_ chapter. OK, it looks like an instance variable in Rub
 
 The first control _structure_ (?) introduces is a `for` loop. Iterating, mapping, reducing?—No, we’ve never heard about. Declare an outermost variable and loop with `for`. I am discreetly checking the current date against my calendar. It’s still 2018.
 
-The second one is obviously `if`. “Give me `for` and `if` to stand on, and I will move the Earth,” as Archimedes used to say instead of the evening pray. BTW, the third _control structure_ would be `switch`.
+The second one is obviously `if`. _“Give me `for` and `if` to stand on, and I will move the Earth,”_ as Archimedes used to say instead of the evening pray. BTW, the third _control structure_ would be `switch`.
 
 And that’s it! The language must be as simple as possible. 
 
