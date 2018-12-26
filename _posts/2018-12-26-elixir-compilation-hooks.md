@@ -46,8 +46,10 @@ An excerpt from the docs:
 
 > **`@after_compile`**
 > A hook that will be invoked right after the current module is compiled.
->  Accepts a module or a {module, function_name} tuple. The function must take two arguments: the module environment and its bytecode. When just a module is provided, the function is assumed to be `__after_compile__/2`.
-> Callbacks registered first will run last.
+>
+  Accepts a module or a {module, function_name} tuple. The function must take two arguments: the module environment and its bytecode. When just a module is provided, the function is assumed to be `__after_compile__/2`.
+>
+  Callbacks registered first will run last.
 >
     defmodule MyModule do
       @after_compile __MODULE__
