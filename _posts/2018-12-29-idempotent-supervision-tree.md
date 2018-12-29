@@ -9,7 +9,7 @@ tags:
   - tutorial
 ---
 
-One of the most exciting features of [OTP](https://learnyousomeerlang.com/what-is-otp), the heart of _Erlang VM_, would be the _Supervision Tree_. The long-lived processes are maintained as a tree structure, containing [_Supervisors_](https://hexdocs.pm/elixir/Supervisor.html) and _Workers_. The latter are _leaves_ in the tree. We do not need to be babysitting each and every process, instead we practive [_Let It Crash_](http://verraes.net/2014/12/erlang-let-it-crash/) religion. If something went wrong, in most cases _we do nothing_. We just let the failed process crash and the supervisor will restart it gracefully.
+One of the most exciting features of [OTP](https://learnyousomeerlang.com/what-is-otp), the heart of _Erlang VM_, would be the _Supervision Tree_. The long-lived processes are maintained as a tree structure, containing [_Supervisors_](https://hexdocs.pm/elixir/Supervisor.html) and _Workers_. The latter are _leaves_ in the tree. We do not need to be babysitting each and every process, instead we practice [_Let It Crash_](http://verraes.net/2014/12/erlang-let-it-crash/) religion. If something went wrong, in most cases _we do nothing_. We just let the failed process crash and the supervisor will restart it gracefully.
 
 This is one of the best design decision I can think of.
 
@@ -59,7 +59,7 @@ def start_link(_opts \\ []) do
 end
 ```
 
-Right?—Nope. The code above will blow up when the process is already started. By default, the supervisor will attempt to restart it three times (the number is configurable) and give up then. Yes, the process was likely already started, so no issue, but this is incorrect; the process should not blow up all of suddent for no reason.
+Right?—Nope. The code above will blow up when the process is already started. By default, the supervisor will attempt to restart it three times (the number is configurable) and give up then. Yes, the process was likely already started, so no issue, but this is incorrect; the process should not blow up all of sudden for no reason.
 
 The proper solution would be to act on successful start and _let anything else sink to the caller_. [Kernel.SpecialForms.with/1](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#with/1) _monad-like_ construct comes to the rescue:
 
@@ -72,6 +72,6 @@ def start_link(_opts \\ []) do
 end
 ```
 
-Now if the process has started successfully, we perform the required initialiation. If not, we just _pass the error returned to the calling process_. Let them deal with the issue. This is the correct way to perform idempotent initialization of the process.
+Now if the process has started successfully, we perform the required initialization. If not, we just _pass the error returned to the calling process_. Let them deal with the issue. This is the correct way to perform idempotent initialization of the process.
 
 Happy reloading!
