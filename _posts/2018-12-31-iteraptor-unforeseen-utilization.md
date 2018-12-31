@@ -8,8 +8,6 @@ tags:
   - tricks
 ---
 
-{% link https://dev.to/mudasobwa/elixir-iteraptor--iterating-nested-terms-like-im-five-3b9g %}
-
 [**`Iteraptor`**](https://github.com/am-kantox/iteraptor) library was initially conceived as a helper to iterate/map/reduce deeply nested enumerables, like maps, keywords and lists. Today I occasionally discovered a new—initially undesired—application for it.
 
 I was introducing [property-based testing](https://elixir-lang.org/blog/2017/10/31/stream-data-property-based-testing-and-data-generation-for-elixir/) for [`Camarero`](https://github.com/am-kantox/camarero). The latter serves JSON, so the integration test looked like
