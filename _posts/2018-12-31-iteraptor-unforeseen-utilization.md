@@ -10,8 +10,6 @@ tags:
 
 [**`Iteraptor`**](https://github.com/am-kantox/iteraptor) library was initially conceived as a helper to iterate/map/reduce deeply nested enumerables, like maps, keywords and lists.
 
-{% link https://dev.to/mudasobwa/elixir-iteraptor--iterating-nested-terms-like-im-five-3b9g %}
-
 Today I occasionally discovered a new—initially undesired—application for it. I was introducing [property-based testing](https://elixir-lang.org/blog/2017/10/31/stream-data-property-based-testing-and-data-generation-for-elixir/) for [`Camarero`](https://github.com/am-kantox/camarero). The latter serves JSON, so the integration test looked like
 
 ```elixir
@@ -40,6 +38,7 @@ Luckily enough, I had already the library to modify deeply nested terms, so I de
 
 ```elixir
 @spec jsonify(Access.t(), opts :: list()) :: %{required(binary()) => any()}
+
 def jsonify(input, opts \\ [])
 
 def jsonify([{_, _} | _] = input, opts),
