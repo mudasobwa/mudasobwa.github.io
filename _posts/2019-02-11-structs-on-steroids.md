@@ -12,7 +12,7 @@ tags:
 ![Cami de Ronda](/img/cami-de-ronda.jpg)
 
 Elixir structs are very powerful but sometimes they require too much boilerplate to use them as strict data mappers. If desired, validation should be chained here and there. If the struct has more than three fields,
-pattern matching in the function head is to be copy-pasted over the whole module or extracted into a cryptic macro. Even then, although, it quickly becomes hardly maintainable due to _unused variables warnings_ thrown whenever one calls the all-in-one macro and does not use all the variables inhjected.
+pattern matching in the function head is to be copy-pasted over the whole module or extracted into a cryptic macro. Even then, although, it quickly becomes hardly maintainable due to _unused variables warnings_ thrown whenever one calls the all-in-one macro and does not use all the variables injected.
 
 I am talking about somewhat like this:
 
@@ -91,7 +91,7 @@ If validation fails, all subsequent calls in the pipeline are skipped and the la
 |> MyStruct.put(:foo, 42)
 |> MyStruct.put(:foo, 52)
 |> MyStruct.put(:foo, 62)
-#⇒ %MyStruct{bar: %{}, baz: [], foo: 52}
+#⇒ {:error, %MyStruct{bar: %{}, baz: [], foo: 52}}
 ```
 
 `validate/1` might be invoked at any moment passing an instance of the struct to it.
