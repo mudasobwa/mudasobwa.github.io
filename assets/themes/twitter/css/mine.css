@@ -64,9 +64,10 @@ ul.disc li {
 }
 
 code.highlighter-rouge {
-  background-color: #eee;
+  background-color: #f9f9f9;
   padding: 0em 0.3em;
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
+  font-size: 85%;
 }
 
 a { color: #009688; }
@@ -86,8 +87,7 @@ div.pagination {
 }
 .span10 img { margin: 1em 0 1em 0; }
 pre, code, .code {
-  font-family: 'Anonymous Pro', monospace;
-  font-size: 90%;
+  font-family: 'Ubuntu Mono', 'Anonymous Pro', monospace;
 }
 
 /* tag_box ======================================================== */
