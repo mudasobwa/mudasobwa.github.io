@@ -1,7 +1,7 @@
 /* Override some defaults */
 html {
     line-height: 1.5;
-    font-family: "Mukta Mahee", "Roboto", "Open Sans", sans-serif;
+    font-family: "Iosevka", "Ubuntu", "Mukta Mahee", "Roboto", "Open Sans", sans-serif;
     font-weight: normal;
     font-size: 128%;
     color: rgba(0,0,0,0.87);
@@ -34,7 +34,7 @@ h5 { font-size: 1.70rem; }
 h6 { font-size: 1.50rem; }
 
 .row ul {
-  margin-left: 3em;
+  margin-left: 1.4em;
   font-size: 110%;
 }
 footer .row ul {

@@ -186,7 +186,7 @@ description: "This page exists only for the sake of organizing stuff so that I m
 
 ---
 
-### [🐦](https://twitter.com/mudasobwa)  |  [🐱](https://github.com/am-kantox)  |  [😸](https://github.com/mudasobwa)  |  [☠️](https://dev.to/mudasobwa)
+### [🐦](https://twitter.com/mudasobwa)     |     [🐱](https://github.com/am-kantox)     |     [😸](https://github.com/mudasobwa)     |     [☠️](https://dev.to/mudasobwa)
 
 ---
 
