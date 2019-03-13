@@ -1,7 +1,7 @@
 /* Override some defaults */
 html {
     line-height: 1.5;
-    font-family: "Iosevka", "Ubuntu", "Mukta Mahee", "Roboto", "Open Sans", sans-serif;
+    font-family: "Iosevka", "Ubuntu Condensed", "Mukta Mahee", "Roboto", "Open Sans", sans-serif;
     font-weight: normal;
     font-size: 128%;
     color: rgba(0,0,0,0.87);
