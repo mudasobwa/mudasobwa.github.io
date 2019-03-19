@@ -52,7 +52,11 @@ description: "This page exists only for the sake of organizing stuff so that I m
 ⤷ Easy CSV import/export  
 ⤷ <small style="color: #999;">ruby</small>  
 
-### 🛡️ Used In Prod, Abandoned
+▶ [lib_lat_lon](https://github.com/amotion-city/lib_lat_lon)  
+⤷ Handy geo coding against different providers  
+⤷ <small style="color: #999;">elixir</small>··
+
+### 🛡️ Used In Prod, Retired
 
 ▶ [transdeal](https://github.com/am-kantox/transdeal)  
 ⤷ Helper library allowing to tackle with `ActiveRecord` transactions partial rollback  
@@ -83,6 +87,10 @@ description: "This page exists only for the sake of organizing stuff so that I m
 ▶ [translator-ruby-bot](https://github.com/am-kantox/translator-ruby-bot)  
 ⤷ Slack bot translating words between different languages  
 ⤷ <small style="color: #999;">ruby</small>  
+
+▶ [emphatis](https://github.com/amotion-city/emphatis)  
+⤷ Tiny library that helps to convert the text to italic/bold.mono using unicode fontfaces  
+⤷ <small style="color: #999;">elixir</small>··
 
 ### 👻 Experiments
 
