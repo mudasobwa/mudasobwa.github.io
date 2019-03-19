@@ -54,7 +54,7 @@ description: "This page exists only for the sake of organizing stuff so that I m
 
 ▶ [lib_lat_lon](https://github.com/amotion-city/lib_lat_lon)  
 ⤷ Handy geo coding against different providers  
-⤷ <small style="color: #999;">elixir</small>··
+⤷ <small style="color: #999;">elixir</small>  
 
 ### 🛡️ Used In Prod, Retired
 
@@ -90,7 +90,7 @@ description: "This page exists only for the sake of organizing stuff so that I m
 
 ▶ [emphatis](https://github.com/amotion-city/emphatis)  
 ⤷ Tiny library that helps to convert the text to italic/bold.mono using unicode fontfaces  
-⤷ <small style="color: #999;">elixir</small>··
+⤷ <small style="color: #999;">elixir</small>  
 
 ### 👻 Experiments
 
