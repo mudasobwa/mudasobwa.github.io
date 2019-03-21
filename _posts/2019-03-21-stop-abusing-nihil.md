@@ -9,7 +9,7 @@ tags:
 ---
 
 > I call it my billion-dollar mistake.
-> <small><em>— Sir Charles Antony Richard Hoare</em></small>
+> <small><em>Sir Charles Antony Richard Hoare</em></small>
 
 ![Sequoia Gegant](/img/sequoia.jpg)
 
@@ -23,7 +23,7 @@ Emphasis is mine. Null reference! It has nothing to do with `null` in _Java_, wh
 But _Kotlin_ authors seemed to not bother reading the whole quote and they indeed re-invented the wheel.
 
 > Kotlin makes a distinction between nullable and non-nullable data types. All nullable objects must be declared with a "?" postfix after the type name.
-> <small><em>— [Kotlin @Wiki](https://en.wikipedia.org/wiki/Kotlin_(programming_language))</em></small>
+> <small><em>[Kotlin @Wiki](https://en.wikipedia.org/wiki/Kotlin_(programming_language))</em></small>
 
 I doubt there are any reasons of doing that besides the religious worship to the strong typing hype.
 
