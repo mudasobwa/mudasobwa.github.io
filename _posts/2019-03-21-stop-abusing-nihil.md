@@ -85,11 +85,11 @@ If you are using `nil`s for denoting somewhat else, you are doing it wrong. Some
 desires it’s own type. If you need to explicitly state somewhat else, create a typed
 object and make it having a state. But when there is _no such object_, `nil` is pretty good.
 
-Purists loudly advocate nullable types, monads, all that crap might not only help us
+Purists loudly advocate nullable types, monads, all that crap,—might not only help us
 to catch errors on compilation stage (static code analysis stage for interpreted languages,)
 but it even might obsolete tests. Well, maybe. In academical research papers dealing with toy datasets.
 But in the real life, the code as _νούμενον_, as Kant’s _Ding an sich_ makes a little sense.
-To bring a value, the code must operate with some input data. And unless you are
+To bring a value, the code must deal with some input data. And unless you are
 a prison director, you are hardly able to convince your users bringing input data
 to always provide a bullet-proof valid datasets.
 
