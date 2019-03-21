@@ -11,6 +11,8 @@ tags:
 > I call it my billion-dollar mistake.
 > <small><em>— Sir Charles Antony Richard Hoare</em></small>
 
+![Sequoia Gegant](/img/sequoia.jpg)
+
 This quote quickly necame famous amongst static typing adepts,
 pure functional programming evangelists and many other cults disciples.
 The truth is Tony Hoare never mentioned **`nil` value**. The full quote is:
