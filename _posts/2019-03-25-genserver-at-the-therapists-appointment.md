@@ -10,15 +10,15 @@ tags:
 ---
 
 _**Therapist:**_ “What brings you here?”  
-_**GenServer:**_ “I am an alone not supervised GenServer in an aggressive world of unsolicited API requests.”  
+_**GenServer:**_ “I am an alone not supervised `GenServer` in an aggressive world of unsolicited API requests.”  
 _**Therapist:**_ “Have you ever seen a counselor before?”  
-_**GenServer:**_ “Sure; I was trying to get an advice from GenEvent once, but it was deprecated later.”  
+_**GenServer:**_ “Sure; I was trying to get an advice from `GenEvent` once, but it was deprecated later.”  
 _**Therapist:**_ “What is the problem from your viewpoint?”  
 _**GenServer:**_ “They call me any time they need anything and I have to respond immediately, 24/7. They could have used casts instead.”  
 _**Therapist:**_ “How does this problem typically make you feel?”  
 _**GenServer:**_ “It’s overflooding my message box, ruining my schedule and typically makes me feel like I am working in a call centre.”  
 _**Therapist:**_ “What makes the problem better?”  
-_**GenServer:**_ “Sometimes they put a GenStage in front of me to control back pressure and these moments are the best in my entire life.”  
+_**GenServer:**_ “Sometimes they put a `GenStage` in front of me to control back pressure and these moments are the best in my entire life.”  
 _**Therapist:**_ “If you could wave a magic wand, what positive changes would you make happen in your life?”  
 _**GenServer:**_ “I would put myself under the supervision tree so I could feel fast when I am not in the mood.”  
 _**Therapist:**_ “Overall, how would you describe your mood?”  
