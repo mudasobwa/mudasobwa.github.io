@@ -184,6 +184,11 @@ description: "This page exists only for the sake of organizing stuff so that I m
 ⤷ Pure elixir library to extract tiff and exif metadata from jpeg files  
 ⤷ <small style="color: #999;">elixir</small>  
 
+▶ [sobelow](https://github.com/nccgroup/sobelow)  
+⤷ Forked from `nccgroup/sobelow`  
+⤷ Security-focused static analysis for the Phoenix Framework  
+⤷ <small style="color: #999;">elixir</small>  
+
 ## Selected SO Answers
 
 - [How to get list of registered custom elements](https://stackoverflow.com/questions/27334365/how-to-get-list-of-registered-custom-elements/28210364#28210364)
