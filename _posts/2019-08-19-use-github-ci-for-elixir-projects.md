@@ -62,12 +62,14 @@ jobs:
         MIX_ENV=ci mix test
       env:
         RABBITMQ_HOST: rabbitmq
-        RABBITMQ_PORT: $\{{ job.services.rabbitmq.ports[5672] }}
+        RABBITMQ_PORT: $❴❴ job.services.rabbitmq.ports[5672] ❵❵
         REDIS_HOST: redis
-        REDIS_PORT: $\{{ job.services.redis.ports[6379] }}
+        REDIS_PORT: $❴❴ job.services.redis.ports[6379] ❵❵
 ```
 
-As one might see, tests are to be run on _Ubuntu_, using _Elixir v1.9.1_. Services are described under the `services` key, and here is a trick. The port, the service port will be mapped to, is randomly chosen by the container engine in the runtime and stored in the _internal_ shell variable with a name `job.services.rabbitmq.ports[5672]`. `rabbitmq` here is the name of the service, as specified in this file in `services` section and `5672` is the original port. The internal variable has a syntax `${{ foo }}` and is being passed to the environment variable `RABBITMQ_PORT`. `RABBITMQ_HOST` there must be set to the _service name_. Now your application might read the environment variables as usual.
+**NB** Curly brackets above should be normal ones, I uses these because my templating engine drives bonkers seeing two opening curlies, sorry for that.
+
+As one might see, tests are to be run on _Ubuntu_, using _Elixir v1.9.1_. Services are described under the `services` key, and here is a trick. The port, the service port will be mapped to, is randomly chosen by the container engine in the runtime and stored in the _internal_ shell variable with a name `job.services.rabbitmq.ports[5672]`. `rabbitmq` here is the name of the service, as specified in this file in `services` section and `5672` is the original port. The internal variable has a syntax `$❴❴ foo ❵❵` and is being passed to the environment variable `RABBITMQ_PORT`. `RABBITMQ_HOST` there must be set to the _service name_. Now your application might read the environment variables as usual.
 
 ```elixir
 import Config
