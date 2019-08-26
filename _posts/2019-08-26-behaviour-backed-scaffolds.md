@@ -24,6 +24,8 @@ There are several different approaches. Here I am going to show one of them. I s
 
 In a nutshell, `Broadway` takes care about keeping the connection and providing a back pressure against the external source, providing the handy interface for _clients_ of the library to concentrate on the business logic only. Basically, one does `use Broadway` and all they need to plug in their business logic would be to implement `Broadway.handle_message/3` callback which will be called on new incoming messages received from the external source. All the connection low-level handling stuff is kept under the hood and `use Broadway` just makes it implemented automagically. I oversimplified the things, but without loss of generality.
 
+### Deal With It!
+
 So, the approach I advertise and advocate would be
 
 **Implement the common logic in your external package and use callbacks anywhere the business logic is required / affected.**
