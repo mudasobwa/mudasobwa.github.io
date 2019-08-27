@@ -12,7 +12,7 @@ tags:
 
 ### Repeated Code aka Copypasta
 
-If you are like me, you probably try to make the ~~life~~ developming and testing easier by moving all the _generic_ code into well-tested self-contained packages. This is barely necessary if the waterfall development process in the company is shaped to feed the ancient behemoth, affectionately called by all teammates “Monolitty,” but first three microservices happened to appear in the repo eventually make everybody to think about how to share common code between them.
+If you are like me, you probably try to make the ~~life~~ developing and testing easier by moving all the _generic_ code into well-tested self-contained packages. This is barely necessary if the waterfall development process in the company is shaped to feed the ancient behemoth, affectionately called by all teammates “Monolitty,” but first three microservices happened to appear in the repo eventually make everybody to think about how to share common code between them.
 
 Sometimes it might be done by extracting the common code into the package used by all microservices. Unfortunately, the code to be shared is usually not _the same_, but _quite alike_. _Custom Logger_, or _Slack Notifier_, or _RabbitMQ Subscriber_ look very similar in the area of establishing and keeping a connection, managing crashes and disconnections, etc, but they differ in the business logic specific parts. And the decision _how do we shape the common part so that the pieces to be written by clients of this interface are both kept small but best maintainable_ remains the one of most important.
 
@@ -28,7 +28,7 @@ In a nutshell, `Broadway` takes care about keeping the connection and providing 
 
 So, the approach I advertise and advocate would be
 
-**Implement the common logic in your external package and use callbacks anywhere the business logic is required / affected.**
+> **Implement the common logic in your external package and use callbacks anywhere the business logic is required / affected.**
 
 This works incredibly smooth. As an example, unrelated to dealing with connections, I might mention [`DynamicManager`](https://hexdocs.pm/tarearbol/dynamic_workers_management.html#content) included in the last release of [`Tarearbol`](https://hexdocs.pm/tarearbol). This is a helper around [`DynamicSupervisor`](https://hexdocs.pm/elixir/master/DynamicSupervisor.html) taking care about the boilerplate needed to handle and supervise many different processes, behaving _more-or-less_ alike.
 
