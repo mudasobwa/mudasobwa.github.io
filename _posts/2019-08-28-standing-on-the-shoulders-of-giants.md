@@ -10,7 +10,7 @@ tags:
 
 ![EXIF for Joe Armstrong](/img/on-giants-shoulders.jpg)
 
-Today I was grepping the internets for something irrelevant and came across [this blog post](https://joearms.github.io/#2017-12-18%20Calling%20Elixir%20from%20Erlang) by Joe Armstrong. Long store short, he was stumbled upon extraction from the photos _“things like the latitude and longitude of the place where the image was taken and the time when the image was taken”_.
+Today I was grepping the internets for something irrelevant and came across [this blog post](https://joearms.github.io/#2017-12-18%20Calling%20Elixir%20from%20Erlang) by Joe Armstrong. Long story short, he was stumbled upon extraction from the photos _“things like the latitude and longitude of the place where the image was taken and the time when the image was taken”_.
 
 Basically it was about extracting [Exif](https://en.wikipedia.org/wiki/Exif) data from the photos. Joe discovered Dave Thomas’ [_Elixir_ library](https://github.com/pragdave/exexif) that deals with _Exifs_ and finally succeeded with his fleeting task.
 
