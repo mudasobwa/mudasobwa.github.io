@@ -8,7 +8,7 @@ tags:
   - erlang
 ---
 
-![The airplace in the sky](img/airplane-sun-sky.jpg)
+![The airplace in the sky](/img/airplane-sun-sky.jpg)
 
 ### Formulæ Library
 
