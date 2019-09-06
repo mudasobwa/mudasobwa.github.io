@@ -114,7 +114,7 @@ def sink_combination_clause(i) when i > 1 do
       [
         {:when, [],
         [
-          {{:_, [], Elixir}, idx(i)},
+          ❴❴:_, [], Elixir}, idx(i)},
           :ok,
           {:<=, [context: Elixir, import: Kernel], [idx(i), idx(i - 1)]}
         ]}
@@ -145,9 +145,9 @@ And, finally, the outer clause.
 def stream_combination_transform_clause(i, l, body) do
   clauses = sink_combination_clauses(i, body)
 
-  {{{:., [], [{:__aliases__, [alias: false], [:Stream]}, :transform]}, [],
+  ❴❴❴:., [], [{:__aliases__, [alias: false], [:Stream]}, :transform]}, [],
     [
-      {{:., [], [{:__aliases__, [alias: false], [:Stream]}, :with_index]}, [], [l]},
+      ❴❴:., [], [{:__aliases__, [alias: false], [:Stream]}, :with_index]}, [], [l]},
       :ok,
       {:fn, [], clauses}
     ]}, :ok}
