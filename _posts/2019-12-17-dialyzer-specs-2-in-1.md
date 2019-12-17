@@ -110,7 +110,7 @@ iex> CustomSpec.Test.is_forty_two 43
 
 Well, it works. I would not dump the BEAM chunk here, bear with me. You are to believe that spec works as well.
 
-### Шаг 4. Is That It?
+### Step 4. Is That It?
 
 Of course not. In the wild, one would have to properly handle invalid calls, to implement header definitions for functions with several different default parameters, to collect the spec more accurately (with variable names included,) to make sure that all argument names are different, and much more. But as the proof of concept it’s already good enough.
 
