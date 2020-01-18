@@ -10,7 +10,7 @@ tags:
 
 Nowadays there is a tendency all around the internets to enforce the goodness of strong typing. Most stubborn rhetoricians even come to the conclusions like “when you have types you don’t need tests.” I believe, this is simply not true. There are, obviouusly, some circumstances, when strong typing might help to catch human mistakes at early stages, but the boilerplate needed when strong typing is implied everywhere brings more hassle than help.
 
-Please note, that all the below is the humble opinion of not so smart human being. But it based on over 30 years of professional development career providing robust and fault-tolerant services. 
+Please note, that all the below is the humble opinion of not so smart human being. But it based on over 30 years of professional development career providing robust and fault-tolerant services. Also, I welcome every strong typing evangelist to write a _markdown parser_ to see the whole field where Types literally suck.
 
 The typical argument of strong typing evangelists would be “let’s assume refactoring.” When during the process youone attempts to call `get_user_by_id` function passing a user instance instead of an integer identifier, the compiler would complain and the error would not lek into runtime. And that’s true! But you know what? I am writing code for several decades and I never expected anything to literally develop the whole application for me. I feel kinda responsible to avoid passing crap to function arguments. “But it would be great to minimize your effort on that?”—I literally hear the arguing. Well, yes and no.
 
@@ -18,7 +18,7 @@ Assigning the identifier to something that is intended to be used as an instance
 
 ### Following the Wrong Path
 
-Let’s imagine we have a function that handles _HTTP_ calls to the third party service. We are to refactor it to add more careful logging and cover more different response types. We had somewhat like below.
+Let’s imagine we have a function that handles _HTTP_ calls to the third party service. We are to refactor it to add more careful logging and cover different response types. We had somewhat like below.
 
 ```js
 function call_3rd_party(uri) {
