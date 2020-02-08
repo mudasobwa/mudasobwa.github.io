@@ -16,11 +16,12 @@ html {
 
 .content img, p img { max-width: 100%; }
 
+.container { padding: 0 1em }
 p { font-size: 1.2em; }
 footer, footer p { font-size: 0.85em; }
 
 blockquote { border-left: 5px solid #009688; font-size: 0.9rem; }
-blockquote p { color: #999; line-height: 1.6em; padding-right: 10em; }
+blockquote p { color: #999; line-height: 1.6em; padding-right: 2em; }
 blockquote small:before { content:'—  '; }
 
 pre { background-color: #F9F9F9; border: 1px solid #EEE; }
