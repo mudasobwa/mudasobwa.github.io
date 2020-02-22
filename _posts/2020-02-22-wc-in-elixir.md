@@ -16,7 +16,7 @@ Down the road Chris went through _ByteStrings_ implementation, _Monoids_, _Inlin
 
 Several days ago, there was a related article posted on [habr](https://habr.com/ru/post/489136/) (Russian only at the moment, sorry.) The author proved the ability to build an _idiomatic Haskell_ version in 20 (twenty) lines of code that is almost ten times faster than _idiomatic C_ implementation.
 
-Meanwhile I advocate to use _Haskell_ (actually, [_Idris_](https://www.idris-lang.org/) for its dependent types) and [_Coq_](https://coq.inria.fr/) to actually prove the critical concepts in our codebase only; the new production code is still coming 100% in Elixir/Erlang/OTP for its fault tolerance. I wanted to make sure I am not shitting my pants here, so I decided to check how can we do with _Idiomatic Elixir_ for the very same task.
+Meanwhile I advocate to use _Haskell_ (actually, [_Idris_](https://www.idris-lang.org/) for its dependent types) and [_Coq_](https://coq.inria.fr/) to indeed prove the critical concepts in our codebase only; the new production code is still coming 100% in Elixir/Erlang/OTP for its fault tolerance. I wanted to make sure I am not shitting my pants here, so I decided to check how can we do with _Idiomatic Elixir_ for the very same task.
 
 Below you’ll see some tricks I used to speed up the execution. I am a grown man and I don’t believe in Tooth fairy anymore, so I was far from the hope that _Elixir_ might actually beat languages compiled into a native machine code. I just wanted to make sure we didn’t fall behind at the finish line by a lap.
 
@@ -71,10 +71,10 @@ def parse(<<_, rest::binary>>, acc),
   do: parse(rest, %{acc | bc: acc.bc + 1, ns?: 1})
 ```
 
-This function is fed from either greedy [`File.read!/1`], or from `File.stream!/3` in the following way.
+This function is fed from either greedy `File.read!/1`, or lazy `File.stream!/3` in the following way.
 
 ```elixir
-@spec lazy(binary) :: acc()
+@spec lazy(binary) :: acc()actually
 def lazy(file),
   do: file |> File.stream!() |> Enum.reduce(@acc, &parse/2)
 
@@ -86,9 +86,9 @@ def greedy(file),
 As one might expect, the results are too disappointing. I even did not run it on the whole file; I ran it on one tenth part, where `wc` had done for less than a second, and our naïve implementaion did more than ten times worse (results below are in μs.)
 
 ```elixir
-iex|1 ▶ :timer.tc fn -> Wc.Naive.lazy "data/part.txt" end
+iex|1 ▶ :timer.tc fn -> Wc.lazy "data/part.txt" end
 #⇒ {16_737094, %{bc: 185682221, lc: 1500000, ns?: 1, wc: 4477464}}
-iex|2 ▶ :timer.tc fn -> Wc.Naive.greedy "data/part.txt" end
+iex|2 ▶ :timer.tc fn -> Wc.greedy "data/part.txt" end
 #⇒ {13_659356, %{bc: 187182221, lc: 1500000, ns?: 1, wc: 4477464}}
 ```
 
@@ -96,7 +96,7 @@ Shall we throw our toolchain away and migrate to _Haskell_ tomorrow? Not yet.
 
 ### Pattern Match Wisely
 
-What if we could count non-empty bytes by chunks? Sure, good question. Let’s generate functions to pattern match next `?\s` or `\?n` as far from the current point as we can. Looking ahead, I should say that looking ahead way too far makes the code run slower, possibly beause of the overhead on the necessity to handle too many functions for no reason (even Finnish words are rarely longer than forty characters.)
+What if we could count non-empty bytes by chunks? Sure, good question. Let’s generate functions to pattern match next `?\s` or `\?n` as far from the current point as we can. Looking ahead, I should say that looking ahead way too far makes the code run slower, possibly because of the overhead on the necessity to handle too many functions for no reason (even Finnish words are rarely longer than forty characters.)
 
 ```elixir
 @prehandle 42
@@ -127,12 +127,12 @@ Enum.each(@prehandle..0, fn i ->
 end)
 ```
 
-`acc!` above is a syntax sugar macro that shortens this listing, one might see it in the whole code listing below.
+`acc!` above is a syntax sugar macro that shortens this snippet, one might see it in the whole code listing below.
 
 What the heck is happening above and how it it a promised _Idiomatic Elixir_? Well, it is. During a compilation time, we generate 130 different clauses (43 for matching the _next EOL_, the same amount to match the next space, handles for the tail _and_ the handle for the list of Welsh and New Zealand’s toponyms
 
-— [Taumatawhakatangi­hangakoauauotamatea­turipukakapikimaunga­horonukupokaiwhen­uakitanatahu](https://en.wikipedia.org/wiki/Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu), NZ
-— [Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch](https://en.wikipedia.org/wiki/Llanfairpwllgwyngyll), Wales
+- [Taumatawhakatangi­hangakoauauotamatea­turipukakapikimaunga­horonukupokaiwhen­uakitanatahu](https://en.wikipedia.org/wiki/Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu), NZ
+- [Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch](https://en.wikipedia.org/wiki/Llanfairpwllgwyngyll), Wales
 
 Let’s see how it performs.
 
@@ -145,7 +145,7 @@ iex|1 ▶ :timer.tc fn -> Wc.lazy "data/part.txt" end
 
 Well, much better, but it’s still six times longer than the native `wc` for a lazy version (and promising 2.5 times only worse for the greedy load.)
 
-Here one could stop, saying I’d trade being 2.5 times slower for the fault tolerance and hot uploads, but we are here not for that. When I started this journey I promised myself I won’t cheat. But hey, _Erlang/OTP_ brings concurrency for free, so we might probably use it for free. Unless we need to write some sophisticated monoidal code (that I cannot write anyway) as Chris did in his trip. So, welcome [`Flow`](https://hexdocs.pm/flow).
+Here one could stop, saying I’d trade being 2.5 times slower for the fault tolerance and hot uploads, but we are here not for that. When I started this journey I promised myself I won’t cheat. But hey, _Erlang/OTP_ brings concurrency for free, so we might probably use it for free. Unless we need to write some sophisticated monoidal code (that I cannot write anyway) as Chris did in his trip. Luckily enough, everything is already there; welcome [`Flow`](https://hexdocs.pm/flow).
 
 ### Use More Than 12% Of What We Have Paid For
 
@@ -170,7 +170,7 @@ Now we need to implement a new function in the main module.
 ```elixir
 @chunk 1_000_000
 
-@spec flowy(binary) :: acc()
+@spec flowy(binary()) :: acc()
 def flowy(file) do
   file
   |> File.stream!([], @chunk)
@@ -181,7 +181,7 @@ def flowy(file) do
 end
 ```
 
-I experimentally discovered, than the optimal chunk would be somewhat around several megabytes, so I choosed chunks of the size `1M`. The results differ insignificantly.
+I have heuristically (by randomly picking different numbers) discovered, than the optimal chunk would be somewhat around several megabytes, so I choosed chunks of the size `1M`. The results differ insignificantly.
 
 Let’s test it!
 
