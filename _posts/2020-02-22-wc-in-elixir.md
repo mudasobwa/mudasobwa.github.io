@@ -96,7 +96,7 @@ Shall we throw our toolchain away and migrate to _Haskell_ tomorrow? Not yet.
 
 ### Pattern Match Wisely
 
-What if we could count non-empty bytes by chunks? Sure, good question. Let’s generate functions to pattern match next `?\s` or `\?n` as far from the current point as we can. Looking ahead, I should say that looking ahead way too far makes the code run slower, possibly because of the overhead on the necessity to handle too many functions for no reason (even Finnish words are rarely longer than forty characters.)
+What if we could count non-empty bytes by chunks? Sure, good question. Let’s generate functions to pattern match next `?\s` or `?\n` as far from the current point as we can. Looking ahead, I should say that looking ahead way too far makes the code run slower, possibly because of the overhead on the necessity to handle too many functions for no reason (even Finnish words are rarely longer than forty characters.)
 
 ```elixir
 @prehandle 42
