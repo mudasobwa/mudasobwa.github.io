@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WordCount in Elixir"
-description: "An prove of that Elixir/Erlang can be not a mile behind C/Haskell"
+description: "Prove of that Elixir/Erlang can be not a mile behind C/Haskell"
 category: hacking
 tags:
   - elixir
