@@ -131,8 +131,8 @@ end)
 
 What the heck is happening above and how it it a promised _Idiomatic Elixir_? Well, it is. During a compilation time, we generate 130 different clauses (43 for matching the _next EOL_, the same amount to match the next space, handles for the tail _and_ the handle for the list of Welsh and New Zealand’s toponyms
 
-- [Taumatawhakatangi­hangakoauauotamatea­turipukakapikimaunga­horonukupokaiwhen­uakitanatahu](https://en.wikipedia.org/wiki/Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu), NZ
-- [Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch](https://en.wikipedia.org/wiki/Llanfairpwllgwyngyll), Wales
+- [Taumatawhakatangi­hangakoauauotamatea­turipukakapikimaunga­horonukupokaiwhen­uakitanatahu](https://en.wikipedia.org/wiki/Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu), NZ  
+- [Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch](https://en.wikipedia.org/wiki/Llanfairpwllgwyngyll), Wales
 
 Let’s see how it performs.
 
