@@ -145,7 +145,7 @@ iex|1 ▶ :timer.tc fn -> Wc.lazy "data/part.txt" end
 
 Well, much better, but it’s still six times longer than the native `wc` for a lazy version (and promising 2.5 times only worse for the greedy load.)
 
-Here one could stop, saying I’d trade being 2.5 times slower for the fault tolerance and hot uploads, but we are here not for that. When I started this journey I promised myself I won’t cheat. But hey, _Erlang/OTP_ brings concurrency for free, so we might probably use it for free. Unless we need to write some sophisticated monoidal code (that I cannot write anyway) as Chris did in his trip. Luckily enough, everything is already there; welcome [`Flow`](https://hexdocs.pm/flow).
+Here one could stop, saying I’d trade being 2.5 times slower for the fault tolerance and hot uploads, but we are here not for that. When I started this journey I promised myself I won’t cheat. All that creepy stuff, like `NIF`s written in `Rust` as it is fashionable nowadays. Pure _Elixir_ code only, no spices. But hey, _Erlang/OTP_ brings concurrency for free, so we might probably use it for free. Unless we need to write some sophisticated monoidal code (that I cannot write anyway) as Chris did in his trip. Luckily enough, everything is already there; welcome [`Flow`](https://hexdocs.pm/flow).
 
 ### Use More Than 12% Of What We Have Paid For
 
