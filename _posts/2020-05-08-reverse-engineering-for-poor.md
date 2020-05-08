@@ -26,7 +26,7 @@ Well, I am kinda familiar with _Elixir_ core code, but this is _mix_ which I nev
 }
 ```
 
-There are two hashes, the latter is a checksum of the package at [hex.pm](https://hex.pm/packages/nimble_parsec/0.5.3)
+There are two hashes, the latter is a checksum of the package at [hex.pm](https://hex.pm/packages/nimble_parsec/0.5.3) (check the bottom right corner below)
 
 ![Checksum 589b5af56f4afca65217a1f3eb3fee7e79b09c40c742fddc1c312b3ac0b3399f](/img/nimble_parsec_hex_checksum.png)
 
@@ -53,7 +53,7 @@ def write(map) do
 end
 ```
 
- Since _OTP 20_, [`__STACKTRACE__`](https://hexdocs.pm/elixir/Kernel.SpecialForms.html?#__STACKTRACE__/0) might be used in the context of currently handled exception to get, well, the stacktrace. I could have used `Process.info(self(), :current_stacktrace)` instead, but raising an exception gives more flexibility in grokking the behaviour later on. After `make compile` _Elixir_ and `rm -rf mix.lock deps _build && mix deps.get` in my new project directory, I got the stack trace
+ Since _OTP 20_, [`__STACKTRACE__`](https://hexdocs.pm/elixir/Kernel.SpecialForms.html?#__STACKTRACE__/0) might be used in the context of currently handled exception to get, well, the stacktrace. I could have used `Process.info(self(), :current_stacktrace)` instead, but raising an exception gives more flexibility in grokking the behaviour later on (_spoiler:_ it wasn’t necessary.) After `make compile` _Elixir_ and `rm -rf mix.lock deps _build && mix deps.get` in my new project directory, I got the stack trace
 
  ```elixir
  [
