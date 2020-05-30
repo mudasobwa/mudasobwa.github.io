@@ -8,7 +8,7 @@ tags:
   - erlang
 ---
 
-12 Jul 2018 the project `:telemetry` got its [first initial coomit](https://github.com/beam-telemetry/telemetry/commit/8e553556fd683c17f4f97f72972332a4fefd355b). It was pushed by [Arkadiusz Gil](https://github.com/arkgil) but the README [states](https://github.com/beam-telemetry/telemetry#copyright-and-license) _“Telemetry is copyright (c) 2018 Chris McCord and Erlang Solutions”_ and the last commit ATM was made by José Valim.
+12 Jul 2018 the project `:telemetry` got its [first initial commit](https://github.com/beam-telemetry/telemetry/commit/8e553556fd683c17f4f97f72972332a4fefd355b). It was pushed by [Arkadiusz Gil](https://github.com/arkgil) but the README [states](https://github.com/beam-telemetry/telemetry#copyright-and-license) _“Telemetry is copyright (c) 2018 Chris McCord and Erlang Solutions”_ and the last commit ATM was made by José Valim.
 
 ![Big Brother is Watching You](/img/mascarilla.jpg)
 
@@ -18,7 +18,7 @@ The library introduces itself as:
 
 The main advantage of the library is it’s deadly simple. One _registers_ the event, which _is composed of a numeric value and can have metadata attached to it_, _sends_ it whenever needed, and it would be delivered to a _handle_ which might do whatever, usually it’s kinda logging or something alike. Decoupling business logic and metrics/visibility at its best.
 
-The main disadvantage of using `:telemetry` as is, it requires an enormous amount of boilerplate that hs to be maintained in several places. Refactoring project with intensive usage of telemetry might become a disaster. To change the event name one should amend the code in three different places: event registration, event firing, event handling. If one forgets to register newly created event, firing it would silently succeed, but handler would have been never called. Etc.
+The main disadvantage of using `:telemetry` as is, it requires an enormous amount of boilerplate that has to be maintained in several places. Refactoring project with intensive usage of telemetry might become a disaster. To change the event name one should amend the code in three different places: event registration, event firing, event handling. If one forgets to register newly created event, firing it would silently succeed, but handler would have been never called. Etc.
 
 ---
 
@@ -149,10 +149,10 @@ If one is interested in easy jumping into adding metrics to their application, p
 
 If, on the opposite, you are interested in some tricks and tweaks, here is the list of what might be of your interest.
 
-* [★](https://github.com/am-kantox/telemetria/blob/master/lib/options.ex) always valid, auto-documented options through [`nimble_options`](https://hexdocs.pm/nimble_options)
-* [★](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria.ex#L110-L111) annotation [implementation](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria/module_hooks.ex) through `@on_definition` and `@before_compile` [_Module Compile Callbacks_](https://hexdocs.pm/elixir/Module.html#module-compile-callbacks)
-* [★](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria/application.ex#L24-L26) starting the application in phases to ensure full availability of `:telemetry` before anything
-* [★](https://github.com/am-kantox/telemetria/blob/master/lib/mix/tasks/compile/telemetria.ex) implementation of custom compiler for _Elixir_ to collect events and maintain the manifest file
+* [★★★](https://github.com/am-kantox/telemetria/blob/master/lib/options.ex) always valid, auto-documented options through [`nimble_options`](https://hexdocs.pm/nimble_options)
+* [★★★](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria.ex#L110-L111) annotation [implementation](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria/module_hooks.ex) through `@on_definition` and `@before_compile` [_Module Compile Callbacks_](https://hexdocs.pm/elixir/Module.html#module-compile-callbacks)
+* [★★★](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria/application.ex#L24-L26) starting the application in phases to ensure full availability of `:telemetry` before anything
+* [★★★](https://github.com/am-kantox/telemetria/blob/master/lib/mix/tasks/compile/telemetria.ex) implementation of custom compiler for _Elixir_ to collect events and maintain the manifest file
 
 ---
 
