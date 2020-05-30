@@ -149,10 +149,10 @@ If one is interested in easy jumping into adding metrics to their application, p
 
 If, on the opposite, you are interested in some tricks and tweaks, here is the list of what might be of your interest.
 
-- [★](https://github.com/am-kantox/telemetria/blob/master/lib/options.ex) always valid, auto-documented options through [`nimble_options`](https://hexdocs.pm/nimble_options)
-— [★](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria.ex#L110-L111) annotation [implementation](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria/module_hooks.ex) through `@on_definition` and `@before_compile` [_Module Compile Callbacks_](https://hexdocs.pm/elixir/Module.html#module-compile-callbacks)
-— [★](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria/application.ex#L24-L26) starting the application in phases to ensure full availability of `:telemetry` before anything
-- [★](https://github.com/am-kantox/telemetria/blob/master/lib/mix/tasks/compile/telemetria.ex) implementation of custom compiler for _Elixir_ to collect events and maintain the manifest file
+* [★](https://github.com/am-kantox/telemetria/blob/master/lib/options.ex) always valid, auto-documented options through [`nimble_options`](https://hexdocs.pm/nimble_options)
+* [★](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria.ex#L110-L111) annotation [implementation](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria/module_hooks.ex) through `@on_definition` and `@before_compile` [_Module Compile Callbacks_](https://hexdocs.pm/elixir/Module.html#module-compile-callbacks)
+* [★](https://github.com/am-kantox/telemetria/blob/master/lib/telemetria/application.ex#L24-L26) starting the application in phases to ensure full availability of `:telemetry` before anything
+* [★](https://github.com/am-kantox/telemetria/blob/master/lib/mix/tasks/compile/telemetria.ex) implementation of custom compiler for _Elixir_ to collect events and maintain the manifest file
 
 ---
 
