@@ -89,7 +89,7 @@ Bang! Types are special, one cannot simply unquote it anywhere. Maybe unquoting 
 
 ```elixir
       @type t :: %__MODULE__{
-              unquote_splicing([{:version, atom()}, opts[:fields]])
+              unquote_splicing([{:version, atom()} | opts[:fields]])
             }
 #⇒ == Compilation error in file lib/scaffold.ex ==
 #  ** (CompileError) lib/scaffold.ex:11: undefined function atom/0
