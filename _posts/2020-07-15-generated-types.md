@@ -183,6 +183,8 @@ defmacro __using__(opts) do
 end
 ```
 
+Here is the result of executing `mix docs`:
+
 ![Screenshot of type definition](/img/generated-types.png)
 
 ### Appendix. Trick With Quoted Fragment
@@ -204,7 +206,7 @@ type =
     ]}
 ```
 
-That’s all good, but how would we inject this AST into `@type` declaration? The very handy Elixir\_ feature named [Quoted Fragment](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#quote/2-binding-and-unquote-fragments) comes to the rescue. It was designed to allow compile-time generated code like
+That’s all good, but how would we inject this AST into `@type` declaration? The very handy _Elixir_ feature named [Quoted Fragment](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#quote/2-binding-and-unquote-fragments) comes to the rescue. It was designed to allow compile-time generated code like
 
 ```elixir
 defmodule Squares do
@@ -217,7 +219,7 @@ Squares.squared_5
 #⇒ 25
 ```
 
-_Quoted Fragments_ automagically recognized by _Elixir_ inside quotes having a quotes bindings. Easy-peasy.
+_Quoted Fragments_ automagically recognized by _Elixir_ inside quotes having a quoted bindings. Easy-peasy.
 
 ```elixir
 defmacro __using__(opts) do
