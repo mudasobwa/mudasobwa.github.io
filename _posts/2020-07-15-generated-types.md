@@ -101,7 +101,7 @@ OK, looks like we need to build the whole clause as an AST and inject it at once
 
 ### Constructing Type AST
 
-I would skip two hours of my tossing, torments, trial, and errors. Everyone knows that I write code mostly at random, expecting that all of a sudden another permutation would compile and hence work. The issue here is contexts. **We should shove the received fields definitions down to the macro declaring type without unquoting them** because once unquoted, the type like `binary()` would be immediately considered a function and ~~whack-a-mole’ed~~ called by a compiler, resulting in `CompileError`.
+I would skip two hours of my tossing, torments, trial, and errors. Everyone knows that I write code mostly at random, expecting that all of a sudden another permutation would compile and hence work. The issue here is contexts. **We should shove the received fields definitions down to the macro declaring type without unquoting them** because once unquoted, the type like `binary()` would be immediately considered a function and ~~whack-a-mole’d~~ called by a compiler, resulting in `CompileError`.
 
 Also, we cannot use regular functions _inside_ `quote do` because the whole content of the block passed to `quote` would be quoted.
 
@@ -118,7 +118,7 @@ You can see all these `Enum`, `:map` etc there as is. In other words, we should 
 
 ### Less Naïve Attempt
 
-We need to _inject_ AST as AST. without unquoting it. Fine. Sounds as a stalemate?—Well, not really.
+We need to _inject_ AST as AST, without unquoting it. Fine. Sounds as a stalemate?—Well, not really.
 
 ```elixir
 defmacro __using__(opts) do
