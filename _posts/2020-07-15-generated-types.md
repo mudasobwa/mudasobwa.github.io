@@ -108,7 +108,8 @@ Also, we cannot use regular functions _inside_ `quote do` because the whole cont
 quote do
   Enum.map([:foo, :bar], & &1)
 end
-#⇒ {{:., [], [{:__aliases__, [alias: false], [:Enum]}, :map]}, [],
+#⇒ {​
+#   {:., [], [{:__aliases__, [alias: false], [:Enum]}, :map]}, [],
 #     [[:foo, :bar], {:&, [], [{:&, [], [1]}]}]}
 ```
 
