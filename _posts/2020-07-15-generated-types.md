@@ -80,6 +80,7 @@ So far, so good. Maybe we are almost there?
   quote do
     custom_types = unquote(opts[:fields])
     ...
+  end
 #⇒ == Compilation error in file lib/consumer.ex ==
 #  ** (CompileError) lib/consumer.ex:2: undefined function integer/0
 ```
@@ -108,7 +109,7 @@ Also, we cannot use regular functions _inside_ `quote do` because the whole cont
 quote do
   Enum.map([:foo, :bar], & &1)
 end
-#⇒ {​
+#⇒ {
 #   {:., [], [{:__aliases__, [alias: false], [:Enum]}, :map]}, [],
 #     [[:foo, :bar], {:&, [], [{:&, [], [1]}]}]}
 ```
