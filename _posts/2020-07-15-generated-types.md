@@ -183,6 +183,21 @@ defmacro __using__(opts) do
 end
 ```
 
+or, if you don’t need to propagate types from `Scaffold` itself, even simpler, as suggested by [_Qqwy_ here[(https://elixirforum.com/t/how-to-generate-custom-types-with-macros/33122/4?u=mudasobwa) (it wouldn’t work with propageted types, `version: atom()` outside of the quote raises.)
+
+```elixir
+defmacro __using__(opts) do
+  fields = opts[:fields]
+  keys = Keyword.keys(fields)
+  fields_with_struct_name = [__struct__: __CALLER__.module] ++ fields
+
+  quote location: :keep do
+    @type t :: %{unquote_splicing(fields_with_struct)}
+    defstruct unquote(keys)
+  end
+end
+```
+
 Here is the result of executing `mix docs`:
 
 ![Screenshot of type definition](/img/generated-types.png)
