@@ -183,7 +183,7 @@ defmacro __using__(opts) do
 end
 ```
 
-or, if you don’t need to propagate types from `Scaffold` itself, even simpler, as suggested by [_Qqwy_ here[(https://elixirforum.com/t/how-to-generate-custom-types-with-macros/33122/4?u=mudasobwa) (it wouldn’t work with propageted types, `version: atom()` outside of the quote raises.)
+or, if you don’t need to propagate types from `Scaffold` itself, even simpler, as suggested by [_Qqwy_ here](https://elixirforum.com/t/how-to-generate-custom-types-with-macros/33122/4?u=mudasobwa) (it wouldn’t work with propageted types, `version: atom()` outside of the quote raises.)
 
 ```elixir
 defmacro __using__(opts) do
