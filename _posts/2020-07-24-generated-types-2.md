@@ -28,17 +28,17 @@ Unfortunately, we cannot handle it at all. It won’t even get to the call to ou
 
 One of my most beloved quotes on computer science is _“Weeks of coding can save you hours of planning”_ (usually attributed to [@tsilb](https://twitter.com/tsilb/status/65488255566614529), but the user was suspended by twitter, so I am not sure.) I love it so much that I am saying it on every next standup, but as it always happens with inviolable life principles, I often fail to follow it myself.
 
-So I started with introducing _two_ `__using/1` clauses, one accepting the list (assuming it consists of `field → type()` pairs,) and another one accepting everything else, where types are either quoted, or introduced as `{Module, :type, [params]}` tuples. I used sigil [`~q||`](https://github.com/am-kantox/exvalibur/blob/master/lib/sigils.ex#L13-L21), gracefully stolen from one of my ancient pet projects, to allow `foo: ~q|atom()|` notation. I constructed a list that was later passed to the clause accepting lists. The whole code was a nightmare. I doubt I saw something less intricate in my whole career, despite I feel myself absolutely comfortable with regular expressions, I like them and I use them a lot. I once won the bet on memorizing [email regex](https://regular-expressions.mobi/email.html) and still, this code dealt with a plain old good erlang type was way more cumbersome.
+So I started with introducing _two_ `__using__/1` clauses, one accepting the list (assuming it consists of `field → type()` pairs,) and another one accepting everything else, where types are either quoted, or introduced as `{Module, :type, [params]}` tuples. I used sigil [`~q||`](https://github.com/am-kantox/exvalibur/blob/master/lib/sigils.ex#L13-L21), gracefully stolen from one of my ancient pet projects, to allow `foo: ~q|atom()|` notation. I constructed a list that was later passed to the clause accepting lists. The whole codepiece was a nightmare. I doubt I saw something less intricate in my whole career, despite I feel myself absolutely comfortable with regular expressions, I like them and I use them a lot. I once won the bet on memorizing [email regex](https://regular-expressions.mobi/email.html) and still, this code dealt with a plain old good erlang type was way more cumbersome and vague.
 
-That all sounded insane. I have a gut feeling that accepting erlang types in runtime should not need an enormously complicated overmacroed code that looked like a spell that can summon the devil’s spirits. So I stepped back and started to think instead of writing code that nobody could ever understand later (me included.)
+That all looked insane. I have a gut feeling that accepting erlang types in runtime should not need an enormously complicated overmacroed code that looked like a spell that can summon the cobol’s spirits. So I stepped back and started to think instead of writing code that nobody could ever understand later (me included.)
 
-Here is a link to the [working version](https://github.com/am-kantox/vela/blob/v0.9.4/lib/macros.ex), for historical reasons. I am not proud of this code, but I am pretty sure we must share all the errors we met on incorrect paths taken, not only success stories. After all, they are always more inspiring and thrilling than dry presentation of the final result.
+Here is a link to the [working version](https://github.com/am-kantox/vela/blob/v0.9.4/lib/macros.ex), for historical reasons. I am not proud of this code, but I am pretty sure we must share all the mistakes we made on incorrect paths taken, not only success stories. After all, they are always more inspiring and thrilling than dry presentation of the final result.
 
 ### `Tyyppi`
 
-In a couple of days I went to the beach and there I all of a sudden understood, that I am facing the [XY Problem](http://xyproblem.info/). All I need is simply to make erlang types a first class citizen in _Elixir_. That’s how [`Tyyppi`](https://hexdocs.pm/tyyppi) library was born.
+In a couple of days I went to the beach and there I all of a sudden understood, that I am facing an [XY Problem](http://xyproblem.info/). All I needed was simply to make erlang types a first class citizen in _Elixir_ runtime. That’s how [`Tyyppi`](https://hexdocs.pm/tyyppi) library was born.
 
-There is not documented [`Code.Typespec`](https://github.com/elixir-lang/elixir/blob/v1.10.4/lib/elixir/lib/code/typespec.ex) module in the _Elixir_ core, that made my life easier. I started with very simple approach of validating terms against types. I loaded all the types available in my current session and start to cover different cases, recursively expanding remote types. Frankly, that was not funny. That ked me towards the first usable part of this library [`Tyyppi.of?/2`](https://hexdocs.pm/tyyppi/Tyyppi.html#of?/2) which accepts a type and a term and returns a boolean.
+There is not documented [`Code.Typespec`](https://github.com/elixir-lang/elixir/blob/v1.10.4/lib/elixir/lib/code/typespec.ex) module in the _Elixir_ core, that made my life easier. I started with very simple approach of validating terms against types. I loaded all the types available in my current session and continued to cover different cases one by one, recursively expanding remote types. Frankly, that was boring, not funny. That led me towards the first usable part of this library: [`Tyyppi.of?/2`](https://hexdocs.pm/tyyppi/Tyyppi.html#of?/2) function, which accepts a type and a term and returns a boolean.
 
 ```elixir
 iex|tyyppi|1 ▶ Tyyppi.of? GenServer.on_start(), {:ok, self()}
@@ -47,7 +47,7 @@ iex|tyyppi|2 ▶ Tyyppi.of? GenServer.on_start(), :ok
 #⇒ false
 ```
 
-I needed some internal representation for the types, so I decided to store everything in a struct named [`Tyyppi.T`](https://hexdocs.pm/tyyppi/Tyyppi.T.html). And here is a sibling of `Tyyppi.of?/2` — `Tyyppi.of_type?/2` accepting my internal representation of the type and the term.
+I needed some internal representation for the types, so I decided to store everything as a struct named [`Tyyppi.T`](https://hexdocs.pm/tyyppi/Tyyppi.T.html). And here is a sibling of `Tyyppi.of?/2` — [`Tyyppi.of_type?/2`](https://hexdocs.pm/tyyppi/Tyyppi.html#of_type?/2), accepting my internal representation of the type and the term.
 
 ```elixir
 iex|tyyppi|3 ▶ type = Tyyppi.parse(GenServer.on_start)
