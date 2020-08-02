@@ -24,7 +24,7 @@
     <!--link href="{{ ASSET_PATH }}/css/pastel-on-dark.min.css" rel="stylesheet" type="text/css" media="all"-->
     <link href="{{ ASSET_PATH }}/css/mine.css?body=1" rel="stylesheet" type="text/css" media="all">
 
-    <link href="http://feeds.feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
+    <link href="http://{{ site.production_url }}/{{ site.rss }}" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
@@ -108,7 +108,7 @@
             {{ site.author.motto }} <code>::</code>
             <a class="teal-text text-lighten-5" href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a> <code>::</code>
             {{ site.tagline }} <code>::</code>
-            <a class="teal-text text-lighten-5" href="http://feeds.feedburner.com/{{ site.author.feedburner }}">RSS Feed</a> <code>::</code>
+            <a class="teal-text text-lighten-5" href="http://{{ site.production_url }}/{{ site.rss }}">RSS Feed</a> <code>::</code>
             ❤ <code>::</code>
             <a class="teal-text text-lighten-5" href="http://materializecss.com">materializecss</a>
           </strong>
