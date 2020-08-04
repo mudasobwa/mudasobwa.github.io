@@ -9,9 +9,13 @@ tags:
 ---
 
 > The wolf, goat and cabbage problem is a [river crossing puzzle](https://en.wikipedia.org/wiki/River_crossing_puzzle). It dates back to at least the 9<sup>th</sup> century, and has entered the folklore of a number of ethnic groups.  
+>
 > Once upon a time a farmer went to a market and purchased a wolf, a goat, and a cabbage. On his way home, the farmer came to the bank of a river and rented a boat. But crossing the river by boat, the farmer could carry only himself and a single one of his purchases: the wolf, the goat, or the cabbage.  
+>
 > If left unattended together, the wolf would eat the goat, or the goat would eat the cabbage.  
+>
 > The farmer’s challenge was to carry himself and his purchases to the far bank of the river, leaving each purchase intact. How did he do it?  
+>
 > — [Wolf, goat, and cabbage problem @Wiki](https://en.wikipedia.org/wiki/Wolf,_goat_and_cabbage_problem)
 
 ![Wolf → Goat → Cabbage](https://habrastorage.org/webt/wd/yt/9g/wdyt9getbzfatxvfihnk3udgia0.png)
