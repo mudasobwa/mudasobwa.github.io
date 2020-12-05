@@ -21,7 +21,9 @@ Deprecate it, freeze it’s development, but **never ever remove it** nor modify
 There is a fancy (unfortunately implausible) tale revealing Leonardo da Vinci used the same model for both _Christ_ and _Judas_ in ‘Last Supper.’
 
 > It’s said that Leonardo da Vinci took over ten years to paint the masterpiece ‘Last Supper’ because he was so picky about the models he used for each character. Each model had to have a face that was da Vinci’s vision of the person that he would represent. Needless to say, it became a tedious task to find them. One Sunday, just after da Vinci had begun the painting, he spotted a young man in the choir that he felt would be the perfect Jesus Christ. The lad radiated love, innocence, tenderness, compassion and kindness. The young man, Pietri Bandinelli, agreed to be the model.
+> 
 > Ten years went by, and the painting remained incomplete. Leonardo could not find just the right face for Judas. He was allowed to search the prison, and there he found the perfect character to portray the man who betrayed Christ. Near the completion of the painting, the model asked if he was allowed to have a look. As he stared at the painting, tears began to flow down his face. When da Vinci asked what was wrong, the model told him that he was Pietri Bandinelli, the same man who had modeled for Christ ten years earlier. He went on to confess that after modelling he began to sin, and soon he turned away from God altogether, resulting in a life of crime, anger, sadness and grief that ended with him being sent to prison for life.
+> 
 > — [source](https://www.northernstar-online.com/true-or-false-da-vinci-last-supper/)
 
 Imagine for the sake of example that indeed happened. Should Leonardo have the visage of _Christ_ deprecated once he knew the truth? Spend another ten years looking for the new model? I doubt. The same comes for legacy interfaces. Don’t kill them, please. Every time you kill one, God tortures the kitten.
