@@ -149,9 +149,19 @@ description: "This page exists only for the sake of organizing stuff so that I m
 
 ## Projects I Contributed To
 
+▶ [elixir](https://github.com/elixir-lang/elixir)  
+⤷ Forked from `elixir-lang/elixir`  
+⤷ dynamic, functional language designed for building scalable and maintainable applications  
+⤷ <small style="color: #999;">elixir</small>  
+
 ▶ [nimble_csv](https://github.com/plataformatec/nimble_csv)  
 ⤷ Forked from `plataformatec/nimble_csv`  
 ⤷ A simple and fast CSV parsing and dumping library for Elixir  
+⤷ <small style="color: #999;">elixir</small>  
+
+▶ [scenic](https://github.com/boydm/scenic)  
+⤷ Forked from `boydm/scenic`  
+⤷ client application library written directly on the Elixir/Erlang/OTP stack  
 ⤷ <small style="color: #999;">elixir</small>  
 
 ▶ [scribe](https://github.com/codedge-llc/scribe)  
