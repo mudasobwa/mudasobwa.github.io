@@ -42,9 +42,9 @@ What exactly am I to blame for that?—Well, this `lpReserved` field. Whenever M
 
 Nowadays the interfaces are rather data interchange formats rather than pure functions accessible from the outside code via direct linkage. But the latter are still there when it comes to external libraries encapsulating some data.
 
-My advise would be to always create and empty field named `meta`, or `payload`, or `crap` if you are excentric enough, that woul hold the empty collection from scratch.
+My advise would be to always create an empty field named `meta`, or `payload`, or `crap` if you are excentric enough, that would hold the empty collection from scratch.
 
-`State` is _Elixir_ might look like:
+`State` in _Elixir_ might look like:
 
 ```elixir
 defstruct State,
@@ -62,7 +62,7 @@ defstruct State,
 
 ---
 
-Future you will inevitably praise you present for letting literally any data of any shape to be attached to these `State` and `Message` without breaking anything. Just as an example, let’s see how this `state` might receive a new functionality without the necessity to _upgrade major version_ in all the consumers. Imagine, we are after user-defined validation within this structure. And we already have some internal intergity validation, like:
+Future you will inevitably praise you present for letting literally any data of any shape to be attached to these `State` and `Message` without breaking anything. Just as an example, let’s see how this `state` might receive a new functionality without the necessity to _upgrade major version_ on the consumers’ side. Imagine, we are after user-defined validation within this structure. And we already have some internal intergity validation, like:
 
 ```elixir
 def valid?(%State{} = state) do
