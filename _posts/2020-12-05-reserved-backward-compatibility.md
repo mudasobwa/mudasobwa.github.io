@@ -36,7 +36,7 @@ When I need to come up with an example of brilliant backward compatibility, I al
 
 I do recall using this function back in 1996, when tweaking windows registry was kinda semi-hacking experience, required reverse engineering skills, as well as both bravery and despair. It worked 25 years ago, it works today. Everything around has changed, but this function. That’s what I admit and adore _WinAPI_. It is fully backward compatible.
 
-What exactly am I to blame for that?—Well, this `lpReserved` field. Whenever MS engineeers needed kinda new functionality related to the new data attached to this function, they have a room to pass it through. Without changing interfaces. That’s crucial.
+What exactly am I to blame for that?—Well, this `lpReserved` field. Whenever MS engineers needed kinda new functionality related to the new data attached to this function, they have a room to pass it through. Without changing interfaces. That’s crucial.
 
 ---
 
