@@ -20,7 +20,7 @@ in general. (There is another
 Nithin Bekal.)
 
 The term [came from the electronics](https://en.wikipedia.org/wiki/Flip-flop_(electronics))
-where it roughly means two-state machine with memory. Basically, it’s meaning
+where it roughly means two-state machine with memory. Basically, its meaning
 can be expressed as a boolean variable that somehow depends on two conditions
 _and_ the history. It’s initiated with `false`.
 Once set to `true` because of the first condition, it remains
@@ -58,7 +58,7 @@ and turned back to `falsey` on the first even number. That simple.
 ### Flip-flip out of the box
 
 The thing is ruby comes with a default syntax for flip-flop operator,
-that looks a bit discouraging at first glance. It’s range operator with
+that looks a bit discouraging at first glance. It’s a range operator with
 left range boundary being a first condition, and the right one—being the second.
 
 ```ruby
