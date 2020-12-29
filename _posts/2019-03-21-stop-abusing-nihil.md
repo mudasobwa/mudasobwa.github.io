@@ -55,7 +55,7 @@ This seemed a very natural way of thinking.
 > <small><em>[Let's #TalkConcurrency with Joe Armstrong](https://www.erlang-solutions.com/blog/let-s-talkconcurrency-with-joe-armstrong.html)</em></small>
 
 This is applicable to the software development process in general. Abstractions
-should be as adhered to our real life as possible. The Nature in any case does it
+should be as adhered to our real life as possible. Nature in any case does it
 better than we.
 
 I’ll tell nobody, feel free to share: did you ever carefully handle `nil`s in your hashmap values using
@@ -82,7 +82,7 @@ end
 Let me state it again: `nil` means an absense. Value `nil` means there is no such thing.
 Absense of a key means there is no such thing. They are identically equal. That simple.
 If you are using `nil`s for denoting somewhat else, you are doing it wrong. Somewhat else
-desires it’s own type. If you need to explicitly state somewhat else, create a typed
+desires its own type. If you need to explicitly state somewhat else, create a typed
 object and make it having a state. But when there is _no such object_, `nil` is pretty good.
 
 Purists loudly advocate nullable types, monads, all that crap,—might not only help us
@@ -125,7 +125,7 @@ There is no scenario in which the following method should be called if there is
 a value, and _simply ignored_ if there is not. Well, actually I could come up with
 some contrived examples, like “send email if the address is there, do nothing otherwise,”
 but it is still a code smell and a clear sign of a design flaw. If we are to perform
-an action on presented value, we _likely_ are to take some other action on it’s absense.
+an action on presented value, we _likely_ are to take some other action on its absense.
 
 Either we want to send an email, and then we should enforce the user to provide it,
 or we don’t bother and the whole call is redundant.
