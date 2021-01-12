@@ -19,7 +19,7 @@ Experienced professional would be retarded by _IDE_ in the same way as slow cook
 
 ---
 
-On the long run the developer, using the console, and a basic editor providing syntax highlighting (like `vim`, `emacs`, `vscode`, or even `sublime`) is more productive compared to the one struggling to write a function without _IDE_. Below is the list of the most common arguments supporting _IDE_ and my complains about.
+On the long run the developer, using the console, and a basic editor providing syntax highlighting (like `vim`, `emacs`, `vscode`, or even `sublime`) is more productive compared to the one struggling to produce a function without _IDE_. Below is the list of the most common arguments supporting _IDE_ and my complains about.
 
 ### Refactoring is Easier
 
