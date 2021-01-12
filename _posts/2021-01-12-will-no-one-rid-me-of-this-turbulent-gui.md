@@ -73,7 +73,9 @@ Using _IDE_, it’s much easier to miss that last turn to absolutely unmaintaina
 Exactly: one reads the nifty piece of code and apparently there appears an illusion it works that simple way. It does not, unfortunately. The whole bunch of generated stuff _that actually runs_ became totally hidden from the developer. It’s dangerous because we apparently lose control over what the code actually is.
 
 > Also there is annoying outcome of reliance on the _IDE_, one barely understands how to survive without it. I saw people struggling to use `git` w/o `SourceTree` or failing to compile the project without magic green-triangle-run button.
+>
 > That means, that when one relies on _GUI_, they cannot automate the workflow, because a) they don’t know nuts and bolts, b) automation of _GUI_ is much harder, and c) they think it is already solved by _IDE_ in the best possible way.
+>
 > So effectively we are comparing a supermarket (_GUI_) and a fishing pole (_CLI_). The problem is one day one will end up in the middle of the lake, with the closest supermarket in 50km. Guess, how many fishing rods would they have in their boat.
 
 I could not agree more. Thanks :)
