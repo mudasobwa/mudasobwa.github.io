@@ -41,14 +41,19 @@ defmacro maybe_struct_guard(name \\ nil, struct) do
 
   if can_struct_guard?() do
     quote do
-      @doc "Helper guard to match instances of struct #{inspect(unquote(struct))}"
+      @doc """
+      Helper guard to match instances
+        of struct #{inspect(unquote(struct))}
+      """
       defguard unquote(name)(value)
-               when is_map(value) and value.__struct__ == unquote(struct)
+        when is_map(value) and value.__struct__ == unquote(struct)
     end
   else
     quote do
       @doc """
-      Stub guard to match instances of struct #{inspect(unquote(struct))}. Upgrade to 11.0/23 to make it work.
+      Stub guard to match instances
+        of struct #{inspect(unquote(struct))}.
+      Upgrade to 11.0/23 to make it work.
       """
       defguard unquote(name)(value) when is_map(value)
     end
