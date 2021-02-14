@@ -50,7 +50,23 @@ One might see the nearly same message by calling `use GenServer` from the shell.
 
 But all I wanted was to inject some fancy stuff into my current context! Apparently, the AST to inject, besides setting a ton of environment, contained some stuff that makes sense within the module context only. One cannot call `def/2` from outside of the module, or set the module attribute (this is what the cryptic error message above was actually referring to,) just out of the thin air.
 
-Aforementioned `__CALLER__` has [`context_modules`](https://hexdocs.pm/elixir/Macro.Env.html#t:context_modules/0) field to help us. I simply split the AST to inject into two parts, one that made sence only within a module context, and another one, that I might have injected anywhere. And then I simply conditionally concatenated them.
+Aforementioned `__CALLER__` has [`context_modules`](https://hexdocs.pm/elixir/Macro.Env.html#t:context_modules/0) field to help us. According to the [documentation](https://hexdocs.pm/elixir/Macro.Env.html), this field contains the list of modules defined in the current context. One example expresses it better than the thousand of words:
+
+```elixir
+IO.inspect(__ENV__.context_modules, label: "top level")
+defmodule M do
+  IO.inspect(__ENV__.context_modules, label: "inside M module")
+  defmodule N do
+    IO.inspect(__ENV__.context_modules, label: "inside nested N module")
+  end
+end
+
+#⇒ top level: []
+#⇒ inside M module: [M]
+#⇒ inside nested N module: [M.N, M]
+```
+
+So, I simply split the AST to inject into two parts, one that made sence only within a module context, and another one, that I might have injected anywhere. And then I simply conditionally concatenated them.
 
 ```elixir
 defmacro __using__(opts \\ []) do
