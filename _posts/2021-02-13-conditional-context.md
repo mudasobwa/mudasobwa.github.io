@@ -7,9 +7,9 @@ tags:
   - elixir
 ---
 
-Elixir 1.11 brought to us (amongst other very exciting features) [`is_struct/2`](https://hexdocs.pm/elixir/Kernel.html#is_struct/2) guard. It, by the way, might have been used as an example of more straightforward not backward compatible example in my yesterday’s [writing](https://rocket-science.ru/hacking/2021/02/12/conditional-defguard), but I avoided it for a reason that will become clear below.
+Elixir 1.11 brought to us (amongst other very exciting features) [`is_struct/2`](https://hexdocs.pm/elixir/Kernel.html#is_struct/2) guard. It, by the way, might have been used as an example of more straightforward not backward compatible alternative in my yesterday’s [writing](https://rocket-science.ru/hacking/2021/02/12/conditional-defguard), but I avoided it for a reason that will become clear below.
 
-Gazing for the first time into the documentation examples, I was confused. This example is
+Gazing for the first time into the documentation examples, I was confused. Here it is
 
 ```elixir
 iex> is_struct(URI.parse("/"), URI)
