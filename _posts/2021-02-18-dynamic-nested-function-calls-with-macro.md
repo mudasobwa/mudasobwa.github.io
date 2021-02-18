@@ -69,7 +69,7 @@ results in
             {:fn, [], [
                {:->, [], [
                   [{:arg2, [], Elixir}],
-                  {{:arg1, [], Elixir}, {:arg2, [], Elixir}}
+                  {​{:arg1, [], Elixir}, {:arg2, [], Elixir}}
                 ]}]}]}]}]}]}
 ```
 
