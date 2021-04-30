@@ -58,7 +58,7 @@ Now we need to properly handle all the possible responses, depending on what sta
   def perform(id, %State{state: :failed, response: error} = state) do
     Logger.error("Errored: #{id}")
     # Do whatever with the error returned, *do not shutdown the process*
-    {{:timeout, 0}, payload} # switch off subsequential calls to `perform/2`
+    {​{:timeout, 0}, payload} # switch off subsequential calls to `perform/2`
   end
 ```
 
