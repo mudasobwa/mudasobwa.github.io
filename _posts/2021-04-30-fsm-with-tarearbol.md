@@ -15,7 +15,7 @@ Consider the following example. Our system has a 3rd-party service provider to v
 
 The polling lifesycle is a straightforward finite automata, shown below.
 
-![Polling](/img/polling.jpg)
+![Polling](/img/polling.png)
 
 With `Tarearbol.DynamicManager`, we start a process, that handles the current FSM state within its internal state, and using different return values from perform, we control the FSM itself. The code below is taken from the real project.
 
