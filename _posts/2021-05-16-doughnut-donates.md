@@ -4,7 +4,8 @@ title: "Do Not Doughnut Donates"
 description: "A rant on why I do not like donate-based reward systems in OSS"
 category: hacking
 tags:
-  - elixir
+  — “…”
+  - dwim
 ---
 
 The title is surely clickbait, but I am still along with the tagline. I do not think that donations are any good rewarding institute for OSS committers and here is why.
@@ -47,4 +48,4 @@ I am fine with my modest apartment and the feeling that I’m making the world a
 
 ---
 
-Happy donothing, then :)
+Happy donothing, then.
