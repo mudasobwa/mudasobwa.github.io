@@ -4,7 +4,6 @@ title: "Do Not Doughnut Donates"
 description: "A rant on why I do not like donate-based reward systems in OSS"
 category: hacking
 tags:
-  — “…”
   - dwim
 ---
 
