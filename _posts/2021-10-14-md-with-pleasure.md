@@ -24,7 +24,7 @@ The main goal would be to provide a support of still easy-to-read custom markup 
 
 ## Single-pass and Streaming
 
-`Md` is a **single-pass streaming** parser. That said, it never looks behind and therefore is normally faster than competitors.
+`Md` is a **single-pass streaming** parser. That said, it never looks behind, and, therefore, it is normally faster than competitors. `Md` is a plain old good reduce on the incoming stream of characters.
 
 ```
 ## Md.Bench
@@ -37,7 +37,7 @@ The benchmark above is not absolutely honest, because `earmark` supports way mor
 
 ## Custom parsers
 
-`Md` allows to declare custom parsers for any opening sequence. For that to work, one should implement [`Md.Parser`](https://hexdocs.pm/md/Md.Parser.html) behaviour. For instance, to turn twitter handles into links, one might do:
+`Md` allows declaring custom parsers for any opening sequence. For that to work, one should implement [`Md.Parser`](https://hexdocs.pm/md/Md.Parser.html) behaviour. For instance, to turn Twitter handles into links, one might do:
 
 ```elixir
 defmodule My.Parsers.TwitterHandle do
@@ -119,7 +119,7 @@ the above will effectively convert `?[foo](bar)` into `{:abbr, %{title: "that"},
 
 ## Advantages
 
-As it was already shown, `Md` does not aim for covering all the Gruber markdown, but rather it provides a configurable and fully customizable platform for declaring custom markups and deal with them. Being also blazingly fast, it could be a greater choice for custom blog engines or even markups for online shops and similar.
+That all being said, `Md` does not aim for covering all the Gruber markdown, but rather it provides a configurable and fully customizable platform for declaring custom markups and deal with them. Being also blazingly fast, it could be a greater choice for custom blog engines or even markups for online shops and similar.
 
 For instance, when Github introduced their “footnote” feature, adding it to `Md` would be a matter of one syntax update.
 
