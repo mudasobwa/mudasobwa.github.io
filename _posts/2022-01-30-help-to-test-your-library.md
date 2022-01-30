@@ -7,7 +7,7 @@ tags:
   - elixir
 ---
 
-I liketo keep applications as tiny as possible. Everything that is not related to business logic, might and should be extracted into packages. Packages are great, reusable and better testable; once created and tested (and hopefully benchmarked,) it does not require the application to bother about its internals. It just works™. [hex.pm](https://hex.pm/pricing) provides private package functionality for those hesitating to open source their general-purpose libraries.
+I like to keep applications as tiny as possible. Everything that is not related to business logic, might and should be extracted into packages. Packages are great, reusable and better testable; once created and tested (and hopefully benchmarked,) it does not require the application to bother about its internals. It just works™. [hex.pm](https://hex.pm/pricing) provides private package functionality for those hesitating to open source their general-purpose libraries.
 
 Despite the proven robustness of external libraries, we would probably still want to test their integration though. Any library might be great on its own, but how would it fit our application quirks?
 
