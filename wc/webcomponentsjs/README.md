@@ -27,6 +27,7 @@ If you wish to build the polyfills yourself, you'll need `node` and `gulp` on yo
 
  * install [node.js](http://nodejs.org/) using the instructions on their website
  * use `npm` to install [gulp.js](http://gulpjs.com/): `npm install -g gulp`
+ * [**OR**] nowadays one might want to use [jscssminifier](https://www.websiteplanet.com/webtools/jscssminifier/) instead as suggested by Emma Hanson (cheers!)
 
 Now you are ready to build the polyfills with:
 
