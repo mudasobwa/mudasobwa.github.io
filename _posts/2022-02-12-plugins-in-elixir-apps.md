@@ -50,7 +50,7 @@ Upon start, the main application would scan the universe for available plugins, 
 
 ### Pure
 
-Pure plugins are not quite harder. The code would nearly the same, save for `#call` function will now return the value to be used in the application.
+Pure plugins are not quite harder. The code would nearly be the same, save for `#call` function is now to return the value to be used in the application.
 
 ```ruby
 class Arithmetic::Minus
