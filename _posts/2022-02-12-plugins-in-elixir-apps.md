@@ -13,7 +13,7 @@ Eventually, the similar functionality tends to suffer from discrepancies in the 
 
 ![Lizard](/img/plugins.jpg)
 
-`C` uses header files to claim a demand. Erudite developers with a rich vocabulary yell “polymorphism.” OOP coaches whisper “interfaces.” Pattern adepts get probably already bored reading this because the “Command” pattern is the one. Dynamic languages vote for duck-typing. Erlang provides behaviours for the nearly same purpose. Elixir inherits behaviours and introduces a notion of protocols. RESTful notation has its own word. Even Facebook is now Meta (although I doubt it has anything with the real meaning of the beatuful Greek word.)
+`C` uses header files to claim a demand. Erudite developers with a rich vocabulary yell “polymorphism.” OOP coaches whisper “interfaces.” Pattern adepts get probably already bored reading this because the “Command” pattern is the one. Dynamic languages vote for duck-typing. Erlang provides behaviours for the nearly same purpose. Elixir inherits behaviours and introduces a notion of protocols. RESTful notation has its own word. Even Facebook is now Meta (although I doubt it has anything with the real meaning of the beautiful Greek word.)
 
 OK, jokes aside. We are talking about generic plugins here. Once plugged in, such a beast provides some rich additional functionality. If there is no suitable adapter in the house, nothing crashes, despite the significant part of the functionality is not available anymore. Sounds quite familiar. You cannot listen to the music on your not-so-smart-phone if you are using your grandma’s jack’ed earpods, but answering calls and playing snake is still an option.
 
