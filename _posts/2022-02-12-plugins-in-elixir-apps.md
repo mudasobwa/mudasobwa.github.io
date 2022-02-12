@@ -85,7 +85,7 @@ The number of callbacks should be tempting to a minimum, while it must still cov
 
 That sounds too generic, but in fact it’d be not so complicated to implement. There is absolutely no need to strive to produce a swiss-knife-like plugin behaviour. Tree structure works perfectly everywhere, and here it does as well. Just make a top-level behaviour to provide a name, scope _and_ features, where features are other behaviours implemented. Then the main application might perform a sequence of requests for the current scope and decide whether all, or some, or none plugins are suitable to allow in each particular case.
 
-This writing already becames too long, so I’d postpone real-life examples, but the main idea of how to approach this should be _hopefully_ clear now.
+This writing already became too long, so I’d postpone real-life examples, but the main idea of how to approach this should be _hopefully_ clear now.
 
 ---
 
