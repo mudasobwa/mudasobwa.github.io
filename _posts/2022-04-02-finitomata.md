@@ -34,7 +34,7 @@ Last week I had been presenting the _FSM_ concept to non-tech auditory during on
 
 ---
 
-The most important thing I wanted to _automate_ would be the _FSM_ pure description itself. I wanted something, that is error-prone and easy to grasp. I wanted the result to be drawable out of the box. That’s why I recalled [PlantUML format](https://plantuml.com/en/state-diagram). Instead of scrolling the editor window back and forth and memorizing all the transitions handled, the definition of the entire _FSM_ would be in the very single place! That sounded as a great idea.
+The most important thing I wanted to _automate_ would be the _FSM_ pure description itself. I wanted something, that is fault-tolerant, not error-prone, and easy to grasp. I wanted the result to be drawable out of the box. That’s why I recalled [PlantUML format](https://plantuml.com/en/state-diagram). Instead of scrolling the editor window back and forth and memorizing all the transitions handled, the definition of the entire _FSM_ would be in the very single place! That sounded as a great idea.
 
 ```
 [*] --> s1 : to_s1
