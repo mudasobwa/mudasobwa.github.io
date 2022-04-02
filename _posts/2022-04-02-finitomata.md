@@ -46,7 +46,7 @@ s3 --> [*] : ok
 
 So I took [`NimbleParsec`](https://hexdocs.pm/nimble_parsec), the great parser combinators library by [Dashbit](https://dashbit.co/) and started with _PlantUML_ parsing. I ensured the parsed _FSM_ consistency as: one single state, no orphan states, at least one final state. Also I have plans to implement a `mix` task to generate a visual representation of _FSM_ as a diagram (the respective [issue](https://github.com/am-kantox/finitomata/issues/1) is marked as _Help Wanted_ FWIW :))
 
-I already had the approximate architecture in my mind. I wanted _FSM_ to leverage `GenServer` functionality under the hood, and several callbacks for the _real_ consumer actions when the transaction gets performed. These callbacks were intended to allow the cosumer to concentrate on business logic only, without a necessity to deal with processes, messages and supervision trees. It should have been absolutely imperative for the consumer yet fully _OTP_ under the hood.
+I already had the approximate architecture in my mind. I wanted _FSM_ to leverage `GenServer` functionality under the hood, and several callbacks for the _real_ consumer actions when the transaction gets performed. These callbacks were intended to allow the consumer to concentrate on business logic only, without a necessity to deal with processes, messages and supervision trees. It should have been absolutely imperative for the consumer yet fully _OTP_ under the hood.
 
 _Draft implementation:_ the consumer initiates a transition by calling somewhat like `transition(object, event)`, then the `GenServer` does its magic and the callback `on_transition` gets called. From inside this callback, the consumer implements the business logic and returns the result (the next state to move the _FSM_ to.) Soon I figured out we need also `on_failure` and `on_terminate` callbacks to allow easy handling of errors and to perform a final cleanup respectively.
 
@@ -56,7 +56,7 @@ All the callbacks do have a default implementation, which would perfectly handle
 
 Upon start, it moves to the next to initial state and sits there awaiting for the transition request. Then it would call an `on_transition/4` callback and move to the next state, or remain in the current one, according to the response.
 
-Upon reachiung a final state, it would terminate itself, that’s where `on_terminate/3` callback is called from. The process also keeps all the history of states it went through, and might have a payload in its state.
+Upon reaching a final state, it would terminate itself, that’s where `on_terminate/3` callback is called from. The process also keeps all the history of states it went through, and might have a payload in its state.
 
 That’s how the whole implementation would look like
 
