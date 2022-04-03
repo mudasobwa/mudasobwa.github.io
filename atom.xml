@@ -15,7 +15,7 @@ title : Atom Feed
  </author>
 
  {% for tag in site.tags %}
-   <category term="{{ tag | xml_escape }}" />
+   <category term="{{ tag[0] }}" />
  {% endfor %}
 
  {% for post in site.posts %}
