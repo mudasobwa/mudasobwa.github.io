@@ -11,9 +11,9 @@ Last several months I’ve been lazily working on markdown parser. My goal was n
 
 I created a tool for myself in the first place and I wanted to allow custom syntax in markdown spirit, like `^2^` for superscript, [@mudasobwa](https://twitter.com/mudasobwa) for twitter handles, `#hashtag` for hashtags etc. Markdown itself has a lot of contrived features, which are barely known and literally never used by regular adopters. Did you know you could have a bulleted list inside a blockquote which lives withing an item of another numbered list? Well, now you know; would you ever use it?
 
-![Seaview in El Masnou](img/el-masnou-beach.jpg)
+![Seaview in El Masnou](/img/el-masnou-beach.jpg)
 
-I have no clue who had introduced the alignment in tables with colons in the head separator (`|:---:|`,) but this fellow developer surely never thought about they broke the whole markdown paradigm by introducing a markup that has an effect on _the content before declaration_. Yes, these colons change the alignment of the text in head’s columns, introducing the necessity for lookbehinds and drastically ruin the performance (and the original idea in general.)
+I have no clue who had introduced the alignment in tables with colons in the head separator (`|:---:|`,) but this fellow developer surely never thought about how drastically they broke the whole markdown paradigm by introducing a markup that has an effect on _the content before declaration_. Yes, these colons change the alignment of the text in head’s columns, introducing the necessity for lookbehinds and drastically ruin the performance (and the original idea in general.)
 
 [`Md`](https://hexdocs.pm/md) is SAX-like parser, which goes through the input, pattern-matching the control sequences as they come and emits parsed stuff as _XHTML_. It does not do lookbehinds and it’ll never do. Whenever one needs to be full-compliant with _Commonmark_ tests, I’d suggest to pick any other library, generously presented on the market.
 
