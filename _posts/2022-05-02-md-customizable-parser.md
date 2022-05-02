@@ -13,7 +13,7 @@ I created a tool for myself in the first place and I wanted to allow custom synt
 
 ![Seaview in El Masnou](/img/el-masnou-beach.jpg)
 
-I have no clue who had introduced the alignment in tables with colons in the head separator (`|:---:|`,) but this fellow developer surely never thought about how drastically they broke the whole markdown paradigm by introducing a markup that has an effect on _the content before declaration_. Yes, these colons change the alignment of the text in head’s columns, introducing the necessity for lookbehinds and drastically ruin the performance (and the original idea in general.)
+I have no clue who had introduced the alignment in tables with colons in the head separator (`|:---:|`,) but this fellow developer surely never thought about how drastically they broke the whole markdown paradigm by introducing a markup that has an effect on _the content before declaration_. Yes, these colons change the alignment of the text in head’s columns, introducing the necessity for lookbehinds and ruin the performance (and the original idea in general.)
 
 [`Md`](https://hexdocs.pm/md) is SAX-like parser, which goes through the input, pattern-matching the control sequences as they come and emits parsed stuff as _XHTML_. It does not do lookbehinds and it’ll never do. Whenever one needs to be full-compliant with _Commonmark_ tests, I’d suggest to pick any other library, generously presented on the market.
 
