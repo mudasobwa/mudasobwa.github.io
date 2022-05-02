@@ -63,8 +63,12 @@ Table?—Nothing could have ever been easier.
 
 ```elixir
     matrix: [
-      {"|", %{tag: :td, outer: :table, inner: :tr, first_inner_tag: :th, skip: "|-"}}
-    ],
+      {"|", %{
+        tag: :td,
+        outer: :table,
+        inner: :tr,
+        first_inner_tag: :th,
+        skip: "|-"}}],
 ```
 
 Allow some custom tag?—Sure, despite we suggest to use a dedicated syntax, why not?
