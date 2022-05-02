@@ -15,9 +15,9 @@ I created a tool for myself in the first place and I wanted to allow custom synt
 
 I have no clue who had introduced the alignment in tables with colons in the head separator (`|:---:|`,) but this fellow developer surely never thought about how drastically they broke the whole markdown paradigm by introducing a markup that has an effect on _the content before declaration_. Yes, these colons change the alignment of the text in head’s columns, introducing the necessity for lookbehinds and ruin the performance (and the original idea in general.)
 
-[`Md`](https://hexdocs.pm/md) is SAX-like parser, which goes through the input, pattern-matching the control sequences as they come and emits parsed stuff as _XHTML_. It does not do lookbehinds and it’ll never do. Whenever one needs to be full-compliant with _Commonmark_ tests, I’d suggest to pick any other library, generously presented on the market.
+[`Md`](https://hexdocs.pm/md) is SAX-like parser, which goes through the input, pattern-matching the control sequences as they come, and emits parsed stuff as _XHTML_. It does not do lookbehinds and it’ll never do. Whenever one needs to be full-compliant with _Commonmark_ tests, I’d suggest to pick any other library, generously presented on the market.
 
-`Md` is five times faster than `earmark` because of its approach (and lack of some features which I voluntarily decided to be redundant, like the aforementioned table column alignment.) That does not mean `Md` is unusable for the average user, dealing with markdown; I‌have it tested against the whole _Elixir_ documentation and it gets parsed without a glitch.
+`Md` is five times faster than `earmark` because of its approach (and lack of some features which I voluntarily decided to be redundant, like the aforementioned table column alignment.) That does not mean `Md` is unusable for the average user, dealing with markdown; I have it tested against the whole _Elixir_ documentation and it gets parsed without a glitch.
 
 Still, the main advantage of using `Md` compared to other markdown implementations is its full customization. Let’s see how one would implement _Slack_ parser.
 
@@ -59,7 +59,7 @@ What if we wanted to support headers as well?
 +    ],
 ```
 
-Table?—Nothing could have ever be easier.
+Table?—Nothing could have ever been easier.
 
 ```elixir
     matrix: [
