@@ -85,8 +85,6 @@ This works, but it does not update the map itself, the next call to `get_in/2` w
 
 Now `lazy` contains the updated version of the map, with `value` and `timestamp` set in the value associated with key `:foo`. Subsequent call to `get_in/2` would hit the cache (until the value gets expired.)
 
----
-
 That approach might be helpful when one deals with a data which is unlikely to be accessed, or with remote data having expiration time, or even with data, that should not be long-lived in the memory.
 
 ---
