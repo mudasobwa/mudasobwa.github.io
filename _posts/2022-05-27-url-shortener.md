@@ -63,8 +63,8 @@ An access to the long URL would be drastically fast:
 
 ```
 abcdefg
-^       physical nore/shard name
- ^^^^^^ local shard key to hashring
+^         physical node/shard name
+ ^^^^^^   local shard key to hashring
 ```
 
 And then select from the storage by the key itself.
