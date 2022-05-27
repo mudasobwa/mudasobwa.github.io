@@ -73,11 +73,11 @@ And then select from the storage by the key itself.
 
 Remember, I said, there might be no need for _DB_ at all? All we need from scratch would be an interface looking like a pair of `get/1` and `put/2` (and maybe `delete/1`, but we can think about it later) functions. The naïve but robust implementation of this interface would be a bunch of directories on the file system, organized in the same way as linux distros keep packages: for the 7-symbols key it would be a path like `/hashring-id/b/c/d/e/f/g` where `g` is the file having content representing the long original URL. `inode`s work slowly when there are too many files/subdirectories in the directory, but here we have `62` tops on each level, so we are all set and the access would be instant. If it won’t, we’ll move to `62` tables in the RDBMS, or `62` shards in `NoSQL`, or whatever else.
 
-That’s basically it.
+That’s basically it. We have a clean, backend-storage agnostic, scalable solution.
 
 ### Further Improvements
 
-We might easily keep the number of accesses via shortened link, as well as any other attached data. Even more, we might extend this approach to re-use short links, which would increase the write-time, but keey the access time the same (dealing with collisions would be the most interesting part of this solution, I’d leave its design to the astute reader.)
+We might easily keep the number of accesses via shortened link, as well as any other attached data. Even more, we might extend this approach to re-use short links, which would increase the write-time, but keep the access time the same (dealing with collisions would be the most interesting part of this solution, I’d leave its design to the astute reader, feel free to ping/DM me with your suggestions.)
 
 ---
 
