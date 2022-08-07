@@ -8,7 +8,7 @@ tags:
   - ru
 ---
 
-**_NB_ This post is in Russian, the translation to English is coming soon**
+**_NB_ This post is in Russian, [English version is here](/2022-08-07-md-under-the-hood.md)**
 
 ## Вечер воспоминаний
 
