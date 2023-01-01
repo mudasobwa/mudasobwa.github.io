@@ -10,6 +10,8 @@ tags:
 
 When people around me talk about metrics, the most used words are service reliability, latency, throughput, load capacity and their siblings. All that is indeed extremely important until it gets to the data. In the data world, where we deal with customer’s private information, business nuances, and, after all, money, the _data consistency_ is what we should take care of in the first place. I even [wrote a rant about it a while ago](https://rocket-science.ru/hacking/2022/08/14/fsm-driven-development).
 
+![Roses Are Red](/img/roses-are-red.jpg)
+
 Data consistency is harder than rumors say. Data consistency, contrary to popular misconception, cannot be preserved by _RDBMS_ itself. It cannot be represented as a diagram, let alone graph of relations. And, after all, when people talk about consistency, they too often use a wrong vocabulary. There is even the brand new wording invented by people who had most likely never been to the university. [Saga](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga), if one would squeeze out all the water from the paper, is a poor-man FSM. OK, rich-man FSM, it’s coming from Microsoft after all.
 
 I blindly used mocks for decades until I read José Valim’s ‘[I always consider “mock” to be a noun, never a verb.](https://dashbit.co/blog/mocks-and-explicit-contracts)’ and it clicked. Not that I had no clue what mocks are, but I surely was abusing the clean concept with somewhat nasty implementation.
