@@ -14,8 +14,8 @@ Many years ago I’ve read Joe Armstrong’s brilliant description of how they i
 
 This is how the _erlang_ syntax appeared, copying, as far as possible, the English text not only with the spelling of keywords, but also with syntax and punctuation. Similarly, an actor model was chosen because it imitates the standard algorithm of human interaction (“I can’t read minds”).
 
-> We don’t have shared memory. I have my memory. You have yours. We have two brains, one each. They are not joined. To change your memory, I send you a message: I talk, or I wave my arms.
-> You listen, you see, and your memory changes; however, without asking you a question or observing your response, I do not know that you have received my messages.
+> We don’t have shared memory. I have my memory. You have yours. We have two brains, one each. They are not joined. To change your memory, I send you a message: I talk, or I wave my arms.  
+> You listen, you see, and your memory changes; however, without asking you a question or observing your response, I do not know that you have received my messages.  
 > _~ Joe Armstrong, Programming Erlang_
 
 Since then, I have been trying to solve all the problems I encounter in my work by projecting them onto my (or someone else’s) life experience. Such examples help a lot to understand where you are right and where you are very wrong.
