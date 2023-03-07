@@ -8,7 +8,7 @@ tags:
   - ideas
 ---
 
-While pushing for FSMs in general and `Finitomata` in particular, I needed to provide a robust and handy way to test the beast. The ideology of `Finitomata` approach is to spawn a process per each and any entity alive, where _alive_ means _in some intermediate state_. Roughly speaking, that does not make the conventional testing a charm. Consider a process which might change its state (in terms of `Finitomata`, _can transition from one state to another_,) not only as a result of an explicit intervention, like a message sent to it, or, which is nearly the same, via `Finitomata.transition/4`, but also as a consequence or even a coincidence of some several external occasions.
+While pushing for FSMs in general and [`Finitomata`](https://hexdocs.pm/finitomata) in particular, I needed to provide a robust and handy way to test the beast. The ideology of `Finitomata` approach is to spawn a process per each and any entity alive, where _alive_ means _in some intermediate state_. Roughly speaking, that does not make the conventional testing a charm. Consider a process which might change its state (in terms of `Finitomata`, _can transition from one state to another_,) not only as a result of an explicit intervention, like a message sent to it, or, which is nearly the same, via `Finitomata.transition/4`, but also as a consequence or even a coincidence of some several external occasions.
 
 ![Camina Ronda](/img/camina-ronda.jpg)
 
