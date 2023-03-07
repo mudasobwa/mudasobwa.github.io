@@ -13,7 +13,7 @@ Well, when we bump into the asynchrony, we have to break the usual picture in th
 
 To make a life easier for the programmer, man can use the [Reactor](http://en.wikipedia.org/wiki/Reactor_pattern) pattern. I swear that the best its implementation for ruby is [EventMachine](https://github.com/eventmachine/eventmachine/wiki). But there is no perfect thing under the sun and there are some not obvious things with it. I plan to briefly tell about one of them.
 
-###EventMachine
+### EventMachine
 
 ```bash
 gem install eventmachine
