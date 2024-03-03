@@ -9,7 +9,7 @@ tagline: continiously building the M³-model of life
 
 ## My ¢2
 
-My name is Alexei Matyushkin. I was born on October 0, 1973, in Saint-Petersburg, Russia. Nowadays I got used to a nickname “mudasobwa,” proudly granted by rwandian linguists:
+My name is Aleksei Matiushkin. I was born on October 0, 1973, in Saint-Petersburg, Russia. Nowadays I got used to a nickname “mudasobwa,” proudly granted by rwandian linguists:
 
 <blockquote><p>Kinyarwanda, the language spoken by most Rwandans, has no words for many basic technical and computing terms, including the very word “computer,” explained Steve Murphy, organizer of the project. After debating whether to borrow English or French terms or come up with their own native word, the group settled on “mudasobwa,” which roughly translates to “something or someone that does not make mistakes.”</p>
 <small><a href="http://news.com.com/2100-7344_3-5159179.html?part=rss&amp;tag=feed&amp;subj=news">Se habla open source?</a></small></blockquote>
