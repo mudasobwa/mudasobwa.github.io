@@ -1,130 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author.name }}">
-    <meta name="msvalidate.01" content="DD6CC60E32E94EC101FE1201B669A34F" />
 
-    <link rel="shortcut icon" href="/img/favicon.png">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}">{% endif %}
+  <meta name="author" content="{{ site.author.name }}">
+  <meta name="msvalidate.01" content="DD6CC60E32E94EC101FE1201B669A34F" />
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
+  <link rel="shortcut icon" href="/img/favicon.png">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta+Mahee:200">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro">
-    <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/rainbow.min.css"-->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta+Mahee:200">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro">
+  <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/rainbow.min.css"-->
 
-    <!--link href="{{ ASSET_PATH }}/css/pastel-on-dark.min.css" rel="stylesheet" type="text/css" media="all"-->
-    <link href="{{ ASSET_PATH }}/css/mine.css?body=1" rel="stylesheet" type="text/css" media="all">
+  <!--link href="{{ ASSET_PATH }}/css/pastel-on-dark.min.css" rel="stylesheet" type="text/css" media="all"-->
+  <link href="{{ ASSET_PATH }}/css/mine.css?body=1" rel="stylesheet" type="text/css" media="all">
 
-    <link href="{{ site.production_url }}/{{ site.rss }}" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
+  <link href="{{ site.production_url }}/{{ site.rss }}" rel="alternate" title="{{ site.title }}"
+    type="application/atom+xml" />
 
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/nord.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/nord.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-  <body>
+<body>
 
-    <nav class="teal darken-4" role="navigation">
-      <div class="nav-wrapper container"><a id="logo-container" href="{{ HOME_PATH }}" class="brand-logo">{{ site.title }}</a>
-        <ul class="right hide-on-med-and-down">
-          {% assign pages_list = site.pages %}
-          {% assign group = 'navigation' %}
-          {% include JB/pages_list %}
-        </ul>
+  <nav class="teal darken-4" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="{{ HOME_PATH }}" class="brand-logo">{{ site.title
+        }}</a>
+      <ul class="right hide-on-med-and-down">
+        {% assign pages_list = site.pages %}
+        {% assign group = 'navigation' %}
+        {% include JB/pages_list %}
+      </ul>
 
-        <ul id="nav-mobile" class="side-nav">
-          {% assign pages_list = site.pages %}
-          {% assign group = 'navigation' %}
-          {% include JB/pages_list %}
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-      </div>
-    </nav>
+      <ul id="nav-mobile" class="side-nav">
+        {% assign pages_list = site.pages %}
+        {% assign group = 'navigation' %}
+        {% include JB/pages_list %}
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
+  <div class="container">
+    <div class="content">
+      {{ content }}
+    </div>
+  </div> <!-- /container -->
+
+  <hr>
+
+  <footer class="page-footer teal">
     <div class="container">
-      <div class="content">
-        {{ content }}
-      </div>
-    </div> <!-- /container -->
-
-    <hr>
-    <style type="text/css">.webring{position:relative;background-color:#fff;border-radius:8px;max-width:256px;font-family:monospace;color:#000;padding:0;padding-left:8px;padding-right:8px;height:48px}.webring div.title{position:absolute;top:0;left:8px;display:block;font-family:Verdana,Geneva,Tahoma,sans-serif;font-size:14px;font-weight:700;margin:0;padding:0;height:48px;line-height:48px}.webring svg{height:32px;width:32px}.webring a,.webring a:active,.webring a:link,.webring a:visited{color:#000}.webring a.shuffle{position:absolute;top:8px;right:8px;display:block;height:32px;width:32px;color:#000}</style><div class="webring"><div class="title">BEAM Bloggers Webring</div><a class="shuffle" title="Shuffle to a webring site" href="https://beambloggers.com/shuffle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shuffle"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg></a></div>
-    <hr>
-
-    <footer class="page-footer teal">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Here I go</h5>
-            <p class="grey-text text-lighten-4">
-              Name: <b>Aleksei Matiushkin</b> (nick: <b>mudasobwa</b>).<br>
-              About: I am still more <b>more functional</b> than <b>object oriented</b>.<br>
-              Was born: <b>October 0, 1973</b>, in <b>Saint-Petersburg</b>, Russia.<br>
-              Lived: <b>Saint-Petersburg</b> ⇒ <b>Heraclion</b> ⇒ <b>Berlin</b> ⇒ <b>Moscow</b> ⇒ <b>Barcelona</b>.<br>
-              Love: <b>Linux</b>, <b>Elixir</b>, <b>Erlang</b>, <b>Ruby off Rails</b>, <b>COBOL</b>.<br>
-              Hate: <b>MacOS</b>, <b>iOS</b>, <b>PHP</b>, <b>JavaScript</b>, <b>haters</b>.
-            </p>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Lovely posts</h5>
-            <ul>
-              <li><a class="white-text" href="/fun/2013/04/06/abc-for-fluent-speakers-nm-level">ABC for Fluent Speakers</a></li>
-              <li><a class="white-text" href="/hacking/2017/04/24/git-commit-credo-linter-hook">Use credo in git pre-commit</a></li>
-              <li><a class="white-text" href="/hacking/2017/03/08/hack-vs-kludge">Hack vs. Kludge</a></li>
-              <li><a class="white-text" href="/hacking/2017/02/17/either-monad-in-elixir">Either Monad in Elixir</a></li>
-              <li><a class="white-text" href="/hobby/2016/12/25/queso-al-romero">Queso as Romero</a></li>
-              <li><a class="white-text" href="/hacking/2016/12/19/dry-behaviour">Protocols in Ruby</a></li>
-            </ul>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Get in touch</h5>
-            <ul>
-              <li><a class="white-text" href="mailto:am@mudasobwa.ru">am@mudasobwa.ru</a></li>
-              <li><a class="white-text" href="https://github.com/am-kantox">git @kantox</a></li>
-              <li><a class="white-text" href="https://github.com/mudasobwa">git @home</a></li>
-              <li><a class="white-text" href="http://stackoverflow.com/users/story/2035262">story @stackoverflow</a></li>
-              <li><a class="white-text" href="https://twitter.com/mudasobwa">twitter</a></li>
-              <li><a class="white-text" rel="me" href="https://mastodon.social/@mudasobwa">mastodon</a></li>
-              <li><a class="white-text" href="http://mudasobwa.ru">блог на русском</a></li>
-            </ul>
-          </div>
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Here I go</h5>
+          <p class="grey-text text-lighten-4">
+            Name: <b>Aleksei Matiushkin</b> (nick: <b>mudasobwa</b>).<br>
+            About: I am still more <b>more functional</b> than <b>object oriented</b>.<br>
+            Was born: <b>October 0, 1973</b>, in <b>Saint-Petersburg</b>, Russia.<br>
+            Lived: <b>Saint-Petersburg</b> ⇒ <b>Heraclion</b> ⇒ <b>Berlin</b> ⇒ <b>Moscow</b> ⇒ <b>Barcelona</b>.<br>
+            Love: <b>Linux</b>, <b>Elixir</b>, <b>Erlang</b>, <b>Ruby off Rails</b>, <b>COBOL</b>.<br>
+            Hate: <b>MacOS</b>, <b>iOS</b>, <b>PHP</b>, <b>JavaScript</b>, <b>haters</b>.
+          </p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Lovely posts</h5>
+          <ul>
+            <li><a class="white-text" href="/fun/2013/04/06/abc-for-fluent-speakers-nm-level">ABC for Fluent
+                Speakers</a></li>
+            <li><a class="white-text" href="/hacking/2017/04/24/git-commit-credo-linter-hook">Use credo in git
+                pre-commit</a></li>
+            <li><a class="white-text" href="/hacking/2017/03/08/hack-vs-kludge">Hack vs. Kludge</a></li>
+            <li><a class="white-text" href="/hacking/2017/02/17/either-monad-in-elixir">Either Monad in Elixir</a></li>
+            <li><a class="white-text" href="/hobby/2016/12/25/queso-al-romero">Queso as Romero</a></li>
+            <li><a class="white-text" href="/hacking/2016/12/19/dry-behaviour">Protocols in Ruby</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Get in touch</h5>
+          <ul>
+            <li><a class="white-text" href="mailto:am@mudasobwa.ru">am@mudasobwa.ru</a></li>
+            <li><a class="white-text" href="https://github.com/am-kantox">git @kantox</a></li>
+            <li><a class="white-text" href="https://github.com/mudasobwa">git @home</a></li>
+            <li><a class="white-text" href="http://stackoverflow.com/users/story/2035262">story @stackoverflow</a></li>
+            <li><a class="white-text" href="https://twitter.com/mudasobwa">twitter</a></li>
+            <li><a class="white-text" rel="me" href="https://mastodon.social/@mudasobwa">mastodon</a></li>
+            <li><a class="white-text" href="http://mudasobwa.ru">блог на русском</a></li>
+          </ul>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container teal-text text-lighten-3">
-          <strong>
-            <a class="teal-text text-lighten-5" href="http://creativecommons.org/licenses/by/3.0/deed">CC BY 3.0</a> <code>::</code>
-            {{ site.author.name }} <code>::</code>
-            <a class="teal-text text-lighten-5" href="/files/alexei-matyushkin.pdf">résumé</a> <code>::</code>
-            {{ site.author.motto }} <code>::</code>
-            <a class="teal-text text-lighten-5" href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a> <code>::</code>
-            {{ site.tagline }} <code>::</code>
-            <a class="teal-text text-lighten-5" href="{{ site.production_url }}/{{ site.rss }}">RSS Feed</a> <code>::</code>
-            ❤ <code>::</code>
-            <a class="teal-text text-lighten-5" href="http://materializecss.com">materializecss</a>
-          </strong>
-          <!--
+    </div>
+    <div class="footer-copyright">
+      <div class="container teal-text text-lighten-3">
+        <strong>
+          <a class="teal-text text-lighten-5" href="http://creativecommons.org/licenses/by/3.0/deed">CC BY 3.0</a>
+          <code>::</code>
+          {{ site.author.name }} <code>::</code>
+          <a class="teal-text text-lighten-5" href="/files/alexei-matyushkin.pdf">résumé</a> <code>::</code>
+          {{ site.author.motto }} <code>::</code>
+          <a class="teal-text text-lighten-5" href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a>
+          <code>::</code>
+          {{ site.tagline }} <code>::</code>
+          <a class="teal-text text-lighten-5" href="{{ site.production_url }}/{{ site.rss }}">RSS Feed</a>
+          <code>::</code>
+          ❤ <code>::</code>
+          <a class="teal-text text-lighten-5" href="http://materializecss.com">materializecss</a>
+        </strong>
+        <!--
           <a href="http://github.com/{{ site.author.github }}/">github.com/{{ site.author.github }}</a><br />
           <a href="http://twitter.com/{{ site.author.twitter }}/">twitter.com/{{ site.author.twitter }}</a><br />
           -->
-        </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    {% include JB/analytics %}
-  </body>
+  {% include JB/analytics %}
+</body>
+
 </html>

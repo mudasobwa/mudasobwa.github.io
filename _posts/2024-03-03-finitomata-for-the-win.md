@@ -7,7 +7,7 @@ tags:
   - elixir
 ---
 
-It’s been a year since I started to implement my own _FSM_ library in _Elixir_. Now it’s funny to read my writings from the time when I had only a gut feeling I’m doing it write.
+It’s been a year since I started to implement my own _FSM_ library in _Elixir_. Now it’s funny to read my writings from the time when I had only a gut feeling I’m doing it right.
 
 - [The Proper FSM for Elixir](/hacking/2022/04/02/finitomata)
 - [First Class Documentation](/hacking/2022/04/30/finitomata-ex-docs)
