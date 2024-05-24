@@ -11,6 +11,8 @@ _Elixir_ community is great. The average quality of the libraries is superb. We 
 
 Well, yes. But no.
 
+![Bougainvillea](/img/bougainvillea.jpg)
+
 ## Shall I write tests?
 
 While the code is usually indeed enormously awesome, and we all take it as granted, the developers effort in helping to test
