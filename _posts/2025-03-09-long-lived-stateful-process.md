@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Long-lived Process and state recovery after crashes"
+title: "Long-lived Process and State Recovery After Crashes"
 description: ""
 category: hacking
 tags:
   - elixir
 ---
 
-When talking about erlang/elixir, people usually come up with three main associations: lightweight processes, an actor model, and fault tolerance. Erlang made it possible to run hundreds of thousands (with fine—tuning of a virtual machine, millions) of “processes” (what were later called greentreads, and even later goroutines)—almost forty years ago. Joe Armstrong, in his dissertation, half-jokingly characterized language through the catachresis of everything is a process. With the actor model, of course, this is a direct influence of Alan Kay and his ideas about everything is an object (sending messages to each other).
+When talking about erlang/elixir, people usually come up with three main associations: lightweight processes, an actor model, and fault tolerance. Erlang made it possible to run hundreds of thousands (with fine—tuning of a virtual machine, millions) of “processes” (what were later called greentreads, and even later goroutines)—almost forty years ago. Joe Armstrong, in his dissertation, half-jokingly characterized language through the catachresis of _everything is a process_. With the actor model, of course, this is a direct influence of Alan Kay and his ideas about _everything is an object_ (sending _messages_ to each other).
 
 ![Phoenix From Ashes](/img/phoenix-from-ashes.jpg)
 
