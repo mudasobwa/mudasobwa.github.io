@@ -7,8 +7,6 @@ tags:
   - elixir
 ---
 
-# DIY Message Broker
-
 In Erlang (and Elixir), I always missed a way to organize “streaming” message exchange, similar to what a Message Broker provides. Normal developers accept the constraints imposed by their frameworks: Phoenix has [`PubSub`](https://hexdocs.pm/phoenix_pubsub/Phoenix.PubSub.html), OTP has [`:gen_event`](https://www.erlang.org/doc/apps/stdlib/gen_event.html), and Elixir had [`GenEvent`](https://hexdocs.pm/elixir/GenEvent.html), deprecated even before it was born.
 
 None of these suited me. PubSub is powerful, but its asynchronicity is nailed down, and sometimes you need to call subscribers synchronously (I know you can send your pid with the message and wait for responses, but this ad-hoc approach unfortunately doesn’t help when the number of subscribers is unknown). `:gen_event` is almost what I need, but its design clearly exposes side-effect handlers, making convenient filtering of incoming message streams turn into spaghetti. In general, as always: if you don’t do it yourself, no one will.
