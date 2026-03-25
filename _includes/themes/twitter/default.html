@@ -50,10 +50,6 @@
       <a href="{{ HOME_PATH }}" class="brand">{{ site.title }}</a>
       <div style="display:flex;align-items:center">
         <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle navigation">&#9776;</button>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light theme">
-          <span class="icon-sun">&#9788;</span>
-          <span class="icon-moon">&#9790;</span>
-        </button>
       </div>
       <ul class="nav-links" id="nav-links">
         {% assign pages_list = site.pages %}
