@@ -7,130 +7,140 @@
   {% if page.description %}
   <meta name="description" content="{{ page.description }}">{% endif %}
   <meta name="author" content="{{ site.author.name }}">
-  <meta name="msvalidate.01" content="DD6CC60E32E94EC101FE1201B669A34F" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msvalidate.01" content="DD6CC60E32E94EC101FE1201B669A34F">
 
   <link rel="shortcut icon" href="/img/favicon.png">
 
-  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-  <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <!-- Theme init: runs synchronously to prevent flash of wrong theme -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta+Mahee:200">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anonymous+Pro">
-  <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/rainbow.min.css"-->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;450;500&display=swap" rel="stylesheet">
 
-  <!--link href="{{ ASSET_PATH }}/css/pastel-on-dark.min.css" rel="stylesheet" type="text/css" media="all"-->
-  <link href="{{ ASSET_PATH }}/css/mine.css?body=1" rel="stylesheet" type="text/css" media="all">
+  <!-- Theme CSS -->
+  <link href="{{ ASSET_PATH }}/css/nord-theme.css" rel="stylesheet" type="text/css" media="all">
+  <link href="{{ ASSET_PATH }}/css/nord-syntax.css" rel="stylesheet" type="text/css" media="all">
 
+  <!-- highlight.js -->
+  <link id="hljs-theme" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/nord.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>
+    hljs.configure({ ignoreUnescapedHTML: true });
+    hljs.highlightAll();
+  </script>
+
+  <!-- RSS -->
   <link href="{{ site.production_url }}/{{ site.rss }}" rel="alternate" title="{{ site.title }}"
-    type="application/atom+xml" />
-
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/nord.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    type="application/atom+xml">
 </head>
 
 <body>
 
-  <nav class="teal darken-4" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="{{ HOME_PATH }}" class="brand-logo">{{ site.title
-        }}</a>
-      <ul class="right hide-on-med-and-down">
+  <nav class="site-nav" role="navigation">
+    <div class="nav-inner">
+      <a href="{{ HOME_PATH }}" class="brand">{{ site.title }}</a>
+      <div style="display:flex;align-items:center">
+        <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle navigation">&#9776;</button>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light theme">
+          <span class="icon-sun">&#9788;</span>
+          <span class="icon-moon">&#9790;</span>
+        </button>
+      </div>
+      <ul class="nav-links" id="nav-links">
         {% assign pages_list = site.pages %}
         {% assign group = 'navigation' %}
         {% include JB/pages_list %}
+        <li>
+          <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light theme">
+            <span class="icon-sun">&#9788;</span>
+            <span class="icon-moon">&#9790;</span>
+          </button>
+        </li>
       </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        {% assign pages_list = site.pages %}
-        {% assign group = 'navigation' %}
-        {% include JB/pages_list %}
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
-  <div class="container">
-    <div class="content">
+  <main class="site-content">
+    <div class="content-card">
       {{ content }}
     </div>
-  </div> <!-- /container -->
+  </main>
 
-  <hr>
-
-  <footer class="page-footer teal">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Here I go</h5>
-          <p class="grey-text text-lighten-4">
-            Name: <b>Aleksei Matiushkin</b> (nick: <b>mudasobwa</b>).<br>
-            About: I am still more <b>more functional</b> than <b>object oriented</b>.<br>
-            Was born: <b>October 0, 1973</b>, in <b>Saint-Petersburg</b>, Russia.<br>
-            Lived: <b>Saint-Petersburg</b> ⇒ <b>Heraclion</b> ⇒ <b>Berlin</b> ⇒ <b>Moscow</b> ⇒ <b>Barcelona</b>.<br>
-            Love: <b>Linux</b>, <b>Elixir</b>, <b>Erlang</b>, <b>Ruby off Rails</b>, <b>COBOL</b>.<br>
-            Hate: <b>MacOS</b>, <b>iOS</b>, <b>PHP</b>, <b>JavaScript</b>, <b>haters</b>.
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <h5>Here I go</h5>
+          <p>
+            Name: <strong>Aleksei Matiushkin</strong> (nick: <strong>mudasobwa</strong>).<br>
+            About: I am still more <strong>functional</strong> than <strong>object oriented</strong>.<br>
+            Was born: <strong>October 0, 1973</strong>, in <strong>Saint-Petersburg</strong>, Russia.<br>
+            Lived: <strong>Saint-Petersburg</strong> &rarr; <strong>Heraclion</strong> &rarr; <strong>Berlin</strong> &rarr; <strong>Moscow</strong> &rarr; <strong>Barcelona</strong>.<br>
+            Love: <strong>Linux</strong>, <strong>Elixir</strong>, <strong>Erlang</strong>, <strong>Ruby off Rails</strong>, <strong>COBOL</strong>.<br>
+            Hate: <strong>MacOS</strong>, <strong>iOS</strong>, <strong>PHP</strong>, <strong>JavaScript</strong>, <strong>haters</strong>.
           </p>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Lovely posts</h5>
+        <div>
+          <h5>Lovely posts</h5>
           <ul>
-            <li><a class="white-text" href="/fun/2013/04/06/abc-for-fluent-speakers-nm-level">ABC for Fluent
-                Speakers</a></li>
-            <li><a class="white-text" href="/hacking/2017/04/24/git-commit-credo-linter-hook">Use credo in git
-                pre-commit</a></li>
-            <li><a class="white-text" href="/hacking/2017/03/08/hack-vs-kludge">Hack vs. Kludge</a></li>
-            <li><a class="white-text" href="/hacking/2017/02/17/either-monad-in-elixir">Either Monad in Elixir</a></li>
-            <li><a class="white-text" href="/hobby/2016/12/25/queso-al-romero">Queso as Romero</a></li>
-            <li><a class="white-text" href="/hacking/2016/12/19/dry-behaviour">Protocols in Ruby</a></li>
+            <li><a href="/fun/2013/04/06/abc-for-fluent-speakers-nm-level">ABC for Fluent Speakers</a></li>
+            <li><a href="/hacking/2017/04/24/git-commit-credo-linter-hook">Use credo in git pre-commit</a></li>
+            <li><a href="/hacking/2017/03/08/hack-vs-kludge">Hack vs. Kludge</a></li>
+            <li><a href="/hacking/2017/02/17/either-monad-in-elixir">Either Monad in Elixir</a></li>
+            <li><a href="/hobby/2016/12/25/queso-al-romero">Queso al Romero</a></li>
+            <li><a href="/hacking/2016/12/19/dry-behaviour">Protocols in Ruby</a></li>
           </ul>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Get in touch</h5>
+        <div>
+          <h5>Get in touch</h5>
           <ul>
-            <li><a class="white-text" href="mailto:am@mudasobwa.ru">am@mudasobwa.ru</a></li>
-            <li><a class="white-text" href="https://github.com/am-kantox">git @kantox</a></li>
-            <li><a class="white-text" href="https://github.com/mudasobwa">git @home</a></li>
-            <li><a class="white-text" href="http://stackoverflow.com/users/story/2035262">story @stackoverflow</a></li>
-            <li><a class="white-text" href="https://twitter.com/mudasobwa">twitter</a></li>
-            <li><a class="white-text" rel="me" href="https://mastodon.social/@mudasobwa">mastodon</a></li>
-            <li><a class="white-text" href="http://mudasobwa.ru">блог на русском</a></li>
+            <li><a href="mailto:am@mudasobwa.ru">am@mudasobwa.ru</a></li>
+            <li><a href="https://github.com/am-kantox">git @kantox</a></li>
+            <li><a href="https://github.com/mudasobwa">git @home</a></li>
+            <li><a href="http://stackoverflow.com/users/story/2035262">story @stackoverflow</a></li>
+            <li><a href="https://twitter.com/mudasobwa">twitter</a></li>
+            <li><a rel="me" href="https://mastodon.social/@mudasobwa">mastodon</a></li>
+            <li><a href="http://mudasobwa.ru">blog (ru)</a></li>
           </ul>
         </div>
       </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container teal-text text-lighten-3">
-        <strong>
-          <a class="teal-text text-lighten-5" href="http://creativecommons.org/licenses/by/3.0/deed">CC BY 3.0</a>
-          <code>::</code>
-          {{ site.author.name }} <code>::</code>
-          <a class="teal-text text-lighten-5" href="/files/alexei-matyushkin.pdf">résumé</a> <code>::</code>
-          {{ site.author.motto }} <code>::</code>
-          <a class="teal-text text-lighten-5" href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a>
-          <code>::</code>
-          {{ site.tagline }} <code>::</code>
-          <a class="teal-text text-lighten-5" href="{{ site.production_url }}/{{ site.rss }}">RSS Feed</a>
-          <code>::</code>
-          ❤ <code>::</code>
-          <a class="teal-text text-lighten-5" href="http://materializecss.com">materializecss</a>
-        </strong>
-        <!--
-          <a href="http://github.com/{{ site.author.github }}/">github.com/{{ site.author.github }}</a><br />
-          <a href="http://twitter.com/{{ site.author.twitter }}/">twitter.com/{{ site.author.twitter }}</a><br />
-          -->
+      <div class="footer-bottom">
+        <a href="http://creativecommons.org/licenses/by/3.0/deed">CC BY 3.0</a>
+        &middot; {{ site.author.name }}
+        &middot; <a href="/files/alexei-matyushkin.pdf">resume</a>
+        &middot; {{ site.author.motto }}
+        &middot; <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+        &middot; <a href="{{ site.production_url }}/{{ site.rss }}">RSS</a>
       </div>
     </div>
   </footer>
+
+  <!-- Theme toggle logic -->
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+
+    // Listen for system theme changes when no explicit preference is saved
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) {
+        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      }
+    });
+  </script>
 
   {% include JB/analytics %}
 </body>

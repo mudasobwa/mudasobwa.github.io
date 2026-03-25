@@ -1,48 +1,37 @@
-<div class="page-header">
-  <h1>{{ page.title }} <small>{% unless page.tags == empty %}
+<div class="post-header">
+  <h1>{{ page.title }}</h1>
+  <div class="post-meta">
+    <span class="date">{{ page.date | date: "%B %e, %Y" }}</span>
+    {% if page.category %}
+    <span class="separator">&middot;</span>
+    <span>{{ page.category }}</span>
+    {% endif %}
+    {% unless page.tags == empty %}
+    <span class="separator">&middot;</span>
     <ul class="tag_box inline">
-    {% assign tags_list = page.tags %}
-    {% include JB/tags_list %}
+      {% assign tags_list = page.tags %}
+      {% include JB/tags_list %}
     </ul>
-  {% endunless %}</small></h1>
+    {% endunless %}
+  </div>
 </div>
 
-<div class="row">
-  <div class="span1"></div>
-  <div class="span10">
-    {{ content }}
-    <br><br>
-    <div class="pagination row">
-      <div class="col s12 m12 center">
-        {% if page.previous %}
-          <a class="btn btn-floating" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}"><i class="material-icons medium">skip_previous</i></a></a>
-        {% else %}
-          <a class="btn btn-floating disabled"><i class="material-icons medium">skip_previous</i></a>
-        {% endif %}
+<article>
+  {{ content }}
+</article>
 
-        &nbsp;&nbsp;&nbsp;<a class="btn btn-floating" href="{{ BASE_PATH }}{{ site.JB.archive_path }}"><i class="material-icons medium">settings_ethernet</i></a>&nbsp;&nbsp;&nbsp;
+<div class="pagination">
+  {% if page.previous %}
+    <a class="nav-btn" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr;</a>
+  {% else %}
+    <span class="nav-btn disabled">&larr;</span>
+  {% endif %}
 
-        {% if page.next %}
-          <a class="btn btn-floating" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}"><i class="material-icons medium">skip_next</i></a>
-        {% else %}
-          <a class="btn btn-floating disabled"><i class="material-icons medium">skip_next</i></a>
-        {% endif %}
-      </div>
-    </div>
-  </div>
+  <a class="nav-btn-archive" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
 
-<!--
-  <div class="span4">
-    <h4>Published</h4>
-    <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
-
-  {% unless page.tags == empty %}
-    <h4>Tags</h4>
-    <ul class="tag_box">
-    {% assign tags_list = page.tags %}
-    {% include JB/tags_list %}
-    </ul>
-  {% endunless %}
-  </div>
--->
+  {% if page.next %}
+    <a class="nav-btn" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">&rarr;</a>
+  {% else %}
+    <span class="nav-btn disabled">&rarr;</span>
+  {% endif %}
 </div>

@@ -1,0 +1,182 @@
+/* ==========================================================================
+   Nord Syntax Highlighting for Rouge (Jekyll)
+   Based on https://www.nordtheme.com/
+   ========================================================================== */
+
+.highlight {
+  background: #2E3440;
+  color: #D8DEE9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.highlight pre {
+  margin: 0;
+  padding: 1.25em 1.5em;
+  overflow-x: auto;
+  background: #2E3440;
+  border: none;
+}
+
+.highlight code {
+  background: none;
+  color: #D8DEE9;
+  padding: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  border: none;
+}
+
+/* --- Token styles --- */
+
+/* Comments */
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cs,
+.highlight .cp,
+.highlight .ch,
+.highlight .cd {
+  color: #4C566A;
+  font-style: italic;
+}
+
+/* Preprocessor comment */
+.highlight .cp {
+  color: #5E81AC;
+  font-style: normal;
+}
+
+/* Errors */
+.highlight .err {
+  color: #BF616A;
+}
+
+/* Generic */
+.highlight .gd { color: #BF616A; background-color: rgba(191, 97, 106, 0.1); }
+.highlight .gi { color: #A3BE8C; background-color: rgba(163, 190, 140, 0.1); }
+.highlight .ge { font-style: italic; }
+.highlight .gs { font-weight: bold; }
+.highlight .gl { color: #4C566A; }
+.highlight .gh { color: #88C0D0; font-weight: bold; }
+.highlight .gp { color: #4C566A; font-weight: bold; }
+.highlight .go { color: #D8DEE9; }
+.highlight .gt { color: #BF616A; }
+.highlight .gu { color: #88C0D0; font-weight: bold; }
+
+/* Keywords */
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kv {
+  color: #81A1C1;
+}
+
+.highlight .kt {
+  color: #8FBCBB;
+}
+
+/* Literals */
+.highlight .l  { color: #B48EAD; }
+.highlight .ld { color: #A3BE8C; }
+
+/* Names */
+.highlight .n  { color: #D8DEE9; }
+.highlight .na { color: #8FBCBB; }
+.highlight .nb { color: #81A1C1; }
+.highlight .nc { color: #8FBCBB; }
+.highlight .nd { color: #D08770; }
+.highlight .ne { color: #8FBCBB; }
+.highlight .nf { color: #88C0D0; }
+.highlight .ni { color: #D8DEE9; }
+.highlight .nl { color: #8FBCBB; }
+.highlight .nn { color: #8FBCBB; }
+.highlight .no { color: #8FBCBB; }
+.highlight .nt { color: #81A1C1; }
+.highlight .nv { color: #D8DEE9; }
+.highlight .nx { color: #D8DEE9; }
+.highlight .bp { color: #81A1C1; }
+.highlight .vc { color: #D8DEE9; }
+.highlight .vg { color: #D8DEE9; }
+.highlight .vi { color: #D8DEE9; }
+.highlight .vm { color: #D8DEE9; }
+
+/* Numbers */
+.highlight .m,
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .mx,
+.highlight .il {
+  color: #B48EAD;
+}
+
+/* Operators */
+.highlight .o  { color: #81A1C1; }
+.highlight .ow { color: #81A1C1; font-weight: bold; }
+
+/* Punctuation */
+.highlight .p  { color: #D8DEE9; }
+
+/* Strings */
+.highlight .s,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .dl,
+.highlight .sd,
+.highlight .se,
+.highlight .sh,
+.highlight .s1,
+.highlight .s2,
+.highlight .ss {
+  color: #A3BE8C;
+}
+
+.highlight .si {
+  color: #B48EAD;
+}
+
+.highlight .sr {
+  color: #EBCB8B;
+}
+
+.highlight .sx {
+  color: #A3BE8C;
+}
+
+/* Special */
+.highlight .w  { color: #D8DEE9; }
+
+/* Line numbers */
+.highlight .lineno {
+  color: #4C566A;
+  padding-right: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* Ensure rouge table layout works well */
+.highlight table {
+  margin: 0;
+  border: none;
+}
+
+.highlight table td {
+  padding: 0;
+  border: none;
+}
+
+.highlight table pre {
+  margin: 0;
+}
+
+.highlight .gl + .gp {
+  color: #4C566A;
+}
