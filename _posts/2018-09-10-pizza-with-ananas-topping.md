@@ -11,7 +11,7 @@ tags:
 
 ## The Problem
 
-This post is made mostly as a response to [Learning Elixir, Frst Impressions](https://elixirforum.com/t/learning-elixir-frst-impressions-plz-dont-kill-me) posted yesterday at [Elixir Forum](https://elixirforum.com). The real matter I have finally come to writing this would be I feel a necessity to sum up what I constantly tell to my colleagues, mates and wife. Here it is:
+This post is made mostly as a response to [Learning Elixir, First Impressions](https://elixirforum.com/t/learning-elixir-frst-impressions-plz-dont-kill-me) posted yesterday at [Elixir Forum](https://elixirforum.com). The real matter I have finally come to writing this would be I feel a necessity to sum up what I constantly tell to my colleagues, mates and wife. Here it is:
 
 >
 #### thou shalt not make into thee any graven image; do not worship anything or anybody blindly
@@ -38,7 +38,7 @@ Nah. The father of OOP, [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay), the 
 
 That does not mean _objects_ are not a good concept. Mutable objects. I said that. You heard me. Mutable objects are great, they are a better, cleaner and easier-to-get-to concept, than pure immutable data. After all, when we break the glass of our office fire siren alarm (trust me, don’t check it yourself, please)—we end up with a harrowing siren alarm _and_ a broken glass, not with a brand new broken glass _and_ an original one, untouched and intact. Objects are fine.
 
-Everybody who had a chance to develop with [Apache Haddop](https://en.wikipedia.org/wiki/Apache_Hadoop) would tell you: this is a perfect example of extremely well put paradigm. Mappers and even reducers there are great because they are using unceasingly mutated objects. That’s more straightforward and less memory-consuming, and all that stuff.
+Everybody who had a chance to develop with [Apache Hadoop](https://en.wikipedia.org/wiki/Apache_Hadoop) would tell you: this is a perfect example of extremely well put paradigm. Mappers and even reducers there are great because they are using unceasingly mutated objects. That’s more straightforward and less memory-consuming, and all that stuff.
 
 Being object-oriented might help, but it might injure, it might even hurt. One should check what the real consequences of using an OOP paradigm are before going fully OOP. And even inside OOP paradigm, there are still many places where functional approaches work very well.
 
