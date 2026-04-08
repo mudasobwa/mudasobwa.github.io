@@ -48,9 +48,9 @@ Yes, but no. From a technical standpoint—yes. From a human one—no. If your c
 
 [^1]: Here is how deprecation works in one of my most esoteric [Ruby libraries](https://github.com/am-kantox/dry-behaviour):
 
-    ![Sooner or later, users will grow tired of seeing this at every launch—and they will do as I ask](https://habrastorage.org/r/w1560/getpro/habr/upload_files/dfe/1da/a5b/dfe1daa5b9e374a58f2c00d8b750e3fb.png “Sooner or later, users will grow tired of seeing this at every launch—and they will do as I ask”)
+![Sooner or later, users will grow tired of seeing this at every launch—and they will do as I ask](/img/dry-protocols-warning.png)
 
-    Sooner or later, users will grow tired of seeing this at every launch—and they will do as I ask.
+Sooner or later, users will grow tired of seeing this at every launch—and they will do as I ask.
 
 [^2]: _A case from life:_ in one of my libraries I needed to parse simple PlantUML/Mermaid diagrams. For such a thing I do not drag monstrous dependencies into my projects, so I quickly knocked together my own [`parsec`](https://github.com/dashbitco/nimble_parsec) in a private namespace and forgot about it. Roughly a year later, I received an issue complaining that my parser could not handle—I no longer recall the exact details—something like nested comments in states. In other words, a fellow developer had found my library for working correctly with finite automata (!) and was using its undocumented helper functions to parse complex PlantUML.
 
