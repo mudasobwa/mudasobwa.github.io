@@ -10,7 +10,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="msvalidate.01" content="DD6CC60E32E94EC101FE1201B669A34F">
 
-  <link rel="shortcut icon" href="/img/favicon.png">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/logo/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/logo/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/logo/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileImage" content="/img/logo/mstile-150x150.png">
+  <meta name="msapplication-TileColor" content="#2e3440">
+  <meta name="theme-color" content="#2e3440">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:url" content="{{ site.production_url }}{{ page.url }}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:image" content="{{ site.production_url }}/img/logo/logo-orig.png">
+  <meta property="og:image:width" content="719">
+  <meta property="og:image:height" content="719">
+  {% if page.description %}<meta property="og:description" content="{{ page.description }}">{% endif %}
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@{{ site.author.twitter }}">
+  <meta name="twitter:creator" content="@{{ site.author.twitter }}">
+  <meta name="twitter:title" content="{{ page.title }}">
+  {% if page.description %}<meta name="twitter:description" content="{{ page.description }}">{% endif %}
+  <meta name="twitter:image" content="{{ site.production_url }}/img/logo/logo-orig.png">
 
   <!-- Theme init: runs synchronously to prevent flash of wrong theme -->
   <script>
