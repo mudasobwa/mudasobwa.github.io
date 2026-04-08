@@ -52,7 +52,7 @@ Coverage in general is a mediocre metric. I have a library with one hundred perc
 
 Oh yes, the silver bullet. Single responsibility, open-closed, Liskov substitution, interface segregation, dependency inversion—it all sounds like incantations from Harry Potter, and is approximately as applicable in real life. An attempt to follow all five principles simultaneously transforms a simple CRUD into an architectural masterpiece of twenty layers of abstraction, where adding a single field to a form requires modifying seven interfaces, creating three new classes, and updating the dependency injection container configuration. And then a new developer arrives, gazes upon all this magnificence, and asks: “Couldn’t you have just added a column to the database?”
 
-—
+---
 
 And there you have the whole truth about clean code. It doesn’t work—not because the principles are wrong; no, in a vacuum they are splendid. It doesn’t work because the real world is dirty, chaotic, and unpredictable (and asynchronous, too, yes). Because deadlines don’t move, requirements change, budgets run out, and the client wants everything at once. Because ideal code is the code that solved a real problem yesterday, not the code that will look elegant in a textbook the day after tomorrow.
 
