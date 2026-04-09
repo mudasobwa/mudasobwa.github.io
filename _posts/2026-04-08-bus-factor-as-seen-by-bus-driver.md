@@ -9,9 +9,7 @@ tags:
   - opinion
 ---
 
-> _A phone call. A father of three daughters picks up the receiver and hears:  
-> — Is that you, my little frog?  
-> — No. This is the owner of the pond._
+> _A phone call. A father of three daughters picks up the receiver and hears. “Is that you, my little frog?” — “No. This is the owner of the pond.”_
 
 It has become fashionable of late to invoke the [bus factor](https://en.wikipedia.org/wiki/Bus_factor) as though it were an inexorable law of nature, destined to bury your project the instant you hire so much as one competent specialist. Business, we are told, requires nothing but interchangeable cogs—each fitted with a correctly tuned heterodyne of work--life balance, each capable of wielding the frameworks and libraries handed down from on high—and, above all, nothing more.
 
