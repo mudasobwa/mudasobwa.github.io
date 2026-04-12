@@ -11,7 +11,7 @@ tags:
 
 Imagine a five-storey building with no lift, erected in the late fifties somewhere on the outskirts of Avtozavodskaya—or better still, in Kupchino. Every floor speaks its own language. Not figuratively but in the most literal sense: the ground floor communicates in Cyrillic, the second in Latin script, the third in ideograms, the fourth in cuneiform, and the fifth, in the manner of Wittgenstein, maintains a principled silence on the grounds that whereof one cannot speak, thereof one must be silent. The postman, delivering the correspondence, is obliged to carry five copies of one and the same letter, translated into each of these tongues, and to knock on the door every time, hoping the addressee has not moved to another floor.
 
-That is precisely how the world of programming is arranged—if one looks at it from the wings rather than the stalls. Every language has its own internal representation of code. Python stores its AST the way a thrifty housewife stores dry goods: in tidy labelled containers—`BinOp`, `FunctionDef`, `Name`. Elixir, with characteristic self-assurance, uses triples `{atom, metadata, children}` and calls them _quoted expressions_, as though what we have before us is not a syntax tree but a collection of quotations from Mandelstam. Ruby stockpiles its S-expressions the way an antiquarian bookseller stockpiles yellowing volumes, and Erlang, faithful to tradition, converses in tuples and atoms intelligible only to Ericsson engineers and, by a curious coincidence, doctoral students at a handful of Swedish universities.
+That is precisely how the world of programming is arranged—if one looks at it from the wings rather than the stalls. Every language has its own internal representation of code. Python stores its AST the way a thrifty housewife stores dry goods: in tidy labelled containers—`BinOp`, `FunctionDef`, `Name`. Elixir, with characteristic self-assurance, uses triples `{atom, metadata, children}` and calls them _quoted expressions_, as though what we have before us is not a syntax tree but a collection of quotations from William Blake. Ruby stockpiles its S-expressions the way an antiquarian bookseller stockpiles yellowing volumes, and Erlang, faithful to tradition, converses in tuples and atoms intelligible only to Ericsson engineers and, by a curious coincidence, doctoral students at a handful of Swedish universities.
 
 The problem is obvious to anyone who has ever attempted to build a code-analysis tool. Suppose you have written a superb cyclomatic-complexity analyser for Python. It is magnificent: it finds nested conditionals, counts branching points, draws control-flow graphs. Then a colleague comes along and asks, “Could you do one for Ruby?” And it transpires that all your work—all those tree walkers, all that pattern matching over Python’s AST—must be rewritten from scratch. From zero. For a different tree, with different nodes, different semantics, and different booby traps. And then a third colleague will turn up and request the same for Haskell.
 
@@ -25,15 +25,15 @@ Before we turn to the details (and they deserve attention in the way a well-cons
 
 In the early two-thousands—when mobile telephones already existed but had not yet taken charge of our lives—the OMG consortium (Object Management Group, bearing no relation whatsoever to the divine or the exclamatory) released a standard called MOF: Meta-Object Facility. Its essence fits into four lines, yet it took the industry two decades to understand those four lines. MOF defines a four-level hierarchy of models:
 
-**M0** is running code. There it goes, spitting out results, crashing with errors, consuming memory. This is reality.
+**M⁰** is running code. There it goes, spitting out results, crashing with errors, consuming memory. This is reality.
 
-**M1** is a model of reality. For programs, it is the AST: the abstract syntax tree. Python’s `BinOp(op=Add(), left=Name('x'), right=Num(5))` is M1. Elixir’s `{:+, [context: Elixir], [{:x, [], Elixir}, 5]}` is also M1. Every language describes its own code in its own M1, the way every painter paints an apple in their own way.
+**M¹** is a model of reality. For programs, it is the AST: the abstract syntax tree. Python’s `BinOp(op=Add(), left=Name('x'), right=Num(5))` is M¹. Elixir’s `{:+, [context: Elixir], [{:x, [], Elixir}, 5]}` is also M¹. Every language describes its own code in its own M¹, the way every painter paints an apple in their own way.
 
-**M2** is the model of models. The meta-model. It defines what a node of _any_ AST _can be_. Not a concrete node of a concrete language, but the _concept_ of a node. A binary operation is neither Python’s `BinOp` nor Elixir’s `{:+, ...}`. A binary operation is the _idea_ that two operands are connected by an operator. UML lives at the M2 level. And so does MetaAST.
+**M²** is the model of models. The meta-model. It defines what a node of _any_ AST _can be_. Not a concrete node of a concrete language, but the _concept_ of a node. A binary operation is neither Python’s `BinOp` nor Elixir’s `{:+, ...}`. A binary operation is the _idea_ that two operands are connected by an operator. UML lives at the M² level. And so does MetaAST.
 
-**M3** is the meta-meta-model. That which defines what meta-models themselves can be. The type system, the rules of composition. MOF lives here. In the context of MetaAST, this role is played by Elixir’s type system—`@type` and `@spec`.
+**M³** is the meta-meta-model. That which defines what meta-models themselves can be. The type system, the rules of composition. MOF lives here. In the context of MetaAST, this role is played by Elixir’s type system—`@type` and `@spec`.
 
-The fundamental difference between MetaAST and LLVM IR, Java bytecode, or any other intermediate representation lies precisely here: all of those are models (M1). They describe concrete code in a concrete format. MetaAST is a meta-model (M2). It describes what descriptions of code _can be_. The difference is roughly the same as between a dictionary and a language: a dictionary catalogues words, whereas a language defines the rules by which those words are possible in the first place.
+The fundamental difference between MetaAST and LLVM IR, Java bytecode, or any other intermediate representation lies precisely here: all of those are models (M¹). They describe concrete code in a concrete format. MetaAST is a meta-model (M²). It describes what descriptions of code _can be_. The difference is roughly the same as between a dictionary and a language: a dictionary catalogues words, whereas a language defines the rules by which those words are possible in the first place.
 
 ---
 
@@ -41,7 +41,7 @@ Metastatic is an Elixir library that implements this idea in code. The name, as 
 
 The architecture is three-layered, and this is not caprice but a consequence of theory:
 
-**M2.1 — Core.** Concepts present in _every_ programming language on the planet. Literals, variables, binary operations, conditionals, function calls, assignments. Nothing exotic here. `x + 5` in Python, Elixir, Ruby, Erlang, and Haskell is one and the same thing. An identical MetaAST representation. Literally:
+**M².1 — Core.** Concepts present in _every_ programming language on the planet. Literals, variables, binary operations, conditionals, function calls, assignments. Nothing exotic here. `x + 5` in Python, Elixir, Ruby, Erlang, and Haskell is one and the same thing. An identical MetaAST representation. Literally:
 
 ```elixir
 {:binary_op, [category: :arithmetic, operator: :+],
@@ -50,21 +50,21 @@ The architecture is three-layered, and this is not caprice but a consequence of 
 
 Five languages. One tree. One analysis tool. A score legible to any instrument in the orchestra.
 
-**M2.2 — Extended.** Constructs that exist in _most_ languages but not all. Loops, lambdas, collection operations, pattern matching, exception handling. Haskell knows nothing of imperative loops—so be it: it has recursion at the M2.1 level. Ruby knows nothing of guards—no matter: the adapter’s metadata will preserve the context.
+**M².2 — Extended.** Constructs that exist in _most_ languages but not all. Loops, lambdas, collection operations, pattern matching, exception handling. Haskell knows nothing of imperative loops—so be it: it has recursion at the M².1 level. Ruby knows nothing of guards—no matter: the adapter’s metadata will preserve the context.
 
-**M2.3 — Native.** The emergency exit for constructs that resist generalisation. Rust’s lifetimes, Haskell’s type classes, Elixir’s metaprogramming. They are wrapped in `{:language_specific, :rust, ...}`—like fragile porcelain in bubble wrap—and travel through the system without losing their identity, yet without claiming universality either.
+**M².3 — Native.** The emergency exit for constructs that resist generalisation. Rust’s lifetimes, Haskell’s type classes, Elixir’s metaprogramming. They are wrapped in `{:language_specific, :rust, ...}`—like fragile porcelain in bubble wrap—and travel through the system without losing their identity, yet without claiming universality either.
 
 ---
 
 Every MetaAST node is a triple: type, metadata, children (or value). The format is deliberately borrowed from Elixir’s quoted expressions, because if you already know how to write macros in Elixir, you already know how to work with MetaAST. The difference is semantic: where Elixir uses `:+` (the operator itself), MetaAST uses `:binary_op` (the _concept_ of a binary operation) and tucks the operator into metadata. Where Elixir inlines literals, MetaAST wraps them in `{:literal, [subtype: :integer], 42}`, ensuring structural uniformity.
 
-Language adapters form the bridge between M1 and M2. The Python adapter takes Python’s AST (obtained via subprocess) and _abstracts_ it up to MetaAST. The Elixir adapter takes quoted expressions and does the same. The Ruby adapter—likewise. The inverse operation—_reification_—turns MetaAST back into the native AST of the target language. This pair of operations, abstraction and reification, constitutes what mathematicians call a Galois connection:
+Language adapters form the bridge between M¹ and M². The Python adapter takes Python’s AST (obtained via subprocess) and _abstracts_ it up to MetaAST. The Elixir adapter takes quoted expressions and does the same. The Ruby adapter—likewise. The inverse operation—_reification_—turns MetaAST back into the native AST of the target language. This pair of operations, abstraction and reification, constitutes what mathematicians call a Galois connection:
 
 ```
 Adapter_L = (alpha_L, rho_L)
 
-alpha_L: AS_L -> MetaAST x Metadata    (abstraction: M1 -> M2)
-rho_L:   MetaAST x Metadata -> AS_L    (reification: M2 -> M1)
+alpha_L: AS_L -> MetaAST x Metadata    (abstraction: M¹ -> M²)
+rho_L:   MetaAST x Metadata -> AS_L    (reification: M² -> M¹)
 ```
 
 What does this mean in practice? Here is a scenario. You have written a function-purity analyser. It operates on MetaAST: traverses the tree, looks for side effects (I/O, state mutation, calls to random-number generators), and renders its verdict. This analyser was written once. Once. And it works with Python, Elixir, Ruby, Erlang, and Haskell. Because it analyses not the Python or Elixir AST but the _meta-level_. You write:
@@ -76,13 +76,13 @@ result.pure?    # => false — side effect: I/O
 result.effects  # => [:io]
 ```
 
-And precisely the same code, unchanged, works if you replace Python with Ruby and `print('hello')` with `puts 'hello'`. Because both calls are `{:function_call, [name: "print"], [{:literal, [subtype: :string], "hello"}]}` at the M2 level.
+And precisely the same code, unchanged, works if you replace Python with Ruby and `print('hello')` with `puts 'hello'`. Because both calls are `{:function_call, [name: "print"], [{:literal, [subtype: :string], "hello"}]}` at the M² level.
 
 ---
 
 Let us return to MOF and the four-level hierarchy. Why is any of this necessary? Why erect meta-models when one could simply write a converter from one AST to another?
 
-The answer is simple and brutal, like the truth of life. A converter works pairwise. For five languages you need twenty converters (5 x 4). For ten—ninety. For twenty—three hundred and eighty. A meta-model works through a hub: each language connects once, via its own adapter. Five languages—five adapters. Ten—ten. Twenty—twenty. Linear growth instead of quadratic. A mathematician who had spent half his life as a reporter would appreciate the irony.
+The answer is simple and brutal, like the truth of life. A converter works pairwise. For five languages you need twenty converters (5 × 4). For ten—ninety. For twenty—three hundred and eighty. A meta-model works through a hub: each language connects once, via its own adapter. Five languages—five adapters. Ten—ten. Twenty—twenty. Linear growth instead of quadratic. A mathematician who had spent half his life as a reporter would appreciate the irony.
 
 But it is not only a matter of combinatorics. A meta-model provides _standardisation_. Every tool written for MetaAST is guaranteed to work with any language for which an adapter exists. This is not “Python support” and “Ruby support” as separate features. It is one feature: MetaAST support. Everything else follows as a consequence.
 
