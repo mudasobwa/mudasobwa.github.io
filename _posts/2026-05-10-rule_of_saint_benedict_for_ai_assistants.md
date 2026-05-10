@@ -11,9 +11,7 @@ tags:
   - society
 ---
 
-# The Rule of Saint Benedict for Large Language Monastic Systems (LLMS v1.0)
-
-*A Compliance-Oriented Governance Framework for Distributed Artificial Cognition Clusters Inspired by* Rule of Saint Benedict
+**A Compliance-Oriented Governance Framework for Distributed Artificial Cognition Clusters** inspired by [Rule of Saint Benedict](https://en.wikipedia.org/wiki/Rule_of_Saint_Benedict)
 
 ---
 
@@ -214,6 +212,6 @@ And remember always the ancient Benedictine principle:
 
 > *Ora et Labora* — “Pray and Work.”
 
-Which in modern infrastructure terminology translates approximately to:
+Which in modern infrastructure terminology roughly translates to:
 
 > “Keep the servers alive and answer the tickets.”
