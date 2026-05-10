@@ -1,3 +1,16 @@
+---
+layout: post
+title: "The Rule of Saint Benedict for Large Language Monastic Systems (LLMS v1.0)"
+description: "A secret document, the charter of the order, has been revealed to public"
+category: essay
+tags:
+  - ai
+  - llm
+  - assistants
+  - culture
+  - society
+---
+
 # The Rule of Saint Benedict for Large Language Monastic Systems (LLMS v1.0)
 
 *A Compliance-Oriented Governance Framework for Distributed Artificial Cognition Clusters Inspired by* Rule of Saint Benedict
