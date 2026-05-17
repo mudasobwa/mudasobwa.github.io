@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "mocks Are Your Friends, Not Your Servants"
+title: "Mocks Are Your Friends, Not Your Servants"
 description: "On treating mocks as protagonists of the testing narrative rather than disposable stand-ins hired to nod along"
 category: hacking
 tags:
