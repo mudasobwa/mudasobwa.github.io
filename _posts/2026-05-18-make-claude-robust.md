@@ -21,16 +21,16 @@ Here is an example:
 
 > Let's define the workflow you must follow every time we work on a new task, named NEW_TASK. The rules are following:
 >
-> ① The statement "New task <TASK_NAME>!" typed by me starts new NEW_TASK workflow  
-> ② Upon starting new workflow you must pull the main branch from github and create a new branch named "<TASK_NAME>"  
-> ③ At this point you have to wait for me to enter the problem statement  
-> ④ You have to analyze the problem statement and immediately ask all the questions regarding it where you might have had any uncertancy and/or lack of clarity  
-> ⑤ After everythig is clarified, you must come up with the plan of implementation and ask for its amendment and/or approval  
-> ⑥ Upon approval, you should start implementing it, asking all the questions you might have appeared  
-> ⑦ Once done, you must create a comprehensive tests for the new functionality, documentation in both the source code as standalone (markdown), changelog entry, and a brief what-has-been-done note in markdown  
+> ① The statement "New task <TASK_NAME>!" typed by me starts new NEW_TASK workflow<br/>
+> ② Upon starting new workflow you must pull the main branch from github and create a new branch named "<TASK_NAME>"<br/>
+> ③ At this point you have to wait for me to enter the problem statement<br/>
+> ④ You have to analyze the problem statement and immediately ask all the questions regarding it where you might have had any uncertancy and/or lack of clarity<br/>
+> ⑤ After everythig is clarified, you must come up with the plan of implementation and ask for its amendment and/or approval<br/>
+> ⑥ Upon approval, you should start implementing it, asking all the questions you might have appeared<br/>
+> ⑦ Once done, you must create a comprehensive tests for the new functionality, documentation in both the source code as standalone (markdown), changelog entry, and a brief what-has-been-done note in markdown<br/>
 > ⑧ After I accept everything by saying "Task done!", you should commit everything with a descriptive comprehensive commit message, push it to remote, and create a pull request in github.
 
-The key insight here is the **stop-words**. Without them the assistant will cheerfully barrel through all eight steps in one breath, commit untested code to `main`, and open a pull request titled "feat: everything." Stop-words are the leash. Love the leash.
+The key insight here is the **stop-words**. Without them the assistant will cheerfully barrel through all eight steps in one breath, commit untested code to `main`, and open a pull request titled "feat: everything." Stop-words are the leash. Love the leash (and the muzzle, your assistant is ill-mannered and disobedient.)
 
 ## Context Is King (And Your Assistant Has Amnesia)
 
