@@ -20,7 +20,7 @@ But spent three whole weeks trying pairs to unwind.
 Parentheses blinded my aching eyesight.
 
 So I fled to the past, where the money was made,  
-and woke up in COBOL, deeply afraid.
+and woke up in COBOL, deeply afraid.  
 `IDENTIFICATION DIVISION` roared in my head,  
 with columns and margins, I wished I were dead.  
 It’s great for a bank in the year seventy-nine,  
@@ -62,7 +62,7 @@ and `NaN` is a number? I’m sorry, that’s rude!
 as npm bloated and swallowed my disk space.
 
 So I looked for speed, and Golang caught my eye,  
-“It’s simple!” they promised, “Just give it a try!”
+“It’s simple!” they promised, “Just give it a try!”  
 But `if err != nil` was on every damn line,  
 an endless repetition of error design.  
 No generics (at first), just copy and paste,  
