@@ -1,27 +1,29 @@
 ---
 layout: page
 title: mudasobwa@github
-tagline: continuously building the M-cubed-model of life
+tagline: continuously building the M³-model of life
 ---
 {% include JB/setup %}
 
 ---
 
-## My 2c
+## My ¢2
 
-My name is Aleksei Matiushkin. I was born on October 0, 1973, in Saint-Petersburg, Russia. Nowadays I got used to a nickname "mudasobwa," proudly granted by rwandian linguists:
+My name is Aleksei Matiushkin. I was born on October 0, 1973, in Saint-Petersburg, Russia. Nowadays I got used to a nickname “mudasobwa,” proudly granted by rwandian linguists:
 
-> Kinyarwanda, the language spoken by most Rwandans, has no words for many basic technical and computing terms, including the very word "computer," explained Steve Murphy, organizer of the project. After debating whether to borrow English or French terms or come up with their own native word, the group settled on "mudasobwa," which roughly translates to "something or someone that does not make mistakes."
+> Kinyarwanda, the language spoken by most Rwandans, has no words for many basic technical and computing terms, including the very word “computer,” explained Steve Murphy, organizer of the project. After debating whether to borrow English or French terms or come up with their own native word, the group settled on “mudasobwa,” which roughly translates to “something or someone that does not make mistakes.”
 >
 > <small><a href="http://news.com.com/2100-7344_3-5159179.html?part=rss&amp;tag=feed&amp;subj=news">Se habla open source?</a></small>
 
 ----
 
-[My OSS / CC BY-SA Contributions](/pages/projects.html)
-
-----
-
 ## In One Fell Swoop
+
+_2015–nowadays_
+
+I live in Barcelona, the best place on the Earth. I am doing mostly _Elixir_ and _Erlang_ ([OSS](https://github.com/am-kantox), [Œditus OSS](https://github.com/Oeditus),) but also I bring some goodness to _Rust_ ([joerl](https://docs.rs/joerl/latest/joerl), [finitomata](https://docs.rs/finitomata/latest/finitomata), [dllb](https://github.com/Oeditus/dllb).) My code landed in _Elixir_ core and many well-known _Elixir_ libraries.
+
+_1992–2014_
 
 I have an experience in C/C++ pointing, Ruby railing, SQL querying, Java threads voodoo magic (and voodoo pleasure since 6.0), Perl crypting, Javascript handling, AJAX inplacing, Python tabbing, LISP bracketing. I have been working with so many unix variants (HP-UX, Solaris, Minix, Linux) that I finally learned the proper plural form 'unices'. I have managed the jabber client-server apps in Yandex, led warehouse management apps for US customers, developed the metamodelling tool in Berlin and created the medical apps in Saint-Petersburg.
 
@@ -35,18 +37,18 @@ I have an experience in C/C++ pointing, Ruby railing, SQL querying, Java threads
   <li>Flirt with everyone. Sleep alone.</li>
   <li>Know there is somebody around. Forget who.</li>
   <li>Do all things in time. Set the deadlines yourself.</li>
-  <li>Once realized -- do approx. Once approxed -- forgive.</li>
-  <li>Got things done? -- Dismiss. Fail? -- Dare.</li>
+  <li>Once realized—do approx. Once approxed—forgive.</li>
+  <li>Got things done?—Dismiss. Fail?—Dare.</li>
   <li>Accept the past. Fix a future.</li>
   <li>Don't be afraid of a hate. Fear the indifference.</li>
   <li>Believe feelings. Trust in reason.</li>
   <li><strong>Bear in mind</strong>: you are wiser, hence you are guilty.</li>
-  <li><em>P.S.</em> Don't dodge to supplement.</li></ol>
+  <li><em>P.S.</em> Don’t dodge to supplement.</li></ol>
   </div>
   <div>
   <h4 class="smallcaps">binaries</h4>
   <ul class="disc">
-  <li>I don't dread to appear: smart, stupid, arrogant, humble, a womanizer, a misogynist, a chatterbox, a taciturn, a teetotaler, an alcoholic, a dictator, a democrat, reliable, unreliable, white, black and purple.</li>
+  <li>I don’t dread to appear: smart, stupid, arrogant, humble, a womanizer, a misogynist, a chatterbox, a taciturn, a teetotaler, an alcoholic, a dictator, a democrat, reliable, unreliable, white, black and purple.</li>
   <li>I am afraid to show myself: a bore.</li></ul>
   <h4 class="smallcaps">sins (and coss)</h4>
   <ul class="disc">
