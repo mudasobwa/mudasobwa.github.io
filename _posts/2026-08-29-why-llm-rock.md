@@ -12,7 +12,7 @@ tags:
 
 Every now and then, in a fleeting moment of unwarranted optimism, I attempt to summarize a fundamental law of software engineering in a single tweet. It is a foolish habit, akin to throwing a pearl into a crowded pigpen and expecting a thoughtful discussion on marine biology.
 
-![Here is how I think about human and language model interaction, expressed in pristine formal notation—a system I like to call BooLLMean Logic](/img/boolmean-logic.png)
+![Here is how I think about human and language model interaction, expressed in pristine formal notation—a system I like to call BooLLMean Logic](/img/boollmean-logic.png)
 
 or, in plain text:
 
